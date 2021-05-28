@@ -1,0 +1,9 @@
+.section__header {
+    color: #fff;
+    background-color: #1e3246;
+    border-radius: 20px;
+    padding: 2px 20px;
+    font-weight: 400;
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 10px;
+}

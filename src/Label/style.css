@@ -1,0 +1,49 @@
+.label {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 480px) {
+    .label {
+        grid-template-columns: 1fr;
+    }
+}
+
+.labelInnerText {
+    text-align: right;
+}
+
+@media (max-width: 480px) {
+    .labelInnerText {
+        text-align: center;
+    }
+}
+
+.labelSub {
+    vertical-align: sub;
+    font-size: 0.7em;
+    margin-right: 0.15em;
+}
+
+.label__input {
+    min-width: 200px;
+    border: solid 1px #1e3246;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+@media (max-width: 480px) {
+    .label__input {
+        width: 100%;
+    }
+}
+
+.label__input:invalid {
+    background-color: beige;
+}
+
+.label__input:disabled {
+    background-color: #ddd;
+}
