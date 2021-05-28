@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/cnc-calc-react/static/css/main.78f46e8f.chunk.css",
+    "main.js": "/cnc-calc-react/static/js/main.b1d71266.chunk.js",
+    "main.js.map": "/cnc-calc-react/static/js/main.b1d71266.chunk.js.map",
+    "runtime-main.js": "/cnc-calc-react/static/js/runtime-main.debc4767.js",
+    "runtime-main.js.map": "/cnc-calc-react/static/js/runtime-main.debc4767.js.map",
+    "static/js/2.018730af.chunk.js": "/cnc-calc-react/static/js/2.018730af.chunk.js",
+    "static/js/2.018730af.chunk.js.map": "/cnc-calc-react/static/js/2.018730af.chunk.js.map",
+    "static/js/3.1ae77026.chunk.js": "/cnc-calc-react/static/js/3.1ae77026.chunk.js",
+    "static/js/3.1ae77026.chunk.js.map": "/cnc-calc-react/static/js/3.1ae77026.chunk.js.map",
+    "index.html": "/cnc-calc-react/index.html",
+    "static/css/main.78f46e8f.chunk.css.map": "/cnc-calc-react/static/css/main.78f46e8f.chunk.css.map",
+    "static/js/2.018730af.chunk.js.LICENSE.txt": "/cnc-calc-react/static/js/2.018730af.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.debc4767.js",
+    "static/js/2.018730af.chunk.js",
+    "static/css/main.78f46e8f.chunk.css",
+    "static/js/main.b1d71266.chunk.js"
+  ]
+}
