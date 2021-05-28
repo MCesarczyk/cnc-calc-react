@@ -1,5 +1,7 @@
 # CNC-parameters-calc
 
+<img src="%PUBLIC_URL%/../public/CNC.jpg" width="500" alt="CNC machining"/>
+
 ## Simple calculator of cutting parameters for CNC and traditional machininsts.
 
 ### Demo:
@@ -22,6 +24,7 @@ So, don't hesitate to contact me on: michal.cesarczyk@gmail.com to propose anoth
 1. CSS
 1. BEM
 1. JavaScript/ES6: const variables, arrow functions
+2. React.js
 
 # Getting Started with Create React App
 
