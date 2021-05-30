@@ -1,4 +1,4 @@
-.label {
+.field {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -6,28 +6,28 @@
 }
 
 @media (max-width: 480px) {
-    .label {
+    .field {
         grid-template-columns: 1fr;
     }
 }
 
-.labelInnerText {
+.fieldInnerText {
     text-align: right;
 }
 
 @media (max-width: 480px) {
-    .labelInnerText {
+    .fieldInnerText {
         text-align: center;
     }
 }
 
-.labelSub {
+.field__textSub {
     vertical-align: sub;
     font-size: 0.7em;
     margin-right: 0.15em;
 }
 
-.label__input {
+.field__input {
     min-width: 200px;
     border: solid 1px #1e3246;
     border-radius: 5px;
@@ -35,15 +35,15 @@
 }
 
 @media (max-width: 480px) {
-    .label__input {
+    .field__input {
         width: 100%;
     }
 }
 
-.label__input:invalid {
+.field__input:invalid {
     background-color: beige;
 }
 
-.label__input:disabled {
+.field__input:disabled {
     background-color: #ddd;
 }

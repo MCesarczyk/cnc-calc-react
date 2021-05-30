@@ -1,9 +1,17 @@
 import React from "react";
 import "./style.css";
 
-const Form = ({ children }) => (
+const Form = ({ legend, labels, fields, buttons }) => (
     <form className="form">
-        {children}
+        <fieldset className="form__fieldset">
+            <legend className="form__legend">{legend}</legend>
+            <div className="form__fieldsContainer">
+                {fields}
+            </div>
+            <div className="form__buttonsContainer">
+                {buttons}
+            </div>
+        </fieldset>
     </form>
 );
 
