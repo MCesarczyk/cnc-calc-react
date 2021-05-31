@@ -160,6 +160,71 @@ function App() {
           }
         />
 
+        <Section
+          title="Gwintowanie"
+          body={
+            <React.Fragment>
+              <Form
+                legend="Prędkość obrotowa narzędzia"
+                fields={
+                  <React.Fragment>
+                    <Field
+                      text="D [mm]"
+                      input={<input type="number" min="0.0001" step="0.0001"
+                        placeholder=" średnica narzędzia " required className="field__input" />}
+                    />
+                    <Field
+                      text="Vc [m/min]"
+                      input={<input
+                        type="number" min="1" step="1" placeholder=" prędkość liniowa " required
+                        className="field__input" />}
+                    />
+                    <Field
+                      text="n_obr. [obr/min]"
+                      input={<input
+                        readonly placeholder=" wynik " className="field__input" />}
+                    />
+                  </React.Fragment>
+                }
+                buttons={
+                  <React.Fragment>
+                    <Button name="Oblicz" type="submit" />
+                    <Button name="Reset" type="reset" />
+                  </React.Fragment>
+                }
+              />
+
+              <Form
+                legend="Posuw przy gwintowaniu"
+                fields={
+                  <React.Fragment>
+                    <Field
+                      text="n [obr/min]"
+                      input={<input type="number" min="1" step="1"
+                        placeholder=" obroty wrzeciona " required className="field__input" />}
+                    />
+                    <Field
+                      text="P [mm]"
+                      input={<input type="number" min="0.0001" step="0.0001"
+                        placeholder=" skok gwintu " required autofocus className="field__input" />}
+                    />
+                    <Field
+                      text="f [mm/min]"
+                      input={<input readonly placeholder=" wynik " className="field__input" />}
+                    />
+                  </React.Fragment>
+                }
+                buttons={
+                  <React.Fragment>
+                    <Button name="Oblicz" type="submit" />
+                    <Button name="Reset" type="reset" />
+                  </React.Fragment>
+                }
+              />
+            </React.Fragment>
+          }
+        />
+
       </Container>
 
       <Footer
