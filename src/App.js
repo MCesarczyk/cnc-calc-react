@@ -195,7 +195,7 @@ function App() {
               />
 
               <Form
-                legend="Posuw przy gwintowaniu"
+                legend="Wielkość posuwu przy gwintowaniu"
                 fields={
                   <React.Fragment>
                     <Field
@@ -203,15 +203,19 @@ function App() {
                       input={<input type="number" min="1" step="1"
                         placeholder=" obroty wrzeciona " required className="field__input" />}
                     />
+                    <Button name="Wstaw z sekcji powyżej"/>
                     <Field
-                      text="P [mm]"
-                      input={<input type="number" min="0.0001" step="0.0001"
-                        placeholder=" skok gwintu " required autofocus className="field__input" />}
+                      text="Średnica narzędzia [mm]"
+                      input={<select className="field__select" name="tapDiameter"></select>}
+                    />
+                    <Field
+                      text="Skok gwintu [mm]"
+                      input={<input readonly placeholder=" skok gwintu " className="field__input" />}
                     />
                     <Field
                       text="f [mm/min]"
                       input={<input readonly placeholder=" wynik " className="field__input" />}
-                    />
+                     />
                   </React.Fragment>
                 }
                 buttons={

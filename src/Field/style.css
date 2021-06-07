@@ -47,3 +47,8 @@
 .field__input:disabled {
     background-color: #ddd;
 }
+
+.field__select {
+    padding: 4px;
+    border-radius: 5px;
+}

@@ -12,6 +12,7 @@
 
 .form__fieldsContainer {
     display: grid;
+    /* grid-template-columns: auto auto; */
     justify-content: center;
     gap: 10px;
     margin-bottom: 10px;
