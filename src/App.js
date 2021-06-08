@@ -16,11 +16,11 @@ function App() {
         <Section
           title="Frezowanie/wiercenie"
           body={
-            <React.Fragment>
+            <>
               <Form
                 legend="Liniowa prędkość skrawania"
                 fields={
-                  <React.Fragment>
+                  <>
                     <Field
                       text="D [mm]"
                       input={<input type="number" min="0.0001" step="0.0001"
@@ -35,20 +35,20 @@ function App() {
                       text="Vc [m/min]"
                       input={<input readonly placeholder=" wynik " className="field__input" />}
                     />
-                  </React.Fragment>
+                  </>
                 }
                 buttons={
-                  <React.Fragment>
+                  <>
                     <Button name="Oblicz" type="submit" />
                     <Button name="Reset" type="reset" />
-                  </React.Fragment>
+                  </>
                 }
               />
 
               <Form
                 legend="Prędkość obrotowa narzędzia"
                 fields={
-                  <React.Fragment>
+                  <>
                     <Field
                       text="D [mm]"
                       input={<input type="number" min="0.0001" step="0.0001"
@@ -65,20 +65,20 @@ function App() {
                       input={<input
                         readonly placeholder=" wynik " className="field__input" />}
                     />
-                  </React.Fragment>
+                  </>
                 }
                 buttons={
-                  <React.Fragment>
+                  <>
                     <Button name="Oblicz" type="submit" />
                     <Button name="Reset" type="reset" />
-                  </React.Fragment>
+                  </>
                 }
               />
 
               <Form
                 legend="Wielkość posuwu liniowego"
                 fields={
-                  <React.Fragment>
+                  <>
                     <Field
                       text="n [obr/min]"
                       input={<input type="number" min="1" step="1"
@@ -106,20 +106,20 @@ function App() {
                       input={<input readonly placeholder=" wynik "
                         className="field__input" />}
                     />
-                  </React.Fragment>
+                  </>
                 }
                 buttons={
-                  <React.Fragment>
+                  <>
                     <Button name="Oblicz" type="submit" />
                     <Button name="Reset" type="reset" />
-                  </React.Fragment>
+                  </>
                 }
               />
 
               <Form
                 legend="Prędkość obrotowa narzędzia w zależności od posuwu liniowego"
                 fields={
-                  <React.Fragment>
+                  <>
                     <Field
                       text="f [mm/min]"
                       input={<input type="number" min="1" step="1"
@@ -147,27 +147,27 @@ function App() {
                       input={<input readonly placeholder=" wynik "
                         className="field__input" />}
                     />
-                  </React.Fragment>
+                  </>
                 }
                 buttons={
-                  <React.Fragment>
+                  <>
                     <Button name="Oblicz" type="submit" />
                     <Button name="Reset" type="reset" />
-                  </React.Fragment>
+                  </>
                 }
               />
-            </React.Fragment>
+            </>
           }
         />
 
         <Section
           title="Gwintowanie"
           body={
-            <React.Fragment>
+            <>
               <Form
                 legend="Prędkość obrotowa narzędzia"
                 fields={
-                  <React.Fragment>
+                  <>
                     <Field
                       text="D [mm]"
                       input={<input type="number" min="0.0001" step="0.0001"
@@ -184,20 +184,20 @@ function App() {
                       input={<input
                         readonly placeholder=" wynik " className="field__input" />}
                     />
-                  </React.Fragment>
+                  </>
                 }
                 buttons={
-                  <React.Fragment>
+                  <>
                     <Button name="Oblicz" type="submit" />
                     <Button name="Reset" type="reset" />
-                  </React.Fragment>
+                  </>
                 }
               />
 
               <Form
                 legend="Wielkość posuwu przy gwintowaniu"
                 fields={
-                  <React.Fragment>
+                  <>
                     <Field
                       text="n [obr/min]"
                       input={<input type="number" min="1" step="1"
@@ -216,16 +216,16 @@ function App() {
                       text="f [mm/min]"
                       input={<input readonly placeholder=" wynik " className="field__input" />}
                      />
-                  </React.Fragment>
+                  </>
                 }
                 buttons={
-                  <React.Fragment>
+                  <>
                     <Button name="Oblicz" type="submit" />
                     <Button name="Reset" type="reset" />
-                  </React.Fragment>
+                  </>
                 }
               />
-            </React.Fragment>
+            </>
           }
         />
 
