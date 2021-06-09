@@ -5,6 +5,7 @@ import Field from "./Field";
 import Button from "./Button";
 import Form1 from "./Form1";
 import Form2 from "./Form2";
+import Form3 from "./Form3";
 import Form from "./Form";
 import Container from "./Container";
 import Section from "./Section";
@@ -28,45 +29,45 @@ function App() {
                 legend="Prędkość obrotowa narzędzia"
               />
 
-              <Form
+              <Form3
                 legend="Wielkość posuwu liniowego"
-                fields={
-                  <>
-                    <Field
-                      text="n [obr/min]"
-                      input={<input type="number" min="1" step="1"
-                        placeholder=" obroty wrzeciona " required className="field__input" />}
-                    />
-                    <Field
-                      control={<input type="radio" name="feedType" id="FPR" className="js-rev" checked />}
-                      binding="FPR"
-                      text="f_obr [mm/obr]"
-                      input={<input type="number" min="0.01" step="0.01" required placeholder=" posuw na obrót " className="field__input" />}
-                    />
-                    <Field
-                      control={<input type="radio" name="feedType" id="FPT" className="js-tooth" />}
-                      binding="FPT"
-                      text="f_z [mm]"
-                      input={<input type="number" min="0.01" step="0.01" required disabled placeholder=" posuw na ząb " className="field__input" />}
-                    />
-                    <Field
-                      text="z"
-                      input={<input type="number" min="1" step="1" required
-                        className="field__input" placeholder=" ilość zębów " disabled />}
-                    />
-                    <Field
-                      text="f [mm/min]"
-                      input={<input readonly placeholder=" wynik "
-                        className="field__input" />}
-                    />
-                  </>
-                }
-                buttons={
-                  <>
-                    <Button name="Oblicz" type="submit" />
-                    <Button name="Reset" type="reset" />
-                  </>
-                }
+                // fields={
+                //   <>
+                //     <Field
+                //       text="n [obr/min]"
+                //       input={<input type="number" min="1" step="1"
+                //         placeholder=" obroty wrzeciona " required className="field__input" />}
+                //     />
+                //     <Field
+                //       control={<input type="radio" name="feedType" id="FPR" className="js-rev" checked />}
+                //       binding="FPR"
+                //       text="f_obr [mm/obr]"
+                //       input={<input type="number" min="0.01" step="0.01" required placeholder=" posuw na obrót " className="field__input" />}
+                //     />
+                //     <Field
+                //       control={<input type="radio" name="feedType" id="FPT" className="js-tooth" />}
+                //       binding="FPT"
+                //       text="f_z [mm]"
+                //       input={<input type="number" min="0.01" step="0.01" required disabled placeholder=" posuw na ząb " className="field__input" />}
+                //     />
+                //     <Field
+                //       text="z"
+                //       input={<input type="number" min="1" step="1" required
+                //         className="field__input" placeholder=" ilość zębów " disabled />}
+                //     />
+                //     <Field
+                //       text="f [mm/min]"
+                //       input={<input readonly placeholder=" wynik "
+                //         className="field__input" />}
+                //     />
+                //   </>
+                // }
+                // buttons={
+                //   <>
+                //     <Button name="Oblicz" type="submit" />
+                //     <Button name="Reset" type="reset" />
+                //   </>
+                // }
               />
 
               <Form
