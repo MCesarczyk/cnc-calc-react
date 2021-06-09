@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Field from "./Field";
 import Button from "./Button";
 import Form1 from "./Form1";
+import Form2 from "./Form2";
 import Form from "./Form";
 import Container from "./Container";
 import Section from "./Section";
@@ -23,34 +24,8 @@ function App() {
                 legend="Liniowa prędkość skrawania"
               />
 
-              <Form
+              <Form2
                 legend="Prędkość obrotowa narzędzia"
-                fields={
-                  <>
-                    <Field
-                      text="D [mm]"
-                      input={<input type="number" min="0.0001" step="0.0001"
-                        placeholder=" średnica narzędzia " required className="field__input" />}
-                    />
-                    <Field
-                      text="Vc [m/min]"
-                      input={<input
-                        type="number" min="1" step="1" placeholder=" prędkość liniowa " required
-                        className="field__input" />}
-                    />
-                    <Field
-                      text="n_obr. [obr/min]"
-                      input={<input
-                        readonly placeholder=" wynik " className="field__input" />}
-                    />
-                  </>
-                }
-                buttons={
-                  <>
-                    <Button name="Oblicz" type="submit" />
-                    <Button name="Reset" type="reset" />
-                  </>
-                }
               />
 
               <Form
