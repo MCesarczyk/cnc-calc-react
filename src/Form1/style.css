@@ -18,7 +18,7 @@
     margin-bottom: 10px;
 }
 
-.form {
+.form__label {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -26,7 +26,7 @@
 }
 
 @media (max-width: 480px) {
-    .form {
+    .form__label {
         grid-template-columns: 1fr;
     }
 }

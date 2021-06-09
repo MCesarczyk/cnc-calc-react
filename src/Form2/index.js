@@ -22,13 +22,13 @@ const Form1 = ({ legend }) => {
             <fieldset className="form__fieldset">
                 <legend className="form__legend">{legend}</legend>
                 <div className="form__fieldsContainer">
-                    <label className="field">
-                        <span className="fieldInnerText">
+                    <label className="form__label">
+                        <span className="form__innerText">
                             <label>D [mm]:</label>
                         </span>
                         <input
                             value={diameter}
-                            className="field__input"
+                            className="form__input"
                             type="number"
                             min="0.0001"
                             step="0.0001"
@@ -37,13 +37,13 @@ const Form1 = ({ legend }) => {
                             onChange={({ target }) => setDiameter(target.value)}
                         />
                     </label>
-                    <label className="field">
-                        <span className="fieldInnerText">
+                    <label className="form__label">
+                        <span className="form__innerText">
                             <label>Vc [m/min]:</label>
                         </span>
                         <input
                             value={cuttingSpeed}
-                            className="field__input"
+                            className="form__input"
                             type="number"
                             min="1"
                             step="1"
@@ -52,15 +52,15 @@ const Form1 = ({ legend }) => {
                             onChange={({ target }) => setCuttingSpeed(target.value)}
                         />
                     </label>
-                    <label className="field">
-                        <span className="fieldInnerText">
+                    <label className="form__label">
+                        <span className="form__innerText">
                             <label>n_obr. [obr/min]:</label>
                         </span>
                         <input
                             value={rotationSpeed}
                             readOnly
                             placeholder=" wynik "
-                            className="field__input"
+                            className="form__input"
                         />
                     </label>
                 </div>

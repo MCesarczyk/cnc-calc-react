@@ -1,12 +1,9 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Field from "./Field";
-import Button from "./Button";
 import Form1 from "./Form1";
 import Form2 from "./Form2";
 import Form3 from "./Form3";
-import Form from "./Form";
 import Container from "./Container";
 import Section from "./Section";
 
@@ -70,7 +67,7 @@ function App() {
                 // }
               />
 
-              <Form
+              {/* <Form
                 legend="Prędkość obrotowa narzędzia w zależności od posuwu liniowego"
                 fields={
                   <>
@@ -109,12 +106,12 @@ function App() {
                     <Button name="Reset" type="reset" />
                   </>
                 }
-              />
+              /> */}
             </>
           }
         />
 
-        <Section
+        {/* <Section
           title="Gwintowanie"
           body={
             <>
@@ -181,7 +178,7 @@ function App() {
               />
             </>
           }
-        />
+        /> */}
 
       </Container>
 
