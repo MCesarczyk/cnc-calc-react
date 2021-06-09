@@ -10,20 +10,6 @@ import Section from "./Section";
 
 function App() {
 
-  //   const form1equation = () => {
-  //     const diameter = document.querySelector(".js-diameterInput1").value;
-  //     const rotation = document.querySelector(".js-rotationInput1").value;
-  //     return speedElement = Math.PI * diameter * rotation / 1000;
-  // };
-
-  // const form1submit = (event) => {
-  //     event.preventDefault();
-  //     form1equation();
-  //     const speedResult = document.querySelector(".js-speedResult1");
-  //     speedResult.value = speedElement.toFixed(2);
-  // };
-
-
   return (
     <div>
       <Header title="Kalkulator obróbki skrawaniem" />
