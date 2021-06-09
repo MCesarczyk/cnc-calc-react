@@ -11,8 +11,14 @@ const Form1 = ({ legend }) => {
         setCuttingSpeed((Math.PI * diameter * rotationSpeed / 1000).toFixed(2));
     };
 
+    const onFormReset = (event) => {
+        setDiameter();
+        setRotationSpeed();
+        setCuttingSpeed();
+    };
+
     return (
-        <form className="form" onSubmit={onFormSubmit} >
+        <form className="form" onSubmit={onFormSubmit} onReset={onFormReset} >
             <fieldset className="form__fieldset">
                 <legend className="form__legend">{legend}</legend>
                 <div className="form__fieldsContainer">
