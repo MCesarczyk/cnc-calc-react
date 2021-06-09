@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const Form = ({ legend, labels, fields, buttons }) => (
+const Form = ({ legend, fields, buttons }) => (
     <form className="form">
         <fieldset className="form__fieldset">
             <legend className="form__legend">{legend}</legend>

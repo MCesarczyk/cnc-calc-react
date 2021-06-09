@@ -3,11 +3,27 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Field from "./Field";
 import Button from "./Button";
+import Form1 from "./Form1";
 import Form from "./Form";
 import Container from "./Container";
 import Section from "./Section";
 
 function App() {
+
+  //   const form1equation = () => {
+  //     const diameter = document.querySelector(".js-diameterInput1").value;
+  //     const rotation = document.querySelector(".js-rotationInput1").value;
+  //     return speedElement = Math.PI * diameter * rotation / 1000;
+  // };
+
+  // const form1submit = (event) => {
+  //     event.preventDefault();
+  //     form1equation();
+  //     const speedResult = document.querySelector(".js-speedResult1");
+  //     speedResult.value = speedElement.toFixed(2);
+  // };
+
+
   return (
     <div>
       <Header title="Kalkulator obróbki skrawaniem" />
@@ -17,32 +33,8 @@ function App() {
           title="Frezowanie/wiercenie"
           body={
             <>
-              <Form
+              <Form1
                 legend="Liniowa prędkość skrawania"
-                fields={
-                  <>
-                    <Field
-                      text="D [mm]"
-                      input={<input type="number" min="0.0001" step="0.0001"
-                        placeholder=" średnica narzędzia " required autofocus className="field__input" />}
-                    />
-                    <Field
-                      text="n [obr/min]"
-                      input={<input type="number" min="1" step="1"
-                        placeholder=" obroty wrzeciona " required className="field__input" />}
-                    />
-                    <Field
-                      text="Vc [m/min]"
-                      input={<input readonly placeholder=" wynik " className="field__input" />}
-                    />
-                  </>
-                }
-                buttons={
-                  <>
-                    <Button name="Oblicz" type="submit" />
-                    <Button name="Reset" type="reset" />
-                  </>
-                }
               />
 
               <Form
@@ -203,7 +195,7 @@ function App() {
                       input={<input type="number" min="1" step="1"
                         placeholder=" obroty wrzeciona " required className="field__input" />}
                     />
-                    <Button name="Wstaw z sekcji powyżej"/>
+                    <Button name="Wstaw z sekcji powyżej" />
                     <Field
                       text="Średnica narzędzia [mm]"
                       input={<select className="field__select" name="tapDiameter"></select>}
@@ -215,7 +207,7 @@ function App() {
                     <Field
                       text="f [mm/min]"
                       input={<input readonly placeholder=" wynik " className="field__input" />}
-                     />
+                    />
                   </>
                 }
                 buttons={
