@@ -34,7 +34,6 @@ const Form1 = ({ legend }) => {
                             step="0.0001"
                             placeholder=" średnica narzędzia "
                             required
-                            autofocus
                             onChange={({ target }) => setDiameter(target.value)}
                         />
                     </label>
@@ -59,7 +58,7 @@ const Form1 = ({ legend }) => {
                         </span>
                         <input
                             value={rotationSpeed}
-                            readonly
+                            readOnly
                             placeholder=" wynik "
                             className="field__input"
                         />
