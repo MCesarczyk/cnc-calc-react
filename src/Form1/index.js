@@ -11,10 +11,10 @@ const Form1 = ({ legend }) => {
         setCuttingSpeed((Math.PI * diameter * rotationSpeed / 1000).toFixed(2));
     };
 
-    const onFormReset = (event) => {
-        setDiameter();
-        setRotationSpeed();
-        setCuttingSpeed();
+    const onFormReset = () => {
+        setDiameter("");
+        setRotationSpeed("");
+        setCuttingSpeed("");
     };
 
     return (
