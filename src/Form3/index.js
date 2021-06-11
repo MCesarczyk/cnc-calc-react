@@ -81,7 +81,6 @@ const Form3 = ({ legend }) => {
         </ul>
     );
 
-
     return (
         <form className="form" onSubmit={onFormSubmit} onReset={onFormReset} >
             <fieldset className="form__fieldset">
@@ -104,57 +103,6 @@ const Form3 = ({ legend }) => {
                     </label>
 
                     {feedOptionList}
-
-                    {/* <label className="form__label">
-                        <span className=".form__innerText">
-                            <input
-                                type="radio"
-                                name="feedType"
-                                id="FPR"
-                                value="FPR"
-                                defaultChecked
-                                onChange={({ target }) => setFeedType(target.value)}
-                            />
-                            <label htmlFor="FPR">
-                                f_obr [mm/obr]:
-                            </label>
-                        </span>
-                        <input
-                            value={feedPerRevolution}
-                            type="number"
-                            min="0.01"
-                            step="0.01"
-                            required
-                            placeholder=" posuw na obrót "
-                            className="form__input"
-                            onChange={({ target }) => setFeedPerRevolution(target.value)}
-                        />
-                    </label>
-                    <label className="form__label">
-                        <span className=".form__innerText">
-                            <input
-                                type="radio"
-                                name="feedType"
-                                id="FPT"
-                                value="FPT"
-                                onChange={({ target }) => setFeedType(target.value)}
-                            />
-                            <label htmlFor="FPT">
-                                f_z [mm]:
-                            </label>
-                        </span>
-                        <input
-                            value={feedPerTooth}
-                            type="number"
-                            min="0.01"
-                            step="0.01"
-                            // required
-                            disabled
-                            placeholder=" posuw na ząb "
-                            className="form__input"
-                            onChange={({ target }) => setFeedPerTooth(target.value)}
-                        />
-                    </label> */}
 
                     <label className="form__label">
                         <span className=".form__innerText">
