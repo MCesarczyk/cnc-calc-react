@@ -3,20 +3,26 @@ import "./style.css";
 
 const Form3 = ({ legend }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
-    const [feedPerRevolutionInput, setFeedPerRevolutionInput] = useState("");
-    const [feedPerToothInput, setFeedPerToothInput] = useState("");
+    const [feedPerRevolution, setFeedPerRevolution] = useState("");
+    const [feedPerTooth, setFeedPerTooth] = useState("");
     const [toothNumber, setToothNumber] = useState("");
+    const [feedType, setFeedType] = useState("FPR");
     const [feedValue, setFeedValue] = useState("");
-
+    
     const onFormSubmit = (event) => {
         event.preventDefault();
-        setFeedValue((rotationSpeed * 1000 / Math.PI / 2).toFixed(2));
+        if (feedType === "FPR") {
+            setFeedValue((rotationSpeed * feedPerRevolution).toFixed());
+        } else {
+            setFeedValue((rotationSpeed * feedPerTooth * toothNumber).toFixed());
+        }
+        
     };
 
     const onFormReset = () => {
         setRotationSpeed("");
-        setFeedPerRevolutionInput("");
-        setFeedPerToothInput("");
+        setFeedPerRevolution("");
+        setFeedPerTooth("");
         setToothNumber("");
         setFeedValue("");
     };
@@ -38,22 +44,8 @@ const Form3 = ({ legend }) => {
     //     };
     // };
 
-    // const form3submit = (event) => {
-    //     event.preventDefault();
-    //     const feedResult = document.querySelector(".js-feedResult3");
-    //     feedResult.value = feedElement;
-    // };
-
-    const [feedType, setFeedType] = useState("FPR");
-
-    const handleFormSubmit = (formSubmitEvent) => {
-        formSubmitEvent.preventDefault();
-
-        console.log("działamy: ", feedType);
-    };
-
     return (
-        <form className="form" onSubmit={handleFormSubmit} onReset={onFormReset} >
+        <form className="form" onSubmit={onFormSubmit} onReset={onFormReset} >
             <fieldset className="form__fieldset">
                 <legend className="form__legend">{legend}</legend>
                 <div className="form__fieldsContainer">
@@ -68,7 +60,7 @@ const Form3 = ({ legend }) => {
                             min="1"
                             step="1"
                             placeholder=" obroty wrzeciona "
-                            // required
+                            required
                             onChange={({ target }) => setRotationSpeed(target.value)}
                         />
                     </label>
@@ -88,14 +80,14 @@ const Form3 = ({ legend }) => {
                             </label>
                         </span>
                         <input
-                            value={feedPerRevolutionInput}
+                            value={feedPerRevolution}
                             type="number"
                             min="0.01"
                             step="0.01"
-                            // required
+                            required
                             placeholder=" posuw na obrót "
                             className="form__input"
-                            onChange={({ target }) => setFeedPerRevolutionInput(target.value)}
+                            onChange={({ target }) => setFeedPerRevolution(target.value)}
                         />
                     </label>
                     <label className="form__label">
@@ -112,7 +104,7 @@ const Form3 = ({ legend }) => {
                             </label>
                         </span>
                         <input
-                            value={feedPerToothInput}
+                            value={feedPerTooth}
                             type="number"
                             min="0.01"
                             step="0.01"
@@ -120,7 +112,7 @@ const Form3 = ({ legend }) => {
                             disabled
                             placeholder=" posuw na ząb "
                             className="form__input"
-                            onChange={({ target }) => setFeedPerToothInput(target.value)}
+                            onChange={({ target }) => setFeedPerTooth(target.value)}
                         />
                     </label>
 
