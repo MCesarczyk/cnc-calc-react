@@ -101,3 +101,7 @@
 .form__button:focus {
     border: solid #dc3223;
 }
+
+.form__list {
+    list-style: none;
+}
