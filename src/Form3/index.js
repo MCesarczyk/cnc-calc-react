@@ -1,35 +1,27 @@
 import React, { useState } from "react";
 import "./style.css";
 
-const Form1 = ({ legend }) => {
+const Form3 = ({ legend }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
-    const [diameter, setDiameter] = useState("");
-    const [feedPerRevolution, setFeedPerRevolution] = useState("");
-    const [feedPerTooth, setFeedPerTooth] = useState("");
+    const [feedPerRevolutionInput, setFeedPerRevolutionInput] = useState("");
+    const [feedPerToothInput, setFeedPerToothInput] = useState("");
     const [toothNumber, setToothNumber] = useState("");
-    const [cuttingSpeed, setCuttingSpeed] = useState("");
+    const [feedValue, setFeedValue] = useState("");
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        setRotationSpeed((cuttingSpeed * 1000 / Math.PI / diameter).toFixed(2));
+        setFeedValue((rotationSpeed * 1000 / Math.PI / 2).toFixed(2));
     };
 
-    const onFormReset = (event) => {
+    const onFormReset = () => {
         setRotationSpeed("");
-        setDiameter("");
-        setFeedPerRevolution("");
-        setFeedPerTooth("");
+        setFeedPerRevolutionInput("");
+        setFeedPerToothInput("");
         setToothNumber("");
-        setCuttingSpeed("");
+        setFeedValue("");
     };
 
     // const form3input = (event) => {
-    //     const rotation = document.querySelector(".js-rotationInput3").value;
-    //     const feedForRev = document.querySelector(".js-feedForRev");
-    //     const feedForTooth = document.querySelector(".js-feedForTooth");
-    //     const toothNumber = document.querySelector(".js-toothNumber");
-    //     const rev = document.querySelector(".js-rev");
-    //     const tooth = document.querySelector(".js-tooth");
     //     if (tooth.checked) {
     //         feedForRev.disabled = true;
     //         feedForRev.value = "";
@@ -52,8 +44,16 @@ const Form1 = ({ legend }) => {
     //     feedResult.value = feedElement;
     // };
 
+    const [feedType, setFeedType] = useState("FPR");
+
+    const handleFormSubmit = (formSubmitEvent) => {
+        formSubmitEvent.preventDefault();
+
+        console.log("działamy: ", feedType);
+    };
+
     return (
-        <form className="form" onSubmit={onFormSubmit} onReset={onFormReset} >
+        <form className="form" onSubmit={handleFormSubmit} onReset={onFormReset} >
             <fieldset className="form__fieldset">
                 <legend className="form__legend">{legend}</legend>
                 <div className="form__fieldsContainer">
@@ -68,24 +68,8 @@ const Form1 = ({ legend }) => {
                             min="1"
                             step="1"
                             placeholder=" obroty wrzeciona "
-                            required
+                            // required
                             onChange={({ target }) => setRotationSpeed(target.value)}
-                        />
-                    </label>
-                    <label className="form__label">
-                        <span className=".form__innerText">
-                            <label>D [mm]:</label>
-                        </span>
-                        <input
-                            value={diameter}
-                            className="form__input"
-                            type="number"
-                            min="0.0001"
-                            step="0.0001"
-                            placeholder=" średnica narzędzia "
-                            required
-                            autofocus
-                            onChange={({ target }) => setDiameter(target.value)}
                         />
                     </label>
 
@@ -95,21 +79,23 @@ const Form1 = ({ legend }) => {
                                 type="radio"
                                 name="feedType"
                                 id="FPR"
-                                checked
+                                value="FPR"
+                                defaultChecked
+                                onChange={({ target }) => setFeedType(target.value)}
                             />
-                            <label for="FPR">
+                            <label htmlFor="FPR">
                                 f_obr [mm/obr]:
                             </label>
                         </span>
                         <input
-                            value={feedPerRevolution}
+                            value={feedPerRevolutionInput}
                             type="number"
                             min="0.01"
                             step="0.01"
-                            required
+                            // required
                             placeholder=" posuw na obrót "
                             className="form__input"
-                            onChange={({ target }) => setFeedPerRevolution(target.value)}
+                            onChange={({ target }) => setFeedPerRevolutionInput(target.value)}
                         />
                     </label>
                     <label className="form__label">
@@ -118,21 +104,23 @@ const Form1 = ({ legend }) => {
                                 type="radio"
                                 name="feedType"
                                 id="FPT"
+                                value="FPT"
+                                onChange={({ target }) => setFeedType(target.value)}
                             />
-                            <label for="FPT">
+                            <label htmlFor="FPT">
                                 f_z [mm]:
                             </label>
                         </span>
                         <input
-                            value={feedPerTooth}
+                            value={feedPerToothInput}
                             type="number"
                             min="0.01"
                             step="0.01"
-                            required
+                            // required
                             disabled
                             placeholder=" posuw na ząb "
                             className="form__input"
-                            onChange={({ target }) => setFeedPerTooth(target.value)}
+                            onChange={({ target }) => setFeedPerToothInput(target.value)}
                         />
                     </label>
 
@@ -157,7 +145,7 @@ const Form1 = ({ legend }) => {
                             <label>f [mm/min]:</label>
                         </span>
                         <input
-                            value={cuttingSpeed}
+                            value={feedValue}
                             readOnly
                             placeholder=" wynik "
                             className="form__input"
@@ -177,4 +165,4 @@ const Form1 = ({ legend }) => {
     )
 };
 
-export default Form1;
+export default Form3;

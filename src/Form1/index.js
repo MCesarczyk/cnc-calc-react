@@ -34,7 +34,7 @@ const Form1 = ({ legend }) => {
                             step="0.0001"
                             placeholder=" średnica narzędzia "
                             required
-                            autofocus
+                            autoFocus
                             onChange={({ target }) => setDiameter(target.value)}
                         />
                     </label>
@@ -59,7 +59,7 @@ const Form1 = ({ legend }) => {
                         </span>
                         <input
                             value={cuttingSpeed}
-                            readonly
+                            readOnly
                             placeholder=" wynik "
                             className="form__input"
                         />
