@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 
 const Form1 = ({ legend }) => {
-    const [diameter, setDiameter] = useState("");
-    const [rotationSpeed, setRotationSpeed] = useState("");
+    const initialDiameterValue = (localStorage.getItem("diameter")) || 0;
+    const initialRotationSpeedValue = (localStorage.getItem("rotationSpeed")) || 0;
+    
+    const [diameter, setDiameter] = useState(initialDiameterValue);
+    const [rotationSpeed, setRotationSpeed] = useState(initialRotationSpeedValue);
     const [cuttingSpeed, setCuttingSpeed] = useState("");
+
+    useEffect(() => {
+        localStorage.setItem("diameter", diameter);
+        localStorage.setItem("rotationSpeed", rotationSpeed);
+    });
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -35,7 +43,7 @@ const Form1 = ({ legend }) => {
                             placeholder=" średnica narzędzia "
                             required
                             autoFocus
-                            onChange={({ target }) => setDiameter(target.value)}
+                            onChange={({ target }) => setDiameter(target.value - 0)}
                         />
                     </label>
                     <label className="form__label">
