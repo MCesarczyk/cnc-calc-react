@@ -54,17 +54,19 @@ const Form3 = ({ legend }) => {
             {
                 feedOptions.map(feedOption => (
                     <li className="form__label" key={feedOption.id}>
-                        <input
-                            type="radio"
-                            name="feedType"
-                            id={feedOption.id}
-                            value={feedOption.id}
-                            defaultChecked={feedOption.checked}
-                            onChange={onOptionChange}
-                        />
-                        <label htmlFor={feedOption.id}>
-                            {feedOption.label}
-                        </label>
+                        <div className="form__radioButtonContainer">
+                            <input
+                                type="radio"
+                                name="feedType"
+                                id={feedOption.id}
+                                value={feedOption.id}
+                                defaultChecked={feedOption.checked}
+                                onChange={onOptionChange}
+                            />
+                            <label htmlFor={feedOption.id}>
+                                {feedOption.label}
+                            </label>
+                        </div>
                         <input
                             value={(feedOption.id === feedType) ? feedPerRevolution : ""}
                             type="number"

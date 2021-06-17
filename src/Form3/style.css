@@ -12,22 +12,21 @@
 
 .form__fieldsContainer {
     display: grid;
-    /* grid-template-columns: auto auto; */
     justify-content: center;
     gap: 10px;
     margin-bottom: 10px;
 }
 
 .form__label {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
 }
 
 @media (max-width: 480px) {
     .form__label {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 
@@ -45,6 +44,15 @@
     vertical-align: sub;
     font-size: 0.7em;
     margin-right: 0.15em;
+}
+
+.form__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 
 .form__input {
@@ -66,6 +74,11 @@
 
 .form__input:disabled {
     background-color: #ddd;
+}
+
+.form__radioButtonContainer {
+    display: flex;
+    gap: 10px;
 }
 
 .form__select {
@@ -100,8 +113,4 @@
 
 .form__button:focus {
     border: solid #dc3223;
-}
-
-.form__list {
-    list-style: none;
 }
