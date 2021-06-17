@@ -3,50 +3,37 @@ import "./style.css";
 
 const Form3 = ({ legend }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
-    const [feedPerRevolution, setFeedPerRevolution] = useState("");
-    const [feedPerTooth, setFeedPerTooth] = useState("");
-    const [toothNumber, setToothNumber] = useState("");
+    const [feedFactor1, setFeedFactor1] = useState("");
+    const [feedFactor2, setFeedFactor2] = useState("");
     const [feedType, setFeedType] = useState("FPR");
     const [feedValue, setFeedValue] = useState("");
 
     const onFormSubmit = (event) => {
         event.preventDefault();
         if (feedType === "FPR") {
-            setFeedValue((rotationSpeed * feedPerRevolution).toFixed());
+            setFeedValue((rotationSpeed * feedFactor1).toFixed());
         } else {
-            setFeedValue((rotationSpeed * feedPerTooth * toothNumber).toFixed());
+            setFeedValue((rotationSpeed * feedFactor1 * feedFactor2).toFixed());
         }
     };
 
     const onFormReset = () => {
         setRotationSpeed("");
-        setFeedPerRevolution("");
-        setFeedPerTooth("");
-        setToothNumber("");
+        setFeedType("FPR");
+        setFeedFactor1("");
+        setFeedFactor2("");
         setFeedValue("");
     };
 
-    // const form3input = (event) => {
-    //     if (tooth.checked) {
-    //         feedForRev.value = "";
-    //         return feedElement = rotation * feedForTooth.value * toothNumber.value;
-    //     } if (rev.checked) {
-    //         feedForTooth.value = "";
-    //         toothNumber.value = "";
-    //         return feedElement = rotation * feedForRev.value;
-    //     };
-    // };
-
     const feedOptions = [
-        { id: "FPR", checked: true, label: "f_obr [mm/obr]:", placeholder: " posuw na obrót ", disabled: false },
-        { id: "FPT", checked: false, label: "f_z [mm]:", placeholder: " posuw na ząb ", disabled: true }
+        { id: "FPR", label: "f_obr [mm/obr]:", placeholder: " posuw na obrót ", disabled: false },
+        { id: "FPT", label: "f_z [mm]:", placeholder: " posuw na ząb ", disabled: true }
     ];
-
-    const [toothNumberActive, setToothNumberActive] = useState(false);
 
     const onOptionChange = ({ target }) => {
         setFeedType(target.value);
-        setToothNumberActive((target.value === "FPT") ? true : false);
+        setFeedFactor1("");
+        setFeedFactor2("");
     };
 
     const feedOptionList = (
@@ -60,7 +47,7 @@ const Form3 = ({ legend }) => {
                                 name="feedType"
                                 id={feedOption.id}
                                 value={feedOption.id}
-                                defaultChecked={feedOption.checked}
+                                checked={feedType === feedOption.id}
                                 onChange={onOptionChange}
                             />
                             <label htmlFor={feedOption.id}>
@@ -68,7 +55,7 @@ const Form3 = ({ legend }) => {
                             </label>
                         </div>
                         <input
-                            value={(feedOption.id === feedType) ? feedPerRevolution : ""}
+                            value={(feedOption.id === feedType) ? feedFactor1 : ""}
                             type="number"
                             min="0.01"
                             step="0.01"
@@ -76,7 +63,7 @@ const Form3 = ({ legend }) => {
                             disabled={feedOption.id !== feedType}
                             placeholder={feedOption.placeholder}
                             className="form__input"
-                            onChange={({ target }) => setFeedPerRevolution(target.value)}
+                            onChange={({ target }) => setFeedFactor1(target.value)}
                         />
                     </li>
                 ))
@@ -112,15 +99,15 @@ const Form3 = ({ legend }) => {
                             <label>z:</label>
                         </span>
                         <input
-                            value={toothNumberActive ? toothNumber : ""}
+                            value={(feedType === "FPT") ? feedFactor2 : ""}
                             className="form__input"
                             type="number"
                             min="1"
                             step="1"
                             placeholder=" ilość zębów "
                             required
-                            disabled={!toothNumberActive}
-                            onChange={({ target }) => setToothNumber(target.value)}
+                            disabled={feedType === "FPR"}
+                            onChange={({ target }) => setFeedFactor2(target.value)}
                         />
                     </label>
                     <label className="form__label">
