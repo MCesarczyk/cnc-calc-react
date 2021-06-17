@@ -61,7 +61,7 @@ const Form3 = ({ legend }) => {
                             defaultChecked={feedOption.checked}
                             onChange={({ target }) => setFeedType(target.value)}
                         />
-                        <label htmlFor="FPR">
+                        <label htmlFor={feedOption.id}>
                             {feedOption.label}
                         </label>
                         <input
