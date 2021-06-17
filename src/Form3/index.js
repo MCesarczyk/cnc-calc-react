@@ -28,16 +28,10 @@ const Form3 = ({ legend }) => {
 
     // const form3input = (event) => {
     //     if (tooth.checked) {
-    //         feedForRev.disabled = true;
     //         feedForRev.value = "";
-    //         feedForTooth.disabled = false;
-    //         toothNumber.disabled = false;
     //         return feedElement = rotation * feedForTooth.value * toothNumber.value;
     //     } if (rev.checked) {
-    //         feedForRev.disabled = false;
-    //         feedForTooth.disabled = true;
     //         feedForTooth.value = "";
-    //         toothNumber.disabled = true;
     //         toothNumber.value = "";
     //         return feedElement = rotation * feedForRev.value;
     //     };
@@ -47,6 +41,13 @@ const Form3 = ({ legend }) => {
         { id: "FPR", checked: true, label: "f_obr [mm/obr]:", placeholder: " posuw na obrót ", disabled: false },
         { id: "FPT", checked: false, label: "f_z [mm]:", placeholder: " posuw na ząb ", disabled: true }
     ];
+
+    const [toothNumberActive, setToothNumberActive] = useState(false);
+
+    const onOptionChange = ({ target }) => {
+        setFeedType(target.value);
+        setToothNumberActive((target.value === "FPT") ? true : false);
+    };
 
     const feedOptionList = (
         <ul className="form__list">
@@ -59,18 +60,18 @@ const Form3 = ({ legend }) => {
                             id={feedOption.id}
                             value={feedOption.id}
                             defaultChecked={feedOption.checked}
-                            onChange={({ target }) => setFeedType(target.value)}
+                            onChange={onOptionChange}
                         />
                         <label htmlFor={feedOption.id}>
                             {feedOption.label}
                         </label>
                         <input
-                            value={feedPerRevolution}
+                            value={(feedOption.id === feedType) ? feedPerRevolution : ""}
                             type="number"
                             min="0.01"
                             step="0.01"
                             required
-                            disabled={feedOption.disabled}
+                            disabled={feedOption.id !== feedType}
                             placeholder={feedOption.placeholder}
                             className="form__input"
                             onChange={({ target }) => setFeedPerRevolution(target.value)}
@@ -109,14 +110,14 @@ const Form3 = ({ legend }) => {
                             <label>z:</label>
                         </span>
                         <input
-                            value={toothNumber}
+                            value={toothNumberActive ? toothNumber : ""}
                             className="form__input"
                             type="number"
                             min="1"
                             step="1"
                             placeholder=" ilość zębów "
                             required
-                            disabled
+                            disabled={!toothNumberActive}
                             onChange={({ target }) => setToothNumber(target.value)}
                         />
                     </label>
