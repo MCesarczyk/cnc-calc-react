@@ -14,17 +14,24 @@ I plan to add next functionalities with time.
 So, don't hesitate to contact me on: michal.cesarczyk@gmail.com to propose another one.
 
 ### Sections:
-1. drilling/milling:
- - cutting speed
- - tool rotational speed
- - feed rate
+1. Drilling/milling:
+ - linear cutting speed in function of diameter and spindle speed
+ - tool rotational speed in function of diameter and surface speed
+ - feed rate in function of spindle speed and:
+    - feed per revolution
+    - feed per tooth, numer of tooth
+
+ 2. Threading/tapping:
+ - feed rate for tapping in function of spindle speed and threading tool pitch  
+ (pitch value is selected from list according to tool diameter)
 
 ### Used technologies
 1. html
 1. CSS
 1. BEM
-1. JavaScript/ES6: const variables, arrow functions
-2. React.js
+1. JavaScript/ES6: const variables, arrow functions, arrays, objects
+1. Immutability
+1. React.js: useState, controlled components
 
 # Getting Started with Create React App
 
