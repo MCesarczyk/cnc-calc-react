@@ -6,13 +6,13 @@
 
 .buttons__button {
     display: flex;
-    flex-basis: 300px;
+    flex-basis: 200px;
     justify-content: center;
     color: #fff;
     background-color: #1e3246;
     border: solid #1e3246;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 .buttons__button:hover {
@@ -21,8 +21,13 @@
 
 .buttons__button:active {
     background-color: #788291;
+    border-color: currentColor;
 }
 
-.buttons__button:focus {
-    border: solid #dc3223;
+.buttons__button--submit {
+    color: #19aa6e;
+}
+
+.buttons__button--reset {
+    color: #dc3223;
 }
