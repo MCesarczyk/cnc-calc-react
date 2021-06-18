@@ -37,7 +37,7 @@ function App() {
           title="Gwintowanie"
           body={
             <>
-               <Form4
+              <Form4
                 legend="Wielkość posuwu przy gwintowaniu"
               />
             </>
@@ -47,13 +47,7 @@ function App() {
       </Container>
 
       <Footer
-        content="&copy; by Michał Cesarczyk"
-        annotation="2021 Powered by"
-        link={
-          <a className="footer__link" href="https://youcode.pl/" target="_blank" rel="noreferrer noopener">
-            you<span className="footer__linkFeature">code</span>.pl
-          </a>
-        }
+        content="&copy; 2021 by Michał Cesarczyk"
       />
     </div>
   )
