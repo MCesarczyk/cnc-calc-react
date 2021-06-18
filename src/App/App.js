@@ -1,9 +1,9 @@
-import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Form1 from "./Forms/Form1";
 import Form2 from "./Forms/Form2";
 import Form3 from "./Forms/Form3";
+import Form4 from "./Forms/Form4";
 import Container from "./Container";
 import Section from "./Section";
 
@@ -29,119 +29,20 @@ function App() {
               <Form3
                 legend="Wielkość posuwu liniowego"
               />
-
-              {/* <Form
-                legend="Prędkość obrotowa narzędzia w zależności od posuwu liniowego"
-                fields={
-                  <>
-                    <Field
-                      text="f [mm/min]"
-                      input={<input type="number" min="1" step="1"
-                        placeholder=" posuw liniowy " required className="field__input" />}
-                    />
-                    <Field
-                      control={<input type="radio" name="feedType" id="FPR" className="js-rev" checked />}
-                      binding="FPR"
-                      text="f_obr [mm/obr]"
-                      input={<input type="number" min="0.01" step="0.01" required placeholder=" posuw na obrót " className="field__input" />}
-                    />
-                    <Field
-                      control={<input type="radio" name="feedType" id="FPT" className="js-tooth" />}
-                      binding="FPT"
-                      text="f_z [mm]"
-                      input={<input type="number" min="0.01" step="0.01" required disabled placeholder=" posuw na ząb " className="field__input" />}
-                    />
-                    <Field
-                      text="z"
-                      input={<input type="number" min="1" step="1" required
-                        className="field__input" placeholder=" ilość zębów " disabled />}
-                    />
-                    <Field
-                      text="n [obr/min]"
-                      input={<input readonly placeholder=" wynik "
-                        className="field__input" />}
-                    />
-                  </>
-                }
-                buttons={
-                  <>
-                    <Button name="Oblicz" type="submit" />
-                    <Button name="Reset" type="reset" />
-                  </>
-                }
-              /> */}
             </>
           }
         />
 
-        {/* <Section
+        <Section
           title="Gwintowanie"
           body={
             <>
-              <Form
-                legend="Prędkość obrotowa narzędzia"
-                fields={
-                  <>
-                    <Field
-                      text="D [mm]"
-                      input={<input type="number" min="0.0001" step="0.0001"
-                        placeholder=" średnica narzędzia " required className="field__input" />}
-                    />
-                    <Field
-                      text="Vc [m/min]"
-                      input={<input
-                        type="number" min="1" step="1" placeholder=" prędkość liniowa " required
-                        className="field__input" />}
-                    />
-                    <Field
-                      text="n_obr. [obr/min]"
-                      input={<input
-                        readonly placeholder=" wynik " className="field__input" />}
-                    />
-                  </>
-                }
-                buttons={
-                  <>
-                    <Button name="Oblicz" type="submit" />
-                    <Button name="Reset" type="reset" />
-                  </>
-                }
-              />
-
-              <Form
+               <Form4
                 legend="Wielkość posuwu przy gwintowaniu"
-                fields={
-                  <>
-                    <Field
-                      text="n [obr/min]"
-                      input={<input type="number" min="1" step="1"
-                        placeholder=" obroty wrzeciona " required className="field__input" />}
-                    />
-                    <Button name="Wstaw z sekcji powyżej" />
-                    <Field
-                      text="Średnica narzędzia [mm]"
-                      input={<select className="field__select" name="tapDiameter"></select>}
-                    />
-                    <Field
-                      text="Skok gwintu [mm]"
-                      input={<input readonly placeholder=" skok gwintu " className="field__input" />}
-                    />
-                    <Field
-                      text="f [mm/min]"
-                      input={<input readonly placeholder=" wynik " className="field__input" />}
-                    />
-                  </>
-                }
-                buttons={
-                  <>
-                    <Button name="Oblicz" type="submit" />
-                    <Button name="Reset" type="reset" />
-                  </>
-                }
               />
             </>
           }
-        /> */}
+        />
 
       </Container>
 
