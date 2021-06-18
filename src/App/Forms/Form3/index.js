@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Buttons from "../Buttons";
 import "../style.css";
 
 const Form3 = ({ legend }) => {
@@ -122,14 +123,7 @@ const Form3 = ({ legend }) => {
                         />
                     </label>
                 </div>
-                <div className="form__buttonsContainer">
-                    <button className="form__button" type="submit">
-                        Oblicz
-                    </button>
-                    <button className="form__button" type="reset">
-                        Reset
-                    </button>
-                </div>
+            <Buttons />
             </fieldset>
         </form>
     )
