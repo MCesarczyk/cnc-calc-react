@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Buttons from "../Buttons";
 import "../style.css";
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Buttons from "../Buttons";
 import "../style.css";
 
@@ -123,7 +123,7 @@ const Form3 = ({ legend }) => {
                         />
                     </label>
                 </div>
-            <Buttons />
+                <Buttons />
             </fieldset>
         </form>
     )

@@ -1,8 +1,7 @@
-import React from "react";
 import "./style.css";
 
-const Footer = ({content, annotation, link}) => (
-    <footer className="footer">
+const Footer = ({ content, annotation, link }) => (
+  <footer className="footer">
     <p className="footer__content">
       {content}
     </p>

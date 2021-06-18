@@ -1,8 +1,6 @@
-import React from "react";
-
 const Container = ({ children }) => (
     <main>
-       {children}
+        {children}
     </main>
 );
 

@@ -1,29 +1,29 @@
 /* ~~ footer.css ~~ */
 
 .footer {
-    margin: 30px 0px;
-  }
-  
-  .footer__content {
-    color: #000;
-    padding: 0 25px;
-  }
-  
-  .footer__annotation {
-    color: #000;
-    text-align: right;
-    padding: 0 15px;
-  }
-  
-  .footer__linkContainer {
-    text-align: left;
-  }
-  
-  .footer__link {
-    color: #000;
-    margin-left: 5px;
-  }
-  
-  .footer__linkFeature {
-    color: orangered;
-  }
+  margin: 30px 0px;
+}
+
+.footer__content {
+  color: #000;
+  padding: 0 25px;
+}
+
+.footer__annotation {
+  color: #000;
+  text-align: right;
+  padding: 0 15px;
+}
+
+.footer__linkContainer {
+  text-align: left;
+}
+
+.footer__link {
+  color: #000;
+  margin-left: 5px;
+}
+
+.footer__linkFeature {
+  color: orangered;
+}
