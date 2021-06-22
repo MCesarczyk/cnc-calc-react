@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Buttons from "../Buttons";
-import "../style.css";
 import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput } from "../styled.js";
 
 const Form1 = ({ legend }) => {
@@ -26,7 +25,7 @@ const Form1 = ({ legend }) => {
                 <FieldsContainer>
                     <FormLabel>
                         <FormInnerText>
-                            <label>D<FormTextSub>[mm]</FormTextSub>:</label>
+                            <label>D&nbsp;[mm]:</label>
                         </FormInnerText>
                         <FormInput
                             value={diameter}
@@ -41,7 +40,7 @@ const Form1 = ({ legend }) => {
                     </FormLabel>
                     <FormLabel>
                         <FormInnerText>
-                            <label>n<FormTextSub>[obr/min]</FormTextSub>:</label>
+                            <label>n<FormTextSub>obr</FormTextSub>&nbsp;[obr/min]:</label>
                         </FormInnerText>
                         <FormInput
                             value={rotationSpeed}
@@ -55,7 +54,7 @@ const Form1 = ({ legend }) => {
                     </FormLabel>
                     <FormLabel>
                         <FormInnerText>
-                            <label>Vc<FormTextSub>[m/min]</FormTextSub>:</label>
+                            <label>V<FormTextSub>c</FormTextSub>&nbsp;[m/min]:</label>
                         </FormInnerText>
                         <FormInput
                             value={cuttingSpeed}
