@@ -45,3 +45,22 @@ export const FormTextSub = styled.span`
     font-size: 0.7em;
     margin-right: 0.15em;
 `;
+
+export const FormInput = styled.input`
+    min-width: 200px;
+    border: solid 1px #1e3246;
+    border-radius: 5px;
+    padding: 5px;
+
+    @media (max-width: 480px) {
+        width: 100%;
+    }
+
+    &:invalid {
+    background-color: beige;
+    }
+
+    &:disabled {
+        background-color: #ddd;
+    }
+`;
