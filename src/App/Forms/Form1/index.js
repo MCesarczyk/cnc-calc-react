@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Buttons from "../Buttons";
 import "../style.css";
-import { Form } from "../styled.js";
+import { Form, Fieldset, Legend } from "../styled.js";
 
 const Form1 = ({ legend }) => {
     const [diameter, setDiameter] = useState("");
@@ -21,8 +21,8 @@ const Form1 = ({ legend }) => {
 
     return (
         <Form onSubmit={onFormSubmit} onReset={onFormReset} >
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">{legend}</legend>
+            <Fieldset>
+                <Legend>{legend}</Legend>
                 <div className="form__fieldsContainer">
                     <label className="form__label">
                         <span className="form__innerText">
@@ -68,7 +68,7 @@ const Form1 = ({ legend }) => {
                     </label>
                 </div>
                 <Buttons />
-            </fieldset>
+            </Fieldset>
         </Form>
     )
 };
