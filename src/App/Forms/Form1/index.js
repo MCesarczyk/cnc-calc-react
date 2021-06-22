@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Buttons from "../Buttons";
 import "../style.css";
-import { Form, Fieldset, Legend, FieldsContainer, FormLabel } from "../styled.js";
+import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub } from "../styled.js";
 
 const Form1 = ({ legend }) => {
     const [diameter, setDiameter] = useState("");
@@ -25,9 +25,9 @@ const Form1 = ({ legend }) => {
                 <Legend>{legend}</Legend>
                 <FieldsContainer>
                     <FormLabel>
-                        <span className="form__innerText">
-                            <label>D [mm]:</label>
-                        </span>
+                        <FormInnerText>
+                            <label>D<FormTextSub>[mm]</FormTextSub>:</label>
+                        </FormInnerText>
                         <input
                             value={diameter}
                             className="form__input"
@@ -41,9 +41,9 @@ const Form1 = ({ legend }) => {
                         />
                     </FormLabel>
                     <FormLabel>
-                        <span className="form__innerText">
-                            <label>n [obr/min]:</label>
-                        </span>
+                        <FormInnerText>
+                            <label>n<FormTextSub>[obr/min]</FormTextSub>:</label>
+                        </FormInnerText>
                         <input
                             value={rotationSpeed}
                             className="form__input"
@@ -56,9 +56,9 @@ const Form1 = ({ legend }) => {
                         />
                     </FormLabel>
                     <FormLabel>
-                        <span className="form__innerText">
-                            <label>Vc [m/min]:</label>
-                        </span>
+                        <FormInnerText>
+                            <label>Vc<FormTextSub>[m/min]</FormTextSub>:</label>
+                        </FormInnerText>
                         <input
                             value={cuttingSpeed}
                             readOnly

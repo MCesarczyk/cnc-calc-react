@@ -31,3 +31,17 @@ export const FormLabel = styled.label`
         justify-content: center;
     }
 `;
+
+export const FormInnerText = styled.span`
+    text-align: right;
+
+    @media (max-width: 480px) {
+        text-align: center;
+    }
+`;
+
+export const FormTextSub = styled.span`
+    vertical-align: sub;
+    font-size: 0.7em;
+    margin-right: 0.15em;
+`;
