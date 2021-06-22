@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Buttons from "../Buttons";
 import "../style.css";
-import { Form, Fieldset, Legend } from "../styled.js";
+import { Form, Fieldset, Legend, FieldsContainer, FormLabel } from "../styled.js";
 
 const Form1 = ({ legend }) => {
     const [diameter, setDiameter] = useState("");
@@ -23,8 +23,8 @@ const Form1 = ({ legend }) => {
         <Form onSubmit={onFormSubmit} onReset={onFormReset} >
             <Fieldset>
                 <Legend>{legend}</Legend>
-                <div className="form__fieldsContainer">
-                    <label className="form__label">
+                <FieldsContainer>
+                    <FormLabel>
                         <span className="form__innerText">
                             <label>D [mm]:</label>
                         </span>
@@ -39,8 +39,8 @@ const Form1 = ({ legend }) => {
                             autoFocus
                             onChange={({ target }) => setDiameter(target.value - 0)}
                         />
-                    </label>
-                    <label className="form__label">
+                    </FormLabel>
+                    <FormLabel>
                         <span className="form__innerText">
                             <label>n [obr/min]:</label>
                         </span>
@@ -54,8 +54,8 @@ const Form1 = ({ legend }) => {
                             required
                             onChange={({ target }) => setRotationSpeed(target.value)}
                         />
-                    </label>
-                    <label className="form__label">
+                    </FormLabel>
+                    <FormLabel>
                         <span className="form__innerText">
                             <label>Vc [m/min]:</label>
                         </span>
@@ -65,8 +65,8 @@ const Form1 = ({ legend }) => {
                             placeholder=" wynik "
                             className="form__input"
                         />
-                    </label>
-                </div>
+                    </FormLabel>
+                </FieldsContainer>
                 <Buttons />
             </Fieldset>
         </Form>
