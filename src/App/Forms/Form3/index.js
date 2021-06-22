@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Buttons from "../Buttons";
 import "../style.css";
+import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput } from "../styled.js";
 
 const Form3 = ({ legend }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -73,17 +74,16 @@ const Form3 = ({ legend }) => {
     );
 
     return (
-        <form className="form" onSubmit={onFormSubmit} onReset={onFormReset} >
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">{legend}</legend>
-                <div className="form__fieldsContainer">
-                    <label className="form__label">
-                        <span className=".form__innerText">
-                            <label>n [obr/min]:</label>
-                        </span>
-                        <input
+        <Form onSubmit={onFormSubmit} onReset={onFormReset} >
+            <Fieldset>
+                <Legend>{legend}</Legend>
+                <FieldsContainer>
+                    <FormLabel>
+                        <FormInnerText>
+                            <label>n<FormTextSub>obr</FormTextSub>&nbsp;[obr/min]:</label>
+                        </FormInnerText>
+                        <FormInput
                             value={rotationSpeed}
-                            className="form__input"
                             type="number"
                             min="1"
                             step="1"
@@ -91,17 +91,16 @@ const Form3 = ({ legend }) => {
                             required
                             onChange={({ target }) => setRotationSpeed(target.value)}
                         />
-                    </label>
+                    </FormLabel>
 
                     {feedOptionList}
 
-                    <label className="form__label">
-                        <span className=".form__innerText">
+                    <FormLabel>
+                        <FormInnerText>
                             <label>z:</label>
-                        </span>
-                        <input
+                        </FormInnerText>
+                        <FormInput
                             value={(feedType === "FPT") ? feedFactor2 : ""}
-                            className="form__input"
                             type="number"
                             min="1"
                             step="1"
@@ -110,22 +109,21 @@ const Form3 = ({ legend }) => {
                             disabled={feedType === "FPR"}
                             onChange={({ target }) => setFeedFactor2(target.value)}
                         />
-                    </label>
-                    <label className="form__label">
-                        <span className=".form__innerText">
-                            <label>f [mm/min]:</label>
-                        </span>
-                        <input
+                    </FormLabel>
+                    <FormLabel>
+                        <FormInnerText>
+                            <label>f&nbsp;[mm/min]:</label>
+                        </FormInnerText>
+                        <FormInput
                             value={feedValue}
                             readOnly
                             placeholder=" wynik "
-                            className="form__input"
                         />
-                    </label>
-                </div>
+                    </FormLabel>
+                </FieldsContainer>
                 <Buttons />
-            </fieldset>
-        </form>
+            </Fieldset>
+        </Form>
     )
 };
 
