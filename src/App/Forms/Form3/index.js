@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Buttons from "../Buttons";
 import "../style.css";
-import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput } from "../styled.js";
+import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput, RadioButtonContainer } from "../styled.js";
 
 const Form3 = ({ legend }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -39,11 +39,11 @@ const Form3 = ({ legend }) => {
     };
 
     const feedOptionList = (
-        <ul className="form__list">
+        <>
             {
                 feedOptions.map(feedOption => (
-                    <li className="form__label" key={feedOption.id}>
-                        <div className="form__radioButtonContainer">
+                    <FormLabel key={feedOption.id}>
+                        <RadioButtonContainer>
                             <input
                                 type="radio"
                                 name="feedType"
@@ -55,8 +55,8 @@ const Form3 = ({ legend }) => {
                             <label htmlFor={feedOption.id}>
                                 {feedOption.label}
                             </label>
-                        </div>
-                        <input
+                        </RadioButtonContainer>
+                        <FormInput
                             value={(feedOption.id === feedType) ? feedFactor1 : ""}
                             type="number"
                             min="0.01"
@@ -64,13 +64,12 @@ const Form3 = ({ legend }) => {
                             required
                             disabled={feedOption.id !== feedType}
                             placeholder={feedOption.placeholder}
-                            className="form__input"
                             onChange={({ target }) => setFeedFactor1(target.value)}
                         />
-                    </li>
+                    </FormLabel>
                 ))
             }
-        </ul>
+        </>
     );
 
     return (
