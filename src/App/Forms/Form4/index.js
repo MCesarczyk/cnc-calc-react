@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Buttons from "../Buttons";
 import tapDiameters from "./tapDiameters";
-import "../style.css";
+import { FormLabel, Select, Form, Fieldset, Legend, FieldsContainer, FormInnerText, FormTextSub, FormInput } from "../styled";
 
 const Form4 = ({ legend }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -28,10 +28,9 @@ const Form4 = ({ legend }) => {
     };
 
     const createTapDiameterList = (
-        <div className="form__label">
-            <label htmlFor="diameterSelector">D [mm]:</label>
-            <select
-                className="form__input form__input--select"
+        <FormLabel>
+            <label htmlFor="diameterSelector">D&nbsp;[mm]:</label>
+            <Select
                 id="diameterSelector"
                 onChange={onOptionChange}
             >
@@ -45,22 +44,21 @@ const Form4 = ({ legend }) => {
                         </option>
                     ))
                 }
-            </select>
-        </div>
+            </Select>
+        </FormLabel>
     );
 
     return (
-        <form className="form" onSubmit={onFormSubmit} onReset={onFormReset} >
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">{legend}</legend>
-                <div className="form__fieldsContainer">
-                    <label className="form__label">
-                        <span className=".form__innerText">
-                            <label>n [obr/min]:</label>
-                        </span>
-                        <input
+        <Form onSubmit={onFormSubmit} onReset={onFormReset} >
+            <Fieldset>
+                <Legend>{legend}</Legend>
+                <FieldsContainer>
+                    <FormLabel>
+                        <FormInnerText>
+                            <label>n<FormTextSub>obr</FormTextSub>&nbsp;[obr/min]:</label>
+                        </FormInnerText>
+                        <FormInput
                             value={rotationSpeed}
-                            className="form__input"
                             type="number"
                             min="1"
                             step="1"
@@ -68,36 +66,34 @@ const Form4 = ({ legend }) => {
                             required
                             onChange={({ target }) => setRotationSpeed(target.value)}
                         />
-                    </label>
+                    </FormLabel>
 
                     {createTapDiameterList}
 
-                    <label className="form__label">
-                        <span className=".form__innerText">
-                            <label>P [mm]:</label>
-                        </span>
-                        <input
+                    <FormLabel>
+                        <FormInnerText>
+                            <label>P&nbsp;[mm]:</label>
+                        </FormInnerText>
+                        <FormInput
                             value={pitch}
-                            className="form__input"
                             placeholder=" Skok gwintu "
                             readOnly
                         />
-                    </label>
-                    <label className="form__label">
-                        <span className=".form__innerText">
-                            <label>f [mm/min]:</label>
-                        </span>
-                        <input
+                    </FormLabel>
+                    <FormLabel>
+                        <FormInnerText>
+                            <label>f&nbsp;[mm/min]:</label>
+                        </FormInnerText>
+                        <FormInput
                             value={feedValue}
                             readOnly
                             placeholder=" wynik "
-                            className="form__input"
                         />
-                    </label>
-                </div>
+                    </FormLabel>
+                </FieldsContainer>
                 <Buttons />
-            </fieldset>
-        </form>
+            </Fieldset>
+        </Form>
     )
 };
 

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Form = styled.form`
     color: #1e3246;
@@ -63,13 +63,16 @@ export const FormInput = styled.input`
     &:disabled {
         background-color: #ddd;
     }
-
-    ${({ select }) => select && css`
-    min-width: 222px;
-    `}
 `;
 
 export const RadioButtonContainer = styled.div`
     display: flex;
     gap: 10px;
+`;
+
+export const Select = styled.select`
+    min-width: 222px;
+    border: solid 1px #1e3246;
+    border-radius: 5px;
+    padding: 5px;
 `;
