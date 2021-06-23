@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Buttons from "../Buttons";
-import "../style.css";
 import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput, RadioButtonContainer } from "../styled.js";
 
 const Form3 = ({ legend }) => {
