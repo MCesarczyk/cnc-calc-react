@@ -41,7 +41,7 @@ const Form3 = ({ legend }) => {
         setFeedFactor2("");
     };
 
-    const feedOptionList = (
+    const createFeedOptionList = (
         <>
             {
                 feedOptions.map(feedOption => (
@@ -96,7 +96,7 @@ const Form3 = ({ legend }) => {
                         />
                     </FormLabel>
 
-                    {feedOptionList}
+                    {createFeedOptionList}
 
                     <FormLabel>
                         <FormInnerText>
