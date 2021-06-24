@@ -1,14 +1,11 @@
-import "./style.css";
+import { FooterStyled, FooterContent } from "./styled";
 
-const Footer = ({ content, annotation, link }) => (
-  <footer className="footer">
-    <p className="footer__content">
+const Footer = ({ content }) => (
+  <FooterStyled>
+    <FooterContent>
       {content}
-    </p>
-    <p className="footer__annotation">
-      {annotation}{link}
-    </p>
-  </footer>
+    </FooterContent>
+  </FooterStyled>
 );
 
 export default Footer;
