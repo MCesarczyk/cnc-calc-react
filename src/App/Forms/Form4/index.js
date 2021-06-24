@@ -1,25 +1,32 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Buttons from "../Buttons";
 import tapDiameters from "./tapDiameters";
 import { FormLabel, Select, Form, Fieldset, Legend, FieldsContainer, FormInnerText, FormTextSub, FormInput } from "../styled";
 
 const Form4 = ({ legend }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
+    const [diameter, setDiameter] = useState("");
     const [pitch, setPitch] = useState("");
     const [feedValue, setFeedValue] = useState("");
+    const inputRef = useRef(null);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
         setFeedValue((rotationSpeed * pitch).toFixed());
+        inputRef.current.focus();
     };
 
-    const onFormReset = () => {
+    const onFormReset = (event) => {
+        event.preventDefault();
         setRotationSpeed("");
+        setDiameter("");
         setPitch("");
         setFeedValue("");
+        inputRef.current.focus();
     };
 
     const onOptionChange = ({ target }) => {
+        setDiameter(target.value);
         setPitch(
             tapDiameters[
                 tapDiameters.findIndex(({ diameter }) => diameter.toString() === target.value)
@@ -33,12 +40,12 @@ const Form4 = ({ legend }) => {
             <Select
                 id="diameterSelector"
                 onChange={onOptionChange}
+                value={diameter}
             >
                 {
                     tapDiameters.map(tapDiameter => (
                         <option
                             key={tapDiameter.id}
-                            value={tapDiameter.diameter}
                         >
                             {tapDiameter.diameter}
                         </option>
@@ -58,6 +65,7 @@ const Form4 = ({ legend }) => {
                             <label>n<FormTextSub>obr</FormTextSub>&nbsp;[obr/min]:</label>
                         </FormInnerText>
                         <FormInput
+                            ref={inputRef}
                             value={rotationSpeed}
                             type="number"
                             min="1"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Buttons from "../Buttons";
 import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput } from "../styled.js";
 
@@ -7,16 +7,20 @@ const Form1 = ({ legend }) => {
     const [diameter, setDiameter] = useState("");
     const [cuttingSpeed, setCuttingSpeed] = useState("");
     const [rotationSpeed, setRotationSpeed] = useState("");
+    const inputRef = useRef(null);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
         setRotationSpeed((cuttingSpeed * 1000 / Math.PI / diameter).toFixed(2));
+        inputRef.current.focus();
     };
 
-    const onFormReset = () => {
+    const onFormReset = (event) => {
+        event.preventDefault();
         setDiameter("");
         setCuttingSpeed("");
         setRotationSpeed("");
+        inputRef.current.focus();
     };
 
     return (
@@ -29,6 +33,7 @@ const Form1 = ({ legend }) => {
                             <label>D&nbsp;[mm]:</label>
                         </FormInnerText>
                         <FormInput
+                            ref={inputRef}
                             value={diameter}
                             type="number"
                             min="0.0001"

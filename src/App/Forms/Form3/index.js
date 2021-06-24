@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Buttons from "../Buttons";
 import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput, RadioButtonContainer } from "../styled.js";
 
@@ -8,6 +8,7 @@ const Form3 = ({ legend }) => {
     const [feedFactor2, setFeedFactor2] = useState("");
     const [feedType, setFeedType] = useState("FPR");
     const [feedValue, setFeedValue] = useState("");
+    const inputRef = useRef(null);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -16,14 +17,17 @@ const Form3 = ({ legend }) => {
         } else {
             setFeedValue((rotationSpeed * feedFactor1 * feedFactor2).toFixed());
         }
+        inputRef.current.focus();
     };
 
-    const onFormReset = () => {
+    const onFormReset = (event) => {
+        event.preventDefault();
         setRotationSpeed("");
         setFeedType("FPR");
         setFeedFactor1("");
         setFeedFactor2("");
         setFeedValue("");
+        inputRef.current.focus();
     };
 
     const feedOptions = [
@@ -81,6 +85,7 @@ const Form3 = ({ legend }) => {
                             <label>n<FormTextSub>obr</FormTextSub>&nbsp;[obr/min]:</label>
                         </FormInnerText>
                         <FormInput
+                            ref={inputRef}
                             value={rotationSpeed}
                             type="number"
                             min="1"
