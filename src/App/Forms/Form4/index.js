@@ -1,9 +1,10 @@
 import { useRef, useState } from "react";
 import Buttons from "../Buttons";
+import languages from "../../languages";
 import tapDiameters from "./tapDiameters";
 import { FormLabel, Select, Form, Fieldset, Legend, FieldsContainer, FormInnerText, FormTextSub, FormInput } from "../styled";
 
-const Form4 = ({ legend }) => {
+const Form4 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
     const [diameter, setDiameter] = useState("");
     const [pitch, setPitch] = useState("");
@@ -36,7 +37,10 @@ const Form4 = ({ legend }) => {
 
     const createTapDiameterList = (
         <FormLabel>
-            <label htmlFor="diameterSelector">D&nbsp;[mm]:</label>
+            <label htmlFor="diameterSelector">
+                {languages[langId].diameter.name}
+                {languages[langId].diameter.unit}
+            </label>
             <Select
                 id="diameterSelector"
                 onChange={onOptionChange}
@@ -62,7 +66,13 @@ const Form4 = ({ legend }) => {
                 <FieldsContainer>
                     <FormLabel>
                         <FormInnerText>
-                            <label>n<FormTextSub>obr</FormTextSub>&nbsp;[obr/min]:</label>
+                            <label>
+                                {languages[langId].rotSpeed.name}
+                                <FormTextSub>
+                                    {languages[langId].rotSpeed.sub}
+                                </FormTextSub>
+                                {languages[langId].rotSpeed.unit}
+                            </label>
                         </FormInnerText>
                         <FormInput
                             ref={inputRef}
@@ -70,7 +80,7 @@ const Form4 = ({ legend }) => {
                             type="number"
                             min="1"
                             step="1"
-                            placeholder=" obroty wrzeciona "
+                            placeholder={languages[langId].rotSpeed.placeholder}
                             required
                             onChange={({ target }) => setRotationSpeed(target.value)}
                         />
@@ -80,22 +90,28 @@ const Form4 = ({ legend }) => {
 
                     <FormLabel>
                         <FormInnerText>
-                            <label>P&nbsp;[mm]:</label>
+                            <label>
+                                {languages[langId].pitch.name}
+                                {languages[langId].pitch.unit}
+                            </label>
                         </FormInnerText>
                         <FormInput
                             value={pitch}
-                            placeholder=" Skok gwintu "
+                            placeholder={languages[langId].pitch.placeholder}
                             readOnly
                         />
                     </FormLabel>
                     <FormLabel>
                         <FormInnerText>
-                            <label>f&nbsp;[mm/min]:</label>
+                            <label>
+                                {languages[langId].feedrate.name}
+                                {languages[langId].feedrate.unit}
+                            </label>
                         </FormInnerText>
                         <FormInput
                             value={feedValue}
                             readOnly
-                            placeholder=" wynik "
+                            placeholder={languages[langId].feedrate.placeholder}
                         />
                     </FormLabel>
                 </FieldsContainer>

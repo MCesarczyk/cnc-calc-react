@@ -45,6 +45,11 @@ const languages = [
     teethNumber: {
       name: "t:",
       placeholder: "numer of teeth"
+    },
+    pitch: {
+      name: "P",
+      unit: " [mm]",
+      placeholder: "thread pitch"
     }
   },
   {
@@ -93,6 +98,11 @@ const languages = [
     teethNumber: {
       name: "z:",
       placeholder: "liczba zębów"
+    },
+    pitch: {
+      name: "P",
+      unit: " [mm]",
+      placeholder: "skok gwintu"
     }
   },
 ];
