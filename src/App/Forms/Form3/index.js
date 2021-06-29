@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
+import languages from "../../languages";
 import Buttons from "../Buttons";
 import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput, RadioButtonContainer } from "../styled.js";
 
-const Form3 = ({ legend }) => {
+const Form3 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
     const [feedFactor1, setFeedFactor1] = useState("");
     const [feedFactor2, setFeedFactor2] = useState("");
@@ -31,8 +32,22 @@ const Form3 = ({ legend }) => {
     };
 
     const feedOptions = [
-        { id: "FPR", label: "f_obr [mm/obr]:", placeholder: " posuw na obrót ", disabled: false },
-        { id: "FPT", label: "f_z [mm]:", placeholder: " posuw na ząb ", disabled: true }
+        {
+            id: "FPR",
+            name: `${languages[langId].feedPerRev.name}`,
+            sub: `${languages[langId].feedPerRev.sub}`,
+            unit: `${languages[langId].feedPerRev.unit}`,
+            placeholder: `${languages[langId].feedPerRev.placeholder}`,
+            disabled: false
+        },
+        {
+            id: "FPT",
+            name: `${languages[langId].feedPerTooth.name}`,
+            sub: `${languages[langId].feedPerTooth.sub}`,
+            unit: `${languages[langId].feedPerTooth.unit}`,
+            placeholder: `${languages[langId].feedPerTooth.placeholder}`,
+            disabled: true
+        }
     ];
 
     const onOptionChange = ({ target }) => {
@@ -56,7 +71,11 @@ const Form3 = ({ legend }) => {
                                 onChange={onOptionChange}
                             />
                             <label htmlFor={feedOption.id}>
-                                {feedOption.label}
+                                {feedOption.name}
+                                <FormTextSub>
+                                    {feedOption.sub}
+                                </FormTextSub>
+                                {feedOption.unit}
                             </label>
                         </RadioButtonContainer>
                         <FormInput
@@ -82,7 +101,13 @@ const Form3 = ({ legend }) => {
                 <FieldsContainer>
                     <FormLabel>
                         <FormInnerText>
-                            <label>n<FormTextSub>obr</FormTextSub>&nbsp;[obr/min]:</label>
+                            <label>
+                                {languages[langId].rotSpeed.name}
+                                <FormTextSub>
+                                    {languages[langId].rotSpeed.sub}
+                                </FormTextSub>
+                                {languages[langId].rotSpeed.unit}
+                            </label>
                         </FormInnerText>
                         <FormInput
                             ref={inputRef}
@@ -90,7 +115,7 @@ const Form3 = ({ legend }) => {
                             type="number"
                             min="1"
                             step="1"
-                            placeholder=" obroty wrzeciona "
+                            placeholder={languages[langId].rotSpeed.placeholder}
                             required
                             onChange={({ target }) => setRotationSpeed(target.value)}
                         />
@@ -100,14 +125,16 @@ const Form3 = ({ legend }) => {
 
                     <FormLabel>
                         <FormInnerText>
-                            <label>z:</label>
+                            <label>
+                                {languages[langId].teethNumber.name}
+                            </label>
                         </FormInnerText>
                         <FormInput
                             value={(feedType === "FPT") ? feedFactor2 : ""}
                             type="number"
                             min="1"
                             step="1"
-                            placeholder=" ilość zębów "
+                            placeholder={languages[langId].teethNumber.placeholder}
                             required
                             disabled={feedType === "FPR"}
                             onChange={({ target }) => setFeedFactor2(target.value)}
@@ -115,12 +142,15 @@ const Form3 = ({ legend }) => {
                     </FormLabel>
                     <FormLabel>
                         <FormInnerText>
-                            <label>f&nbsp;[mm/min]:</label>
+                            <label>
+                                {languages[langId].feedrate.name}
+                                {languages[langId].feedrate.unit}
+                            </label>
                         </FormInnerText>
                         <FormInput
                             value={feedValue}
                             readOnly
-                            placeholder=" wynik "
+                            placeholder={languages[langId].feedrate.placeholder}
                         />
                     </FormLabel>
                 </FieldsContainer>

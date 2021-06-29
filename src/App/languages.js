@@ -25,6 +25,27 @@ const languages = [
       unit: " [m/min]:",
       placeholder: "cutting speed"
     },
+    feedrate: {
+      name: "f",
+      unit: " [mm/min]:",
+      placeholder: "feedrate"
+    },
+    feedPerRev: {
+      name: "f",
+      sub: "r",
+      unit: " [mm/rev]:",
+      placeholder: "feed per rev."
+    },
+    feedPerTooth: {
+      name: "f",
+      sub: "t",
+      unit: " [mm]:",
+      placeholder: "feed per tooth"
+    },
+    teethNumber: {
+      name: "t:",
+      placeholder: "numer of teeth"
+    }
   },
   {
     key: "PL",
@@ -52,7 +73,28 @@ const languages = [
       unit: " [m/min]:",
       placeholder: "prędkość skrawania"
     },
-  }
+    feedrate: {
+      name: "f",
+      unit: " [mm/min]:",
+      placeholder: "posuw liniowy"
+    },
+    feedPerRev: {
+      name: "f",
+      sub: "o",
+      unit: " [mm/obr]:",
+      placeholder: "posuw na obrót"
+    },
+    feedPerTooth: {
+      name: "f",
+      sub: "z",
+      unit: " [mm]:",
+      placeholder: "posuw na ząb"
+    },
+    teethNumber: {
+      name: "z:",
+      placeholder: "liczba zębów"
+    }
+  },
 ];
 
 export default languages;
