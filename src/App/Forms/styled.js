@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-    color: #1e3246;
+    color: ${({ theme }) => theme.color.primary};
     margin-bottom: 10px;
 `;
 
@@ -48,7 +48,7 @@ export const FormTextSub = styled.span`
 
 export const FormInput = styled.input`
     min-width: 200px;
-    border: solid 1px #1e3246;
+    border: solid 1px ${({ theme }) => theme.color.primary};
     border-radius: 5px;
     padding: 5px;
 
@@ -72,7 +72,7 @@ export const RadioButtonContainer = styled.div`
 
 export const Select = styled.select`
     min-width: 222px;
-    border: solid 1px #1e3246;
+    border: solid 1px ${({ theme }) => theme.color.primary};
     border-radius: 5px;
     padding: 5px;
 `;

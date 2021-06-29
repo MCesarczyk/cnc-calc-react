@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+
 html {
   box-sizing: border-box;
 }
@@ -15,3 +19,8 @@ body {
   font-family: 'Ubuntu', sans-serif;
   min-width: 248px;
 }
+
+button {
+    cursor: pointer;
+}
+`;

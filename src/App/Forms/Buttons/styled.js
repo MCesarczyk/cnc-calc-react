@@ -11,8 +11,8 @@ export const Button = styled.button`
     flex-basis: 200px;
     justify-content: center;
     color: #fff;
-    background-color: #1e3246;
-    border: solid #1e3246;
+    background-color: ${({ theme }) => theme.color.primary};
+    border: solid ${({ theme }) => theme.color.primary};
     padding: 5px;
     border-radius: 20px;
 
