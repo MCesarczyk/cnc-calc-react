@@ -1,4 +1,6 @@
-.header__headline {
+import styled from "styled-components";
+
+export const Headline = styled.h1`
     color: #fff;
     background-color: #1e3246;
     border-radius: 25px;
@@ -7,10 +9,8 @@
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
     margin: 0 auto 10px auto;
-}
 
-@media (max-width: 375px) {
-    .header__headline {
+    @media (max-width: 375px) {
         font-size: 28px;
     }
-}
+`;
