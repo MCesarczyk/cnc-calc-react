@@ -22,9 +22,9 @@ function App() {
     <div>
       <Header title={languages[langId].mainTitle} />
       <Switcher
-            languages={languages}
-            changeLanguage={changeLanguage}
-          />
+        languages={languages}
+        changeLanguage={changeLanguage}
+      />
 
       <Container>
         <Section
@@ -33,14 +33,17 @@ function App() {
             <>
               <Form1
                 legend={languages[langId].form1Legend}
+                langId={langId}
               />
 
               <Form2
                 legend={languages[langId].form2Legend}
+                langId={langId}
               />
 
               <Form3
                 legend={languages[langId].form3Legend}
+                langId={langId}
               />
             </>
           }
@@ -52,6 +55,7 @@ function App() {
             <>
               <Form4
                 legend={languages[langId].form4Legend}
+                langId={langId}
               />
             </>
           }
