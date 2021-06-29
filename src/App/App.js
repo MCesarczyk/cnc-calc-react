@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <Header title="Kalkulator obróbki skrawaniem" />
+      <Header title={languages[langId].mainTitle} />
       <Switcher
             languages={languages}
             changeLanguage={changeLanguage}
@@ -28,30 +28,30 @@ function App() {
 
       <Container>
         <Section
-          title="Frezowanie/wiercenie"
+          title={languages[langId].section1Title}
           body={
             <>
               <Form1
-                legend="Liniowa prędkość skrawania"
+                legend={languages[langId].form1Legend}
               />
 
               <Form2
-                legend="Prędkość obrotowa narzędzia"
+                legend={languages[langId].form2Legend}
               />
 
               <Form3
-                legend="Wielkość posuwu liniowego"
+                legend={languages[langId].form3Legend}
               />
             </>
           }
         />
 
         <Section
-          title="Gwintowanie"
+          title={languages[langId].section2Title}
           body={
             <>
               <Form4
-                legend="Wielkość posuwu przy gwintowaniu"
+                legend={languages[langId].form4Legend}
               />
             </>
           }
