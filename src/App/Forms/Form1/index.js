@@ -31,8 +31,8 @@ const Form1 = ({ legend, langId }) => {
           <FormLabel>
             <FormInnerText>
               <label>
-                {languages[langId].diameterName}
-                {languages[langId].diameterUnit}
+                {languages[langId].diameter.name}
+                {languages[langId].diameter.unit}
               </label>
             </FormInnerText>
             <FormInput
@@ -41,7 +41,7 @@ const Form1 = ({ legend, langId }) => {
               type="number"
               min="0.0001"
               step="0.0001"
-              placeholder={languages[langId].form1Input1Placeholder}
+              placeholder={languages[langId].diameter.placeholder}
               required
               autoFocus
               onChange={({ target }) => setDiameter(target.value - 0)}
@@ -50,11 +50,11 @@ const Form1 = ({ legend, langId }) => {
           <FormLabel>
             <FormInnerText>
               <label>
-                {languages[langId].rotSpeedName}
+                {languages[langId].rotSpeed.name}
                 <FormTextSub>
-                  {languages[langId].rotSpeedSub}
+                  {languages[langId].rotSpeed.sub}
                 </FormTextSub>
-                {languages[langId].rotSpeedUnit}
+                {languages[langId].rotSpeed.unit}
               </label>
             </FormInnerText>
             <FormInput
@@ -62,23 +62,23 @@ const Form1 = ({ legend, langId }) => {
               type="number"
               min="1"
               step="1"
-              placeholder={languages[langId].form1Input2Placeholder}
+              placeholder={languages[langId].rotSpeed.placeholder}
               required
               onChange={({ target }) => setRotationSpeed(target.value)}
             />
           </FormLabel>
           <FormLabel>
             <FormInnerText>
-              {languages[langId].cutSpeedName}
+              {languages[langId].cutSpeed.name}
               <FormTextSub>
-                {languages[langId].cutSpeedSub}
+                {languages[langId].cutSpeed.sub}
               </FormTextSub>
-              {languages[langId].cutSpeedUnit}
+              {languages[langId].cutSpeed.unit}
             </FormInnerText>
             <FormInput
               value={cuttingSpeed}
               readOnly
-              placeholder={languages[langId].form1Input3Placeholder}
+              placeholder={languages[langId].cutSpeed.placeholder}
             />
           </FormLabel>
         </FieldsContainer>
