@@ -1,9 +1,10 @@
 import { useRef, useState } from "react";
+import languages from "../../languages";
 import Buttons from "../Buttons";
 import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput } from "../styled.js";
 
 
-const Form1 = ({ legend }) => {
+const Form1 = ({ legend, langId }) => {
     const [diameter, setDiameter] = useState("");
     const [cuttingSpeed, setCuttingSpeed] = useState("");
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -30,7 +31,10 @@ const Form1 = ({ legend }) => {
                 <FieldsContainer>
                     <FormLabel>
                         <FormInnerText>
-                            <label>D&nbsp;[mm]:</label>
+                            <label>
+                                {languages[langId].diameter.name}
+                                {languages[langId].diameter.unit}
+                            </label>
                         </FormInnerText>
                         <FormInput
                             ref={inputRef}
@@ -38,33 +42,45 @@ const Form1 = ({ legend }) => {
                             type="number"
                             min="0.0001"
                             step="0.0001"
-                            placeholder=" średnica narzędzia "
+                            placeholder={languages[langId].diameter.placeholder}
                             required
                             onChange={({ target }) => setDiameter(target.value)}
                         />
                     </FormLabel>
                     <FormLabel>
                         <FormInnerText>
-                            <label>V<FormTextSub>c</FormTextSub>&nbsp;[m/min]:</label>
+                            <label>
+                                {languages[langId].cutSpeed.name}
+                                <FormTextSub>
+                                    {languages[langId].cutSpeed.sub}
+                                </FormTextSub>
+                                {languages[langId].cutSpeed.unit}
+                            </label>
                         </FormInnerText>
                         <FormInput
                             value={cuttingSpeed}
                             type="number"
                             min="1"
                             step="1"
-                            placeholder=" prędkość liniowa "
+                            placeholder={languages[langId].cutSpeed.placeholder}
                             required
                             onChange={({ target }) => setCuttingSpeed(target.value)}
                         />
                     </FormLabel>
                     <FormLabel>
                         <FormInnerText>
-                            <label>n<FormTextSub>obr</FormTextSub>&nbsp;[obr/min]:</label>
+                            <label>
+                                {languages[langId].rotSpeed.name}
+                                <FormTextSub>
+                                    {languages[langId].rotSpeed.sub}
+                                </FormTextSub>
+                                {languages[langId].rotSpeed.unit}
+                            </label>
                         </FormInnerText>
                         <FormInput
                             value={rotationSpeed}
                             readOnly
-                            placeholder=" wynik "
+                            placeholder={languages[langId].rotSpeed.placeholder}
                         />
                     </FormLabel>
                 </FieldsContainer>
