@@ -1,11 +1,11 @@
-import { FooterStyled, FooterContent } from "./styled";
+import { StyledFooter, FooterContent } from "./styled";
 
 const Footer = ({ content }) => (
-  <FooterStyled>
+  <StyledFooter>
     <FooterContent>
       {content}
     </FooterContent>
-  </FooterStyled>
+  </StyledFooter>
 );
 
 export default Footer;
