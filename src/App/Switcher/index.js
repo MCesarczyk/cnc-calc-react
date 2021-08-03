@@ -1,15 +1,17 @@
+import { SwitcherButton, SwitcherWrapper } from "./styled";
+
   
 const Switcher = ({ languages, changeLanguage }) => (
-    <div>
+    <SwitcherWrapper>
         {languages.map(language => (
-            <button
+            <SwitcherButton
                 key={language.key}
                 onClick={() => changeLanguage(language.key)}
             >
                 {language.key}
-            </button>
+            </SwitcherButton>
         ))}
-    </div>
+    </SwitcherWrapper>
 );
 
 export default Switcher;
