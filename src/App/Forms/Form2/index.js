@@ -84,7 +84,7 @@ const Form1 = ({ legend, langId }) => {
                         />
                     </FormLabel>
                 </FieldsContainer>
-                <Buttons />
+                <Buttons langID={langId}/>
             </Fieldset>
         </Form>
     )

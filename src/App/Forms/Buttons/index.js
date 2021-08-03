@@ -1,12 +1,13 @@
+import languages from "../../languages";
 import { ButtonsContainer, Button } from "./styled";
 
-const Buttons = () => (
+const Buttons = ({ langID: langId }) => (
     <ButtonsContainer>
         <Button type="submit">
-            Oblicz
+            {languages[langId].buttonLabel.submit}
         </Button>
         <Button type="reset">
-            Wyczyść
+            {languages[langId].buttonLabel.reset}
         </Button>
     </ButtonsContainer>
 );

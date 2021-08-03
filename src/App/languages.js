@@ -50,6 +50,10 @@ const languages = [
       name: "P",
       unit: " [mm]",
       placeholder: "thread pitch"
+    },
+    buttonLabel: {
+      submit: "Calculate",
+      reset: "Reset"
     }
   },
   {
@@ -103,6 +107,10 @@ const languages = [
       name: "P",
       unit: " [mm]",
       placeholder: "skok gwintu"
+    },
+    buttonLabel: {
+      submit: "Oblicz",
+      reset: "Wyczyść"
     }
   },
 ];

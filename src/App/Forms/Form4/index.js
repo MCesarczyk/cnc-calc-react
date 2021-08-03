@@ -115,7 +115,7 @@ const Form4 = ({ legend, langId }) => {
                         />
                     </FormLabel>
                 </FieldsContainer>
-                <Buttons />
+                <Buttons langID={langId}/>
             </Fieldset>
         </Form>
     )
