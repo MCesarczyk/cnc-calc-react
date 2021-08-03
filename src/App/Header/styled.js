@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Headline = styled.h1`
-    color: #fff;
-    background-color: #1e3246;
+    color: ${({theme}) => theme.color.primaryContrast};
+    background-color: ${({theme}) => theme.color.primary};
     border-radius: 25px;
     padding: 5px 25px;
     font-weight: 300;

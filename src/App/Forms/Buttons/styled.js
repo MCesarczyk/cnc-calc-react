@@ -10,26 +10,26 @@ export const Button = styled.button`
     display: flex;
     flex-basis: 200px;
     justify-content: center;
-    color: #fff;
+    color: ${({ theme }) => theme.color.primaryContrast};
     background-color: ${({ theme }) => theme.color.primary};
     border: solid ${({ theme }) => theme.color.primary};
     padding: 5px;
     border-radius: 20px;
 
     &:hover {
-        background-color: #4b5a69;
+        filter: brightness(150%);
     }
 
     &:active {
-        background-color: #788291;
+        filter: brightness(200%);
         border-color: currentColor;
     }
 
     ${({ type }) => type === "submit" && css`
-        color: #19aa6e;
+        color: ${({ theme }) => theme.color.submitButtonFont};
     `}
     
     ${({ type }) => type === "reset" && css`
-        color: #dc3223;
+        color: ${({ theme }) => theme.color.resetButtonFont};
     `}
 `;

@@ -57,11 +57,11 @@ export const FormInput = styled.input`
     }
 
     &:invalid {
-    background-color: beige;
+        background-color: ${({ theme }) => theme.color.invalid};
     }
 
     &:disabled {
-        background-color: #ddd;
+        background-color: ${({theme})=>theme.color.disabled};
     }
 `;
 
