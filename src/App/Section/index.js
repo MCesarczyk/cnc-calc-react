@@ -1,8 +1,10 @@
-import "./style.css";
+import { SectionHeadline } from "./styled";
 
 const Section = ({ title, body }) => (
     <section>
-        <h2 className="section__header">{title}</h2>
+        <SectionHeadline>
+            {title}
+        </SectionHeadline>
         {body}
     </section>
 );
