@@ -1,5 +1,8 @@
 {
   "name": "cnc-calc-react",
+  "author": "Michał Cesarczyk",
+  "email": "michal.cesarczyk@gmail.com",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://mcesarczyk.github.io/cnc-calc-react/",
@@ -39,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-test-renderer": "^17.0.2"
   }
 }

@@ -3,10 +3,10 @@ import "./style.css";
 
 const STATUS = {
   HOVERED: 'hovered',
-  NORMAL: 'normal'
+  NORMAL: 'normal',
 };
 
-const Link = ({ adress, text, prefix }) => {
+const Link = ({ adress, text }) => {
   const [status, setStatus] = useState(STATUS.NORMAL);
 
   const onMouseEnter = () => {
@@ -18,18 +18,14 @@ const Link = ({ adress, text, prefix }) => {
   };
 
   return (
-    <>
-      {prefix}
-      {' '}
-      <a
-        className={status}
-        href={adress || '#'}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-      >
-        {text}
-      </a>
-    </>
+    <a
+      className={status}
+      href={adress || '#'}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {text}
+    </a>
   )
 };
 

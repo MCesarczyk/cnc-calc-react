@@ -9,7 +9,7 @@ import Form4 from "./Forms/Form4";
 import Container from "./Container";
 import Section from "./Section";
 import languages from "./languages";
-import Link from "./Link";
+import FooterLink from "./Footer/Link";
 
 function App() {
 
@@ -66,7 +66,7 @@ function App() {
 
       <Footer>
         {`Copyright \u00a9 ${new Date().getFullYear()} `}
-        <Link
+        <FooterLink
           adress="mailto:michal.cesarczyk@gmail.com"
           prefix="by"
           text="Michał&nbsp;Cesarczyk"
