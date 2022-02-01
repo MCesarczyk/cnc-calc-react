@@ -9,6 +9,7 @@ import Form4 from "./Forms/Form4";
 import Container from "./Container";
 import Section from "./Section";
 import languages from "./languages";
+import Link from "./Link";
 
 function App() {
 
@@ -65,7 +66,11 @@ function App() {
 
       <Footer>
         {`Copyright \u00a9 ${new Date().getFullYear()} `}
-        by&nbsp;Michał&nbsp;Cesarczyk
+        <Link
+          adress="mailto:michal.cesarczyk@gmail.com"
+          prefix="by"
+          text="Michał&nbsp;Cesarczyk"
+        />
       </Footer>
     </div>
   )
