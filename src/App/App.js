@@ -63,9 +63,10 @@ function App() {
 
       </Container>
 
-      <Footer
-        content="&copy; 2021 by Michał Cesarczyk"
-      />
+      <Footer>
+        {`Copyright \u00a9 ${new Date().getFullYear()} `}
+        by&nbsp;Michał&nbsp;Cesarczyk
+      </Footer>
     </div>
   )
 }

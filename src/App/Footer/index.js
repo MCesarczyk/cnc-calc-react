@@ -1,9 +1,9 @@
 import { StyledFooter, FooterContent } from "./styled";
 
-const Footer = ({ content }) => (
+const Footer = ({ children }) => (
   <StyledFooter>
     <FooterContent>
-      {content}
+      {children}
     </FooterContent>
   </StyledFooter>
 );
