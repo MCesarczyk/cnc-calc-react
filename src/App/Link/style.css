@@ -1,9 +1,0 @@
-.normal {
-  color: inherit;
-}
-
-.hovered {
-  color: crimson;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 4px;
-}

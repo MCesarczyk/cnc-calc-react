@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import { StyledLink } from "./styled";
 
 const STATUS = {
   HOVERED: 'hovered',
@@ -18,14 +18,14 @@ const Link = ({ adress, text }) => {
   };
 
   return (
-    <a
-      className={status}
+    <StyledLink
+      status={status}
       href={adress || '#'}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       {text}
-    </a>
+    </StyledLink>
   )
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import renderer, { act } from "react-test-renderer";
 import Link from ".";
 
 test("Link changes class when hovered", () => {
@@ -13,11 +13,17 @@ test("Link changes class when hovered", () => {
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
-  tree.props.onMouseEnter();
+  act(() => {
+    tree.props.onMouseEnter();
+  });
+
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
-  tree.props.onMouseLeave();
+  act(() => {
+    tree.props.onMouseLeave();
+  });
+
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

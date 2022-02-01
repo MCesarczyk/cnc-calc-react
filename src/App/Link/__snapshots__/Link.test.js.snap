@@ -2,7 +2,7 @@
 
 exports[`Link changes class when hovered 1`] = `
 <a
-  className="normal"
+  className="sc-bdnxRM bPiSQd"
   href="mailto:michal.cesarczyk@gmail.com"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
@@ -11,7 +11,7 @@ exports[`Link changes class when hovered 1`] = `
 
 exports[`Link changes class when hovered 2`] = `
 <a
-  className="hovered"
+  className="sc-bdnxRM fsVBXD"
   href="mailto:michal.cesarczyk@gmail.com"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
@@ -20,7 +20,7 @@ exports[`Link changes class when hovered 2`] = `
 
 exports[`Link changes class when hovered 3`] = `
 <a
-  className="normal"
+  className="sc-bdnxRM bPiSQd"
   href="mailto:michal.cesarczyk@gmail.com"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
