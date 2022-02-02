@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import Buttons from "../Buttons";
-import languages from "../../languages";
 import tapDiameters from "./tapDiameters";
 import { FormLabel, Select, Form, Fieldset, Legend, FieldsContainer, FormInnerText, FormTextSub, FormInput } from "../styled";
+import languages from "../../../assets/fixtures/languages";
 
 const Form4 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");

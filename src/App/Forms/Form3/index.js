@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import languages from "../../languages";
+import languages from "../../../assets/fixtures/languages";
 import Buttons from "../Buttons";
 import FeedOptionSelector from "../FeedOptionSelector";
 import {

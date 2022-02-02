@@ -1,4 +1,4 @@
-import languages from "../../languages";
+import languages from "../../../assets/fixtures/languages";
 import { ButtonsContainer, Button } from "./styled";
 
 const Buttons = ({ langID: langId }) => (

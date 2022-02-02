@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import languages from "../../languages";
+import languages from "../../../assets/fixtures/languages";
 import Buttons from "../Buttons";
 import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput } from "../styled.js";
 

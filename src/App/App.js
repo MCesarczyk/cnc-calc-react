@@ -8,8 +8,8 @@ import Form3 from "./Forms/Form3";
 import Form4 from "./Forms/Form4";
 import Container from "./Container";
 import Section from "./Section";
-import languages from "./languages";
 import FooterLink from "./Footer/Link";
+import languages from "../assets/fixtures/languages";
 
 function App() {
 
