@@ -1,7 +1,17 @@
 import { useRef, useState } from "react";
 import Buttons from "../Buttons";
 import tapDiameters from "./tapDiameters";
-import { FormLabel, Select, Form, Fieldset, Legend, FieldsContainer, FormInnerText, FormTextSub, FormInput } from "../styled";
+import { 
+    FormLabel, 
+    Select, 
+    Form, 
+    Fieldset, 
+    Legend, 
+    FieldsContainer, 
+    FormInnerText, 
+    FormInput 
+} from "../styled";
+import { TextSub } from "../../../components/TextSub";
 import languages from "../../../assets/fixtures/languages";
 
 const Form4 = ({ legend, langId }) => {
@@ -68,9 +78,9 @@ const Form4 = ({ legend, langId }) => {
                         <FormInnerText>
                             <label>
                                 {languages[langId].rotSpeed.name}
-                                <FormTextSub>
+                                <TextSub>
                                     {languages[langId].rotSpeed.sub}
-                                </FormTextSub>
+                                </TextSub>
                                 {languages[langId].rotSpeed.unit}
                             </label>
                         </FormInnerText>

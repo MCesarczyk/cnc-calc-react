@@ -1,7 +1,16 @@
 import { useRef, useState } from "react";
 import languages from "../../../assets/fixtures/languages";
 import Buttons from "../Buttons";
-import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput } from "../styled.js";
+import {
+  Form,
+  Fieldset,
+  Legend,
+  FieldsContainer,
+  FormLabel,
+  FormInnerText,
+  FormInput
+} from "../styled.js";
+import { TextSub } from "../../../components/TextSub";
 
 const Form1 = ({ legend, langId }) => {
   const [diameter, setDiameter] = useState("");
@@ -51,9 +60,9 @@ const Form1 = ({ legend, langId }) => {
             <FormInnerText>
               <label>
                 {languages[langId].rotSpeed.name}
-                <FormTextSub>
+                <TextSub>
                   {languages[langId].rotSpeed.sub}
-                </FormTextSub>
+                </TextSub>
                 {languages[langId].rotSpeed.unit}
               </label>
             </FormInnerText>
@@ -70,9 +79,9 @@ const Form1 = ({ legend, langId }) => {
           <FormLabel>
             <FormInnerText>
               {languages[langId].cutSpeed.name}
-              <FormTextSub>
+              <TextSub>
                 {languages[langId].cutSpeed.sub}
-              </FormTextSub>
+              </TextSub>
               {languages[langId].cutSpeed.unit}
             </FormInnerText>
             <FormInput
@@ -82,7 +91,7 @@ const Form1 = ({ legend, langId }) => {
             />
           </FormLabel>
         </FieldsContainer>
-        <Buttons langID={langId}/>
+        <Buttons langID={langId} />
       </Fieldset>
     </Form>
   )

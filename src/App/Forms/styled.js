@@ -40,12 +40,6 @@ export const FormInnerText = styled.span`
     }
 `;
 
-export const FormTextSub = styled.span`
-    vertical-align: sub;
-    font-size: 0.7em;
-    margin-right: 0.15em;
-`;
-
 export const FormInput = styled.input`
     min-width: 200px;
     border: solid 1px ${({ theme }) => theme.color.primary};

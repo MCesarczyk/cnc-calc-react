@@ -9,9 +9,9 @@ import {
     FieldsContainer,
     FormLabel,
     FormInnerText,
-    FormTextSub,
     FormInput
 } from "../styled.js";
+import { TextSub } from "../../../components/TextSub";
 
 const Form3 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -55,9 +55,9 @@ const Form3 = ({ legend, langId }) => {
                         <FormInnerText>
                             <label>
                                 {languages[langId].rotSpeed.name}
-                                <FormTextSub>
+                                <TextSub>
                                     {languages[langId].rotSpeed.sub}
-                                </FormTextSub>
+                                </TextSub>
                                 {languages[langId].rotSpeed.unit}
                             </label>
                         </FormInnerText>
