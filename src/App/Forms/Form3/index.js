@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import languages from "../../../assets/fixtures/languages";
 import Buttons from "../Buttons";
 import FeedOptionSelector from "../FeedOptionSelector";
@@ -20,6 +20,11 @@ const Form3 = ({ legend, langId }) => {
     const [feedType, setFeedType] = useState("FPR");
     const [feedValue, setFeedValue] = useState("");
     const inputRef = useRef(null);
+
+    useEffect(() => {
+        setFeedFactor1("");
+        setFeedFactor2("");
+    }, [feedType])
 
     const onFormSubmit = (event) => {
         event.preventDefault();

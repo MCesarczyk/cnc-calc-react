@@ -4,14 +4,12 @@ import { FormInput, FormLabel, FormTextSub, RadioButtonContainer } from "../styl
 const FeedOptionSelector = ({
   langId,
   feedType, setFeedType,
-  feedFactor1, setFeedFactor1, setFeedFactor2
+  feedFactor1, setFeedFactor1
 }) => {
   const feedOptions = createFeedOptions(langId);
 
   const onOptionChange = ({ target }) => {
     setFeedType(target.value);
-    setFeedFactor1("");
-    setFeedFactor2("");
   };
 
   return (
