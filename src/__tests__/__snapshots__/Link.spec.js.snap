@@ -1,8 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link changes class when hovered 1`] = `
+.c0 {
+  color: inherit;
+}
+
 <a
-  className="sc-bdnxRM bPiSQd"
+  className="c0"
   href="mailto:michal.cesarczyk@gmail.com"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
@@ -10,8 +14,15 @@ exports[`Link changes class when hovered 1`] = `
 `;
 
 exports[`Link changes class when hovered 2`] = `
+.c0 {
+  color: inherit;
+  color: crimson;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+}
+
 <a
-  className="sc-bdnxRM fsVBXD"
+  className="c0"
   href="mailto:michal.cesarczyk@gmail.com"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
@@ -19,8 +30,12 @@ exports[`Link changes class when hovered 2`] = `
 `;
 
 exports[`Link changes class when hovered 3`] = `
+.c0 {
+  color: inherit;
+}
+
 <a
-  className="sc-bdnxRM bPiSQd"
+  className="c0"
   href="mailto:michal.cesarczyk@gmail.com"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}

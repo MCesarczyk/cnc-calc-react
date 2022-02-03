@@ -1,6 +1,7 @@
 import React from "react";
 import renderer, { act } from "react-test-renderer";
-import Link from ".";
+import Link from "../components/Link";
+import "jest-styled-components";
 
 test("Link changes class when hovered", () => {
   const component = renderer.create(
