@@ -1,8 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Footer from "../App/Footer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../theme";
+import Footer from "../components/Footer";
 import "jest-styled-components";
 
 test("Footer rendered properly", () => {
