@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header rendered properly 1`] = `
+.c0 {
+  color: #fff;
+  background-color: #1e3246;
+  border-radius: 25px;
+  padding: 5px 25px;
+  font-weight: 300;
+  font-family: 'Ubuntu',sans-serif;
+  text-align: center;
+  margin: 0 auto 10px auto;
+}
+
+@media (max-width:375px) {
+  .c0 {
+    font-size: 28px;
+  }
+}
+
+<header
+  id="start"
+>
+  <h1
+    className="c0"
+  />
+</header>
+`;

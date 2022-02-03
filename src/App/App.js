@@ -1,5 +1,5 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { useLanguage } from './useLanguage';
 import Switcher from "./Switcher";
 import Form1 from "./Forms/Form1";
@@ -7,7 +7,7 @@ import Form2 from "./Forms/Form2";
 import Form3 from "./Forms/Form3";
 import Form4 from "./Forms/Form4";
 import Section from "./Section";
-import FooterLink from "./Footer/Link";
+import FooterLink from "../components/Footer/Link";
 import languages from "../assets/fixtures/languages";
 
 function App() {
