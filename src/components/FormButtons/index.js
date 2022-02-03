@@ -1,5 +1,6 @@
 import languages from "../../assets/fixtures/languages";
-import { ButtonsContainer, Button } from "./styled";
+import { ButtonsContainer } from "./styled";
+import { Button } from "./Button";
 
 const FormButtons = ({ langID: langId }) => (
     <ButtonsContainer>
