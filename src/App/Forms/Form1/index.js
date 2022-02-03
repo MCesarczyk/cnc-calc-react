@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import languages from "../../../assets/fixtures/languages";
-import Buttons from "../Buttons";
+import FormButtons from "../../../components/FormButtons";
 import {
   Form,
   Fieldset,
@@ -91,7 +91,7 @@ const Form1 = ({ legend, langId }) => {
             />
           </FormLabel>
         </FieldsContainer>
-        <Buttons langID={langId} />
+        <FormButtons langID={langId} />
       </Fieldset>
     </Form>
   )

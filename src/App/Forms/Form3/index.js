@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import languages from "../../../assets/fixtures/languages";
-import Buttons from "../Buttons";
+import FormButtons from "../../../components/FormButtons";
 import FeedOptionSelector from "../FeedOptionSelector";
 import {
     Form,
@@ -113,7 +113,7 @@ const Form3 = ({ legend, langId }) => {
                         />
                     </FormLabel>
                 </FieldsContainer>
-                <Buttons langID={langId} />
+                <FormButtons langID={langId} />
             </Fieldset>
         </Form>
     )

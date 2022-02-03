@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import Buttons from "../Buttons";
+import FormButtons from "../../../components/FormButtons";
 import tapDiameters from "./tapDiameters";
 import { 
     FormLabel, 
@@ -125,7 +125,7 @@ const Form4 = ({ legend, langId }) => {
                         />
                     </FormLabel>
                 </FieldsContainer>
-                <Buttons langID={langId}/>
+                <FormButtons langID={langId}/>
             </Fieldset>
         </Form>
     )

@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useLanguage } from './useLanguage';
+import { useLanguage } from '../assets/utils/useLanguage';
 import Switcher from "./Switcher";
 import Form1 from "./Forms/Form1";
 import Form2 from "./Forms/Form2";
