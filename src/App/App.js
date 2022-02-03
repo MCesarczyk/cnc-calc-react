@@ -6,7 +6,6 @@ import Form1 from "./Forms/Form1";
 import Form2 from "./Forms/Form2";
 import Form3 from "./Forms/Form3";
 import Form4 from "./Forms/Form4";
-import Container from "./Container";
 import Section from "./Section";
 import FooterLink from "./Footer/Link";
 import languages from "../assets/fixtures/languages";
@@ -27,7 +26,7 @@ function App() {
         changeLanguage={changeLanguage}
       />
 
-      <Container>
+      <main>
         <Section
           title={languages[langId].section1Title}
           body={
@@ -62,7 +61,7 @@ function App() {
           }
         />
 
-      </Container>
+      </main>
 
       <Footer>
         {`Copyright \u00a9 ${new Date().getFullYear()} `}
