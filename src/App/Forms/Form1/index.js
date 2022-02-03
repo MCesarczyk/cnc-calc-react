@@ -5,23 +5,20 @@ import {
   Form,
   Fieldset,
   Legend,
-  FieldsContainer,
-  FormLabel,
-  FormInnerText,
-  FormInput
+  FieldsContainer
 } from "../styled.js";
-import { TextSub } from "../../../components/TextSub";
+import FormField from "../../../components/FormField";
 
 const Form1 = ({ legend, langId }) => {
   const [diameter, setDiameter] = useState("");
   const [rotationSpeed, setRotationSpeed] = useState("");
   const [cuttingSpeed, setCuttingSpeed] = useState("");
-  const inputRef = useRef(null);
+  const inputRef = useRef();
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     setCuttingSpeed((Math.PI * diameter * rotationSpeed / 1000).toFixed(2));
-    inputRef.current.focus();
+    inputRef.current?.focus();
   };
 
   const onFormReset = (event) => {
@@ -29,7 +26,7 @@ const Form1 = ({ legend, langId }) => {
     setDiameter("");
     setRotationSpeed("");
     setCuttingSpeed("");
-    inputRef.current.focus();
+    inputRef.current?.focus();
   };
 
   return (
@@ -37,63 +34,43 @@ const Form1 = ({ legend, langId }) => {
       <Fieldset>
         <Legend>{legend}</Legend>
         <FieldsContainer>
-          <FormLabel>
-            <FormInnerText>
-              <label>
-                {languages[langId].diameter.name}
-                {languages[langId].diameter.unit}
-              </label>
-            </FormInnerText>
-            <FormInput
-              ref={inputRef}
-              value={diameter}
-              type="number"
-              min="0.0001"
-              step="0.0001"
-              placeholder={languages[langId].diameter.placeholder}
-              required
-              autoFocus
-              onChange={({ target }) => setDiameter(target.value - 0)}
-            />
-          </FormLabel>
-          <FormLabel>
-            <FormInnerText>
-              <label>
-                {languages[langId].rotSpeed.name}
-                <TextSub>
-                  {languages[langId].rotSpeed.sub}
-                </TextSub>
-                {languages[langId].rotSpeed.unit}
-              </label>
-            </FormInnerText>
-            <FormInput
-              value={rotationSpeed}
-              type="number"
-              min="1"
-              step="1"
-              placeholder={languages[langId].rotSpeed.placeholder}
-              required
-              onChange={({ target }) => setRotationSpeed(target.value)}
-            />
-          </FormLabel>
-          <FormLabel>
-            <FormInnerText>
-              {languages[langId].cutSpeed.name}
-              <TextSub>
-                {languages[langId].cutSpeed.sub}
-              </TextSub>
-              {languages[langId].cutSpeed.unit}
-            </FormInnerText>
-            <FormInput
-              value={cuttingSpeed}
-              readOnly
-              placeholder={languages[langId].cutSpeed.placeholder}
-            />
-          </FormLabel>
+          <FormField
+            name={languages[langId].diameter.name}
+            unit={languages[langId].diameter.unit}
+            inputRef={inputRef}
+            value={diameter}
+            type="number"
+            min="0.0001"
+            step="0.0001"
+            placeholder={languages[langId].diameter.placeholder}
+            required
+            autoFocus
+            onChange={({ target }) => setDiameter(target.value - 0)}
+          />
+          <FormField
+            name={languages[langId].rotSpeed.name}
+            sub={languages[langId].rotSpeed.sub}
+            unit={languages[langId].rotSpeed.unit}
+            value={rotationSpeed}
+            type="number"
+            min="1"
+            step="1"
+            placeholder={languages[langId].rotSpeed.placeholder}
+            required
+            onChange={({ target }) => setRotationSpeed(target.value)}
+          />
+          <FormField
+            name={languages[langId].cutSpeed.name}
+            sub={languages[langId].cutSpeed.sub}
+            unit={languages[langId].cutSpeed.unit}
+            value={cuttingSpeed}
+            readOnly
+            placeholder={languages[langId].cutSpeed.placeholder}
+          />
         </FieldsContainer>
         <FormButtons langID={langId} />
       </Fieldset>
-    </Form>
+    </Form >
   )
 };
 
