@@ -5,6 +5,12 @@ exports[`Footer rendered properly 1`] = `
   color: inherit;
 }
 
+.c2:hover {
+  color: crimson;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 4px;
+}
+
 .c0 {
   margin: 30px 0px;
 }
@@ -22,16 +28,11 @@ exports[`Footer rendered properly 1`] = `
     className="c1"
   >
     Copyright © 
-    2022
      by 
     <a
       className="c2"
-      href="mailto:michal.cesarczyk@gmail.com"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-    >
-      Michał Cesarczyk
-    </a>
+      href="#"
+    />
   </p>
 </footer>
 `;

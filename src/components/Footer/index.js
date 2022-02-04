@@ -1,16 +1,16 @@
 import Link from "../Link";
-import { StyledFooter, FooterContent } from "./styled";
+import { FooterWrapper, FooterContent } from "./styled";
 
-const Footer = () => (
-  <StyledFooter>
+const Footer = ({ date, address, name }) => (
+  <FooterWrapper>
     <FooterContent>
-      Copyright &copy; {new Date().getFullYear()} by&nbsp;
+      Copyright &copy; {date} by&nbsp;
       <Link
-        adress={"mailto:michal.cesarczyk@gmail.com"}
-        text="Michał&nbsp;Cesarczyk"
+        adress={address}
+        text={name}
       />
     </FooterContent>
-  </StyledFooter>
+  </FooterWrapper>
 );
 
 export default Footer;

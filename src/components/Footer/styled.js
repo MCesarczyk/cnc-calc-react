@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledFooter = styled.footer`
+export const FooterWrapper = styled.footer`
   margin: 30px 0px;
 `;
 

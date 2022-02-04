@@ -8,6 +8,7 @@ import Form3 from "./Forms/Form3";
 import Form4 from "./Forms/Form4";
 import Section from "./Section";
 import languages from "../assets/fixtures/languages";
+import { ADDRESS, DATE, NAME } from "../assets/fixtures/author";
 
 function App() {
 
@@ -62,7 +63,11 @@ function App() {
 
       </main>
 
-      <Footer />
+      <Footer
+        date={DATE}
+        address={ADDRESS}
+        name={NAME}
+      />
     </div>
   )
 }
