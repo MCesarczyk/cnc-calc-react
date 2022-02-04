@@ -1,14 +1,11 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-export const StyledLink = styled.a.attrs(props => ({
-  hovered: props.status === 'hovered',
-  normal: props.status === 'normal'
-}))`
+export const StyledLink = styled.a`
   color: inherit;
 
-  ${props => props.hovered && css`
+  &:hover {
     color: crimson;
     border-bottom: 1px solid currentColor;
     padding-bottom: 4px;
-  `}
+  }
 `

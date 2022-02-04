@@ -1,21 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link changes class when hovered 1`] = `
+exports[`Link with states rendering properly 1`] = `
 .c0 {
   color: inherit;
 }
 
-<a
-  className="c0"
-  href="mailto:michal.cesarczyk@gmail.com"
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-/>
-`;
-
-exports[`Link changes class when hovered 2`] = `
-.c0 {
-  color: inherit;
+.c0:hover {
   color: crimson;
   border-bottom: 1px solid currentColor;
   padding-bottom: 4px;
@@ -23,21 +13,6 @@ exports[`Link changes class when hovered 2`] = `
 
 <a
   className="c0"
-  href="mailto:michal.cesarczyk@gmail.com"
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-/>
-`;
-
-exports[`Link changes class when hovered 3`] = `
-.c0 {
-  color: inherit;
-}
-
-<a
-  className="c0"
-  href="mailto:michal.cesarczyk@gmail.com"
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
+  href="#"
 />
 `;
