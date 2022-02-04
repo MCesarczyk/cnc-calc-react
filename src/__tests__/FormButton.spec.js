@@ -5,7 +5,7 @@ import { theme } from "../theme";
 import "jest-styled-components";
 import { Button } from "../components/FormButtons/Button";
 
-test("Form button with pseudostyles rendered properly", () => {
+test("Form button with states rendering properly", () => {
   const component = renderer.create(
     <ThemeProvider theme={theme} >
       <Button />
@@ -14,7 +14,6 @@ test("Form button with pseudostyles rendered properly", () => {
 
   let tree = component.toJSON()
 
-  // expect(tree).toMatchSnapshot();
   expect(tree).toHaveStyleRule('filter', 'brightness(150%)', {
     modifier: ':hover'
   })
