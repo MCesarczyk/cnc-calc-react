@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer rendered properly 1`] = `
+.c2 {
+  color: inherit;
+}
+
 .c0 {
   margin: 30px 0px;
 }
@@ -16,6 +20,18 @@ exports[`Footer rendered properly 1`] = `
 >
   <p
     className="c1"
-  />
+  >
+    Copyright © 
+    2022
+     by 
+    <a
+      className="c2"
+      href="mailto:michal.cesarczyk@gmail.com"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      Michał Cesarczyk
+    </a>
+  </p>
 </footer>
 `;

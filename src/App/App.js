@@ -7,7 +7,6 @@ import Form2 from "./Forms/Form2";
 import Form3 from "./Forms/Form3";
 import Form4 from "./Forms/Form4";
 import Section from "./Section";
-import FooterLink from "../components/Footer/Link";
 import languages from "../assets/fixtures/languages";
 
 function App() {
@@ -63,14 +62,7 @@ function App() {
 
       </main>
 
-      <Footer>
-        {`Copyright \u00a9 ${new Date().getFullYear()} `}
-        <FooterLink
-          adress="mailto:michal.cesarczyk@gmail.com"
-          prefix="by"
-          text="Michał&nbsp;Cesarczyk"
-        />
-      </Footer>
+      <Footer />
     </div>
   )
 }
