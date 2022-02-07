@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import languages from "../../../assets/fixtures/languages";
+import languages from "../../assets/fixtures/languages";
 import { 
     Form, 
     Fieldset, 
@@ -8,9 +8,9 @@ import {
     FormLabel, 
     FormInnerText, 
     FormInput 
-} from "../styled.js";
-import { TextSub } from "../../../components/TextSub";
-import FormFooter from "../../../components/Form/Footer";
+} from "../../components/Forms/styled";
+import { TextSub } from "../../components/TextSub";
+import FormFooter from "../../components/Form/Footer";
 
 
 const Form1 = ({ legend, langId }) => {

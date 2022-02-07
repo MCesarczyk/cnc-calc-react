@@ -1,14 +1,14 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useLanguage } from '../assets/utils/useLanguage';
 import Switcher from "./Switcher";
-import Form1 from "./Forms/Form1";
-import Form2 from "./Forms/Form2";
-import Form3 from "./Forms/Form3";
-import Form4 from "./Forms/Form4";
-import Section from "./Section";
 import languages from "../assets/fixtures/languages";
+import { useLanguage } from '../assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "../assets/fixtures/author";
+import Form1 from "../views/Form1";
+import Form2 from "../views/Form2";
+import Form3 from "../views/Form3";
+import Form4 from "../views/Form4";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
   };
 
   return (
-    <div>
+    <BrowserRouter>
       <Header title={languages[langId].mainTitle} />
       <Switcher
         languages={languages}
@@ -27,40 +27,48 @@ function App() {
       />
 
       <main>
-        <Section
-          title={languages[langId].section1Title}
-          body={
-            <>
+        <Routes>
+          <Route
+            path="/surface-speed"
+            element={
               <Form1
                 legend={languages[langId].form1Legend}
                 langId={langId}
               />
-
+            }
+          />
+          <Route
+            path="/spindle-speed"
+            element={
               <Form2
                 legend={languages[langId].form2Legend}
                 langId={langId}
               />
-
+            }
+          />
+          <Route
+            path="/feedrate"
+            element={
               <Form3
                 legend={languages[langId].form3Legend}
                 langId={langId}
               />
-            </>
-          }
-        />
-
-        <Section
-          title={languages[langId].section2Title}
-          body={
-            <>
+            }
+          />
+          <Route
+            path="/tapping-feed"
+            element={
               <Form4
                 legend={languages[langId].form4Legend}
                 langId={langId}
               />
-            </>
-          }
-        />
-
+            }
+          />
+          <Route
+            path="/"
+            element={<Navigate replace to="/surface-speed" />}
+          />
+        </Routes>
       </main>
 
       <Footer
@@ -68,7 +76,7 @@ function App() {
         address={ADDRESS}
         name={NAME}
       />
-    </div>
+    </BrowserRouter>
   )
 }
 export default App;

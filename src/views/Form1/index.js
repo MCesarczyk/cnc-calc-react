@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
-import languages from "../../../assets/fixtures/languages";
-import Form from "../../../components/Form";
-import FormFooter from "../../../components/Form/Footer";
-import FormField from "../../../components/FormField";
+import languages from "../../assets/fixtures/languages";
+import Form from "../../components/Form";
+import FormFooter from "../../components/Form/Footer";
+import FormField from "../../components/FormField";
 
 const Form1 = ({ legend, langId }) => {
   const [diameter, setDiameter] = useState("");
