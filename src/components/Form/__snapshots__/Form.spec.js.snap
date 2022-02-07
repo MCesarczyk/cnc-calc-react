@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component rendering properly 1`] = `
+.c0 {
+  color: #1e3246;
+  margin-bottom: 10px;
+}
+
+.c1 {
+  border-radius: 20px;
+}
+
+.c2 {
+  text-align: center;
+}
+
+.c3 {
+  display: grid;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+<form
+  className="c0"
+>
+  <fieldset
+    className="c1"
+  >
+    <legend
+      className="c2"
+    />
+    <div
+      className="c3"
+    />
+  </fieldset>
+</form>
+`;
