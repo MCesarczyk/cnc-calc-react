@@ -1,7 +1,17 @@
-import { useRef, useState } from "react";
-import languages from "../../languages";
-import Buttons from "../Buttons";
-import { Form, Fieldset, Legend, FieldsContainer, FormLabel, FormInnerText, FormTextSub, FormInput, RadioButtonContainer } from "../styled.js";
+import { useEffect, useRef, useState } from "react";
+import languages from "../../../assets/fixtures/languages";
+import FeedOptionSelector from "../FeedOptionSelector";
+import {
+    Form,
+    Fieldset,
+    Legend,
+    FieldsContainer,
+    FormLabel,
+    FormInnerText,
+    FormInput
+} from "../styled.js";
+import { TextSub } from "../../../components/TextSub";
+import FormFooter from "../../../components/Form/Footer";
 
 const Form3 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -10,6 +20,11 @@ const Form3 = ({ legend, langId }) => {
     const [feedType, setFeedType] = useState("FPR");
     const [feedValue, setFeedValue] = useState("");
     const inputRef = useRef(null);
+
+    useEffect(() => {
+        setFeedFactor1("");
+        setFeedFactor2("");
+    }, [feedType])
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -31,69 +46,6 @@ const Form3 = ({ legend, langId }) => {
         inputRef.current.focus();
     };
 
-    const feedOptions = [
-        {
-            id: "FPR",
-            name: `${languages[langId].feedPerRev.name}`,
-            sub: `${languages[langId].feedPerRev.sub}`,
-            unit: `${languages[langId].feedPerRev.unit}`,
-            placeholder: `${languages[langId].feedPerRev.placeholder}`,
-            disabled: false
-        },
-        {
-            id: "FPT",
-            name: `${languages[langId].feedPerTooth.name}`,
-            sub: `${languages[langId].feedPerTooth.sub}`,
-            unit: `${languages[langId].feedPerTooth.unit}`,
-            placeholder: `${languages[langId].feedPerTooth.placeholder}`,
-            disabled: true
-        }
-    ];
-
-    const onOptionChange = ({ target }) => {
-        setFeedType(target.value);
-        setFeedFactor1("");
-        setFeedFactor2("");
-    };
-
-    const createFeedOptionList = (
-        <>
-            {
-                feedOptions.map(feedOption => (
-                    <FormLabel key={feedOption.id}>
-                        <RadioButtonContainer>
-                            <input
-                                type="radio"
-                                name="feedType"
-                                id={feedOption.id}
-                                value={feedOption.id}
-                                checked={feedType === feedOption.id}
-                                onChange={onOptionChange}
-                            />
-                            <label htmlFor={feedOption.id}>
-                                {feedOption.name}
-                                <FormTextSub>
-                                    {feedOption.sub}
-                                </FormTextSub>
-                                {feedOption.unit}
-                            </label>
-                        </RadioButtonContainer>
-                        <FormInput
-                            value={(feedOption.id === feedType) ? feedFactor1 : ""}
-                            type="number"
-                            min="0.01"
-                            step="0.01"
-                            required
-                            disabled={feedOption.id !== feedType}
-                            placeholder={feedOption.placeholder}
-                            onChange={({ target }) => setFeedFactor1(target.value)}
-                        />
-                    </FormLabel>
-                ))
-            }
-        </>
-    );
-
     return (
         <Form onSubmit={onFormSubmit} onReset={onFormReset} >
             <Fieldset>
@@ -103,9 +55,9 @@ const Form3 = ({ legend, langId }) => {
                         <FormInnerText>
                             <label>
                                 {languages[langId].rotSpeed.name}
-                                <FormTextSub>
+                                <TextSub>
                                     {languages[langId].rotSpeed.sub}
-                                </FormTextSub>
+                                </TextSub>
                                 {languages[langId].rotSpeed.unit}
                             </label>
                         </FormInnerText>
@@ -121,7 +73,14 @@ const Form3 = ({ legend, langId }) => {
                         />
                     </FormLabel>
 
-                    {createFeedOptionList}
+                    <FeedOptionSelector
+                        langId={langId}
+                        feedType={feedType}
+                        setFeedType={setFeedType}
+                        feedFactor1={feedFactor1}
+                        setFeedFactor1={setFeedFactor1}
+                        setFeedFactor2={setFeedFactor2}
+                    />
 
                     <FormLabel>
                         <FormInnerText>
@@ -154,7 +113,7 @@ const Form3 = ({ legend, langId }) => {
                         />
                     </FormLabel>
                 </FieldsContainer>
-                <Buttons langID={langId}/>
+                <FormFooter langID={langId} />
             </Fieldset>
         </Form>
     )

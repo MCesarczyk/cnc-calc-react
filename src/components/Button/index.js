@@ -1,11 +1,5 @@
 import styled, { css } from "styled-components";
 
-export const ButtonsContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-`;
-
 export const Button = styled.button`
     display: flex;
     flex-basis: 200px;

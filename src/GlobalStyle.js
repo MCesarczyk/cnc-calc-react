@@ -20,7 +20,11 @@ body {
   min-width: 248px;
 }
 
-button {
+button, a {
     cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
 `;

@@ -1,14 +1,14 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import { useLanguage } from './useLanguage';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { useLanguage } from '../assets/utils/useLanguage';
 import Switcher from "./Switcher";
 import Form1 from "./Forms/Form1";
 import Form2 from "./Forms/Form2";
 import Form3 from "./Forms/Form3";
 import Form4 from "./Forms/Form4";
-import Container from "./Container";
 import Section from "./Section";
-import languages from "./languages";
+import languages from "../assets/fixtures/languages";
+import { ADDRESS, DATE, NAME } from "../assets/fixtures/author";
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
         changeLanguage={changeLanguage}
       />
 
-      <Container>
+      <main>
         <Section
           title={languages[langId].section1Title}
           body={
@@ -61,10 +61,12 @@ function App() {
           }
         />
 
-      </Container>
+      </main>
 
       <Footer
-        content="&copy; 2021 by Michał Cesarczyk"
+        date={DATE}
+        address={ADDRESS}
+        name={NAME}
       />
     </div>
   )

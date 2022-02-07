@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio button rendered properly 1`] = `
+Array [
+  <input
+    checked={true}
+    type="radio"
+  />,
+  .c0 {
+  vertical-align: sub;
+  font-size: 0.7em;
+  margin-right: 0.15em;
+}
+
+<label>
+    <span
+      className="c0"
+    />
+  </label>,
+]
+`;
