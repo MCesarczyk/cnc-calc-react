@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import languages from "../../../assets/fixtures/languages";
-import FormButtons from "../../../components/FormButtons";
 import FeedOptionSelector from "../FeedOptionSelector";
 import {
     Form,
@@ -12,6 +11,7 @@ import {
     FormInput
 } from "../styled.js";
 import { TextSub } from "../../../components/TextSub";
+import FormFooter from "../../../components/Form/Footer";
 
 const Form3 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -113,7 +113,7 @@ const Form3 = ({ legend, langId }) => {
                         />
                     </FormLabel>
                 </FieldsContainer>
-                <FormButtons langID={langId} />
+                <FormFooter langID={langId} />
             </Fieldset>
         </Form>
     )

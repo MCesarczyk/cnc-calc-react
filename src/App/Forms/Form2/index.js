@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import languages from "../../../assets/fixtures/languages";
-import FormButtons from "../../../components/FormButtons";
 import { 
     Form, 
     Fieldset, 
@@ -11,6 +10,7 @@ import {
     FormInput 
 } from "../styled.js";
 import { TextSub } from "../../../components/TextSub";
+import FormFooter from "../../../components/Form/Footer";
 
 
 const Form1 = ({ legend, langId }) => {
@@ -93,7 +93,7 @@ const Form1 = ({ legend, langId }) => {
                         />
                     </FormLabel>
                 </FieldsContainer>
-                <FormButtons langID={langId}/>
+                <FormFooter langID={langId}/>
             </Fieldset>
         </Form>
     )

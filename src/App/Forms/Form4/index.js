@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import languages from "../../../assets/fixtures/languages";
-import FormButtons from "../../../components/FormButtons";
 import tapDiameters from "./tapDiameters";
 import { 
     FormLabel, 
@@ -13,6 +12,7 @@ import {
     FormInput 
 } from "../styled";
 import { TextSub } from "../../../components/TextSub";
+import FormFooter from "../../../components/Form/Footer";
 
 const Form4 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -125,7 +125,7 @@ const Form4 = ({ legend, langId }) => {
                         />
                     </FormLabel>
                 </FieldsContainer>
-                <FormButtons langID={langId}/>
+                <FormFooter langID={langId}/>
             </Fieldset>
         </Form>
     )
