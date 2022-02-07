@@ -1,6 +1,6 @@
 import React from "react";
-import renderer, { act } from "react-test-renderer";
-import Link from "../components/Link";
+import renderer from "react-test-renderer";
+import Link from ".";
 import "jest-styled-components";
 
 test("Link with states rendering properly", () => {

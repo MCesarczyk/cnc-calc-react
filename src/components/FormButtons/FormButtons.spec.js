@@ -1,8 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import FormButtons from "../components/FormButtons";
+import FormButtons from ".";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../theme";
+import { theme } from "../../theme";
 import "jest-styled-components";
 
 test("Form buttons rendered properly", () => {

@@ -1,9 +1,9 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import styled, { ThemeProvider } from "styled-components";
-import { theme } from "../theme";
+import { ThemeProvider } from "styled-components";
+import { theme } from "../../../theme";
 import "jest-styled-components";
-import { Button } from "../components/FormButtons/Button";
+import { Button } from ".";
 
 test("Form button with states rendering properly", () => {
   const component = renderer.create(
