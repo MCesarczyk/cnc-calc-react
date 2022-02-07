@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import languages from "../../../assets/fixtures/languages";
 import Form from "../../../components/Form";
-import FormButtons from "../../../components/FormButtons";
+import FormFooter from "../../../components/Form/Footer";
 import FormField from "../../../components/FormField";
 
 const Form1 = ({ legend, langId }) => {
@@ -29,7 +29,7 @@ const Form1 = ({ legend, langId }) => {
       legend={legend}
       onSubmit={onFormSubmit}
       onReset={onFormReset}
-      footerContent={<FormButtons langID={langId} />}
+      footerContent={<FormFooter langID={langId} />}
     >
       <FormField
         name={languages[langId].diameter.name}

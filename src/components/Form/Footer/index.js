@@ -1,8 +1,8 @@
-import languages from "../../assets/fixtures/languages";
+import languages from "../../../assets/fixtures/languages";
 import { ButtonsContainer } from "./styled";
-import { Button } from "./Button";
+import { Button } from "../../Button";
 
-const FormButtons = ({ langID: langId }) => (
+const FormFooter = ({ langID: langId }) => (
     <ButtonsContainer>
         <Button type="submit">
             {languages[langId]?.buttonLabel.submit}
@@ -13,4 +13,4 @@ const FormButtons = ({ langID: langId }) => (
     </ButtonsContainer>
 );
 
-export default FormButtons;
+export default FormFooter;
