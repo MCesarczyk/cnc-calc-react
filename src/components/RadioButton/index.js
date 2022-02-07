@@ -5,17 +5,17 @@ const RadioButton = ({name, option, parameter, onChange}) => (
     <input
       type="radio"
       name={name}
-      id={option.id}
-      value={option.id}
-      checked={parameter === option.id}
+      id={option?.id}
+      value={option?.id}
+      checked={parameter === option?.id}
       onChange={onChange}
     />
-    <label htmlFor={option.id}>
-      {option.name}
+    <label htmlFor={option?.id}>
+      {option?.name}
       <TextSub>
-        {option.sub}
+        {option?.sub}
       </TextSub>
-      {option.unit}
+      {option?.unit}
     </label>
   </>
 );
