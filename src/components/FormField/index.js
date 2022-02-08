@@ -12,6 +12,7 @@ const FormField = ({
   step,
   placeholder,
   required,
+  disabled,
   readOnly,
   autoFocus,
   onChange
@@ -35,6 +36,7 @@ const FormField = ({
         step={step}
         placeholder={placeholder}
         required={required}
+        disabled={disabled}
         readOnly={readOnly}
         autoFocus={autoFocus}
         onChange={onChange}

@@ -1,16 +1,8 @@
 import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
-import { 
-    Form, 
-    Fieldset, 
-    Legend, 
-    FieldsContainer, 
-    FormLabel, 
-    FormInnerText, 
-    FormInput 
-} from "../../components/Forms/styled";
-import { TextSub } from "../../components/TextSub";
+import Form from "../../components/Form";
 import FormFooter from "../../components/Form/Footer";
+import FormField from "../../components/FormField";
 
 
 const Form1 = ({ legend, langId }) => {
@@ -34,68 +26,46 @@ const Form1 = ({ legend, langId }) => {
     };
 
     return (
-        <Form onSubmit={onFormSubmit} onReset={onFormReset} >
-            <Fieldset>
-                <Legend>{legend}</Legend>
-                <FieldsContainer>
-                    <FormLabel>
-                        <FormInnerText>
-                            <label>
-                                {languages[langId].diameter.name}
-                                {languages[langId].diameter.unit}
-                            </label>
-                        </FormInnerText>
-                        <FormInput
-                            ref={inputRef}
-                            value={diameter}
-                            type="number"
-                            min="0.0001"
-                            step="0.0001"
-                            placeholder={languages[langId].diameter.placeholder}
-                            required
-                            onChange={({ target }) => setDiameter(target.value)}
-                        />
-                    </FormLabel>
-                    <FormLabel>
-                        <FormInnerText>
-                            <label>
-                                {languages[langId].cutSpeed.name}
-                                <TextSub>
-                                    {languages[langId].cutSpeed.sub}
-                                </TextSub>
-                                {languages[langId].cutSpeed.unit}
-                            </label>
-                        </FormInnerText>
-                        <FormInput
-                            value={cuttingSpeed}
-                            type="number"
-                            min="1"
-                            step="1"
-                            placeholder={languages[langId].cutSpeed.placeholder}
-                            required
-                            onChange={({ target }) => setCuttingSpeed(target.value)}
-                        />
-                    </FormLabel>
-                    <FormLabel>
-                        <FormInnerText>
-                            <label>
-                                {languages[langId].rotSpeed.name}
-                                <TextSub>
-                                    {languages[langId].rotSpeed.sub}
-                                </TextSub>
-                                {languages[langId].rotSpeed.unit}
-                            </label>
-                        </FormInnerText>
-                        <FormInput
-                            value={rotationSpeed}
-                            readOnly
-                            placeholder={languages[langId].rotSpeed.placeholder}
-                        />
-                    </FormLabel>
-                </FieldsContainer>
-                <FormFooter langID={langId}/>
-            </Fieldset>
-        </Form>
+        <Form
+            legend={legend}
+            onSubmit={onFormSubmit}
+            onReset={onFormReset}
+            footerContent={<FormFooter langID={langId} />}
+        >
+            <FormField
+                name={languages[langId].diameter.name}
+                unit={languages[langId].diameter.unit}
+                inputRef={inputRef}
+                value={diameter}
+                type="number"
+                min="0.0001"
+                step="0.0001"
+                placeholder={languages[langId].diameter.placeholder}
+                required
+                autoFocus
+                onChange={({ target }) => setDiameter(target.value)}
+            />
+            <FormField
+                name={languages[langId].cutSpeed.name}
+                sub={languages[langId].cutSpeed.sub}
+                unit={languages[langId].cutSpeed.unit}
+                value={cuttingSpeed}
+                type="number"
+                min="1"
+                step="1"
+                placeholder={languages[langId].cutSpeed.placeholder}
+                required
+                onChange={({ target }) => setCuttingSpeed(target.value)}
+            />
+            <FormField
+                name={languages[langId].rotSpeed.name}
+                sub={languages[langId].rotSpeed.sub}
+                unit={languages[langId].rotSpeed.unit}
+                value={rotationSpeed}
+                readOnly
+                placeholder={languages[langId].rotSpeed.placeholder}
+            />
+        </Form >
     )
 };
 

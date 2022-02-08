@@ -1,18 +1,10 @@
 import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
-import tapDiameters from "./tapDiameters";
-import { 
-    FormLabel, 
-    Select, 
-    Form, 
-    Fieldset, 
-    Legend, 
-    FieldsContainer, 
-    FormInnerText, 
-    FormInput 
-} from "../../components/Forms/styled";
-import { TextSub } from "../../components/TextSub";
+import tapDiameters from "../../assets/fixtures/tapDiameters";
+import Form from "../../components/Form";
+import FormField from "../../components/FormField";
 import FormFooter from "../../components/Form/Footer";
+import { FormLabel, Select } from "./styled";
 
 const Form4 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -70,63 +62,43 @@ const Form4 = ({ legend, langId }) => {
     );
 
     return (
-        <Form onSubmit={onFormSubmit} onReset={onFormReset} >
-            <Fieldset>
-                <Legend>{legend}</Legend>
-                <FieldsContainer>
-                    <FormLabel>
-                        <FormInnerText>
-                            <label>
-                                {languages[langId].rotSpeed.name}
-                                <TextSub>
-                                    {languages[langId].rotSpeed.sub}
-                                </TextSub>
-                                {languages[langId].rotSpeed.unit}
-                            </label>
-                        </FormInnerText>
-                        <FormInput
-                            ref={inputRef}
-                            value={rotationSpeed}
-                            type="number"
-                            min="1"
-                            step="1"
-                            placeholder={languages[langId].rotSpeed.placeholder}
-                            required
-                            onChange={({ target }) => setRotationSpeed(target.value)}
-                        />
-                    </FormLabel>
+        <Form
+            legend={legend}
+            onSubmit={onFormSubmit}
+            onReset={onFormReset}
+            footerContent={<FormFooter langID={langId} />}
+        >
+            <FormField
+                name={languages[langId].rotSpeed.name}
+                sub={languages[langId].rotSpeed.sub}
+                unit={languages[langId].rotSpeed.unit}
+                inputRef={inputRef}
+                value={rotationSpeed}
+                type="number"
+                min="1"
+                step="1"
+                placeholder={languages[langId].rotSpeed.placeholder}
+                required
+                autoFocus
+                onChange={({ target }) => setRotationSpeed(target.value)}
+            />
 
-                    {createTapDiameterList}
+            {createTapDiameterList}
 
-                    <FormLabel>
-                        <FormInnerText>
-                            <label>
-                                {languages[langId].pitch.name}
-                                {languages[langId].pitch.unit}
-                            </label>
-                        </FormInnerText>
-                        <FormInput
-                            value={pitch}
-                            placeholder={languages[langId].pitch.placeholder}
-                            readOnly
-                        />
-                    </FormLabel>
-                    <FormLabel>
-                        <FormInnerText>
-                            <label>
-                                {languages[langId].feedrate.name}
-                                {languages[langId].feedrate.unit}
-                            </label>
-                        </FormInnerText>
-                        <FormInput
-                            value={feedValue}
-                            readOnly
-                            placeholder={languages[langId].feedrate.placeholder}
-                        />
-                    </FormLabel>
-                </FieldsContainer>
-                <FormFooter langID={langId}/>
-            </Fieldset>
+            <FormField
+                name={languages[langId].pitch.name}
+                unit={languages[langId].pitch.unit}
+                value={pitch}
+                placeholder={languages[langId].pitch.placeholder}
+                readOnly
+            />
+            <FormField
+                name={languages[langId].feedrate.name}
+                unit={languages[langId].feedrate.unit}
+                value={feedValue}
+                readOnly
+                placeholder={languages[langId].feedrate.placeholder}
+            />
         </Form>
     )
 };
