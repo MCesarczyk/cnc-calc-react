@@ -1,6 +1,6 @@
 import { createFeedOptions } from "../../../assets/utils/createFeedOptions";
 import RadioButton from "../../../components/RadioButton";
-import { FormInput, FormLabel, RadioButtonContainer } from "./styled";
+import { Input, FormLabel, RadioButtonContainer } from "./styled";
 
 const FeedOptionSelector = ({
   langId,
@@ -26,7 +26,7 @@ const FeedOptionSelector = ({
                 onChange={onOptionChange}
               />
             </RadioButtonContainer>
-            <FormInput
+            <Input
               value={(feedOption.id === feedType) ? feedFactor1 : ""}
               type="number"
               min="0.01"

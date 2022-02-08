@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
 import tapDiameters from "../../assets/fixtures/tapDiameters";
 import Form from "../../components/Form";
-import FormField from "../../components/FormField";
+import FormInput from "../../components/FormInput";
 import FormFooter from "../../components/Form/Footer";
 import { FormLabel, Select } from "./styled";
 
@@ -68,7 +68,7 @@ const Form4 = ({ legend, langId }) => {
             onReset={onFormReset}
             footerContent={<FormFooter langID={langId} />}
         >
-            <FormField
+            <FormInput
                 name={languages[langId].rotSpeed.name}
                 sub={languages[langId].rotSpeed.sub}
                 unit={languages[langId].rotSpeed.unit}
@@ -85,14 +85,14 @@ const Form4 = ({ legend, langId }) => {
 
             {createTapDiameterList}
 
-            <FormField
+            <FormInput
                 name={languages[langId].pitch.name}
                 unit={languages[langId].pitch.unit}
                 value={pitch}
                 placeholder={languages[langId].pitch.placeholder}
                 readOnly
             />
-            <FormField
+            <FormInput
                 name={languages[langId].feedrate.name}
                 unit={languages[langId].feedrate.unit}
                 value={feedValue}

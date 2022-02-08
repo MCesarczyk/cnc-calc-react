@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
 import Form from "../../components/Form";
 import FormFooter from "../../components/Form/Footer";
-import FormField from "../../components/FormField";
+import FormInput from "../../components/FormInput";
 
 const Form1 = ({ legend, langId }) => {
   const [diameter, setDiameter] = useState("");
@@ -31,7 +31,7 @@ const Form1 = ({ legend, langId }) => {
       onReset={onFormReset}
       footerContent={<FormFooter langID={langId} />}
     >
-      <FormField
+      <FormInput
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         inputRef={inputRef}
@@ -44,7 +44,7 @@ const Form1 = ({ legend, langId }) => {
         autoFocus
         onChange={({ target }) => setDiameter(target.value - 0)}
       />
-      <FormField
+      <FormInput
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
@@ -56,7 +56,7 @@ const Form1 = ({ legend, langId }) => {
         required
         onChange={({ target }) => setRotationSpeed(target.value)}
       />
-      <FormField
+      <FormInput
         name={languages[langId].cutSpeed.name}
         sub={languages[langId].cutSpeed.sub}
         unit={languages[langId].cutSpeed.unit}

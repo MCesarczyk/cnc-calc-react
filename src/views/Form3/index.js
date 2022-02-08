@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
 import Form from "../../components/Form";
-import FormField from "../../components/FormField";
+import FormInput from "../../components/FormInput";
 import FormFooter from "../../components/Form/Footer";
 import FeedOptionSelector from "./FeedOptionSelector";
 
@@ -45,7 +45,7 @@ const Form3 = ({ legend, langId }) => {
             onReset={onFormReset}
             footerContent={<FormFooter langID={langId} />}
         >
-            <FormField
+            <FormInput
                 name={languages[langId].rotSpeed.name}
                 sub={languages[langId].rotSpeed.sub}
                 unit={languages[langId].rotSpeed.unit}
@@ -69,7 +69,7 @@ const Form3 = ({ legend, langId }) => {
                 setFeedFactor2={setFeedFactor2}
             />
 
-            <FormField
+            <FormInput
                 name={languages[langId].teethNumber.name}
                 value={(feedType === "FPT") ? feedFactor2 : ""}
                 type="number"
@@ -80,7 +80,7 @@ const Form3 = ({ legend, langId }) => {
                 disabled={feedType === "FPR"}
                 onChange={({ target }) => setFeedFactor2(target.value)}
             />
-            <FormField
+            <FormInput
                 name={languages[langId].feedrate.name}
                 unit={languages[langId].feedrate.unit}
                 value={feedValue}

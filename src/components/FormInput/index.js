@@ -1,7 +1,7 @@
 import { TextSub } from "../TextSub";
-import { InputLabelText, FormInput, FieldWrapper } from "./styled";
+import { InputLabelText, Input, FieldWrapper } from "./styled";
 
-const FormField = ({
+const FormInput = ({
   name,
   sub,
   unit,
@@ -28,7 +28,7 @@ const FormField = ({
           {unit}
         </label>
       </InputLabelText>
-      <FormInput
+      <Input
         ref={inputRef}
         value={value}
         type={type}
@@ -45,4 +45,4 @@ const FormField = ({
   )
 };
 
-export default FormField;
+export default FormInput;

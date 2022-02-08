@@ -3,14 +3,14 @@ import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
-import { FieldWrapper, FormInput, InputLabelText } from "./styled";
+import { FieldWrapper, Input, InputLabelText } from "./styled";
 
-test("FormField component rendering properly", () => {
+test("FormInput component rendering properly", () => {
   const component = renderer.create(
     <ThemeProvider theme={theme} >
       <FieldWrapper>
         <InputLabelText></InputLabelText>
-        <FormInput />
+        <Input />
       </FieldWrapper>
     </ThemeProvider>
   );
@@ -23,7 +23,7 @@ test("FormField component rendering properly", () => {
 test("FormInput changed styles based on status", () => {
   const input = renderer.create(
     <ThemeProvider theme={theme}>
-      <FormInput />
+      <Input />
     </ThemeProvider>
   );
 
