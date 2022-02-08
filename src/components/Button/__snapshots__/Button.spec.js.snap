@@ -6,9 +6,8 @@ exports[`Button with states rendering properly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-basis: 200px;
-  -ms-flex-preferred-size: 200px;
-  flex-basis: 200px;
+  min-width: 12rem;
+  width: 100%;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -16,8 +15,8 @@ exports[`Button with states rendering properly 1`] = `
   color: #fff;
   background-color: #1e3246;
   border: solid #1e3246;
-  padding: 5px;
-  border-radius: 20px;
+  padding: 0.25rem;
+  border-radius: 1.5rem;
 }
 
 .c0:hover {

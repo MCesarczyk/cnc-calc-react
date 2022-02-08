@@ -11,12 +11,12 @@ export const Item = styled(Link)`
     background-color: ${({ theme }) => theme.color.primary};
     display: block;
     font-size: 1.25rem;
-    border-radius: 20px;
+    border-radius: 1.5rem;
     padding: 0.5rem 1.5rem;
     margin: 1rem;
     font-weight: 400;
     font-family: 'Ubuntu', sans-serif;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 0.75rem auto;
     transition: all 0.3s ease-in-out;
     transition: transform 0.1s ease-in-out;
 
