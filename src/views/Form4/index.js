@@ -4,7 +4,7 @@ import tapDiameters from "../../assets/fixtures/tapDiameters";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormFooter from "../../components/Form/Footer";
-import { FormLabel, Select } from "./styled";
+import FormSelect from "../../components/FormSelect";
 
 const Form4 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -37,30 +37,6 @@ const Form4 = ({ legend, langId }) => {
         );
     };
 
-    const createTapDiameterList = (
-        <FormLabel>
-            <label htmlFor="diameterSelector">
-                {languages[langId].diameter.name}
-                {languages[langId].diameter.unit}
-            </label>
-            <Select
-                id="diameterSelector"
-                onChange={onOptionChange}
-                value={diameter}
-            >
-                {
-                    tapDiameters.map(tapDiameter => (
-                        <option
-                            key={tapDiameter.id}
-                        >
-                            {tapDiameter.diameter}
-                        </option>
-                    ))
-                }
-            </Select>
-        </FormLabel>
-    );
-
     return (
         <Form
             legend={legend}
@@ -82,9 +58,14 @@ const Form4 = ({ legend, langId }) => {
                 autoFocus
                 onChange={({ target }) => setRotationSpeed(target.value)}
             />
-
-            {createTapDiameterList}
-
+            <FormSelect
+                name={languages[langId].diameter.name}
+                unit={languages[langId].diameter.unit}
+                id="diameterSelector"
+                onChange={onOptionChange}
+                value={diameter}
+                data={tapDiameters}
+            />
             <FormInput
                 name={languages[langId].pitch.name}
                 unit={languages[langId].pitch.unit}
