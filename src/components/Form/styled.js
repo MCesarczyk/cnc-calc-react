@@ -20,4 +20,8 @@ export const FieldsContainer = styled.div`
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
+
+    @media (max-width: 480px) {
+        gap: 0.5rem;
+    }
 `;

@@ -58,6 +58,12 @@ exports[`Form component rendering properly 1`] = `
   margin-bottom: 1.5rem;
 }
 
+@media (max-width:480px) {
+  .c3 {
+    gap: 0.5rem;
+  }
+}
+
 <form
   className="c0"
 >

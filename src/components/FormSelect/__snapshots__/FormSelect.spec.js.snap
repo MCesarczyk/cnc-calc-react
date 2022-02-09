@@ -37,12 +37,15 @@ exports[`FormSelect component rendering properly 1`] = `
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+    gap: 0.25rem;
   }
 }
 
 @media (max-width:480px) {
   .c1 {
-    text-align: center;
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
   }
 }
 

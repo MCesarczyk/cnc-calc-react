@@ -15,6 +15,14 @@ exports[`Radio button rendered properly 1`] = `
   gap: 10px;
 }
 
+@media (max-width:480px) {
+  .c0 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
 <div
   className="c0"
 >

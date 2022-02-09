@@ -9,5 +9,6 @@ export const FieldWrapper = styled.div`
     @media (max-width: 480px) {
         flex-direction: column;
         justify-content: center;
+        gap: 0.25rem;
     }
 `;

@@ -47,6 +47,14 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
 }
 
 @media (max-width:480px) {
+  .c1 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width:480px) {
   .c0 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
@@ -55,6 +63,7 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+    gap: 0.25rem;
   }
 }
 
