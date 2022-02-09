@@ -22,7 +22,7 @@ exports[`FormSelect component rendering properly 1`] = `
 }
 
 .c2 {
-  min-width: 222px;
+  min-width: 226px;
   border: solid 1px #1e3246;
   border-radius: 5px;
   padding: 5px;

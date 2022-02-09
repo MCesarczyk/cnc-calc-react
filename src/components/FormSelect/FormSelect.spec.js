@@ -5,7 +5,7 @@ import { theme } from "../../theme";
 import "jest-styled-components";
 import { FieldWrapper } from "../FieldWrapper";
 import { Label } from "../Label";
-import { Select } from "./styled";
+import { Select } from "../Select";
 
 test("FormSelect component rendering properly", () => {
   const component = renderer.create(

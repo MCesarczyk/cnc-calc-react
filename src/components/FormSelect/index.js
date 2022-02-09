@@ -1,7 +1,7 @@
 import { FieldWrapper } from "../FieldWrapper";
 import { Label } from "../Label";
 import { TextSub } from "../TextSub";
-import { Select } from "./styled";
+import { Select } from "../Select";
 
 const FormSelect = ({
   name,
