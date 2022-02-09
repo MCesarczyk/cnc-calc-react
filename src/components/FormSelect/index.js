@@ -1,6 +1,7 @@
 import { FieldWrapper } from "../FieldWrapper";
+import { Label } from "../Label";
 import { TextSub } from "../TextSub";
-import { InputLabelText, Select } from "./styled";
+import { Select } from "./styled";
 
 const FormSelect = ({
   name,
@@ -13,7 +14,7 @@ const FormSelect = ({
 }) => {
   return (
     <FieldWrapper>
-      <InputLabelText>
+      <Label>
         <label htmlFor={id}>
           {name}
           <TextSub>
@@ -21,7 +22,7 @@ const FormSelect = ({
           </TextSub>
           {unit}
         </label>
-      </InputLabelText>
+      </Label>
       <Select
         id={id}
         value={value}

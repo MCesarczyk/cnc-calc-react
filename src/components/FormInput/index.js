@@ -1,7 +1,7 @@
 import { FieldWrapper } from "../FieldWrapper";
 import { Input } from "../Input";
 import { TextSub } from "../TextSub";
-import { InputLabelText } from "./styled";
+import { Label } from "../Label";
 
 const FormInput = ({
   name,
@@ -21,7 +21,7 @@ const FormInput = ({
 }) => {
   return (
     <FieldWrapper>
-      <InputLabelText>
+      <Label>
         <label>
           {name}
           <TextSub>
@@ -29,7 +29,7 @@ const FormInput = ({
           </TextSub>
           {unit}
         </label>
-      </InputLabelText>
+      </Label>
       <Input
         ref={inputRef}
         value={value}

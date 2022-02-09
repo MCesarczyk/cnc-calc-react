@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const InputLabelText = styled.span`
+export const Label = styled.label`
     text-align: right;
 
     @media (max-width: 480px) {
