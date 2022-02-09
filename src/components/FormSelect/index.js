@@ -28,8 +28,8 @@ const FormSelect = ({
       >
         {
           data.map(item => (
-            <option key={item.id}>
-              {item.diameter}
+            <option key={item.key}>
+              {item.value}
             </option>
           ))
         }

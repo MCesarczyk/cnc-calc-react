@@ -1,10 +1,15 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
 import tapDiameters from "../../assets/fixtures/tapDiameters";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormFooter from "../../components/Form/Footer";
 import FormSelect from "../../components/FormSelect";
+
+const newArray = tapDiameters.map(record => ({
+    key: record.id,
+    value: record.diameter
+}));
 
 const Form4 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -64,7 +69,7 @@ const Form4 = ({ legend, langId }) => {
                 id="diameterSelector"
                 onChange={onOptionChange}
                 value={diameter}
-                data={tapDiameters}
+                data={newArray}
             />
             <FormInput
                 name={languages[langId].pitch.name}
