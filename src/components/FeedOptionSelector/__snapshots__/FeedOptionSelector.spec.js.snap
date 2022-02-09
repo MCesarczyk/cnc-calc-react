@@ -1,19 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FeedOptionSelector component rendering properly 1`] = `
-.c3 {
-  min-width: 200px;
-  border: solid 1px #1e3246;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.c3:invalid {
-  background-color: beige;
-}
-
-.c3:disabled {
-  background-color: #ddd;
+.c2 {
+  vertical-align: sub;
+  font-size: 0.7em;
+  margin-right: 0.15em;
 }
 
 .c0 {
@@ -40,16 +31,19 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   gap: 10px;
 }
 
-.c2 {
-  vertical-align: sub;
-  font-size: 0.7em;
-  margin-right: 0.15em;
+.c3 {
+  min-width: 200px;
+  border: solid 1px #1e3246;
+  border-radius: 5px;
+  padding: 5px;
 }
 
-@media (max-width:480px) {
-  .c3 {
-    width: 100%;
-  }
+.c3:invalid {
+  background-color: beige;
+}
+
+.c3:disabled {
+  background-color: #ddd;
 }
 
 @media (max-width:480px) {
@@ -61,6 +55,12 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+}
+
+@media (max-width:480px) {
+  .c3 {
+    width: 100%;
   }
 }
 

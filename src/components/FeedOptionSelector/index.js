@@ -1,6 +1,7 @@
 import { createFeedOptions } from "../../assets/utils/createFeedOptions";
 import RadioButton from "../RadioButton";
-import { Input, FormLabel, RadioButtonContainer } from "./styled";
+import { Input } from "../Input";
+import { FormLabel, RadioButtonContainer } from "./styled";
 
 const FeedOptionSelector = ({
   langId,

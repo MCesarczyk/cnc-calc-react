@@ -3,8 +3,9 @@ import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
-import { FormLabel, Input, RadioButtonContainer } from "./styled";
 import RadioButton from "../RadioButton";
+import { FormLabel, RadioButtonContainer } from "./styled";
+import { Input } from "../Input";
 
 test("FeedOptionSelector component rendering properly", () => {
   const component = renderer.create(
