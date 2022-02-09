@@ -6,7 +6,7 @@ export const Input = styled.input`
     border-radius: 5px;
     padding: 5px;
 
-    @media (max-width: 480px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
         width: 100%;
     }
 

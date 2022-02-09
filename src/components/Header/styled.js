@@ -3,14 +3,11 @@ import styled from "styled-components";
 export const Headline = styled.h1`
     color: ${({theme}) => theme.color.primaryContrast};
     background-color: ${({theme}) => theme.color.primary};
-    border-radius: 25px;
-    padding: 5px 25px;
+    border-radius: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 2rem;
     font-weight: 300;
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
     margin: 0 auto 10px auto;
-
-    @media (max-width: 375px) {
-        font-size: 28px;
-    }
 `;

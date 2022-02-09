@@ -21,7 +21,7 @@ export const FieldsContainer = styled.div`
     gap: 1rem;
     margin-bottom: 1.5rem;
 
-    @media (max-width: 480px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
         gap: 0.5rem;
     }
 `;

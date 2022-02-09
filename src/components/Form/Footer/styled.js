@@ -7,7 +7,7 @@ export const ButtonsContainer = styled.div`
     justify-content: center;
     gap: 0.75rem;
 
-    @media (max-width: 480px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
         flex-direction: column;
         align-items: stretch;
     }
