@@ -37,6 +37,14 @@ const App = () => {
         <main>
           <Routes>
             <Route
+              path="/"
+              element={<Navigate replace to="/surface-speed" />}
+            />
+            <Route
+              path="/cnc-calc-react"
+              element={<Navigate replace to="/surface-speed" />}
+            />
+            <Route
               path="/surface-speed"
               element={<SurfaceSpeedForm langId={langId} />}
             />
@@ -51,10 +59,6 @@ const App = () => {
             <Route
               path="/tapping-feed"
               element={<TappingFeedrateForm langId={langId} />}
-            />
-            <Route
-              path="/"
-              element={<Navigate replace to="/surface-speed" />}
             />
           </Routes>
         </main>
