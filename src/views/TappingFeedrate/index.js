@@ -1,51 +1,54 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
+import tapDiameters from "../../assets/fixtures/tapDiameters";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormFooter from "../../components/Form/Footer";
-import FeedOptionSelector from "../../components/FeedOptionSelector";
+import FormSelect from "../../components/FormSelect";
 
-const Form3 = ({ legend, langId }) => {
+const newArray = tapDiameters.map(record => ({
+    key: record.id,
+    value: record.diameter
+}));
+
+const TappingFeedrateForm = ({ langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
-    const [feedFactor1, setFeedFactor1] = useState("");
-    const [feedFactor2, setFeedFactor2] = useState("");
-    const [feedType, setFeedType] = useState("FPR");
+    const [diameter, setDiameter] = useState("");
+    const [pitch, setPitch] = useState("");
     const [feedValue, setFeedValue] = useState("");
     const inputRef = useRef(null);
 
-    useEffect(() => {
-        setFeedFactor1("");
-        setFeedFactor2("");
-    }, [feedType])
-
     const onFormSubmit = (event) => {
         event.preventDefault();
-        if (feedType === "FPR") {
-            setFeedValue((rotationSpeed * feedFactor1).toFixed());
-        } else {
-            setFeedValue((rotationSpeed * feedFactor1 * feedFactor2).toFixed());
-        }
+        setFeedValue((rotationSpeed * pitch).toFixed());
         inputRef.current.focus();
     };
 
     const onFormReset = (event) => {
         event.preventDefault();
         setRotationSpeed("");
-        setFeedType("FPR");
-        setFeedFactor1("");
-        setFeedFactor2("");
+        setDiameter("");
+        setPitch("");
         setFeedValue("");
         inputRef.current.focus();
     };
 
+    const onOptionChange = ({ target }) => {
+        setDiameter(target.value);
+        setPitch(
+            tapDiameters[
+                tapDiameters.findIndex(({ diameter }) => diameter.toString() === target.value)
+            ].pitch
+        );
+    };
+
     return (
         <Form
-            legend={legend}
+            legend={languages[langId].form4Legend}
             onSubmit={onFormSubmit}
             onReset={onFormReset}
             footerContent={<FormFooter langID={langId} />}
         >
-
             <FormInput
                 name={languages[langId].rotSpeed.name}
                 sub={languages[langId].rotSpeed.sub}
@@ -60,27 +63,21 @@ const Form3 = ({ legend, langId }) => {
                 autoFocus
                 onChange={({ target }) => setRotationSpeed(target.value)}
             />
-
-            <FeedOptionSelector
-                langId={langId}
-                feedType={feedType}
-                setFeedType={setFeedType}
-                feedFactor1={feedFactor1}
-                setFeedFactor1={setFeedFactor1}
+            <FormSelect
+                name={languages[langId].diameter.name}
+                unit={languages[langId].diameter.unit}
+                id="diameterSelector"
+                onChange={onOptionChange}
+                value={diameter}
+                data={newArray}
             />
-
             <FormInput
-                name={languages[langId].teethNumber.name}
-                value={(feedType === "FPT") ? feedFactor2 : ""}
-                type="number"
-                min="1"
-                step="1"
-                placeholder={languages[langId].teethNumber.placeholder}
-                required
-                disabled={feedType === "FPR"}
-                onChange={({ target }) => setFeedFactor2(target.value)}
+                name={languages[langId].pitch.name}
+                unit={languages[langId].pitch.unit}
+                value={pitch}
+                placeholder={languages[langId].pitch.placeholder}
+                readOnly
             />
-
             <FormInput
                 name={languages[langId].feedrate.name}
                 unit={languages[langId].feedrate.unit}
@@ -88,9 +85,8 @@ const Form3 = ({ legend, langId }) => {
                 readOnly
                 placeholder={languages[langId].feedrate.placeholder}
             />
-
         </Form>
     )
 };
 
-export default Form3;
+export default TappingFeedrateForm;

@@ -5,10 +5,10 @@ import Switcher from "./features/Switcher";
 import languages from "./assets/fixtures/languages";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
-import Form1 from "./views/Form1";
-import Form2 from "./views/Form2";
-import Form3 from "./views/Form3";
-import Form4 from "./views/Form4";
+import SurfaceSpeedForm from "./views/SurfaceSpeed";
+import ToolRotationForm from "./views/ToolRotation";
+import LinearFeedrateForm from "./views/LinearFeedrate";
+import TappingFeedrateForm from "./views/TappingFeedrate";
 import { Wrapper } from "./components/Wrapper/styled";
 import Navigation from "./features/Navigation";
 
@@ -29,7 +29,7 @@ const App = () => {
       />
 
       <Wrapper>
-        <Navigation 
+        <Navigation
           languages={languages}
           langId={langId}
         />
@@ -38,39 +38,19 @@ const App = () => {
           <Routes>
             <Route
               path="/surface-speed"
-              element={
-                <Form1
-                  legend={languages[langId].form1Legend}
-                  langId={langId}
-                />
-              }
+              element={<SurfaceSpeedForm langId={langId} />}
             />
             <Route
               path="/spindle-speed"
-              element={
-                <Form2
-                  legend={languages[langId].form2Legend}
-                  langId={langId}
-                />
-              }
+              element={<ToolRotationForm langId={langId} />}
             />
             <Route
               path="/feedrate"
-              element={
-                <Form3
-                  legend={languages[langId].form3Legend}
-                  langId={langId}
-                />
-              }
+              element={<LinearFeedrateForm langId={langId} />}
             />
             <Route
               path="/tapping-feed"
-              element={
-                <Form4
-                  legend={languages[langId].form4Legend}
-                  langId={langId}
-                />
-              }
+              element={<TappingFeedrateForm langId={langId} />}
             />
             <Route
               path="/"

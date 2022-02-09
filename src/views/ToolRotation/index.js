@@ -5,7 +5,7 @@ import FormFooter from "../../components/Form/Footer";
 import FormInput from "../../components/FormInput";
 
 
-const Form1 = ({ legend, langId }) => {
+const ToolRotationForm = ({ langId }) => {
     const [diameter, setDiameter] = useState("");
     const [cuttingSpeed, setCuttingSpeed] = useState("");
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -27,7 +27,7 @@ const Form1 = ({ legend, langId }) => {
 
     return (
         <Form
-            legend={legend}
+            legend={languages[langId].form2Legend}
             onSubmit={onFormSubmit}
             onReset={onFormReset}
             footerContent={<FormFooter langID={langId} />}
@@ -69,4 +69,4 @@ const Form1 = ({ legend, langId }) => {
     )
 };
 
-export default Form1;
+export default ToolRotationForm;

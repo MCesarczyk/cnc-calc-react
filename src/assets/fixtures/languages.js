@@ -6,7 +6,7 @@ const languages = [
     section2Title: "Threading/tapping",
     form1Legend: "Surface cutting speed",
     form2Legend: "Tool rotational speed",
-    form3Legend: "Feedrate value",
+    form3Legend: "Linear feedrate",
     form4Legend: "Tapping feedrate",
     diameter: {
       name: "D",
