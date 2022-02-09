@@ -1,8 +1,7 @@
 import { createFeedOptions } from "../../assets/utils/createFeedOptions";
 import RadioButton from "../RadioButton";
-import { Input } from "../Input";
-import { RadioButtonContainer } from "./styled";
 import { FieldWrapper } from "../FieldWrapper";
+import { Input } from "../Input";
 
 const FeedOptionSelector = ({
   langId,
@@ -20,14 +19,12 @@ const FeedOptionSelector = ({
       {
         feedOptions.map(feedOption => (
           <FieldWrapper key={feedOption.id}>
-            <RadioButtonContainer>
-              <RadioButton
-                name="feedType"
-                option={feedOption}
-                parameter={feedType}
-                onChange={onOptionChange}
-              />
-            </RadioButtonContainer>
+            <RadioButton
+              name="feedType"
+              option={feedOption}
+              parameter={feedType}
+              onChange={onOptionChange}
+            />
             <Input
               value={(feedOption.id === feedType) ? feedFactor1 : ""}
               type="number"

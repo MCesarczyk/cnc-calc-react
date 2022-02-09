@@ -15,21 +15,6 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   gap: 10px;
 }
 
-.c3 {
-  min-width: 200px;
-  border: solid 1px #1e3246;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.c3:invalid {
-  background-color: beige;
-}
-
-.c3:disabled {
-  background-color: #ddd;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -46,10 +31,19 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   justify-content: space-between;
 }
 
-@media (max-width:480px) {
-  .c3 {
-    width: 100%;
-  }
+.c3 {
+  min-width: 200px;
+  border: solid 1px #1e3246;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.c3:invalid {
+  background-color: beige;
+}
+
+.c3:disabled {
+  background-color: #ddd;
 }
 
 @media (max-width:480px) {
@@ -61,6 +55,12 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+}
+
+@media (max-width:480px) {
+  .c3 {
+    width: 100%;
   }
 }
 

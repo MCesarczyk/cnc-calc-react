@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const RadioButtonContainer = styled.div`
+export const RadioButtonWrapper = styled.div`
     display: flex;
     gap: 10px;
 `;
