@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const FormLabel = styled.label`
+export const FieldWrapper = styled.div`
     display: flex;
-    gap: 5px;
+    gap: 0.5rem;
     align-items: center;
     justify-content: space-between;
 
@@ -10,11 +10,4 @@ export const FormLabel = styled.label`
         flex-direction: column;
         justify-content: center;
     }
-`;
-
-export const Select = styled.select`
-    min-width: 222px;
-    border: solid 1px ${({ theme }) => theme.color.primary};
-    border-radius: 5px;
-    padding: 5px;
 `;

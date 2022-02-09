@@ -4,18 +4,19 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
 import RadioButton from "../RadioButton";
-import { FormLabel, RadioButtonContainer } from "./styled";
+import { RadioButtonContainer } from "./styled";
 import { Input } from "../Input";
+import { FieldWrapper } from "../FieldWrapper";
 
 test("FeedOptionSelector component rendering properly", () => {
   const component = renderer.create(
     <ThemeProvider theme={theme} >
-      <FormLabel>
+      <FieldWrapper>
         <RadioButtonContainer>
           <RadioButton />
         </RadioButtonContainer>
         <Input />
-      </FormLabel>
+      </FieldWrapper>
     </ThemeProvider>
   );
 

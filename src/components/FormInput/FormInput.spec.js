@@ -3,8 +3,9 @@ import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
-import { FieldWrapper, InputLabelText } from "./styled";
+import { InputLabelText } from "./styled";
 import { Input } from "../Input";
+import { FieldWrapper } from "../FieldWrapper";
 
 test("FormInput component rendering properly", () => {
   const component = renderer.create(

@@ -7,22 +7,6 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   margin-right: 0.15em;
 }
 
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 5px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -46,6 +30,28 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   background-color: #ddd;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@media (max-width:480px) {
+  .c3 {
+    width: 100%;
+  }
+}
+
 @media (max-width:480px) {
   .c0 {
     -webkit-flex-direction: column;
@@ -58,13 +64,7 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   }
 }
 
-@media (max-width:480px) {
-  .c3 {
-    width: 100%;
-  }
-}
-
-<label
+<div
   className="c0"
 >
   <div
@@ -83,5 +83,5 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   <input
     className="c3"
   />
-</label>
+</div>
 `;

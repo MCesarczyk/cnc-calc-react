@@ -1,6 +1,7 @@
+import { FieldWrapper } from "../FieldWrapper";
 import { Input } from "../Input";
 import { TextSub } from "../TextSub";
-import { InputLabelText, FieldWrapper } from "./styled";
+import { InputLabelText } from "./styled";
 
 const FormInput = ({
   name,

@@ -3,7 +3,8 @@ import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
-import { FieldWrapper, Select, InputLabelText } from "./styled";
+import { Select, InputLabelText } from "./styled";
+import { FieldWrapper } from "../FieldWrapper";
 
 test("FormSelect component rendering properly", () => {
   const component = renderer.create(
