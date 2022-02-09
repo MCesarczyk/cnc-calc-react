@@ -9,6 +9,7 @@ export const theme = {
         disabled: "#ddd"
     },
     breakpoint: {
-        mobileMax: "480px",
+        xs: "480px",
+        md: "768px"
     },
 }

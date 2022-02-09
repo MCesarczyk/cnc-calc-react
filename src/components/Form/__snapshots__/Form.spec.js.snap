@@ -2,6 +2,8 @@
 
 exports[`Form Footer rendered properly 1`] = `
 .c0 {
+  max-width: 30rem;
+  margin: 0 auto;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10,7 +12,19 @@ exports[`Form Footer rendered properly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  gap: 10px;
+  gap: 0.75rem;
+}
+
+@media (max-width:480px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: stretch;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
 }
 
 <div
@@ -21,15 +35,17 @@ exports[`Form Footer rendered properly 1`] = `
 exports[`Form component rendering properly 1`] = `
 .c0 {
   color: #1e3246;
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
 }
 
 .c1 {
-  border-radius: 20px;
+  border-radius: 2rem;
+  padding: 1rem;
 }
 
 .c2 {
   text-align: center;
+  margin: 0.5rem;
 }
 
 .c3 {
@@ -38,8 +54,14 @@ exports[`Form component rendering properly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width:480px) {
+  .c3 {
+    gap: 0.5rem;
+  }
 }
 
 <form

@@ -15,13 +15,18 @@ body {
   background-color: #fff;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 1.5rem 0.5rem;
   line-height: 1.15;
   font-family: 'Ubuntu', sans-serif;
   min-width: 248px;
+
+  @media (max-width: 480px) {
+    overflow-y: scroll;
+  }
 }
 
 button, a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 a {

@@ -1,7 +1,8 @@
 import { TextSub } from "../TextSub";
+import { RadioButtonWrapper } from "./styled";
 
-const RadioButton = ({name, option, parameter, onChange}) => (
-  <>
+const RadioButton = ({ name, option, parameter, onChange }) => (
+  <RadioButtonWrapper>
     <input
       type="radio"
       name={name}
@@ -17,7 +18,7 @@ const RadioButton = ({name, option, parameter, onChange}) => (
       </TextSub>
       {option?.unit}
     </label>
-  </>
+  </RadioButtonWrapper>
 );
 
 export default RadioButton;

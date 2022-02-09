@@ -2,13 +2,14 @@ import styled, { css } from "styled-components";
 
 export const Button = styled.button`
     display: flex;
-    flex-basis: 200px;
+    min-width: 12rem;
+    width: 100%;
     justify-content: center;
     color: ${({ theme }) => theme.color.primaryContrast};
     background-color: ${({ theme }) => theme.color.primary};
     border: solid ${({ theme }) => theme.color.primary};
-    padding: 5px;
-    border-radius: 20px;
+    padding: 0.25rem;
+    border-radius: 1.5rem;
 
     &:hover {
         filter: brightness(150%);

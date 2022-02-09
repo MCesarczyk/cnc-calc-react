@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select component rendering properly 1`] = `
+.c0 {
+  min-width: 226px;
+  border: solid 1px #1e3246;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+<select
+  className="c0"
+/>
+`;

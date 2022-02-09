@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedOptionSelector component rendering properly 1`] = `
+.c2 {
+  vertical-align: sub;
+  font-size: 0.7em;
+  margin-right: 0.15em;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c3 {
+  min-width: 200px;
+  border: solid 1px #1e3246;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.c3:invalid {
+  background-color: beige;
+}
+
+.c3:disabled {
+  background-color: #ddd;
+}
+
+@media (max-width:480px) {
+  .c1 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width:480px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width:480px) {
+  .c3 {
+    width: 100%;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+  >
+    <input
+      checked={true}
+      type="radio"
+    />
+    <label>
+      <span
+        className="c2"
+      />
+    </label>
+  </div>
+  <input
+    className="c3"
+  />
+</div>
+`;
