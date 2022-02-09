@@ -3,7 +3,7 @@ import languages from "../../assets/fixtures/languages";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormFooter from "../../components/Form/Footer";
-import FeedOptionSelector from "./FeedOptionSelector";
+import FeedOptionSelector from "../../components/FeedOptionSelector";
 
 const Form3 = ({ legend, langId }) => {
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -45,6 +45,7 @@ const Form3 = ({ legend, langId }) => {
             onReset={onFormReset}
             footerContent={<FormFooter langID={langId} />}
         >
+
             <FormInput
                 name={languages[langId].rotSpeed.name}
                 sub={languages[langId].rotSpeed.sub}
@@ -66,7 +67,6 @@ const Form3 = ({ legend, langId }) => {
                 setFeedType={setFeedType}
                 feedFactor1={feedFactor1}
                 setFeedFactor1={setFeedFactor1}
-                setFeedFactor2={setFeedFactor2}
             />
 
             <FormInput
@@ -80,6 +80,7 @@ const Form3 = ({ legend, langId }) => {
                 disabled={feedType === "FPR"}
                 onChange={({ target }) => setFeedFactor2(target.value)}
             />
+
             <FormInput
                 name={languages[langId].feedrate.name}
                 unit={languages[langId].feedrate.unit}
@@ -87,6 +88,7 @@ const Form3 = ({ legend, langId }) => {
                 readOnly
                 placeholder={languages[langId].feedrate.placeholder}
             />
+
         </Form>
     )
 };

@@ -1,5 +1,5 @@
-import { createFeedOptions } from "../../../assets/utils/createFeedOptions";
-import RadioButton from "../../../components/RadioButton";
+import { createFeedOptions } from "../../assets/utils/createFeedOptions";
+import RadioButton from "../RadioButton";
 import { Input, FormLabel, RadioButtonContainer } from "./styled";
 
 const FeedOptionSelector = ({

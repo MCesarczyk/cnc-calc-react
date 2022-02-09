@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
 import tapDiameters from "../../assets/fixtures/tapDiameters";
 import Form from "../../components/Form";
