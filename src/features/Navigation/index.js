@@ -1,7 +1,7 @@
 import { createRoutesList } from "../../assets/utils/createRoutesList";
 import { Item, List } from "./styled";
 
-const Navigation = ({ langId }) => {
+const Navigation = ({ langId, handleClose }) => {
 
   const routes = createRoutesList(langId);
 
@@ -11,7 +11,7 @@ const Navigation = ({ langId }) => {
         <li key={route.id}>
           <Item
             to={route.path}
-            onClick={()=>console.log('jedziemy')}
+            onClick={handleClose}
           >
             {route.label}
           </Item>

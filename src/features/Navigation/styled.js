@@ -10,6 +10,14 @@ export const NavigationWrapper = styled.div`
 `;
 
 export const MobileNavWrapper = styled.div`
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
+    display: block;
+  }
+`;
+
+export const SidebarNavWrapper = styled.div`
   position: absolute;
   left: 0;
   top: 0;
