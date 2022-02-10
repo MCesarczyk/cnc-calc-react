@@ -12,6 +12,7 @@ import TappingFeedrateForm from "./views/TappingFeedrate";
 import { Wrapper } from "./components/Wrapper/styled";
 import Navigation from "./features/Navigation";
 import Home from "./views/Home";
+import { NavigationWrapper } from "./features/Navigation/styled";
 
 const App = () => {
 
@@ -23,17 +24,18 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Header title={languages[langId].mainTitle} />
+      <Header langId={langId} />
       <Switcher
         languages={languages}
         changeLanguage={changeLanguage}
       />
 
       <Wrapper>
-        <Navigation
-          languages={languages}
-          langId={langId}
-        />
+        <NavigationWrapper>
+          <Navigation
+            langId={langId}
+          />
+        </NavigationWrapper>
 
         <main>
           <Routes>

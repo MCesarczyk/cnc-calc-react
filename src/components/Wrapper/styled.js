@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
     gap: 2rem;
     padding: 1rem;
     width: 100%;
+    min-height: 16rem;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
         grid-template-columns: 1fr;

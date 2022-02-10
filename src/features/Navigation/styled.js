@@ -3,6 +3,25 @@ import { Link } from "react-router-dom";
 
 export const NavigationWrapper = styled.div`
   align-self: flex-start;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
+    display: none;
+  }
+`;
+
+export const MobileNavWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: ${({ theme }) => theme.color.primary};
+  background-color: ${({ theme }) => theme.color.primaryContrast};
+  padding: 1rem;
+  padding-top: 2rem;
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
+    display: ${props => props.visible && 'block'};
+  }
 `;
 
 export const List = styled.ul`

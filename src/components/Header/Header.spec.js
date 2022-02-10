@@ -3,13 +3,16 @@ import renderer from "react-test-renderer";
 import Header from ".";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
+import { BrowserRouter } from "react-router-dom";
 import "jest-styled-components";
-import { MenuIcon } from "./MenuIcon";
+import { MenuIconWrapper } from "./MenuIcon/styled";
 
 test("Header rendered properly", () => {
   const component = renderer.create(
     <ThemeProvider theme={theme} >
-      <Header />
+      <BrowserRouter>
+        <Header />
+      </BrowserRouter>
     </ThemeProvider>
   );
 
@@ -17,15 +20,15 @@ test("Header rendered properly", () => {
   expect(header).toMatchSnapshot();
 });
 
-test("MenuIcon changes style on action", ()=>{
+test("MenuIcon changes style on action", () => {
   const iconComponent = renderer.create(
     <ThemeProvider theme={theme} >
-      <MenuIcon />
+      <MenuIconWrapper />
     </ThemeProvider>
   );
 
   let icon = iconComponent.toJSON();
-  
+
   expect(icon).toHaveStyleRule('filter', 'brightness(0.8)', {
     modifier: ':hover'
   });

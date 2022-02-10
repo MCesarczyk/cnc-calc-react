@@ -17,7 +17,7 @@ exports[`Header rendered properly 1`] = `
   align-items: center;
 }
 
-.c2 {
+.c5 {
   font-size: 2rem;
   font-weight: 300;
   font-family: 'Ubuntu',sans-serif;
@@ -25,8 +25,56 @@ exports[`Header rendered properly 1`] = `
   margin: 0;
 }
 
+.c2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1e3246;
+  background-color: #fff;
+  padding: 1rem;
+  padding-top: 2rem;
+  display: none;
+}
+
+.c3 {
+  padding: 0;
+  list-style: none;
+}
+
+.c4 {
+  color: #fff;
+  background-color: #1e3246;
+  display: block;
+  font-size: 1.25rem;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem;
+  font-weight: 400;
+  font-family: 'Ubuntu',sans-serif;
+  margin: 0 auto 0.75rem auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.1s ease-in-out;
+  -webkit-transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
+}
+
+.c4:hover {
+  -webkit-filter: brightness(1.5);
+  filter: brightness(1.5);
+}
+
+.c4:active {
+  -webkit-filter: brightness(1);
+  filter: brightness(1);
+  -webkit-transform: scale(0.98);
+  -ms-transform: scale(0.98);
+  transform: scale(0.98);
+}
+
 .c1 {
   height: 1.5rem;
+  margin: 0.5rem;
   margin-right: 1rem;
   background: transparent;
   border: none;
@@ -49,8 +97,20 @@ exports[`Header rendered properly 1`] = `
 }
 
 @media (max-width:768px) {
+
+}
+
+@media (max-width:768px) {
   .c1 {
     display: block;
+  }
+}
+
+@media (max-width:480px) {
+  .c1 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
   }
 }
 
@@ -68,8 +128,52 @@ exports[`Header rendered properly 1`] = `
         hamburger-menu.svg
       </svg>
     </button>
-    <h1
+    <div
       className="c2"
+    >
+      <button
+        className="c1"
+        onClick={[Function]}
+      >
+        <svg>
+          hamburger-menu.svg
+        </svg>
+      </button>
+      <ul
+        className="c3"
+      >
+        <li>
+          <a
+            className="c4"
+            href="/surface-speed"
+            onClick={[Function]}
+          />
+        </li>
+        <li>
+          <a
+            className="c4"
+            href="/spindle-speed"
+            onClick={[Function]}
+          />
+        </li>
+        <li>
+          <a
+            className="c4"
+            href="/feedrate"
+            onClick={[Function]}
+          />
+        </li>
+        <li>
+          <a
+            className="c4"
+            href="/tapping-feed"
+            onClick={[Function]}
+          />
+        </li>
+      </ul>
+    </div>
+    <h1
+      className="c5"
     />
   </div>
 </header>
