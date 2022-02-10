@@ -2,6 +2,7 @@ const languages = [
   {
     key: "EN",
     mainTitle: "Cutting parameters calculator",
+    welcomeTitle: "Choose an option, please.",
     section1Title: "Milling/drilling",
     section2Title: "Threading/tapping",
     form1Legend: "Surface cutting speed",
@@ -59,6 +60,7 @@ const languages = [
   {
     key: "PL",
     mainTitle: "Kalkulator obróbki skrawaniem",
+    welcomeTitle: "Wybierz jedną z opcji.",
     section1Title: "Frezowanie/wiercenie",
     section2Title: "Gwintowanie",
     form1Legend: "Liniowa prędkość skrawania",

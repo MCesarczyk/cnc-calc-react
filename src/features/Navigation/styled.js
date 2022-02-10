@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+export const NavigationWrapper = styled.div`
+  align-self: flex-start;
+`;
+
 export const List = styled.ul`
   padding: 0;
   list-style: none;
-`
+`;
 
 export const Item = styled(Link)`
     color: ${({ theme }) => theme.color.primaryContrast};

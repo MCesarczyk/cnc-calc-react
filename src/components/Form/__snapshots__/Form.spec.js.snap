@@ -35,7 +35,6 @@ exports[`Form Footer rendered properly 1`] = `
 exports[`Form component rendering properly 1`] = `
 .c0 {
   color: #1e3246;
-  margin-bottom: 2rem;
 }
 
 .c1 {

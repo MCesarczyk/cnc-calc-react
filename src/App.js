@@ -11,6 +11,7 @@ import LinearFeedrateForm from "./views/LinearFeedrate";
 import TappingFeedrateForm from "./views/TappingFeedrate";
 import { Wrapper } from "./components/Wrapper/styled";
 import Navigation from "./features/Navigation";
+import Home from "./views/Home";
 
 const App = () => {
 
@@ -38,11 +39,11 @@ const App = () => {
           <Routes>
             <Route
               path="/"
-              element={<Navigate replace to="/surface-speed" />}
+              element={<Home langId={langId} />}
             />
             <Route
               path="/cnc-calc-react"
-              element={<Navigate replace to="/surface-speed" />}
+              element={<Navigate replace to="/" />}
             />
             <Route
               path="/surface-speed"

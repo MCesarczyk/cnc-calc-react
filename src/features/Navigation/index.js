@@ -1,12 +1,12 @@
 import { createRoutesList } from "../../assets/utils/createRoutesList";
-import { Item, List } from "./styled";
+import { Item, List, NavigationWrapper } from "./styled";
 
 const Navigation = ({ langId }) => {
 
   const routes = createRoutesList(langId);
 
   return (
-    <nav>
+    <NavigationWrapper>
       <List>
         {routes.map(route => (
           <li key={route.id}>
@@ -14,7 +14,7 @@ const Navigation = ({ langId }) => {
           </li>
         ))}
       </List>
-    </nav>
+    </NavigationWrapper>
   )
 };
 
