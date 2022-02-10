@@ -10,6 +10,30 @@ html {
   box-sizing: inherit;
 }
 
+*:root {
+  font-size: 20px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.xl}) {
+    font-size: 18px;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoint.lg}) {
+    font-size: 16px;
+  }
+  
+  @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
+    font-size: 14px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.sm}) {
+    font-size: 13px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+    font-size: 12px;
+  }
+}
+
 body {
   color: #1E3246;
   background-color: #fff;
@@ -20,7 +44,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
   min-width: 248px;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
     overflow-y: scroll;
   }
 }
