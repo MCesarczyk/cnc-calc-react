@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const SwitcherWrapper = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    
+    @media (max-width: ${({ theme }) => theme.breakpoint.sm}) {
+        flex-direction: column;
+    }
 `;
 
 export const SwitcherButton = styled.button`

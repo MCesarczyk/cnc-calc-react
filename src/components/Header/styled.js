@@ -10,6 +10,12 @@ export const AppBar = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
+        border-radius: 0;
+        margin: 0 0 10px 0;
+        padding: 0.5rem;
+    }
 `;
 
 export const HomeLink = styled(Link)`
@@ -32,4 +38,8 @@ export const Headline = styled.h1`
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
     margin: 0;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
+        font-size: 1.5rem;
+    }
 `;

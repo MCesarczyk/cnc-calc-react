@@ -23,9 +23,10 @@ export const MenuIconWrapper = styled.button`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
     display: block;
+    margin: 0.5rem;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
-    align-self: flex-start;
+    margin: 0;
   }
 `;

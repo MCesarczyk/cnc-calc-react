@@ -44,6 +44,10 @@ body {
   font-family: 'Ubuntu', sans-serif;
   min-width: 248px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
+    padding: 0;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
     overflow-y: scroll;
   }

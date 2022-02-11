@@ -59,7 +59,7 @@ const languages = [
   },
   {
     key: "PL",
-    mainTitle: "Kalkulator obróbki skrawaniem",
+    mainTitle: "Kalkulator parametrów skrawania",
     welcomeTitle: "Wybierz jedną z opcji.",
     section1Title: "Frezowanie/wiercenie",
     section2Title: "Gwintowanie",
