@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Button = styled.button`
+export const FormButton = styled.button`
     display: flex;
     min-width: 12rem;
     width: 100%;

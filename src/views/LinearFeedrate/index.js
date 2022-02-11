@@ -3,7 +3,6 @@ import languages from "../../assets/fixtures/languages";
 import { focusForm } from "../../assets/utils/focusForm";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
-import FormFooter from "../../components/Form/Footer";
 import FeedOptionSelector from "../../components/FeedOptionSelector";
 
 const LinearFeedrateForm = ({ langId }) => {
@@ -44,7 +43,7 @@ const LinearFeedrateForm = ({ langId }) => {
             legend={languages[langId].form3Legend}
             onSubmit={onFormSubmit}
             onReset={onFormReset}
-            footerContent={<FormFooter langID={langId} />}
+            langId={langId}
         >
 
             <FormInput

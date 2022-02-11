@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
 import { focusForm } from "../../assets/utils/focusForm";
 import Form from "../../components/Form";
-import FormFooter from "../../components/Form/Footer";
 import FormInput from "../../components/FormInput";
 
 const SurfaceSpeedForm = ({ langId }) => {
@@ -30,7 +29,7 @@ const SurfaceSpeedForm = ({ langId }) => {
       legend={languages[langId].form1Legend}
       onSubmit={onFormSubmit}
       onReset={onFormReset}
-      footerContent={<FormFooter langID={langId} />}
+      langId={langId}
     >
       <FormInput
         name={languages[langId].diameter.name}
