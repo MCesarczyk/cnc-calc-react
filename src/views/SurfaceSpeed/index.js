@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
+import { focusForm } from "../../assets/utils/focusForm";
 import Form from "../../components/Form";
 import FormFooter from "../../components/Form/Footer";
 import FormInput from "../../components/FormInput";
@@ -13,7 +14,7 @@ const SurfaceSpeedForm = ({ langId }) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     setCuttingSpeed((Math.PI * diameter * rotationSpeed / 1000).toFixed(2));
-    inputRef.current?.focus();
+    focusForm(inputRef);
   };
 
   const onFormReset = (event) => {
@@ -21,7 +22,7 @@ const SurfaceSpeedForm = ({ langId }) => {
     setDiameter("");
     setRotationSpeed("");
     setCuttingSpeed("");
-    inputRef.current?.focus();
+    focusForm(inputRef);
   };
 
   return (

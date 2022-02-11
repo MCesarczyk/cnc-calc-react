@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
+import { focusForm } from "../../assets/utils/focusForm";
 import Form from "../../components/Form";
 import FormFooter from "../../components/Form/Footer";
 import FormInput from "../../components/FormInput";
@@ -14,7 +15,7 @@ const ToolRotationForm = ({ langId }) => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         setRotationSpeed((cuttingSpeed * 1000 / Math.PI / diameter).toFixed(2));
-        inputRef.current.focus();
+        focusForm(inputRef);
     };
 
     const onFormReset = (event) => {
@@ -22,7 +23,7 @@ const ToolRotationForm = ({ langId }) => {
         setDiameter("");
         setCuttingSpeed("");
         setRotationSpeed("");
-        inputRef.current.focus();
+        focusForm(inputRef);
     };
 
     return (
