@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Form Button with states rendering properly 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 12rem;
+  width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #1e3246;
+  border: solid #1e3246;
+  padding: 0.25rem;
+  border-radius: 1.5rem;
+}
+
+.c0:hover {
+  -webkit-filter: brightness(150%);
+  filter: brightness(150%);
+}
+
+.c0:active {
+  -webkit-filter: brightness(200%);
+  filter: brightness(200%);
+  border-color: currentColor;
+}
+
+<button
+  className="c0"
+/>
+`;
+
 exports[`Form Footer rendered properly 1`] = `
 .c0 {
   max-width: 30rem;
@@ -35,7 +70,6 @@ exports[`Form Footer rendered properly 1`] = `
 exports[`Form component rendering properly 1`] = `
 .c0 {
   color: #1e3246;
-  margin-bottom: 2rem;
 }
 
 .c1 {

@@ -1,15 +1,15 @@
 import languages from "../../../assets/fixtures/languages";
 import { ButtonsContainer } from "./styled";
-import { Button } from "../../Button";
+import { FormButton } from "../Button";
 
-const FormFooter = ({ langID: langId }) => (
+const FormFooter = ({ langId }) => (
     <ButtonsContainer>
-        <Button type="submit">
+        <FormButton type="submit">
             {languages[langId]?.buttonLabel.submit}
-        </Button>
-        <Button type="reset">
+        </FormButton>
+        <FormButton type="reset">
             {languages[langId]?.buttonLabel.reset}
-        </Button>
+        </FormButton>
     </ButtonsContainer>
 );
 

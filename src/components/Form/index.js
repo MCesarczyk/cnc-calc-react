@@ -1,9 +1,10 @@
+import FormFooter from "./Footer";
 import { FieldsContainer, Fieldset, FormWrapper, Legend } from "./styled";
 
 const Form = ({
+  langId,
   legend,
   children,
-  footerContent,
   onSubmit,
   onReset
 }) => (
@@ -13,7 +14,7 @@ const Form = ({
       <FieldsContainer>
         {children}
       </FieldsContainer>
-      {footerContent}
+      <FormFooter langId={langId} />
     </Fieldset>
   </FormWrapper>
 );

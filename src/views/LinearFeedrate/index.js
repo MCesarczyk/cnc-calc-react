@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
+import { focusForm } from "../../assets/utils/focusForm";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
-import FormFooter from "../../components/Form/Footer";
 import FeedOptionSelector from "../../components/FeedOptionSelector";
 
 const LinearFeedrateForm = ({ langId }) => {
@@ -25,7 +25,7 @@ const LinearFeedrateForm = ({ langId }) => {
         } else {
             setFeedValue((rotationSpeed * feedFactor1 * feedFactor2).toFixed());
         }
-        inputRef.current.focus();
+        focusForm(inputRef);
     };
 
     const onFormReset = (event) => {
@@ -35,7 +35,7 @@ const LinearFeedrateForm = ({ langId }) => {
         setFeedFactor1("");
         setFeedFactor2("");
         setFeedValue("");
-        inputRef.current.focus();
+        focusForm(inputRef);
     };
 
     return (
@@ -43,7 +43,7 @@ const LinearFeedrateForm = ({ langId }) => {
             legend={languages[langId].form3Legend}
             onSubmit={onFormSubmit}
             onReset={onFormReset}
-            footerContent={<FormFooter langID={langId} />}
+            langId={langId}
         >
 
             <FormInput

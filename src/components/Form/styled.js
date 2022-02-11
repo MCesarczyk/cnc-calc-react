@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const FormWrapper = styled.form`
     color: ${({ theme }) => theme.color.primary};
-    margin-bottom: 2rem;
 `;
 
 export const Fieldset = styled.fieldset`
@@ -12,7 +11,7 @@ export const Fieldset = styled.fieldset`
 
 export const Legend = styled.legend`
     text-align: center;
-    margin: 0.5rem
+    margin: 0.5rem;
 `;
 
 export const FieldsContainer = styled.div`

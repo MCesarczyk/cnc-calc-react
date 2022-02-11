@@ -1,48 +1,44 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Switcher from "./features/Switcher";
-import languages from "./assets/fixtures/languages";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Navigation from "./features/Navigation";
+import Home from "./views/Home";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
 import ToolRotationForm from "./views/ToolRotation";
 import LinearFeedrateForm from "./views/LinearFeedrate";
 import TappingFeedrateForm from "./views/TappingFeedrate";
 import { Wrapper } from "./components/Wrapper/styled";
-import Navigation from "./features/Navigation";
+import { NavigationWrapper } from "./features/Navigation/styled";
 
 const App = () => {
 
   const { langId, setLangId } = useLanguage();
 
-  const changeLanguage = (key) => {
-    setLangId(languages.findIndex(language => language.key === key));
-  };
-
   return (
     <BrowserRouter>
-      <Header title={languages[langId].mainTitle} />
-      <Switcher
-        languages={languages}
-        changeLanguage={changeLanguage}
+      <Header
+        langId={langId}
+        setLangId={setLangId}
       />
 
       <Wrapper>
-        <Navigation
-          languages={languages}
-          langId={langId}
-        />
+        <NavigationWrapper>
+          <Navigation
+            langId={langId}
+          />
+        </NavigationWrapper>
 
         <main>
           <Routes>
             <Route
               path="/"
-              element={<Navigate replace to="/surface-speed" />}
+              element={<Home langId={langId} />}
             />
             <Route
               path="/cnc-calc-react"
-              element={<Navigate replace to="/surface-speed" />}
+              element={<Navigate replace to="/" />}
             />
             <Route
               path="/surface-speed"

@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import languages from "../../assets/fixtures/languages";
 import tapDiameters from "../../assets/fixtures/tapDiameters";
+import { focusForm } from "../../assets/utils/focusForm";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
-import FormFooter from "../../components/Form/Footer";
 import FormSelect from "../../components/FormSelect";
 
 const newArray = tapDiameters.map(record => ({
@@ -21,7 +21,7 @@ const TappingFeedrateForm = ({ langId }) => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         setFeedValue((rotationSpeed * pitch).toFixed());
-        inputRef.current.focus();
+        focusForm(inputRef);
     };
 
     const onFormReset = (event) => {
@@ -30,7 +30,7 @@ const TappingFeedrateForm = ({ langId }) => {
         setDiameter("");
         setPitch("");
         setFeedValue("");
-        inputRef.current.focus();
+        focusForm(inputRef);
     };
 
     const onOptionChange = ({ target }) => {
@@ -47,7 +47,7 @@ const TappingFeedrateForm = ({ langId }) => {
             legend={languages[langId].form4Legend}
             onSubmit={onFormSubmit}
             onReset={onFormReset}
-            footerContent={<FormFooter langID={langId} />}
+            langId={langId}
         >
             <FormInput
                 name={languages[langId].rotSpeed.name}
