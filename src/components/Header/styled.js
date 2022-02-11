@@ -9,6 +9,7 @@ export const AppBar = styled.div`
     margin: 0 auto 10px auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 `;
 
 export const HomeLink = styled(Link)`

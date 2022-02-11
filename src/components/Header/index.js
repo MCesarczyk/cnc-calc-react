@@ -5,8 +5,9 @@ import { AppBar, Headline, HomeLink } from "./styled";
 import { SidebarNavWrapper } from "../../features/Navigation/styled";
 import Navigation from "../../features/Navigation";
 import MenuIcon from "./MenuIcon";
+import Switcher from "../../features/Switcher";
 
-const Header = ({ langId }) => {
+const Header = ({ langId, setLangId }) => {
     const [open, setOpen] = useState(false);
 
     const { pathname } = useLocation();
@@ -33,6 +34,9 @@ const Header = ({ langId }) => {
                         {languages[langId]?.mainTitle}
                     </Headline>
                 </HomeLink>
+                <Switcher
+                    setLangId={setLangId}
+                />
             </AppBar>
         </header>
     )

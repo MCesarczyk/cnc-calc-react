@@ -15,6 +15,10 @@ exports[`Header rendered properly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c5:hover {
@@ -110,6 +114,33 @@ exports[`Header rendered properly 1`] = `
   outline: none;
 }
 
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c8 {
+  color: #1e3246;
+  background-color: #fff;
+  border: 2px solid #1e3246;
+  border-radius: 2px;
+}
+
+.c8:hover {
+  -webkit-filter: brightness(125%);
+  filter: brightness(125%);
+}
+
+.c8:active {
+  -webkit-filter: brightness(150%);
+  filter: brightness(150%);
+}
+
 @media (max-width:768px) {
 
 }
@@ -195,6 +226,38 @@ exports[`Header rendered properly 1`] = `
         className="c6"
       />
     </a>
+    <div
+      className="c7"
+    >
+      <button
+        className="c8"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundImage": "url(flagUS.png)",
+            "backgroundPosition": "center center",
+            "backgroundRepeat": "no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        EN
+      </button>
+      <button
+        className="c8"
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundImage": "url(flagPL.png)",
+            "backgroundPosition": "center center",
+            "backgroundRepeat": "no-repeat",
+            "backgroundSize": "cover",
+          }
+        }
+      >
+        PL
+      </button>
+    </div>
   </div>
 </header>
 `;
