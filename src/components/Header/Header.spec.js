@@ -41,3 +41,25 @@ test("MenuIcon changes style on action", () => {
     modifier: ':focus'
   });
 });
+
+test("Home link changes style on action", () => {
+  const homeLinkComponent = renderer.create(
+    <ThemeProvider theme={theme} >
+      <MenuIconWrapper />
+    </ThemeProvider>
+  );
+
+  let homeLink = homeLinkComponent.toJSON();
+
+  expect(homeLink).toHaveStyleRule('filter', 'brightness(0.8)', {
+    modifier: ':hover'
+  });
+
+  expect(homeLink).toHaveStyleRule('filter', 'unset', {
+    modifier: ':active'
+  });
+
+  expect(homeLink).toHaveStyleRule('outline', 'none', {
+    modifier: ':focus'
+  });
+});

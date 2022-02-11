@@ -51,6 +51,7 @@ body {
 
 button, a {
   cursor: pointer;
+  color: inherit;
 }
 
 a {

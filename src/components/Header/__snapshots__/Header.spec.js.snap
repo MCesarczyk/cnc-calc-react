@@ -17,7 +17,21 @@ exports[`Header rendered properly 1`] = `
   align-items: center;
 }
 
-.c5 {
+.c5:hover {
+  -webkit-filter: brightness(0.8);
+  filter: brightness(0.8);
+}
+
+.c5:active {
+  -webkit-filter: unset;
+  filter: unset;
+}
+
+.c5:focus {
+  outline: none;
+}
+
+.c6 {
   font-size: 2rem;
   font-weight: 300;
   font-family: 'Ubuntu',sans-serif;
@@ -172,9 +186,15 @@ exports[`Header rendered properly 1`] = `
         </li>
       </ul>
     </div>
-    <h1
+    <a
       className="c5"
-    />
+      href="/"
+      onClick={[Function]}
+    >
+      <h1
+        className="c6"
+      />
+    </a>
   </div>
 </header>
 `;

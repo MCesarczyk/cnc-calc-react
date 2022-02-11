@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const AppBar = styled.div`
@@ -8,6 +9,20 @@ export const AppBar = styled.div`
     margin: 0 auto 10px auto;
     display: flex;
     align-items: center;
+`;
+
+export const HomeLink = styled(Link)`
+    &:hover {
+        filter: brightness(0.8);
+    }
+
+    &:active {
+        filter: unset;
+    }
+
+    &:focus {
+        outline: none;
+    }
 `;
 
 export const Headline = styled.h1`

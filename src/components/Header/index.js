@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import languages from "../../assets/fixtures/languages";
-import { AppBar, Headline } from "./styled";
+import { AppBar, Headline, HomeLink } from "./styled";
 import { SidebarNavWrapper } from "../../features/Navigation/styled";
 import Navigation from "../../features/Navigation";
 import MenuIcon from "./MenuIcon";
@@ -28,9 +28,11 @@ const Header = ({ langId }) => {
                         handleClose={() => setOpen(false)}
                     />
                 </SidebarNavWrapper>
-                <Headline>
-                    {languages[langId]?.mainTitle}
-                </Headline>
+                <HomeLink to="/">
+                    <Headline>
+                        {languages[langId]?.mainTitle}
+                    </Headline>
+                </HomeLink>
             </AppBar>
         </header>
     )
