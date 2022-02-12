@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import Header from "./components/Header";
@@ -17,7 +17,7 @@ const App = () => {
   const { langId, setLangId } = useLanguage();
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/cnc-calc-react" >
       <Header
         langId={langId}
         setLangId={setLangId}
@@ -37,19 +37,19 @@ const App = () => {
               element={<Home langId={langId} />}
             />
             <Route
-              path="surface-speed"
+              path="/surface-speed"
               element={<SurfaceSpeedForm langId={langId} />}
             />
             <Route
-              path="spindle-speed"
+              path="/spindle-speed"
               element={<ToolRotationForm langId={langId} />}
             />
             <Route
-              path="feedrate"
+              path="/feedrate"
               element={<LinearFeedrateForm langId={langId} />}
             />
             <Route
-              path="tapping-feed"
+              path="/tapping-feed"
               element={<TappingFeedrateForm langId={langId} />}
             />
           </Routes>
