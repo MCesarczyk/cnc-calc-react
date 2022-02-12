@@ -37,23 +37,19 @@ const App = () => {
               element={<Home langId={langId} />}
             />
             <Route
-              path="/cnc-calc-react"
-              element={<Navigate replace to="/" />}
-            />
-            <Route
-              path="/surface-speed"
+              path="surface-speed"
               element={<SurfaceSpeedForm langId={langId} />}
             />
             <Route
-              path="/spindle-speed"
+              path="spindle-speed"
               element={<ToolRotationForm langId={langId} />}
             />
             <Route
-              path="/feedrate"
+              path="feedrate"
               element={<LinearFeedrateForm langId={langId} />}
             />
             <Route
-              path="/tapping-feed"
+              path="tapping-feed"
               element={<TappingFeedrateForm langId={langId} />}
             />
           </Routes>
