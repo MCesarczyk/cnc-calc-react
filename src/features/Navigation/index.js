@@ -1,7 +1,7 @@
 import { createRoutesList } from "../../assets/utils/createRoutesList";
 import { Item, List } from "./styled";
 
-const Navigation = ({ langId, handleClose }) => {
+const Navigation = ({ langId, handleClose, base }) => {
 
   const routes = createRoutesList(langId);
 
@@ -10,7 +10,7 @@ const Navigation = ({ langId, handleClose }) => {
       {routes.map(route => (
         <li key={route.id}>
           <Item
-            to={route.path}
+            to={`${base || ''}${route.path}`}
             onClick={handleClose}
           >
             {route.label}

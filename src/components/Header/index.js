@@ -27,6 +27,7 @@ const Header = ({ langId, setLangId }) => {
                     <Navigation
                         langId={langId}
                         handleClose={() => setOpen(false)}
+                        base="cnc-calc-react/"
                     />
                 </SidebarNavWrapper>
                 <HomeLink to="/">

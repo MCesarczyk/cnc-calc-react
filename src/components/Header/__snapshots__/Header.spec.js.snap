@@ -208,28 +208,28 @@ exports[`Header rendered properly 1`] = `
         <li>
           <a
             className="c4"
-            href="/surface-speed"
+            href="/cnc-calc-react/surface-speed"
             onClick={[Function]}
           />
         </li>
         <li>
           <a
             className="c4"
-            href="/spindle-speed"
+            href="/cnc-calc-react/spindle-speed"
             onClick={[Function]}
           />
         </li>
         <li>
           <a
             className="c4"
-            href="/feedrate"
+            href="/cnc-calc-react/feedrate"
             onClick={[Function]}
           />
         </li>
         <li>
           <a
             className="c4"
-            href="/tapping-feed"
+            href="/cnc-calc-react/tapping-feed"
             onClick={[Function]}
           />
         </li>

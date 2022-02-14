@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import Header from "./components/Header";
@@ -17,41 +17,49 @@ const App = () => {
   const { langId, setLangId } = useLanguage();
 
   return (
-    <BrowserRouter basename="/cnc-calc-react" >
+    <BrowserRouter >
       <Header
         langId={langId}
         setLangId={setLangId}
       />
 
       <Wrapper>
+        <main>
         <NavigationWrapper>
           <Navigation
             langId={langId}
           />
         </NavigationWrapper>
 
-        <main>
           <Routes>
             <Route
               path="/"
-              element={<Home langId={langId} />}
+              element={<Navigate to="cnc-calc-react" />}
             />
             <Route
-              path="/surface-speed"
-              element={<SurfaceSpeedForm langId={langId} />}
-            />
-            <Route
-              path="/spindle-speed"
-              element={<ToolRotationForm langId={langId} />}
-            />
-            <Route
-              path="/feedrate"
-              element={<LinearFeedrateForm langId={langId} />}
-            />
-            <Route
-              path="/tapping-feed"
-              element={<TappingFeedrateForm langId={langId} />}
-            />
+              path="cnc-calc-react"
+            >
+              <Route
+                index
+                element={<Home langId={langId} />}
+              />
+              <Route
+                path="surface-speed"
+                element={<SurfaceSpeedForm langId={langId} />}
+              />
+              <Route
+                path="spindle-speed"
+                element={<ToolRotationForm langId={langId} />}
+              />
+              <Route
+                path="feedrate"
+                element={<LinearFeedrateForm langId={langId} />}
+              />
+              <Route
+                path="tapping-feed"
+                element={<TappingFeedrateForm langId={langId} />}
+              />
+            </Route>
           </Routes>
         </main>
       </Wrapper>
