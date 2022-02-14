@@ -8,6 +8,7 @@ export const MenuIconWrapper = styled.button`
   border: none;
   color: inherit;
   display: none;
+  z-index: 25;
 
   &:hover {
       filter: brightness(0.8);

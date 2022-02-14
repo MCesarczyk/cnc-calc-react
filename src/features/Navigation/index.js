@@ -2,7 +2,6 @@ import { createRoutesList } from "../../assets/utils/createRoutesList";
 import { Item, List } from "./styled";
 
 const Navigation = ({ langId, handleClose, base }) => {
-
   const routes = createRoutesList(langId);
 
   return (
@@ -10,6 +9,7 @@ const Navigation = ({ langId, handleClose, base }) => {
       {routes.map(route => (
         <li key={route.id}>
           <Item
+            sidebar={base}
             to={`${base || ''}${route.path}`}
             onClick={handleClose}
           >

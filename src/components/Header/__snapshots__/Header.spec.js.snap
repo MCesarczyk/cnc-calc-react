@@ -21,73 +21,26 @@ exports[`Header rendered properly 1`] = `
   justify-content: space-between;
 }
 
-.c5:hover {
+.c2:hover {
   -webkit-filter: brightness(0.8);
   filter: brightness(0.8);
 }
 
-.c5:active {
+.c2:active {
   -webkit-filter: unset;
   filter: unset;
 }
 
-.c5:focus {
+.c2:focus {
   outline: none;
 }
 
-.c6 {
+.c3 {
   font-size: 2rem;
   font-weight: 300;
   font-family: 'Ubuntu',sans-serif;
   text-align: center;
   margin: 0;
-}
-
-.c2 {
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #1e3246;
-  background-color: #fff;
-  padding: 1rem;
-  padding-top: 2rem;
-  display: none;
-}
-
-.c3 {
-  padding: 0;
-  list-style: none;
-}
-
-.c4 {
-  color: #fff;
-  background-color: #1e3246;
-  display: block;
-  font-size: 1.25rem;
-  border-radius: 1.5rem;
-  padding: 0.5rem 1.5rem;
-  margin: 1rem;
-  font-weight: 400;
-  font-family: 'Ubuntu',sans-serif;
-  margin: 0 auto 0.75rem auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: -webkit-transform 0.1s ease-in-out;
-  -webkit-transition: transform 0.1s ease-in-out;
-  transition: transform 0.1s ease-in-out;
-}
-
-.c4:hover {
-  -webkit-filter: brightness(1.5);
-  filter: brightness(1.5);
-}
-
-.c4:active {
-  -webkit-filter: brightness(1);
-  filter: brightness(1);
-  -webkit-transform: scale(0.98);
-  -ms-transform: scale(0.98);
-  transform: scale(0.98);
 }
 
 .c1 {
@@ -98,6 +51,7 @@ exports[`Header rendered properly 1`] = `
   border: none;
   color: inherit;
   display: none;
+  z-index: 25;
 }
 
 .c1:hover {
@@ -114,26 +68,26 @@ exports[`Header rendered properly 1`] = `
   outline: none;
 }
 
-.c7 {
+.c4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.c8 {
+.c5 {
   color: #1e3246;
   background-color: #fff;
   border: 2px solid #1e3246;
   border-radius: 2px;
 }
 
-.c8:hover {
+.c5:hover {
   -webkit-filter: brightness(125%);
   filter: brightness(125%);
 }
 
-.c8:active {
+.c5:active {
   -webkit-filter: brightness(150%);
   filter: brightness(150%);
 }
@@ -147,13 +101,9 @@ exports[`Header rendered properly 1`] = `
 }
 
 @media (max-width:768px) {
-  .c6 {
+  .c3 {
     font-size: 1.5rem;
   }
-}
-
-@media (max-width:768px) {
-
 }
 
 @media (max-width:768px) {
@@ -170,7 +120,7 @@ exports[`Header rendered properly 1`] = `
 }
 
 @media (max-width:576px) {
-  .c7 {
+  .c4 {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -191,64 +141,20 @@ exports[`Header rendered properly 1`] = `
         hamburger-menu.svg
       </svg>
     </button>
-    <div
-      className="c2"
-    >
-      <button
-        className="c1"
-        onClick={[Function]}
-      >
-        <svg>
-          hamburger-menu.svg
-        </svg>
-      </button>
-      <ul
-        className="c3"
-      >
-        <li>
-          <a
-            className="c4"
-            href="/cnc-calc-react/surface-speed"
-            onClick={[Function]}
-          />
-        </li>
-        <li>
-          <a
-            className="c4"
-            href="/cnc-calc-react/spindle-speed"
-            onClick={[Function]}
-          />
-        </li>
-        <li>
-          <a
-            className="c4"
-            href="/cnc-calc-react/feedrate"
-            onClick={[Function]}
-          />
-        </li>
-        <li>
-          <a
-            className="c4"
-            href="/cnc-calc-react/tapping-feed"
-            onClick={[Function]}
-          />
-        </li>
-      </ul>
-    </div>
     <a
-      className="c5"
+      className="c2"
       href="/"
       onClick={[Function]}
     >
       <h1
-        className="c6"
+        className="c3"
       />
     </a>
     <div
-      className="c7"
+      className="c4"
     >
       <button
-        className="c8"
+        className="c5"
         onClick={[Function]}
         style={
           Object {
@@ -262,7 +168,7 @@ exports[`Header rendered properly 1`] = `
         EN
       </button>
       <button
-        className="c8"
+        className="c5"
         onClick={[Function]}
         style={
           Object {
