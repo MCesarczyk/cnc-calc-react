@@ -17,7 +17,7 @@ export const SidebarNavigation = styled.div`
   color: ${({ theme }) => theme.color.primaryContrast};
   background-color: ${({ theme }) => theme.color.primary};
   padding: 1rem;
-  padding-top: 2rem;
+  padding-top: 6rem;
   display: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.md}) {

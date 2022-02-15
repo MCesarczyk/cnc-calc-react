@@ -26,8 +26,9 @@ const Sidebar = ({ langId, open, setOpen }) => {
     >
       <Navigation
         langId={langId}
+        sidebar
+        baseUrl="cnc-calc-react/"
         handleClose={handleClose}
-        base="cnc-calc-react/"
       />
     </SidebarNavigation>
   </>

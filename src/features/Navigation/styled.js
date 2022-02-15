@@ -20,7 +20,6 @@ export const MobileNavWrapper = styled.div`
 export const List = styled.ul`
   padding: 0;
   list-style: none;
-  margin-top: 6rem;
 `;
 
 export const Item = styled(Link)`

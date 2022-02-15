@@ -33,44 +33,43 @@ const App = () => {
       />
 
       <Wrapper>
-        <main>
-          <NavigationWrapper>
-            <Navigation
-              langId={langId}
-            />
-          </NavigationWrapper>
+        <NavigationWrapper>
+          <Navigation
+            langId={langId}
+            baseUrl="cnc-calc-react/"
+          />
+        </NavigationWrapper>
 
-          <Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={<Navigate to="cnc-calc-react" />}
+          />
+          <Route
+            path="cnc-calc-react"
+          >
             <Route
-              path="/"
-              element={<Navigate to="cnc-calc-react" />}
+              index
+              element={<Home langId={langId} />}
             />
             <Route
-              path="cnc-calc-react"
-            >
-              <Route
-                index
-                element={<Home langId={langId} />}
-              />
-              <Route
-                path="surface-speed"
-                element={<SurfaceSpeedForm langId={langId} />}
-              />
-              <Route
-                path="spindle-speed"
-                element={<ToolRotationForm langId={langId} />}
-              />
-              <Route
-                path="feedrate"
-                element={<LinearFeedrateForm langId={langId} />}
-              />
-              <Route
-                path="tapping-feed"
-                element={<TappingFeedrateForm langId={langId} />}
-              />
-            </Route>
-          </Routes>
-        </main>
+              path="surface-speed"
+              element={<SurfaceSpeedForm langId={langId} />}
+            />
+            <Route
+              path="spindle-speed"
+              element={<ToolRotationForm langId={langId} />}
+            />
+            <Route
+              path="feedrate"
+              element={<LinearFeedrateForm langId={langId} />}
+            />
+            <Route
+              path="tapping-feed"
+              element={<TappingFeedrateForm langId={langId} />}
+            />
+          </Route>
+        </Routes>
       </Wrapper>
 
       <Footer
