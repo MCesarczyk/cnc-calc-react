@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavigationWrapper = styled.div`
@@ -14,21 +14,6 @@ export const MobileNavWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
     display: block;
-  }
-`;
-
-export const SidebarNavWrapper = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: ${({ theme }) => theme.color.primary};
-  background-color: ${({ theme }) => theme.color.primaryContrast};
-  padding: 1rem;
-  padding-top: 2rem;
-  display: none;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
-    display: ${props => props.visible && 'block'};
   }
 `;
 
@@ -59,4 +44,21 @@ export const Item = styled(Link)`
       filter: brightness(1);
       transform: scale(0.98);
     }
+    
+    ${props => props.sidebar && css`
+      border-radius: 0;
+      border-bottom: 1px solid currentColor;
+      background-color: transparent;
+      transition: transform 0.1s ease-in-out;
+
+      &:hover {
+        filter: brightness(0.8);
+        transform: scale(1.02);
+      }
+
+      &:active {
+        filter: brightness(1);
+        transform: scale(0.98);
+      }
+    `}
 `;

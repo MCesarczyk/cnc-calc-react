@@ -24,14 +24,6 @@ html {
   @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
     font-size: 14px;
   }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.sm}) {
-    font-size: 13px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
-    font-size: 12px;
-  }
 }
 
 body {
