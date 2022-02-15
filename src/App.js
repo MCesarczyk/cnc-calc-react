@@ -7,12 +7,12 @@ import ToolRotationForm from "./views/ToolRotation";
 import LinearFeedrateForm from "./views/LinearFeedrate";
 import TappingFeedrateForm from "./views/TappingFeedrate";
 import Home from "./views/Home";
-import Navigation from "./features/Navigation";
-import Sidebar from "./features/Sidebar";
+import Navigation from "./features/navigation/Navigation";
+import Sidebar from "./features/navigation/Sidebar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Wrapper } from "./components/Wrapper/styled";
-import { NavigationWrapper } from "./features/Navigation/styled";
+import { NavigationWrapper } from "./features/navigation/Navigation/styled";
 
 const App = () => {
   const { langId, setLangId } = useLanguage();

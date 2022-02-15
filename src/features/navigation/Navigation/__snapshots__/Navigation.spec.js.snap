@@ -43,7 +43,6 @@ exports[`Navigation list rendered properly 1`] = `
 .c0 {
   padding: 0;
   list-style: none;
-  margin-top: 6rem;
 }
 
 <ul

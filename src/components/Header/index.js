@@ -1,7 +1,7 @@
 import languages from "../../assets/fixtures/languages";
 import { AppBar, Headline, HomeLink } from "./styled";
 import MenuIcon from "./MenuIcon";
-import Switcher from "../../features/Switcher";
+import Switcher from "../../features/language/Switcher";
 
 const Header = ({ langId, setLangId, open, setOpen }) => (
     <header id="start">

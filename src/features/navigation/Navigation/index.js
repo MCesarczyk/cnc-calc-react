@@ -1,4 +1,4 @@
-import { createRoutesList } from "../../assets/utils/createRoutesList";
+import { createRoutesList } from "../../../assets/utils/createRoutesList";
 import { Item, List } from "./styled";
 
 const Navigation = ({ langId, handleClose, sidebar, baseUrl }) => {

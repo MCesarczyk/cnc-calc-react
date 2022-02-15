@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../../theme";
+import { theme } from "../../../theme";
 import "jest-styled-components";
 import { Item, List } from "./styled";
 import { BrowserRouter } from "react-router-dom";

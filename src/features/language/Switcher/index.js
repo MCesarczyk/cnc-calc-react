@@ -1,7 +1,7 @@
 import { SwitcherButton, SwitcherWrapper } from "./styled";
-import flagPL from "../../assets/images/flagPL.png";
-import flagEN from "../../assets/images/flagUS.png";
-import languages from "../../assets/fixtures/languages";
+import flagPL from "../../../assets/images/flagPL.png";
+import flagEN from "../../../assets/images/flagUS.png";
+import languages from "../../../assets/fixtures/languages";
 
 const Switcher = ({ setLangId }) => {
     const changeLanguage = (key) => {

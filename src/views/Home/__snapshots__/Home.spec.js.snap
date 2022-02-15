@@ -26,7 +26,6 @@ Array [
 .c1 {
   padding: 0;
   list-style: none;
-  margin-top: 6rem;
 }
 
 .c2 {
