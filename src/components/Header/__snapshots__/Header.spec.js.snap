@@ -1,48 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header rendered properly 1`] = `
-.c0 {
-  color: #fff;
-  background-color: #1e3246;
-  border-radius: 1.5rem;
-  padding: 0.5rem 1.5rem;
-  margin: 0 auto 10px auto;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.c2:hover {
-  -webkit-filter: brightness(0.8);
-  filter: brightness(0.8);
-}
-
-.c2:active {
-  -webkit-filter: unset;
-  filter: unset;
-}
-
-.c2:focus {
-  outline: none;
-}
-
-.c3 {
-  font-size: 2rem;
-  font-weight: 300;
-  font-family: 'Ubuntu',sans-serif;
-  text-align: center;
-  margin: 0;
-}
-
 .c1 {
   height: 1.5rem;
   margin: 0.5rem;
@@ -92,18 +50,46 @@ exports[`Header rendered properly 1`] = `
   filter: brightness(150%);
 }
 
-@media (max-width:768px) {
-  .c0 {
-    border-radius: 0;
-    margin: 0 0 10px 0;
-    padding: 0.5rem;
-  }
+.c0 {
+  color: #fff;
+  background-color: #1e3246;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0 auto 10px auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
-@media (max-width:768px) {
-  .c3 {
-    font-size: 1.5rem;
-  }
+.c2:hover {
+  -webkit-filter: brightness(0.8);
+  filter: brightness(0.8);
+}
+
+.c2:active {
+  -webkit-filter: unset;
+  filter: unset;
+}
+
+.c2:focus {
+  outline: none;
+}
+
+.c3 {
+  font-size: 2rem;
+  font-weight: 300;
+  font-family: 'Ubuntu',sans-serif;
+  text-align: center;
+  margin: 0;
 }
 
 @media (max-width:768px) {
@@ -124,6 +110,20 @@ exports[`Header rendered properly 1`] = `
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+  }
+}
+
+@media (max-width:768px) {
+  .c0 {
+    border-radius: 0;
+    margin: 0 0 10px 0;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c3 {
+    font-size: 1.5rem;
   }
 }
 
