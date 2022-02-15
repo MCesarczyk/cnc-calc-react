@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import { Wrapper } from "./components/Wrapper/styled";
 import { NavigationWrapper } from "./features/navigation/Navigation/styled";
 import LanguageProvider from "./features/language/provider";
+import NavigationProvider from "./features/navigation/provider";
 
 const App = () => {
   const { langId, setLangId } = useLanguage();
@@ -21,61 +22,63 @@ const App = () => {
 
   return (
     <LanguageProvider value={{ langId, setLangId }} >
-      <BrowserRouter >
-        <Sidebar
-          open={open}
-          setOpen={setOpen}
-        />
-        <Header
-          open={open}
-          setOpen={setOpen}
-        />
+      <NavigationProvider value={{ open, setOpen }}>
+        <BrowserRouter >
+          <Sidebar
+            open={open}
+            setOpen={setOpen}
+          />
+          <Header
+            open={open}
+            setOpen={setOpen}
+          />
 
-        <Wrapper>
-          <NavigationWrapper>
-            <Navigation
-              baseUrl="cnc-calc-react/"
-            />
-          </NavigationWrapper>
+          <Wrapper>
+            <NavigationWrapper>
+              <Navigation
+                baseUrl="cnc-calc-react/"
+              />
+            </NavigationWrapper>
 
-          <Routes>
-            <Route
-              path="/"
-              element={<Navigate to="cnc-calc-react" />}
-            />
-            <Route
-              path="cnc-calc-react"
-            >
+            <Routes>
               <Route
-                index
-                element={<Home />}
+                path="/"
+                element={<Navigate to="cnc-calc-react" />}
               />
               <Route
-                path="surface-speed"
-                element={<SurfaceSpeedForm />}
-              />
-              <Route
-                path="spindle-speed"
-                element={<ToolRotationForm />}
-              />
-              <Route
-                path="feedrate"
-                element={<LinearFeedrateForm />}
-              />
-              <Route
-                path="tapping-feed"
-                element={<TappingFeedrateForm />}
-              />
-            </Route>
-          </Routes>
-        </Wrapper>
+                path="cnc-calc-react"
+              >
+                <Route
+                  index
+                  element={<Home />}
+                />
+                <Route
+                  path="surface-speed"
+                  element={<SurfaceSpeedForm />}
+                />
+                <Route
+                  path="spindle-speed"
+                  element={<ToolRotationForm />}
+                />
+                <Route
+                  path="feedrate"
+                  element={<LinearFeedrateForm />}
+                />
+                <Route
+                  path="tapping-feed"
+                  element={<TappingFeedrateForm />}
+                />
+              </Route>
+            </Routes>
+          </Wrapper>
 
-        <Footer
-          date={DATE}
-          address={ADDRESS}
-          name={NAME}
-        />
-      </BrowserRouter>
+          <Footer
+            date={DATE}
+            address={ADDRESS}
+            name={NAME}
+          />
+        </BrowserRouter>
+      </NavigationProvider>
     </LanguageProvider>
   )
 }
