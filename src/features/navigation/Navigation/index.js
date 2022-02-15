@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import LanguageContext from "../../language/context";
 import { createRoutesList } from "../../../assets/utils/createRoutesList";
 import { Item, List } from "./styled";
 
-const Navigation = ({ langId, handleClose, sidebar, baseUrl }) => {
+const Navigation = ({ handleClose, sidebar, baseUrl }) => {
+  const { langId } = useContext(LanguageContext);
   const routes = createRoutesList(langId);
 
   return (

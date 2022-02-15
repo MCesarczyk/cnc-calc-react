@@ -1,16 +1,12 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import MenuIcon from "./MenuIcon";
 import Switcher from "../../features/language/Switcher";
 import { AppBar, Headline, HomeLink } from "./styled";
 
-const Header = ({ langId, setLangId, open, setOpen }) => {
-    const sharedLang = useContext(LanguageContext);
-
-    useEffect(() => {
-        console.log(sharedLang);
-    }, [sharedLang]);
+const Header = ({ open, setOpen }) => {
+    const { langId } = useContext(LanguageContext);
 
     return (
         <header id="start">
@@ -23,9 +19,7 @@ const Header = ({ langId, setLangId, open, setOpen }) => {
                         {languages[langId]?.mainTitle}
                     </Headline>
                 </HomeLink>
-                <Switcher
-                    setLangId={setLangId}
-                />
+                <Switcher />
             </AppBar>
         </header>
     )

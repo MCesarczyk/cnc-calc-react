@@ -26,30 +26,6 @@ exports[`Header rendered properly 1`] = `
   outline: none;
 }
 
-.c4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.c5 {
-  color: #1e3246;
-  background-color: #fff;
-  border: 2px solid #1e3246;
-  border-radius: 2px;
-}
-
-.c5:hover {
-  -webkit-filter: brightness(125%);
-  filter: brightness(125%);
-}
-
-.c5:active {
-  -webkit-filter: brightness(150%);
-  filter: brightness(150%);
-}
-
 .c0 {
   color: #fff;
   background-color: #1e3246;
@@ -105,14 +81,6 @@ exports[`Header rendered properly 1`] = `
   }
 }
 
-@media (max-width:576px) {
-  .c4 {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-}
-
 @media (max-width:768px) {
   .c0 {
     border-radius: 0;
@@ -127,61 +95,24 @@ exports[`Header rendered properly 1`] = `
   }
 }
 
-<header
-  id="start"
+<div
+  className="c0"
 >
-  <div
-    className="c0"
+  <button
+    className="c1"
   >
-    <button
-      className="c1"
-      onClick={[Function]}
-    >
-      <svg>
-        hamburger-menu.svg
-      </svg>
-    </button>
-    <a
-      className="c2"
-      href="/"
-      onClick={[Function]}
-    >
-      <h1
-        className="c3"
-      />
-    </a>
-    <div
-      className="c4"
-    >
-      <button
-        className="c5"
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundImage": "url(flagUS.png)",
-            "backgroundPosition": "center center",
-            "backgroundRepeat": "no-repeat",
-            "backgroundSize": "cover",
-          }
-        }
-      >
-        EN
-      </button>
-      <button
-        className="c5"
-        onClick={[Function]}
-        style={
-          Object {
-            "backgroundImage": "url(flagPL.png)",
-            "backgroundPosition": "center center",
-            "backgroundRepeat": "no-repeat",
-            "backgroundSize": "cover",
-          }
-        }
-      >
-        PL
-      </button>
-    </div>
-  </div>
-</header>
+    <svg>
+      hamburger-menu.svg
+    </svg>
+  </button>
+  <a
+    className="c2"
+    href="/"
+    onClick={[Function]}
+  >
+    <h1
+      className="c3"
+    />
+  </a>
+</div>
 `;

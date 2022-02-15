@@ -1,11 +1,12 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import { focusForm } from "../../assets/utils/focusForm";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 
-
-const ToolRotationForm = ({ langId }) => {
+const ToolRotationForm = () => {
+    const { langId } = useContext(LanguageContext);
     const [diameter, setDiameter] = useState("");
     const [cuttingSpeed, setCuttingSpeed] = useState("");
     const [rotationSpeed, setRotationSpeed] = useState("");
@@ -30,7 +31,6 @@ const ToolRotationForm = ({ langId }) => {
             legend={languages[langId].form2Legend}
             onSubmit={onFormSubmit}
             onReset={onFormReset}
-            langId={langId}
         >
             <FormInput
                 name={languages[langId].diameter.name}

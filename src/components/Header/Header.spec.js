@@ -1,17 +1,23 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Header from ".";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import { BrowserRouter } from "react-router-dom";
 import "jest-styled-components";
 import { MenuIconWrapper } from "./MenuIcon/styled";
+import { AppBar, Headline, HomeLink } from "./styled";
+import MenuIcon from "./MenuIcon";
 
 test("Header rendered properly", () => {
   const component = renderer.create(
     <ThemeProvider theme={theme} >
       <BrowserRouter>
-        <Header />
+        <AppBar>
+          <MenuIcon />
+          <HomeLink to="/">
+            <Headline />
+          </HomeLink>
+        </AppBar>
       </BrowserRouter>
     </ThemeProvider>
   );

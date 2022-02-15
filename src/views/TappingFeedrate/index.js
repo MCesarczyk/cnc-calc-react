@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import tapDiameters from "../../assets/fixtures/tapDiameters";
 import { focusForm } from "../../assets/utils/focusForm";
@@ -11,7 +12,8 @@ const newArray = tapDiameters.map(record => ({
     value: record.diameter
 }));
 
-const TappingFeedrateForm = ({ langId }) => {
+const TappingFeedrateForm = () => {
+    const { langId } = useContext(LanguageContext);
     const [rotationSpeed, setRotationSpeed] = useState("");
     const [diameter, setDiameter] = useState("");
     const [pitch, setPitch] = useState("");
@@ -47,7 +49,6 @@ const TappingFeedrateForm = ({ langId }) => {
             legend={languages[langId].form4Legend}
             onSubmit={onFormSubmit}
             onReset={onFormReset}
-            langId={langId}
         >
             <FormInput
                 name={languages[langId].rotSpeed.name}

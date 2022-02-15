@@ -20,16 +20,13 @@ const App = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <LanguageProvider value={langId} >
+    <LanguageProvider value={{ langId, setLangId }} >
       <BrowserRouter >
         <Sidebar
-          langId={langId}
           open={open}
           setOpen={setOpen}
         />
         <Header
-          langId={langId}
-          setLangId={setLangId}
           open={open}
           setOpen={setOpen}
         />
@@ -37,7 +34,6 @@ const App = () => {
         <Wrapper>
           <NavigationWrapper>
             <Navigation
-              langId={langId}
               baseUrl="cnc-calc-react/"
             />
           </NavigationWrapper>
@@ -52,23 +48,23 @@ const App = () => {
             >
               <Route
                 index
-                element={<Home langId={langId} />}
+                element={<Home />}
               />
               <Route
                 path="surface-speed"
-                element={<SurfaceSpeedForm langId={langId} />}
+                element={<SurfaceSpeedForm />}
               />
               <Route
                 path="spindle-speed"
-                element={<ToolRotationForm langId={langId} />}
+                element={<ToolRotationForm />}
               />
               <Route
                 path="feedrate"
-                element={<LinearFeedrateForm langId={langId} />}
+                element={<LinearFeedrateForm />}
               />
               <Route
                 path="tapping-feed"
-                element={<TappingFeedrateForm langId={langId} />}
+                element={<TappingFeedrateForm />}
               />
             </Route>
           </Routes>
