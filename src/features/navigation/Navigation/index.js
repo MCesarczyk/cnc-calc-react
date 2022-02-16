@@ -14,7 +14,7 @@ const Navigation = ({ handleClose, sidebar, baseUrl }) => {
           <Item
             sidebar={sidebar}
             to={`${baseUrl || ''}${route.path}`}
-            onClick={handleClose}
+            onPointerDown={handleClose}
           >
             {route.label}
           </Item>
