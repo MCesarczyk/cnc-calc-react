@@ -20,6 +20,10 @@ const Sidebar = () => {
   }, [setOpen]);
 
   useEffect(() => {
+    handleClose();
+  }, [pathname, handleClose]);
+
+  useEffect(() => {
     const checkIfClickedOutside = e => {
       if (open && sidebarRef.current && !sidebarRef.current.contains(e.target)) {
         handleClose();
@@ -40,7 +44,7 @@ const Sidebar = () => {
       />
       <SidebarNavigation
         ref={sidebarRef}
-        visible={open && pathname !== "/"}
+        visible={open && pathname !== "/cnc-calc-react"}
       >
         <Navigation
           sidebar="true"

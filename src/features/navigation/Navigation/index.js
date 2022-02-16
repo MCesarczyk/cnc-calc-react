@@ -3,7 +3,7 @@ import LanguageContext from "../../language/context";
 import { createRoutesList } from "../../../assets/utils/createRoutesList";
 import { Item, List } from "./styled";
 
-const Navigation = ({ handleClose, sidebar, baseUrl }) => {
+const Navigation = ({ sidebar, baseUrl }) => {
   const { langId } = useContext(LanguageContext);
   const routes = createRoutesList(langId);
 
@@ -14,7 +14,6 @@ const Navigation = ({ handleClose, sidebar, baseUrl }) => {
           <Item
             sidebar={sidebar}
             to={`${baseUrl || ''}${route.path}`}
-            onPointerDown={handleClose}
           >
             {route.label}
           </Item>
