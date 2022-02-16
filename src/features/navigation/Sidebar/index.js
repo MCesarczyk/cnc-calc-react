@@ -1,16 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useLocation } from "react-router-dom";
 import NavigationContext from "../context";
 import Navigation from "../Navigation";
 import { SidebarActivationArea, SidebarNavigation } from "./styled";
 
-const Sidebar = ({ open, setOpen }) => {
-  const context = useContext(NavigationContext);
-  
-  useEffect(() => {
-    console.log(context.open, context.setOpen);
-  }, [context]);
-
+const Sidebar = () => {
+  const {open, setOpen} = useContext(NavigationContext);
   const { pathname } = useLocation();
 
   const handleOpen = () => {

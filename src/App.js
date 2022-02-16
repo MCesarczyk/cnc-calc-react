@@ -24,15 +24,8 @@ const App = () => {
     <LanguageProvider value={{ langId, setLangId }} >
       <NavigationProvider value={{ open, setOpen }}>
         <BrowserRouter >
-          <Sidebar
-            open={open}
-            setOpen={setOpen}
-          />
-          <Header
-            open={open}
-            setOpen={setOpen}
-          />
-
+          <Sidebar />
+          <Header />
           <Wrapper>
             <NavigationWrapper>
               <Navigation
