@@ -2,6 +2,7 @@ import { useContext, useRef, useState } from "react";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import { focusForm } from "../../assets/utils/focusForm";
+import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 
@@ -15,7 +16,6 @@ const SurfaceSpeedForm = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     setCuttingSpeed((Math.PI * diameter * rotationSpeed / 1000).toFixed(2));
-    focusForm(inputRef);
   };
 
   const onFormReset = (event) => {
@@ -42,7 +42,7 @@ const SurfaceSpeedForm = () => {
         step="0.0001"
         placeholder={languages[langId].diameter.placeholder}
         required
-        autoFocus
+        autoFocus={!checkIfItsTouchDevice()}
         onChange={({ target }) => setDiameter(target.value - 0)}
       />
       <FormInput

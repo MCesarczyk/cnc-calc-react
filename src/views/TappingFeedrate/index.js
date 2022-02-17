@@ -3,6 +3,7 @@ import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import tapDiameters from "../../assets/fixtures/tapDiameters";
 import { focusForm } from "../../assets/utils/focusForm";
+import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormSelect from "../../components/FormSelect";
@@ -23,7 +24,6 @@ const TappingFeedrateForm = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         setFeedValue((rotationSpeed * pitch).toFixed());
-        focusForm(inputRef);
     };
 
     const onFormReset = (event) => {
@@ -61,7 +61,7 @@ const TappingFeedrateForm = () => {
                 step="1"
                 placeholder={languages[langId].rotSpeed.placeholder}
                 required
-                autoFocus
+                autoFocus={!checkIfItsTouchDevice()}
                 onChange={({ target }) => setRotationSpeed(target.value)}
             />
             <FormSelect

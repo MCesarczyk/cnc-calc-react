@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import { focusForm } from "../../assets/utils/focusForm";
+import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FeedOptionSelector from "../../components/FeedOptionSelector";
@@ -27,7 +28,6 @@ const LinearFeedrateForm = () => {
         } else {
             setFeedValue((rotationSpeed * feedFactor1 * feedFactor2).toFixed());
         }
-        focusForm(inputRef);
     };
 
     const onFormReset = (event) => {
@@ -58,7 +58,7 @@ const LinearFeedrateForm = () => {
                 step="1"
                 placeholder={languages[langId].rotSpeed.placeholder}
                 required
-                autoFocus
+                autoFocus={!checkIfItsTouchDevice()}
                 onChange={({ target }) => setRotationSpeed(target.value)}
             />
 
