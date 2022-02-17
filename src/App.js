@@ -7,77 +7,72 @@ import ToolRotationForm from "./views/ToolRotation";
 import LinearFeedrateForm from "./views/LinearFeedrate";
 import TappingFeedrateForm from "./views/TappingFeedrate";
 import Home from "./views/Home";
-import Navigation from "./features/Navigation";
-import Sidebar from "./features/Sidebar";
+import Navigation from "./features/navigation/Navigation";
+import Sidebar from "./features/navigation/Sidebar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Wrapper } from "./components/Wrapper/styled";
-import { NavigationWrapper } from "./features/Navigation/styled";
+import { NavigationWrapper } from "./features/navigation/Navigation/styled";
+import LanguageProvider from "./features/language/provider";
+import NavigationProvider from "./features/navigation/provider";
 
 const App = () => {
   const { langId, setLangId } = useLanguage();
   const [open, setOpen] = useState(false);
 
   return (
-    <BrowserRouter >
-      <Sidebar
-        langId={langId}
-        open={open}
-        setOpen={setOpen}
-      />
-      <Header
-        langId={langId}
-        setLangId={setLangId}
-        open={open}
-        setOpen={setOpen}
-      />
+    <LanguageProvider value={{ langId, setLangId }} >
+      <NavigationProvider value={{ open, setOpen }}>
+        <BrowserRouter >
+          <Sidebar />
+          <Header />
+          <Wrapper>
+            <NavigationWrapper>
+              <Navigation
+                baseUrl="cnc-calc-react/"
+              />
+            </NavigationWrapper>
 
-      <Wrapper>
-        <NavigationWrapper>
-          <Navigation
-            langId={langId}
-            baseUrl="cnc-calc-react/"
+            <Routes>
+              <Route
+                path="/"
+                element={<Navigate to="cnc-calc-react" />}
+              />
+              <Route
+                path="cnc-calc-react"
+              >
+                <Route
+                  index
+                  element={<Home />}
+                />
+                <Route
+                  path="surface-speed"
+                  element={<SurfaceSpeedForm />}
+                />
+                <Route
+                  path="spindle-speed"
+                  element={<ToolRotationForm />}
+                />
+                <Route
+                  path="feedrate"
+                  element={<LinearFeedrateForm />}
+                />
+                <Route
+                  path="tapping-feed"
+                  element={<TappingFeedrateForm />}
+                />
+              </Route>
+            </Routes>
+          </Wrapper>
+
+          <Footer
+            date={DATE}
+            address={ADDRESS}
+            name={NAME}
           />
-        </NavigationWrapper>
-
-        <Routes>
-          <Route
-            path="/"
-            element={<Navigate to="cnc-calc-react" />}
-          />
-          <Route
-            path="cnc-calc-react"
-          >
-            <Route
-              index
-              element={<Home langId={langId} />}
-            />
-            <Route
-              path="surface-speed"
-              element={<SurfaceSpeedForm langId={langId} />}
-            />
-            <Route
-              path="spindle-speed"
-              element={<ToolRotationForm langId={langId} />}
-            />
-            <Route
-              path="feedrate"
-              element={<LinearFeedrateForm langId={langId} />}
-            />
-            <Route
-              path="tapping-feed"
-              element={<TappingFeedrateForm langId={langId} />}
-            />
-          </Route>
-        </Routes>
-      </Wrapper>
-
-      <Footer
-        date={DATE}
-        address={ADDRESS}
-        name={NAME}
-      />
-    </BrowserRouter>
+        </BrowserRouter>
+      </NavigationProvider>
+    </LanguageProvider>
   )
 }
 export default App;

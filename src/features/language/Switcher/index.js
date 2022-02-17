@@ -1,9 +1,13 @@
+import { useContext } from "react";
+import LanguageContext from "../context";
 import { SwitcherButton, SwitcherWrapper } from "./styled";
-import flagPL from "../../assets/images/flagPL.png";
-import flagEN from "../../assets/images/flagUS.png";
-import languages from "../../assets/fixtures/languages";
+import flagPL from "../../../assets/images/flagPL.png";
+import flagEN from "../../../assets/images/flagUS.png";
+import languages from "../../../assets/fixtures/languages";
 
-const Switcher = ({ setLangId }) => {
+const Switcher = () => {
+    const { setLangId } = useContext(LanguageContext);
+
     const changeLanguage = (key) => {
         setLangId(languages.findIndex(language => language.key === key));
     };

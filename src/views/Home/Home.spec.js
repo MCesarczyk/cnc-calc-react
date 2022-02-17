@@ -4,13 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
-import Home from ".";
+import { HomeTitle } from "./styled";
+import { MobileNavWrapper } from "../../features/navigation/Navigation/styled";
 
 test("Home component rendered properly", () => {
   const component = renderer.create(
     <ThemeProvider theme={theme} >
       <BrowserRouter>
-        <Home />
+        <HomeTitle />
+        <MobileNavWrapper />
       </BrowserRouter>
     </ThemeProvider>
   );

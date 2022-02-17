@@ -1,13 +1,15 @@
+import { useContext } from "react";
+import LanguageContext from "../../features/language/context";
 import { createFeedOptions } from "../../assets/utils/createFeedOptions";
 import RadioButton from "../RadioButton";
 import { FieldWrapper } from "../FieldWrapper";
 import { Input } from "../Input";
 
 const FeedOptionSelector = ({
-  langId,
   feedType, setFeedType,
   feedFactor1, setFeedFactor1
 }) => {
+  const { langId } = useContext(LanguageContext);
   const feedOptions = createFeedOptions(langId);
 
   const onOptionChange = ({ target }) => {

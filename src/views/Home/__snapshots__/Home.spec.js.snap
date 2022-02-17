@@ -7,13 +7,13 @@ Array [
 }
 
 @media (max-width:768px) {
-
-}
-
-@media (max-width:768px) {
   .c0 {
     display: none;
   }
+}
+
+@media (max-width:768px) {
+
 }
 
 <h2
@@ -23,41 +23,8 @@ Array [
   display: none;
 }
 
-.c1 {
-  padding: 0;
-  list-style: none;
-  margin-top: 6rem;
-}
+@media (max-width:768px) {
 
-.c2 {
-  color: #fff;
-  background-color: #1e3246;
-  display: block;
-  font-size: 1.25rem;
-  border-radius: 1.5rem;
-  padding: 0.5rem 1.5rem;
-  margin: 1rem;
-  font-weight: 400;
-  font-family: 'Ubuntu',sans-serif;
-  margin: 0 auto 0.75rem auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-transition: -webkit-transform 0.1s ease-in-out;
-  -webkit-transition: transform 0.1s ease-in-out;
-  transition: transform 0.1s ease-in-out;
-}
-
-.c2:hover {
-  -webkit-filter: brightness(1.5);
-  filter: brightness(1.5);
-}
-
-.c2:active {
-  -webkit-filter: brightness(1);
-  filter: brightness(1);
-  -webkit-transform: scale(0.98);
-  -ms-transform: scale(0.98);
-  transform: scale(0.98);
 }
 
 @media (max-width:768px) {
@@ -66,45 +33,8 @@ Array [
   }
 }
 
-@media (max-width:768px) {
-
-}
-
 <div
     className="c0"
-  >
-    <ul
-      className="c1"
-    >
-      <li>
-        <a
-          className="c2"
-          href="/surface-speed"
-          onClick={[Function]}
-        />
-      </li>
-      <li>
-        <a
-          className="c2"
-          href="/spindle-speed"
-          onClick={[Function]}
-        />
-      </li>
-      <li>
-        <a
-          className="c2"
-          href="/feedrate"
-          onClick={[Function]}
-        />
-      </li>
-      <li>
-        <a
-          className="c2"
-          href="/tapping-feed"
-          onClick={[Function]}
-        />
-      </li>
-    </ul>
-  </div>,
+  />,
 ]
 `;

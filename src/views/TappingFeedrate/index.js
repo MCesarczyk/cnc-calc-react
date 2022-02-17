@@ -1,7 +1,9 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import tapDiameters from "../../assets/fixtures/tapDiameters";
 import { focusForm } from "../../assets/utils/focusForm";
+import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormSelect from "../../components/FormSelect";
@@ -11,7 +13,8 @@ const newArray = tapDiameters.map(record => ({
     value: record.diameter
 }));
 
-const TappingFeedrateForm = ({ langId }) => {
+const TappingFeedrateForm = () => {
+    const { langId } = useContext(LanguageContext);
     const [rotationSpeed, setRotationSpeed] = useState("");
     const [diameter, setDiameter] = useState("");
     const [pitch, setPitch] = useState("");
@@ -21,7 +24,6 @@ const TappingFeedrateForm = ({ langId }) => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         setFeedValue((rotationSpeed * pitch).toFixed());
-        focusForm(inputRef);
     };
 
     const onFormReset = (event) => {
@@ -47,7 +49,6 @@ const TappingFeedrateForm = ({ langId }) => {
             legend={languages[langId].form4Legend}
             onSubmit={onFormSubmit}
             onReset={onFormReset}
-            langId={langId}
         >
             <FormInput
                 name={languages[langId].rotSpeed.name}
@@ -60,7 +61,7 @@ const TappingFeedrateForm = ({ langId }) => {
                 step="1"
                 placeholder={languages[langId].rotSpeed.placeholder}
                 required
-                autoFocus
+                autoFocus={!checkIfItsTouchDevice()}
                 onChange={({ target }) => setRotationSpeed(target.value)}
             />
             <FormSelect
