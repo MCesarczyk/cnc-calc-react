@@ -39,24 +39,28 @@ const App = () => {
               />
               <Route
                 path={rootPath}
-                element={<Home />}
-              />
-              <Route
-                path={`${rootPath}/surface-speed`}
-                element={<SurfaceSpeedForm />}
-              />
-              <Route
-                path={`${rootPath}/spindle-speed`}
-                element={<ToolRotationForm />}
-              />
-              <Route
-                path={`${rootPath}/feedrate`}
-                element={<LinearFeedrateForm />}
-              />
-              <Route
-                path={`${rootPath}/tapping-feed`}
-                element={<TappingFeedrateForm />}
-              />
+              >
+                <Route
+                  index
+                  element={<Home />}
+                />
+                <Route
+                  path="surface-speed"
+                  element={<SurfaceSpeedForm />}
+                />
+                <Route
+                  path="spindle-speed"
+                  element={<ToolRotationForm />}
+                />
+                <Route
+                  path="feedrate"
+                  element={<LinearFeedrateForm />}
+                />
+                <Route
+                  path="tapping-feed"
+                  element={<TappingFeedrateForm />}
+                />
+              </Route>
             </Routes>
           </Wrapper>
 
