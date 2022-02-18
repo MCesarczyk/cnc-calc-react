@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { rootPath } from "./assets/fixtures/rootPath";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
@@ -28,40 +29,34 @@ const App = () => {
           <Header />
           <Wrapper>
             <NavigationWrapper>
-              <Navigation
-                baseUrl="cnc-calc-react/"
-              />
+              <Navigation />
             </NavigationWrapper>
 
             <Routes>
               <Route
                 path="/"
-                element={<Navigate to="cnc-calc-react" />}
+                element={<Navigate to={rootPath} />}
               />
               <Route
-                path="cnc-calc-react"
-              >
-                <Route
-                  index
-                  element={<Home />}
-                />
-                <Route
-                  path="surface-speed"
-                  element={<SurfaceSpeedForm />}
-                />
-                <Route
-                  path="spindle-speed"
-                  element={<ToolRotationForm />}
-                />
-                <Route
-                  path="feedrate"
-                  element={<LinearFeedrateForm />}
-                />
-                <Route
-                  path="tapping-feed"
-                  element={<TappingFeedrateForm />}
-                />
-              </Route>
+                path={rootPath}
+                element={<Home />}
+              />
+              <Route
+                path={`${rootPath}/surface-speed`}
+                element={<SurfaceSpeedForm />}
+              />
+              <Route
+                path={`${rootPath}/spindle-speed`}
+                element={<ToolRotationForm />}
+              />
+              <Route
+                path={`${rootPath}/feedrate`}
+                element={<LinearFeedrateForm />}
+              />
+              <Route
+                path={`${rootPath}/tapping-feed`}
+                element={<TappingFeedrateForm />}
+              />
             </Routes>
           </Wrapper>
 

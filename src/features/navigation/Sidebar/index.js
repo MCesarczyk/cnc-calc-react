@@ -1,5 +1,6 @@
 import { useCallback, useContext, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import { rootPath } from "../../../assets/fixtures/rootPath";
 import NavigationContext from "../context";
 import Navigation from "../Navigation";
 import { SidebarActivationArea, SidebarNavigation } from "./styled";
@@ -44,11 +45,11 @@ const Sidebar = () => {
       />
       <SidebarNavigation
         ref={sidebarRef}
-        visible={open && pathname !== "/cnc-calc-react"}
+        visible={open && pathname !== rootPath}
       >
         <Navigation
           sidebar="true"
-          baseUrl="cnc-calc-react/"
+          rootPath={rootPath}
           handleClose={handleClose}
         />
       </SidebarNavigation>
