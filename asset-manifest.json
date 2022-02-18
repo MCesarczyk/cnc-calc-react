@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/cnc-calc-react/static/js/main.3681e5b6.chunk.js",
-    "main.js.map": "/cnc-calc-react/static/js/main.3681e5b6.chunk.js.map",
+    "main.js": "/cnc-calc-react/static/js/main.e9531a84.chunk.js",
+    "main.js.map": "/cnc-calc-react/static/js/main.e9531a84.chunk.js.map",
     "runtime-main.js": "/cnc-calc-react/static/js/runtime-main.00551cf0.js",
     "runtime-main.js.map": "/cnc-calc-react/static/js/runtime-main.00551cf0.js.map",
     "static/js/2.e96edcfa.chunk.js": "/cnc-calc-react/static/js/2.e96edcfa.chunk.js",
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.00551cf0.js",
     "static/js/2.e96edcfa.chunk.js",
-    "static/js/main.3681e5b6.chunk.js"
+    "static/js/main.e9531a84.chunk.js"
   ]
 }
