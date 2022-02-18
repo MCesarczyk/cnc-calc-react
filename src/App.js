@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { rootPath } from "./assets/fixtures/rootPath";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
@@ -24,7 +23,7 @@ const App = () => {
   return (
     <LanguageProvider value={{ langId, setLangId }} >
       <NavigationProvider value={{ open, setOpen }}>
-        <BrowserRouter >
+        <HashRouter >
           <Sidebar />
           <Header />
           <Wrapper>
@@ -34,27 +33,23 @@ const App = () => {
 
             <Routes>
               <Route
-                path="/"
-                element={<Navigate to={rootPath} />}
-              />
-              <Route
-                path={rootPath}
+                index
                 element={<Home />}
               />
               <Route
-                path={`${rootPath}/surface-speed`}
+                path="surface-speed"
                 element={<SurfaceSpeedForm />}
               />
               <Route
-                path={`${rootPath}/spindle-speed`}
+                path="spindle-speed"
                 element={<ToolRotationForm />}
               />
               <Route
-                path={`${rootPath}/feedrate`}
+                path="feedrate"
                 element={<LinearFeedrateForm />}
               />
               <Route
-                path={`${rootPath}/tapping-feed`}
+                path="tapping-feed"
                 element={<TappingFeedrateForm />}
               />
             </Routes>
@@ -65,7 +60,7 @@ const App = () => {
             address={ADDRESS}
             name={NAME}
           />
-        </BrowserRouter>
+        </HashRouter>
       </NavigationProvider>
     </LanguageProvider>
   )

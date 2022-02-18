@@ -26,6 +26,12 @@ exports[`Header rendered properly 1`] = `
   outline: none;
 }
 
+.c1:disabled {
+  cursor: unset;
+  -webkit-filter: unset;
+  filter: unset;
+}
+
 .c0 {
   color: #fff;
   background-color: #1e3246;
@@ -100,6 +106,7 @@ exports[`Header rendered properly 1`] = `
 >
   <button
     className="c1"
+    disabled={true}
   >
     <svg>
       hamburger-menu.svg
