@@ -2,7 +2,7 @@
   "short_name": "CNC calc",
   "name": "Cutting parametrers calculator",
   "icons": [],
-  "start_url": "https://mcesarczyk.github.io/cnc-calc-react/",
+  "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
