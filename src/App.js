@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { rootPath } from "./assets/fixtures/rootPath";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
@@ -24,7 +23,7 @@ const App = () => {
   return (
     <LanguageProvider value={{ langId, setLangId }} >
       <NavigationProvider value={{ open, setOpen }}>
-        <BrowserRouter >
+        <HashRouter >
           <Sidebar />
           <Header />
           <Wrapper>
@@ -34,33 +33,25 @@ const App = () => {
 
             <Routes>
               <Route
-                path="/"
-                element={<Navigate to={rootPath} />}
+                index
+                element={<Home />}
               />
               <Route
-                path={rootPath}
-              >
-                <Route
-                  index
-                  element={<Home />}
-                />
-                <Route
-                  path="surface-speed"
-                  element={<SurfaceSpeedForm />}
-                />
-                <Route
-                  path="spindle-speed"
-                  element={<ToolRotationForm />}
-                />
-                <Route
-                  path="feedrate"
-                  element={<LinearFeedrateForm />}
-                />
-                <Route
-                  path="tapping-feed"
-                  element={<TappingFeedrateForm />}
-                />
-              </Route>
+                path="surface-speed"
+                element={<SurfaceSpeedForm />}
+              />
+              <Route
+                path="spindle-speed"
+                element={<ToolRotationForm />}
+              />
+              <Route
+                path="feedrate"
+                element={<LinearFeedrateForm />}
+              />
+              <Route
+                path="tapping-feed"
+                element={<TappingFeedrateForm />}
+              />
             </Routes>
           </Wrapper>
 
@@ -69,7 +60,7 @@ const App = () => {
             address={ADDRESS}
             name={NAME}
           />
-        </BrowserRouter>
+        </HashRouter>
       </NavigationProvider>
     </LanguageProvider>
   )

@@ -11,15 +11,20 @@ export const MenuIconWrapper = styled.button`
   z-index: 25;
 
   &:hover {
-      filter: brightness(0.8);
+    filter: brightness(0.8);
   }
 
   &:active {
-      filter: unset;
+    filter: unset;
   }
 
   &:focus {
-      outline: none;
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: unset;
+    filter: unset;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
