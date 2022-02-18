@@ -3,7 +3,7 @@ import LanguageContext from "../../language/context";
 import { createRoutesList } from "../../../assets/utils/createRoutesList";
 import { Item, List } from "./styled";
 
-const Navigation = ({ sidebar }) => {
+const Navigation = ({ sidebar, rootPath }) => {
   const { langId } = useContext(LanguageContext);
   const routes = createRoutesList(langId);
 
@@ -13,7 +13,7 @@ const Navigation = ({ sidebar }) => {
         <li key={route.id}>
           <Item
             sidebar={sidebar}
-            to={route.path}
+            to={!rootPath ? route.path : `${rootPath}/${route.path}`}
           >
             {route.label}
           </Item>

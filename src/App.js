@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { rootPath } from "./assets/fixtures/rootPath";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
@@ -33,23 +34,27 @@ const App = () => {
 
             <Routes>
               <Route
-                index
+                path="/"
+                element={<Navigate to={rootPath} />}
+              />
+              <Route
+                path={rootPath}
                 element={<Home />}
               />
               <Route
-                path="surface-speed"
+                path={`${rootPath}/surface-speed`}
                 element={<SurfaceSpeedForm />}
               />
               <Route
-                path="spindle-speed"
+                path={`${rootPath}/spindle-speed`}
                 element={<ToolRotationForm />}
               />
               <Route
-                path="feedrate"
+                path={`${rootPath}/feedrate`}
                 element={<LinearFeedrateForm />}
               />
               <Route
-                path="tapping-feed"
+                path={`${rootPath}/tapping-feed`}
                 element={<TappingFeedrateForm />}
               />
             </Routes>
