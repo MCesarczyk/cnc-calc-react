@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
@@ -28,40 +28,30 @@ const App = () => {
           <Header />
           <Wrapper>
             <NavigationWrapper>
-              <Navigation
-                baseUrl="cnc-calc-react/"
-              />
+              <Navigation />
             </NavigationWrapper>
 
             <Routes>
               <Route
-                path="/"
-                element={<Navigate to="cnc-calc-react" />}
+                index
+                element={<Home />}
               />
               <Route
-                path="cnc-calc-react"
-              >
-                <Route
-                  index
-                  element={<Home />}
-                />
-                <Route
-                  path="surface-speed"
-                  element={<SurfaceSpeedForm />}
-                />
-                <Route
-                  path="spindle-speed"
-                  element={<ToolRotationForm />}
-                />
-                <Route
-                  path="feedrate"
-                  element={<LinearFeedrateForm />}
-                />
-                <Route
-                  path="tapping-feed"
-                  element={<TappingFeedrateForm />}
-                />
-              </Route>
+                path="surface-speed"
+                element={<SurfaceSpeedForm />}
+              />
+              <Route
+                path="spindle-speed"
+                element={<ToolRotationForm />}
+              />
+              <Route
+                path="feedrate"
+                element={<LinearFeedrateForm />}
+              />
+              <Route
+                path="tapping-feed"
+                element={<TappingFeedrateForm />}
+              />
             </Routes>
           </Wrapper>
 

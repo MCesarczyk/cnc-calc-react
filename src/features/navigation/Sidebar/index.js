@@ -44,11 +44,10 @@ const Sidebar = () => {
       />
       <SidebarNavigation
         ref={sidebarRef}
-        visible={open && pathname !== "/cnc-calc-react"}
+        visible={open && pathname !== "/"}
       >
         <Navigation
           sidebar="true"
-          baseUrl="cnc-calc-react/"
           handleClose={handleClose}
         />
       </SidebarNavigation>
