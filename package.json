@@ -5,7 +5,7 @@
   "license": "MIT",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mcesarczyk.github.io/cnc-calc-react/index.html",
+  "homepage": "https://mcesarczyk.github.io/cnc-calc-react",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
