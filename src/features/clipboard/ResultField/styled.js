@@ -11,12 +11,11 @@ export const ResultWrapper = styled.div`
 `
 
 export const Result = styled.div`
-    min-width: 10rem;
+    min-width: 16rem;
     border: solid 1px ${({ theme }) => theme.color.primary};
     border-radius: 5px;
     padding: 5px;
     color: ${({ theme }) => theme.color.primaryText};
-    flex-grow: 1;
 
     ${({ placeholder }) => placeholder && css`
       color: ${({ theme }) => theme.color.placeholder};

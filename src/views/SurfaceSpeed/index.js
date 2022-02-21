@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import { focusForm } from "../../assets/utils/focusForm";
@@ -6,9 +6,11 @@ import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import ResultField from "../../features/clipboard/ResultField";
+import ClipboardContext from "../../features/clipboard/context";
 
 const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);
+  const { setValues } = useContext(ClipboardContext);
   const [diameter, setDiameter] = useState("");
   const [rotationSpeed, setRotationSpeed] = useState("");
   const [cuttingSpeed, setCuttingSpeed] = useState("");
@@ -18,6 +20,14 @@ const SurfaceSpeedForm = () => {
     event.preventDefault();
     setCuttingSpeed((Math.PI * diameter * rotationSpeed / 1000).toFixed(2));
   };
+
+  useEffect(() => {
+    setValues({
+      ...setValues,
+      surfaceSpeed: cuttingSpeed
+    });
+
+  }, [cuttingSpeed, setValues])
 
   const onFormReset = (event) => {
     event.preventDefault();
@@ -39,8 +49,8 @@ const SurfaceSpeedForm = () => {
         inputRef={inputRef}
         value={diameter}
         type="number"
-        min="0.0001"
-        step="0.0001"
+        min="0.01"
+        step="0.01"
         placeholder={languages[langId].diameter.placeholder}
         required
         autoFocus={!checkIfItsTouchDevice()}
