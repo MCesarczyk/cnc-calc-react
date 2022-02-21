@@ -18,16 +18,18 @@ const newArray = tapDiameters.map(record => ({
 const TappingFeedrateForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues } = useContext(ClipboardContext);
-    const [rotationSpeed, setRotationSpeed] = useState(values.rotationSpeed || "");
-    const [diameter, setDiameter] = useState("");
-    const [pitch, setPitch] = useState("");
+    const [rotationSpeed, setRotationSpeed] = useState(values?.rotationSpeed || "");
+    const [diameter, setDiameter] = useState(values?.tapDiameter || "");
+    const [pitch, setPitch] = useState(values?.pitch || "");
     const [feedValue, setFeedValue] = useState("");
     const inputRef = useRef(null);
 
     useEffect(() => {
         setValues({
             ...values,
-            diameter: diameter,
+            rotationSpeed: rotationSpeed,
+            tapDiameter: diameter,
+            pitch: pitch,
             tappingFeedrate: feedValue
         });
 

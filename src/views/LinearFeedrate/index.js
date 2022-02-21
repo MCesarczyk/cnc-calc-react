@@ -12,34 +12,48 @@ import ClipboardContext from "../../features/clipboard/context";
 const LinearFeedrateForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues } = useContext(ClipboardContext);
-    const [rotationSpeed, setRotationSpeed] = useState(values.rotationSpeed || "");
-    const [feedFactor1, setFeedFactor1] = useState("");
-    const [feedFactor2, setFeedFactor2] = useState("");
-    const [feedType, setFeedType] = useState("FPR");
-    const [feedValue, setFeedValue] = useState("");
+    const [rotationSpeed, setRotationSpeed] = useState(values?.rotationSpeed || "");
+    const [feedType, setFeedType] = useState(values?.feedType || "FPR");
+    const [toothNumber, setToothNumber] = useState(values?.toothNumber || "");
+    const feedPerRevolutionInitial = values?.feedPerRevolution || "";
+    const [feedPerRevolution, setFeedPerRevolution] = useState(feedPerRevolutionInitial);
+    const feedPerToothInitial = values?.feedPerTooth || "";
+    const [feedPerTooth, setFeedPerTooth] = useState(feedPerToothInitial);
+    const [feedrate, setFeedrate] = useState("");
     const inputRef = useRef(null);
 
     useEffect(() => {
-        setFeedFactor1("");
-        setFeedFactor2("");
+        setFeedPerRevolution(feedPerRevolutionInitial);
+        setFeedPerTooth(feedPerToothInitial);
+        setToothNumber(values?.toothNumber || "");
+        //eslint-disable-next-line
     }, [feedType])
 
     useEffect(() => {
         setValues({
             ...values,
             rotationSpeed: rotationSpeed,
-            feedrate: feedValue
+            feedPerRevolution: feedPerRevolution,
+            feedPerTooth: feedPerTooth,
+            toothNumber: toothNumber,
+            feedType: feedType,
+            feedrate: feedrate
         });
 
         // eslint-disable-next-line 
-    }, [feedValue]);
+    }, [feedrate]);
+
+    const onFeedChange = (feedValue) => {
+        feedType === "FPR" && setFeedPerRevolution(feedValue);
+        feedType === "FPT" && setFeedPerTooth(feedValue);
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
         if (feedType === "FPR") {
-            setFeedValue((rotationSpeed * feedFactor1).toFixed());
+            setFeedrate((rotationSpeed * feedPerRevolution).toFixed());
         } else {
-            setFeedValue((rotationSpeed * feedFactor1 * feedFactor2).toFixed());
+            setFeedrate((rotationSpeed * feedPerTooth * toothNumber).toFixed());
         }
     };
 
@@ -47,9 +61,10 @@ const LinearFeedrateForm = () => {
         event.preventDefault();
         setRotationSpeed("");
         setFeedType("FPR");
-        setFeedFactor1("");
-        setFeedFactor2("");
-        setFeedValue("");
+        setFeedPerRevolution("");
+        setFeedPerTooth("");
+        setToothNumber("");
+        setFeedrate("");
         focusForm(inputRef);
     };
 
@@ -76,24 +91,24 @@ const LinearFeedrateForm = () => {
             <FeedOptionSelector
                 feedType={feedType}
                 setFeedType={setFeedType}
-                feedFactor1={feedFactor1}
-                setFeedFactor1={setFeedFactor1}
+                feedFactor={feedType === "FPR" ? feedPerRevolution : feedPerTooth}
+                setFeedFactor={onFeedChange}
             />
             <FormInput
                 name={languages[langId].teethNumber.name}
-                value={(feedType === "FPT") ? feedFactor2 : ""}
+                value={(feedType === "FPT") ? toothNumber : ""}
                 type="number"
                 min="1"
                 step="1"
                 placeholder={languages[langId].teethNumber.placeholder}
                 required
                 disabled={feedType === "FPR"}
-                onChange={({ target }) => setFeedFactor2(target.value)}
+                onChange={({ target }) => setToothNumber(target.value)}
             />
             <ResultField
                 name={languages[langId].feedrate.name}
                 unit={languages[langId].feedrate.unit}
-                value={feedValue}
+                value={feedrate}
                 placeholder={languages[langId].feedrate.placeholder}
             />
         </Form>

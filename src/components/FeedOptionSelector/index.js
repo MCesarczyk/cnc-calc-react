@@ -7,7 +7,7 @@ import { Input } from "../Input";
 
 const FeedOptionSelector = ({
   feedType, setFeedType,
-  feedFactor1, setFeedFactor1
+  feedFactor, setFeedFactor
 }) => {
   const { langId } = useContext(LanguageContext);
   const feedOptions = createFeedOptions(langId);
@@ -28,14 +28,14 @@ const FeedOptionSelector = ({
               onChange={onOptionChange}
             />
             <Input
-              value={(feedOption.id === feedType) ? feedFactor1 : ""}
+              value={(feedOption.id === feedType) ? feedFactor : ""}
               type="number"
               min="0.01"
               step="0.01"
               required
               disabled={feedOption.id !== feedType}
               placeholder={feedOption.placeholder}
-              onChange={({ target }) => setFeedFactor1(target.value)}
+              onChange={({ target }) => setFeedFactor(target.value)}
             />
           </FieldWrapper>
         ))
