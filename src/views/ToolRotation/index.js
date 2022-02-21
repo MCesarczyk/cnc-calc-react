@@ -1,17 +1,29 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import { focusForm } from "../../assets/utils/focusForm";
 import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
+import ResultField from "../../features/clipboard/ResultField";
+import ClipboardContext from "../../features/clipboard/context";
 
 const ToolRotationForm = () => {
     const { langId } = useContext(LanguageContext);
+    const { values, setValues } = useContext(ClipboardContext);
     const [diameter, setDiameter] = useState("");
     const [cuttingSpeed, setCuttingSpeed] = useState("");
     const [rotationSpeed, setRotationSpeed] = useState("");
     const inputRef = useRef(null);
+
+    useEffect(() => {
+        setValues({
+            ...values,
+            toolRotation: rotationSpeed
+        });
+
+        // eslint-disable-next-line 
+    }, [rotationSpeed]);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -57,12 +69,11 @@ const ToolRotationForm = () => {
                 required
                 onChange={({ target }) => setCuttingSpeed(target.value)}
             />
-            <FormInput
+            <ResultField
                 name={languages[langId].rotSpeed.name}
                 sub={languages[langId].rotSpeed.sub}
                 unit={languages[langId].rotSpeed.unit}
                 value={rotationSpeed}
-                readOnly
                 placeholder={languages[langId].rotSpeed.placeholder}
             />
         </Form >

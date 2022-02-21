@@ -10,24 +10,25 @@ import ClipboardContext from "../../features/clipboard/context";
 
 const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);
-  const { setValues } = useContext(ClipboardContext);
+  const { values, setValues } = useContext(ClipboardContext);
   const [diameter, setDiameter] = useState("");
   const [rotationSpeed, setRotationSpeed] = useState("");
   const [cuttingSpeed, setCuttingSpeed] = useState("");
   const inputRef = useRef();
 
+  useEffect(() => {
+    setValues({
+      ...values,
+      surfaceSpeed: cuttingSpeed
+    });
+
+    // eslint-disable-next-line 
+  }, [cuttingSpeed]);
+
   const onFormSubmit = (event) => {
     event.preventDefault();
     setCuttingSpeed((Math.PI * diameter * rotationSpeed / 1000).toFixed(2));
   };
-
-  useEffect(() => {
-    setValues({
-      ...setValues,
-      surfaceSpeed: cuttingSpeed
-    });
-
-  }, [cuttingSpeed, setValues])
 
   const onFormReset = (event) => {
     event.preventDefault();

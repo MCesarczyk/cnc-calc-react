@@ -6,9 +6,12 @@ import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FeedOptionSelector from "../../components/FeedOptionSelector";
+import ResultField from "../../features/clipboard/ResultField";
+import ClipboardContext from "../../features/clipboard/context";
 
 const LinearFeedrateForm = () => {
     const { langId } = useContext(LanguageContext);
+    const { values, setValues } = useContext(ClipboardContext);
     const [rotationSpeed, setRotationSpeed] = useState("");
     const [feedFactor1, setFeedFactor1] = useState("");
     const [feedFactor2, setFeedFactor2] = useState("");
@@ -20,6 +23,15 @@ const LinearFeedrateForm = () => {
         setFeedFactor1("");
         setFeedFactor2("");
     }, [feedType])
+
+    useEffect(() => {
+        setValues({
+            ...values,
+            linearFeedrate: feedValue
+        });
+
+        // eslint-disable-next-line 
+    }, [feedValue]);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -46,7 +58,6 @@ const LinearFeedrateForm = () => {
             onSubmit={onFormSubmit}
             onReset={onFormReset}
         >
-
             <FormInput
                 name={languages[langId].rotSpeed.name}
                 sub={languages[langId].rotSpeed.sub}
@@ -61,14 +72,12 @@ const LinearFeedrateForm = () => {
                 autoFocus={!checkIfItsTouchDevice()}
                 onChange={({ target }) => setRotationSpeed(target.value)}
             />
-
             <FeedOptionSelector
                 feedType={feedType}
                 setFeedType={setFeedType}
                 feedFactor1={feedFactor1}
                 setFeedFactor1={setFeedFactor1}
             />
-
             <FormInput
                 name={languages[langId].teethNumber.name}
                 value={(feedType === "FPT") ? feedFactor2 : ""}
@@ -80,15 +89,12 @@ const LinearFeedrateForm = () => {
                 disabled={feedType === "FPR"}
                 onChange={({ target }) => setFeedFactor2(target.value)}
             />
-
-            <FormInput
+            <ResultField
                 name={languages[langId].feedrate.name}
                 unit={languages[langId].feedrate.unit}
                 value={feedValue}
-                readOnly
                 placeholder={languages[langId].feedrate.placeholder}
             />
-
         </Form>
     )
 };

@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import tapDiameters from "../../assets/fixtures/tapDiameters";
@@ -7,6 +7,8 @@ import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormSelect from "../../components/FormSelect";
+import ResultField from "../../features/clipboard/ResultField";
+import ClipboardContext from "../../features/clipboard/context";
 
 const newArray = tapDiameters.map(record => ({
     key: record.id,
@@ -15,11 +17,22 @@ const newArray = tapDiameters.map(record => ({
 
 const TappingFeedrateForm = () => {
     const { langId } = useContext(LanguageContext);
+    const { values, setValues } = useContext(ClipboardContext);
     const [rotationSpeed, setRotationSpeed] = useState("");
     const [diameter, setDiameter] = useState("");
     const [pitch, setPitch] = useState("");
     const [feedValue, setFeedValue] = useState("");
     const inputRef = useRef(null);
+
+    useEffect(() => {
+        setValues({
+            ...values,
+            tappingFeedrate: feedValue
+        });
+
+        // eslint-disable-next-line 
+    }, [feedValue]);
+
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -79,11 +92,10 @@ const TappingFeedrateForm = () => {
                 placeholder={languages[langId].pitch.placeholder}
                 readOnly
             />
-            <FormInput
+            <ResultField
                 name={languages[langId].feedrate.name}
                 unit={languages[langId].feedrate.unit}
                 value={feedValue}
-                readOnly
                 placeholder={languages[langId].feedrate.placeholder}
             />
         </Form>
