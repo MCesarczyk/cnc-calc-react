@@ -5,6 +5,7 @@ import { focusForm } from "../../assets/utils/focusForm";
 import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
+import ResultField from "../../features/clipboard/ResultField";
 
 const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);
@@ -57,12 +58,11 @@ const SurfaceSpeedForm = () => {
         required
         onChange={({ target }) => setRotationSpeed(target.value)}
       />
-      <FormInput
+      <ResultField
         name={languages[langId].cutSpeed.name}
         sub={languages[langId].cutSpeed.sub}
         unit={languages[langId].cutSpeed.unit}
         value={cuttingSpeed}
-        readOnly
         placeholder={languages[langId].cutSpeed.placeholder}
       />
     </Form >
