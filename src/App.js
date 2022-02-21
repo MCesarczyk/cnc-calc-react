@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useLanguage } from './assets/utils/useLanguage';
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
@@ -15,10 +15,16 @@ import { Wrapper } from "./components/Wrapper/styled";
 import { NavigationWrapper } from "./features/navigation/Navigation/styled";
 import LanguageProvider from "./features/language/provider";
 import NavigationProvider from "./features/navigation/provider";
+import ClipboardProvider from "./features/clipboard/provider";
 
 const App = () => {
   const { langId, setLangId } = useLanguage();
   const [open, setOpen] = useState(false);
+  const [values, setValues] = useState(undefined);
+
+  useEffect(() => {
+    console.log(values);
+  }, [values]);
 
   return (
     <LanguageProvider value={{ langId, setLangId }} >
@@ -31,28 +37,30 @@ const App = () => {
               <Navigation />
             </NavigationWrapper>
 
-            <Routes>
-              <Route
-                index
-                element={<Home />}
-              />
-              <Route
-                path="surface-speed"
-                element={<SurfaceSpeedForm />}
-              />
-              <Route
-                path="spindle-speed"
-                element={<ToolRotationForm />}
-              />
-              <Route
-                path="feedrate"
-                element={<LinearFeedrateForm />}
-              />
-              <Route
-                path="tapping-feed"
-                element={<TappingFeedrateForm />}
-              />
-            </Routes>
+            <ClipboardProvider value={{ values, setValues }} >
+              <Routes>
+                <Route
+                  index
+                  element={<Home />}
+                />
+                <Route
+                  path="surface-speed"
+                  element={<SurfaceSpeedForm />}
+                />
+                <Route
+                  path="spindle-speed"
+                  element={<ToolRotationForm />}
+                />
+                <Route
+                  path="feedrate"
+                  element={<LinearFeedrateForm />}
+                />
+                <Route
+                  path="tapping-feed"
+                  element={<TappingFeedrateForm />}
+                />
+              </Routes>
+            </ClipboardProvider>
           </Wrapper>
 
           <Footer
