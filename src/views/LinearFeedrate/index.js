@@ -12,7 +12,7 @@ import ClipboardContext from "../../features/clipboard/context";
 const LinearFeedrateForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues } = useContext(ClipboardContext);
-    const [rotationSpeed, setRotationSpeed] = useState("");
+    const [rotationSpeed, setRotationSpeed] = useState(values.rotationSpeed || "");
     const [feedFactor1, setFeedFactor1] = useState("");
     const [feedFactor2, setFeedFactor2] = useState("");
     const [feedType, setFeedType] = useState("FPR");
@@ -27,7 +27,8 @@ const LinearFeedrateForm = () => {
     useEffect(() => {
         setValues({
             ...values,
-            linearFeedrate: feedValue
+            rotationSpeed: rotationSpeed,
+            feedrate: feedValue
         });
 
         // eslint-disable-next-line 

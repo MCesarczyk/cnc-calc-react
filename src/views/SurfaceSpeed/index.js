@@ -11,14 +11,16 @@ import ClipboardContext from "../../features/clipboard/context";
 const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);
   const { values, setValues } = useContext(ClipboardContext);
-  const [diameter, setDiameter] = useState("");
-  const [rotationSpeed, setRotationSpeed] = useState("");
+  const [diameter, setDiameter] = useState(values?.diameter || "");
+  const [rotationSpeed, setRotationSpeed] = useState(values?.rotationSpeed || "");
   const [cuttingSpeed, setCuttingSpeed] = useState("");
   const inputRef = useRef();
 
   useEffect(() => {
     setValues({
       ...values,
+      diameter: diameter,
+      rotationSpeed: rotationSpeed,
       surfaceSpeed: cuttingSpeed
     });
 

@@ -11,15 +11,17 @@ import ClipboardContext from "../../features/clipboard/context";
 const ToolRotationForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues } = useContext(ClipboardContext);
-    const [diameter, setDiameter] = useState("");
-    const [cuttingSpeed, setCuttingSpeed] = useState("");
+    const [diameter, setDiameter] = useState(values?.diameter || "");
+    const [cuttingSpeed, setCuttingSpeed] = useState(values?.surfaceSpeed || "");
     const [rotationSpeed, setRotationSpeed] = useState("");
     const inputRef = useRef(null);
 
     useEffect(() => {
         setValues({
             ...values,
-            toolRotation: rotationSpeed
+            diameter: diameter,
+            surfaceSpeed: cuttingSpeed,
+            rotationSpeed: rotationSpeed
         });
 
         // eslint-disable-next-line 
@@ -27,7 +29,7 @@ const ToolRotationForm = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        setRotationSpeed((cuttingSpeed * 1000 / Math.PI / diameter).toFixed(2));
+        setRotationSpeed((cuttingSpeed * 1000 / Math.PI / diameter).toFixed(0));
     };
 
     const onFormReset = (event) => {
@@ -50,8 +52,8 @@ const ToolRotationForm = () => {
                 inputRef={inputRef}
                 value={diameter}
                 type="number"
-                min="0.0001"
-                step="0.0001"
+                min="0.01"
+                step="0.01"
                 placeholder={languages[langId].diameter.placeholder}
                 required
                 autoFocus={!checkIfItsTouchDevice()}
@@ -64,7 +66,7 @@ const ToolRotationForm = () => {
                 value={cuttingSpeed}
                 type="number"
                 min="1"
-                step="1"
+                step="0.01"
                 placeholder={languages[langId].cutSpeed.placeholder}
                 required
                 onChange={({ target }) => setCuttingSpeed(target.value)}

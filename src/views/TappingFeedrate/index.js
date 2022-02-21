@@ -18,7 +18,7 @@ const newArray = tapDiameters.map(record => ({
 const TappingFeedrateForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues } = useContext(ClipboardContext);
-    const [rotationSpeed, setRotationSpeed] = useState("");
+    const [rotationSpeed, setRotationSpeed] = useState(values.rotationSpeed || "");
     const [diameter, setDiameter] = useState("");
     const [pitch, setPitch] = useState("");
     const [feedValue, setFeedValue] = useState("");
@@ -27,6 +27,7 @@ const TappingFeedrateForm = () => {
     useEffect(() => {
         setValues({
             ...values,
+            diameter: diameter,
             tappingFeedrate: feedValue
         });
 
