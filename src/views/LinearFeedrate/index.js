@@ -12,12 +12,12 @@ import ClipboardContext from "../../features/clipboard/context";
 const LinearFeedrateForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues } = useContext(ClipboardContext);
-    const [rotationSpeed, setRotationSpeed] = useState(values?.rotationSpeed || "");
-    const [feedType, setFeedType] = useState(values?.feedType || "FPR");
-    const [toothNumber, setToothNumber] = useState(values?.toothNumber || "");
-    const feedPerRevolutionInitial = values?.feedPerRevolution || "";
+    const [rotationSpeed, setRotationSpeed] = useState((values?.memoryMode && values?.rotationSpeed) || "");
+    const [feedType, setFeedType] = useState((values?.memoryMode && values?.feedType) || "FPR");
+    const [toothNumber, setToothNumber] = useState((values?.memoryMode && values?.toothNumber) || "");
+    const feedPerRevolutionInitial = (values?.memoryMode && values?.feedPerRevolution) || "";
     const [feedPerRevolution, setFeedPerRevolution] = useState(feedPerRevolutionInitial);
-    const feedPerToothInitial = values?.feedPerTooth || "";
+    const feedPerToothInitial = (values?.memoryMode && values?.feedPerTooth) || "";
     const [feedPerTooth, setFeedPerTooth] = useState(feedPerToothInitial);
     const [feedrate, setFeedrate] = useState("");
     const inputRef = useRef(null);

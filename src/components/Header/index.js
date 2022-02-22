@@ -3,7 +3,7 @@ import LanguageContext from "../../features/language/context";
 import NavigationContext from "../../features/navigation/context";
 import languages from "../../assets/fixtures/languages";
 import MenuIcon from "./MenuIcon";
-import Switcher from "../../features/language/Switcher";
+import LanguageSwitcher from "../../features/language/Switcher";
 import { AppBar, Headline, HomeLink } from "./styled";
 
 const Header = () => {
@@ -21,7 +21,7 @@ const Header = () => {
                         {languages[langId]?.mainTitle}
                     </Headline>
                 </HomeLink>
-                <Switcher />
+                <LanguageSwitcher />
             </AppBar>
         </header>
     )

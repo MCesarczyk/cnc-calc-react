@@ -18,9 +18,9 @@ const newArray = tapDiameters.map(record => ({
 const TappingFeedrateForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues } = useContext(ClipboardContext);
-    const [rotationSpeed, setRotationSpeed] = useState(values?.rotationSpeed || "");
-    const [diameter, setDiameter] = useState(values?.tapDiameter || "");
-    const [pitch, setPitch] = useState(values?.pitch || "");
+    const [rotationSpeed, setRotationSpeed] = useState((values?.memoryMode && values?.rotationSpeed) || "");
+    const [diameter, setDiameter] = useState((values?.memoryMode && values?.tapDiameter) || "");
+    const [pitch, setPitch] = useState((values?.memoryMode && values?.pitch) || "");
     const [feedValue, setFeedValue] = useState("");
     const inputRef = useRef(null);
 

@@ -5,7 +5,7 @@ import flagPL from "../../../assets/images/flagPL.png";
 import flagEN from "../../../assets/images/flagUS.png";
 import languages from "../../../assets/fixtures/languages";
 
-const Switcher = () => {
+const LanguageSwitcher = () => {
     const { setLangId } = useContext(LanguageContext);
 
     const changeLanguage = (key) => {
@@ -32,4 +32,4 @@ const Switcher = () => {
     )
 };
 
-export default Switcher;
+export default LanguageSwitcher;

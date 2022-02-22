@@ -11,8 +11,8 @@ import ClipboardContext from "../../features/clipboard/context";
 const ToolRotationForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues } = useContext(ClipboardContext);
-    const [diameter, setDiameter] = useState(values?.diameter || "");
-    const [cuttingSpeed, setCuttingSpeed] = useState(values?.surfaceSpeed || "");
+    const [diameter, setDiameter] = useState((values?.memoryMode && values?.diameter) || "");
+    const [cuttingSpeed, setCuttingSpeed] = useState((values?.memoryMode && values?.surfaceSpeed) || "");
     const [rotationSpeed, setRotationSpeed] = useState("");
     const inputRef = useRef(null);
 

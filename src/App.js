@@ -16,6 +16,7 @@ import { NavigationWrapper } from "./features/navigation/Navigation/styled";
 import LanguageProvider from "./features/language/provider";
 import NavigationProvider from "./features/navigation/provider";
 import ClipboardProvider from "./features/clipboard/provider";
+import ClipboardSwitcher from "./features/clipboard/Switcher";
 
 const App = () => {
   const { langId, setLangId } = useLanguage();
@@ -23,21 +24,25 @@ const App = () => {
   const [values, setValues] = useState(undefined);
 
   useEffect(() => {
+    console.log(`MemoryMode: ${values?.memoryMode}`);
     console.log(values);
   }, [values]);
 
   return (
     <LanguageProvider value={{ langId, setLangId }} >
       <NavigationProvider value={{ open, setOpen }}>
-        <HashRouter >
-          <Sidebar />
-          <Header />
-          <Wrapper>
-            <NavigationWrapper>
-              <Navigation />
-            </NavigationWrapper>
+        <ClipboardProvider value={{ values, setValues }} >
+          <HashRouter >
+            <Sidebar />
+            <Header />
+            <Wrapper>
+              <div>
+                <NavigationWrapper>
+                  <Navigation />
+                  <ClipboardSwitcher />
+                </NavigationWrapper>
+              </div>
 
-            <ClipboardProvider value={{ values, setValues }} >
               <Routes>
                 <Route
                   index
@@ -60,15 +65,15 @@ const App = () => {
                   element={<TappingFeedrateForm />}
                 />
               </Routes>
-            </ClipboardProvider>
-          </Wrapper>
+            </Wrapper>
 
-          <Footer
-            date={DATE}
-            address={ADDRESS}
-            name={NAME}
-          />
-        </HashRouter>
+            <Footer
+              date={DATE}
+              address={ADDRESS}
+              name={NAME}
+            />
+          </HashRouter>
+        </ClipboardProvider>
       </NavigationProvider>
     </LanguageProvider>
   )
