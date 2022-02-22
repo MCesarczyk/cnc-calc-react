@@ -1,7 +1,6 @@
 import { useContext } from "react";
-import { SwitcherWrapper } from "../../language/Switcher/styled";
 import ClipboardContext from "../context";
-import { Switcher, SwitcherIndicator, SwitcherLabel } from "./styled";
+import { Switcher, SwitcherIndicator, SwitcherLabel, SwitcherWrapper } from "./styled";
 
 const ClipboardSwitcher = () => {
   const { values, setValues } = useContext(ClipboardContext);
@@ -23,7 +22,6 @@ const ClipboardSwitcher = () => {
         onClick={switchMemoryMode}
       >
         <SwitcherIndicator memoryMode={values?.memoryMode} />
-        {values?.memoryMode === true ? "ON" : "OFF"}
       </Switcher>
     </SwitcherWrapper>
   )

@@ -48,6 +48,7 @@ body {
 button, a {
   cursor: pointer;
   color: inherit;
+  outline: none;
 }
 
 a {
