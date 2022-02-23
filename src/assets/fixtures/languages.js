@@ -9,6 +9,7 @@ const languages = [
     form2Legend: "Tool rotational speed",
     form3Legend: "Linear feedrate",
     form4Legend: "Tapping feedrate",
+    clibboardSwitcherLabel: "Memory mode",
     diameter: {
       name: "D",
       unit: " [mm]:",
@@ -67,6 +68,7 @@ const languages = [
     form2Legend: "Prędkość obrotowa narzędzia",
     form3Legend: "Wielkość posuwu liniowego",
     form4Legend: "Wielkość posuwu przy gwintowaniu",
+    clibboardSwitcherLabel: "Tryb zapamiętywania",
     diameter: {
       name: "D",
       unit: " [mm]:",
