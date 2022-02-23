@@ -10,20 +10,40 @@
 
 ### Brief description:
 Since my first profession is **CNC Programming** I use this formulas in my day to day work.
-I plan to add next functionalities with time.  
+I plan to add next functionalities with time.
 So, don't hesitate to contact me on: michal.cesarczyk@gmail.com to propose another one.
 
-### Sections:
-1. Drilling/milling:
- - linear cutting speed in function of diameter and spindle speed
- - tool rotational speed in function of diameter and surface speed
- - feed rate in function of spindle speed and:
-    - feed per revolution
-    - feed per tooth, numer of tooth
+### Features:
+1. Calculation forms:
+   - Drilling/milling:
+      - linear cutting speed in function of diameter and spindle speed
+      - tool rotational speed in function of diameter and surface speed
+      - feed rate in function of spindle speed and:
+         - feed per revolution
+         - feed per tooth, numer of tooth
 
- 2. Threading/tapping:
- - feed rate for tapping in function of spindle speed and threading tool pitch  
- (pitch value is selected from list according to tool diameter)
+    - Threading/tapping:
+      - feed rate for tapping in function of spindle speed and threading tool pitch  
+    (pitch value is selected from list according to tool diameter)
+
+2. Language switching between english and polish.
+
+![language versions](src/assets/images/language_switching.gif)
+
+1. Memory mode to transfer values beetween forms.
+- below is default forms behaviour:
+
+![memory mode off](src/assets/images/default_bahaviour.gif)
+
+- and with memory mode active:
+
+![memory mode on](src/assets/images/memory_mode.gif)
+
+And this is how it works:
+
+![memory mode demo](src/assets/images/using_memory_mode.gif)
+
+
 
 ### Used technologies
 1. html
@@ -31,8 +51,20 @@ So, don't hesitate to contact me on: michal.cesarczyk@gmail.com to propose anoth
 1. BEM
 1. JavaScript/ES6: const variables, arrow functions, arrays, objects
 1. Immutability
-1. React.js: useState, controlled components
+1. React: hooks, controlled components
+2. React Router
 
+I've decided to use UseContext hook to manage globa state of app, but in future updates I plan to switch to Redux, since there is more variables to handle globally.
+Newly added memory mode function inclined me to start thinking about switching to Redux.\
+This would, beside obvious benefits of Redux as code clarity and raliability, allow to keep values in fields even when calculations wasn't perform yet.\
+But in the first place, I'd like to replace snapshot tests with solid unit and integration tests to avoid functional regression errors.
+
+### Areas of future improvement:
+1. Switching to Redux since more variables become propagated in context and more code  repeats in all forms.
+2. Squash app into widget form to enable embedding in other applications/websites.
+3. Use some API data to obtain material related data to automatically propose cutting speeds and feeds.
+
+***
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -79,27 +111,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

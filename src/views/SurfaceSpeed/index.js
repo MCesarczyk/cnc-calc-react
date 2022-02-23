@@ -1,17 +1,31 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import { focusForm } from "../../assets/utils/focusForm";
 import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
+import ResultField from "../../features/clipboard/ResultField";
+import ClipboardContext from "../../features/clipboard/context";
 
 const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);
-  const [diameter, setDiameter] = useState("");
-  const [rotationSpeed, setRotationSpeed] = useState("");
+  const { values, setValues, memoryMode } = useContext(ClipboardContext);
+  const [diameter, setDiameter] = useState((memoryMode && values?.diameter) || "");
+  const [rotationSpeed, setRotationSpeed] = useState((memoryMode && values?.rotationSpeed) || "");
   const [cuttingSpeed, setCuttingSpeed] = useState("");
   const inputRef = useRef();
+
+  useEffect(() => {
+    setValues({
+      ...values,
+      diameter: diameter,
+      rotationSpeed: rotationSpeed,
+      surfaceSpeed: cuttingSpeed
+    });
+
+    // eslint-disable-next-line 
+  }, [cuttingSpeed]);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -38,8 +52,8 @@ const SurfaceSpeedForm = () => {
         inputRef={inputRef}
         value={diameter}
         type="number"
-        min="0.0001"
-        step="0.0001"
+        min="0.01"
+        step="0.01"
         placeholder={languages[langId].diameter.placeholder}
         required
         autoFocus={!checkIfItsTouchDevice()}
@@ -57,12 +71,11 @@ const SurfaceSpeedForm = () => {
         required
         onChange={({ target }) => setRotationSpeed(target.value)}
       />
-      <FormInput
+      <ResultField
         name={languages[langId].cutSpeed.name}
         sub={languages[langId].cutSpeed.sub}
         unit={languages[langId].cutSpeed.unit}
         value={cuttingSpeed}
-        readOnly
         placeholder={languages[langId].cutSpeed.placeholder}
       />
     </Form >

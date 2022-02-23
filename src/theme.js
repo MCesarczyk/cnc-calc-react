@@ -2,11 +2,14 @@ export const theme = {
     color: {
         primary: "#1e3246",
         primaryContrast: "#fff",
+        primaryText: "#000",
         background: "#133246",
         submitButtonFont: "#19aa6e",
         resetButtonFont: "#dc3223",
+        copyButtonFont: "#dc143c",
         invalid: "beige",
-        disabled: "#ddd"
+        disabled: "#ddd",
+        placeholder: "#747474"
     },
     breakpoint: {
         xs: "480px",
