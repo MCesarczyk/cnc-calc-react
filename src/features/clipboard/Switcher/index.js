@@ -3,13 +3,10 @@ import ClipboardContext from "../context";
 import { Switcher, SwitcherIndicator, SwitcherLabel, SwitcherWrapper } from "./styled";
 
 const ClipboardSwitcher = () => {
-  const { values, setValues } = useContext(ClipboardContext);
+  const { memoryMode, setMemoryMode } = useContext(ClipboardContext);
 
   const switchMemoryMode = () => {
-    setValues({
-      ...values,
-      memoryMode: !values?.memoryMode
-    });
+    setMemoryMode(!memoryMode);
   };
 
   return (
@@ -18,10 +15,10 @@ const ClipboardSwitcher = () => {
         Memory mode
       </SwitcherLabel>
       <Switcher
-        memoryMode={values?.memoryMode}
+        memoryMode={memoryMode}
         onClick={switchMemoryMode}
       >
-        <SwitcherIndicator memoryMode={values?.memoryMode} />
+        <SwitcherIndicator memoryMode={memoryMode} />
       </Switcher>
     </SwitcherWrapper>
   )

@@ -10,9 +10,9 @@ import ClipboardContext from "../../features/clipboard/context";
 
 const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);
-  const { values, setValues } = useContext(ClipboardContext);
-  const [diameter, setDiameter] = useState((values?.memoryMode && values?.diameter) || "");
-  const [rotationSpeed, setRotationSpeed] = useState((values?.memoryMode && values?.rotationSpeed) || "");
+  const { values, setValues, memoryMode } = useContext(ClipboardContext);
+  const [diameter, setDiameter] = useState((memoryMode && values?.diameter) || "");
+  const [rotationSpeed, setRotationSpeed] = useState((memoryMode && values?.rotationSpeed) || "");
   const [cuttingSpeed, setCuttingSpeed] = useState("");
   const inputRef = useRef();
 

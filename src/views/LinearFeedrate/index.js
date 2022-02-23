@@ -11,13 +11,13 @@ import ClipboardContext from "../../features/clipboard/context";
 
 const LinearFeedrateForm = () => {
     const { langId } = useContext(LanguageContext);
-    const { values, setValues } = useContext(ClipboardContext);
-    const [rotationSpeed, setRotationSpeed] = useState((values?.memoryMode && values?.rotationSpeed) || "");
-    const [feedType, setFeedType] = useState((values?.memoryMode && values?.feedType) || "FPR");
-    const [toothNumber, setToothNumber] = useState((values?.memoryMode && values?.toothNumber) || "");
-    const feedPerRevolutionInitial = (values?.memoryMode && values?.feedPerRevolution) || "";
+    const { values, setValues, memoryMode } = useContext(ClipboardContext);
+    const [rotationSpeed, setRotationSpeed] = useState((memoryMode && values?.rotationSpeed) || "");
+    const [feedType, setFeedType] = useState((memoryMode && values?.feedType) || "FPR");
+    const [toothNumber, setToothNumber] = useState((memoryMode && values?.toothNumber) || "");
+    const feedPerRevolutionInitial = (memoryMode && values?.feedPerRevolution) || "";
     const [feedPerRevolution, setFeedPerRevolution] = useState(feedPerRevolutionInitial);
-    const feedPerToothInitial = (values?.memoryMode && values?.feedPerTooth) || "";
+    const feedPerToothInitial = (memoryMode && values?.feedPerTooth) || "";
     const [feedPerTooth, setFeedPerTooth] = useState(feedPerToothInitial);
     const [feedrate, setFeedrate] = useState("");
     const inputRef = useRef(null);

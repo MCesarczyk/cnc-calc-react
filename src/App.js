@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { useLanguage } from './assets/utils/useLanguage';
+import { useLocalStorageState } from "./assets/utils/uselocalStorageState";
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
 import ToolRotationForm from "./views/ToolRotation";
@@ -19,9 +19,10 @@ import ClipboardProvider from "./features/clipboard/provider";
 import ClipboardSwitcher from "./features/clipboard/Switcher";
 
 const App = () => {
-  const { langId, setLangId } = useLanguage();
-  const [open, setOpen] = useState(false);
+  const [langId, setLangId] = useLocalStorageState("langId", 0);
+  const [memoryMode, setMemoryMode] = useLocalStorageState("memoryMode", false);
   const [values, setValues] = useState(undefined);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     console.log(`MemoryMode: ${values?.memoryMode}`);
@@ -31,7 +32,7 @@ const App = () => {
   return (
     <LanguageProvider value={{ langId, setLangId }} >
       <NavigationProvider value={{ open, setOpen }}>
-        <ClipboardProvider value={{ values, setValues }} >
+        <ClipboardProvider value={{ values, setValues, memoryMode, setMemoryMode }} >
           <HashRouter >
             <Sidebar />
             <Header />
