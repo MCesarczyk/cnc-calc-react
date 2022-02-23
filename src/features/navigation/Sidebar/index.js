@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import NavigationContext from "../context";
+import ClipboardSwitcher from "../../clipboard/Switcher";
 import Navigation from "../Navigation";
 import { SidebarActivationArea, SidebarNavigation } from "./styled";
 
@@ -50,6 +51,7 @@ const Sidebar = () => {
           sidebar="true"
           handleClose={handleClose}
         />
+        <ClipboardSwitcher />
       </SidebarNavigation>
     </>
   )
