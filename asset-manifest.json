@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/cnc-calc-react/static/js/main.f1bda13b.chunk.js",
-    "main.js.map": "/cnc-calc-react/static/js/main.f1bda13b.chunk.js.map",
-    "runtime-main.js": "/cnc-calc-react/static/js/runtime-main.00551cf0.js",
-    "runtime-main.js.map": "/cnc-calc-react/static/js/runtime-main.00551cf0.js.map",
-    "static/js/2.51f241fc.chunk.js": "/cnc-calc-react/static/js/2.51f241fc.chunk.js",
-    "static/js/2.51f241fc.chunk.js.map": "/cnc-calc-react/static/js/2.51f241fc.chunk.js.map",
-    "static/js/3.d8616ee3.chunk.js": "/cnc-calc-react/static/js/3.d8616ee3.chunk.js",
-    "static/js/3.d8616ee3.chunk.js.map": "/cnc-calc-react/static/js/3.d8616ee3.chunk.js.map",
+    "main.js": "/cnc-calc-react/static/js/main.82a0a536.chunk.js",
+    "main.js.map": "/cnc-calc-react/static/js/main.82a0a536.chunk.js.map",
+    "runtime-main.js": "/cnc-calc-react/static/js/runtime-main.02d9fff6.js",
+    "runtime-main.js.map": "/cnc-calc-react/static/js/runtime-main.02d9fff6.js.map",
+    "static/js/2.7a901b01.chunk.js": "/cnc-calc-react/static/js/2.7a901b01.chunk.js",
+    "static/js/2.7a901b01.chunk.js.map": "/cnc-calc-react/static/js/2.7a901b01.chunk.js.map",
+    "static/js/3.063c026b.chunk.js": "/cnc-calc-react/static/js/3.063c026b.chunk.js",
+    "static/js/3.063c026b.chunk.js.map": "/cnc-calc-react/static/js/3.063c026b.chunk.js.map",
     "index.html": "/cnc-calc-react/index.html",
-    "static/js/2.51f241fc.chunk.js.LICENSE.txt": "/cnc-calc-react/static/js/2.51f241fc.chunk.js.LICENSE.txt",
+    "static/js/2.7a901b01.chunk.js.LICENSE.txt": "/cnc-calc-react/static/js/2.7a901b01.chunk.js.LICENSE.txt",
     "static/media/hamburger-menu.ad1e3324.svg": "/cnc-calc-react/static/media/hamburger-menu.ad1e3324.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.00551cf0.js",
-    "static/js/2.51f241fc.chunk.js",
-    "static/js/main.f1bda13b.chunk.js"
+    "static/js/runtime-main.02d9fff6.js",
+    "static/js/2.7a901b01.chunk.js",
+    "static/js/main.82a0a536.chunk.js"
   ]
 }
