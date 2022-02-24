@@ -7,6 +7,7 @@ import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import ResultField from "../../features/clipboard/ResultField";
 import ClipboardContext from "../../features/clipboard/context";
+import { calculateCuttingSpeed } from "../../assets/utils/equations";
 
 const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);
@@ -15,6 +16,9 @@ const SurfaceSpeedForm = () => {
   const [rotationSpeed, setRotationSpeed] = useState((memoryMode && values?.rotationSpeed) || "");
   const [cuttingSpeed, setCuttingSpeed] = useState("");
   const inputRef = useRef();
+
+  const onDiameterChange = ({ target }) => setDiameter(target.value);
+  const onRotationSpeedChange = ({ target }) => setRotationSpeed(target.value);
 
   useEffect(() => {
     setValues({
@@ -29,7 +33,7 @@ const SurfaceSpeedForm = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    setCuttingSpeed((Math.PI * diameter * rotationSpeed / 1000).toFixed(2));
+    setCuttingSpeed(calculateCuttingSpeed(diameter, rotationSpeed));
   };
 
   const onFormReset = (event) => {
@@ -57,7 +61,7 @@ const SurfaceSpeedForm = () => {
         placeholder={languages[langId].diameter.placeholder}
         required
         autoFocus={!checkIfItsTouchDevice()}
-        onChange={({ target }) => setDiameter(target.value - 0)}
+        onChange={onDiameterChange}
       />
       <FormInput
         name={languages[langId].rotSpeed.name}
@@ -69,7 +73,7 @@ const SurfaceSpeedForm = () => {
         step="1"
         placeholder={languages[langId].rotSpeed.placeholder}
         required
-        onChange={({ target }) => setRotationSpeed(target.value)}
+        onChange={onRotationSpeedChange}
       />
       <ResultField
         name={languages[langId].cutSpeed.name}

@@ -25,7 +25,6 @@ const App = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    console.log(`MemoryMode: ${values?.memoryMode}`);
     console.log(values);
   }, [values]);
 
