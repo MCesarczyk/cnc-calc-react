@@ -14,3 +14,9 @@ export const setPitchValue = (value) => (
     tapDiameters.findIndex(({ diameter }) => diameter.toString() === value)
   ].pitch
 );
+
+export const calculateFeedrate = (feedType, rotationSpeed, feedPerRevolution, feedPerTooth, toothNumber) => 
+  feedType === "FPR"
+    ? (rotationSpeed * feedPerRevolution).toFixed()
+    : (rotationSpeed * feedPerTooth * toothNumber).toFixed();
+;

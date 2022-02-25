@@ -8,6 +8,7 @@ import FormInput from "../../components/FormInput";
 import FeedOptionSelector from "../../components/FeedOptionSelector";
 import ResultField from "../../features/clipboard/ResultField";
 import ClipboardContext from "../../features/clipboard/context";
+import { calculateFeedrate } from "../../assets/utils/equations";
 
 const LinearFeedForm = () => {
     const { langId } = useContext(LanguageContext);
@@ -26,6 +27,7 @@ const LinearFeedForm = () => {
         setFeedPerRevolution(feedPerRevolutionInitial);
         setFeedPerTooth(feedPerToothInitial);
         setToothNumber(values?.toothNumber || "");
+        setFeedrate("");
         //eslint-disable-next-line
     }, [feedType])
 
@@ -50,11 +52,15 @@ const LinearFeedForm = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        if (feedType === "FPR") {
-            setFeedrate((rotationSpeed * feedPerRevolution).toFixed());
-        } else {
-            setFeedrate((rotationSpeed * feedPerTooth * toothNumber).toFixed());
-        }
+        setFeedrate(
+            calculateFeedrate(
+                feedType,
+                rotationSpeed,
+                feedPerRevolution,
+                feedPerTooth,
+                toothNumber
+            )
+        );
     };
 
     const onFormReset = (event) => {
