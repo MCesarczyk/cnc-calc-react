@@ -1,27 +1,22 @@
 import { useContext, useEffect, useRef, useState } from "react";
+import ClipboardContext from "../../features/clipboard/context";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
-import tapDiameters from "../../assets/fixtures/tapDiameters";
 import { focusForm } from "../../assets/utils/focusForm";
 import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormSelect from "../../components/FormSelect";
 import ResultField from "../../features/clipboard/ResultField";
-import ClipboardContext from "../../features/clipboard/context";
+import { calculateTappingFeed, setPitchValue, tapPitchArray } from "../../assets/utils/equations";
 
-const newArray = tapDiameters.map(record => ({
-    key: record.id,
-    value: record.diameter
-}));
-
-const TappingFeedrateForm = () => {
+const TappingFeedForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues, memoryMode } = useContext(ClipboardContext);
     const [rotationSpeed, setRotationSpeed] = useState((memoryMode && values?.rotationSpeed) || "");
     const [diameter, setDiameter] = useState((memoryMode && values?.tapDiameter) || "");
     const [pitch, setPitch] = useState((memoryMode && values?.pitch) || "");
-    const [feedValue, setFeedValue] = useState("");
+    const [feedrate, setFeedrate] = useState("");
     const inputRef = useRef(null);
 
     useEffect(() => {
@@ -30,16 +25,15 @@ const TappingFeedrateForm = () => {
             rotationSpeed: rotationSpeed,
             tapDiameter: diameter,
             pitch: pitch,
-            tappingFeedrate: feedValue
+            tappingFeed: feedrate
         });
 
         // eslint-disable-next-line 
-    }, [feedValue]);
-
+    }, [feedrate]);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        setFeedValue((rotationSpeed * pitch).toFixed());
+        setFeedrate(calculateTappingFeed(rotationSpeed, pitch));
     };
 
     const onFormReset = (event) => {
@@ -47,17 +41,13 @@ const TappingFeedrateForm = () => {
         setRotationSpeed("");
         setDiameter("");
         setPitch("");
-        setFeedValue("");
+        setFeedrate("");
         focusForm(inputRef);
     };
 
     const onOptionChange = ({ target }) => {
         setDiameter(target.value);
-        setPitch(
-            tapDiameters[
-                tapDiameters.findIndex(({ diameter }) => diameter.toString() === target.value)
-            ].pitch
-        );
+        setPitch(setPitchValue(target.value));
     };
 
     return (
@@ -86,7 +76,7 @@ const TappingFeedrateForm = () => {
                 id="diameterSelector"
                 onChange={onOptionChange}
                 value={diameter}
-                data={newArray}
+                data={tapPitchArray}
             />
             <FormInput
                 name={languages[langId].pitch.name}
@@ -98,11 +88,11 @@ const TappingFeedrateForm = () => {
             <ResultField
                 name={languages[langId].feedrate.name}
                 unit={languages[langId].feedrate.unit}
-                value={feedValue}
+                value={feedrate}
                 placeholder={languages[langId].feedrate.placeholder}
             />
         </Form>
     )
 };
 
-export default TappingFeedrateForm;
+export default TappingFeedForm;

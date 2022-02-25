@@ -9,7 +9,7 @@ import FeedOptionSelector from "../../components/FeedOptionSelector";
 import ResultField from "../../features/clipboard/ResultField";
 import ClipboardContext from "../../features/clipboard/context";
 
-const LinearFeedrateForm = () => {
+const LinearFeedForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues, memoryMode } = useContext(ClipboardContext);
     const [rotationSpeed, setRotationSpeed] = useState((memoryMode && values?.rotationSpeed) || "");
@@ -115,4 +115,4 @@ const LinearFeedrateForm = () => {
     )
 };
 
-export default LinearFeedrateForm;
+export default LinearFeedForm;

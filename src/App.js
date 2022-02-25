@@ -4,8 +4,8 @@ import { useLocalStorageState } from "./assets/utils/uselocalStorageState";
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
 import ToolRotationForm from "./views/ToolRotation";
-import LinearFeedrateForm from "./views/LinearFeedrate";
-import TappingFeedrateForm from "./views/TappingFeedrate";
+import LinearFeedForm from "./views/LinearFeed";
+import TappingFeedForm from "./views/TappingFeed";
 import Home from "./views/Home";
 import Navigation from "./features/navigation/Navigation";
 import Sidebar from "./features/navigation/Sidebar";
@@ -58,11 +58,11 @@ const App = () => {
                 />
                 <Route
                   path="feedrate"
-                  element={<LinearFeedrateForm />}
+                  element={<LinearFeedForm />}
                 />
                 <Route
                   path="tapping-feed"
-                  element={<TappingFeedrateForm />}
+                  element={<TappingFeedForm />}
                 />
               </Routes>
             </Wrapper>
