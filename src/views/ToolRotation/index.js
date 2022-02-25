@@ -7,6 +7,7 @@ import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import ResultField from "../../features/clipboard/ResultField";
 import ClipboardContext from "../../features/clipboard/context";
+import { calculateRotationSpeed } from "../../assets/utils/equations";
 
 const ToolRotationForm = () => {
     const { langId } = useContext(LanguageContext);
@@ -14,7 +15,10 @@ const ToolRotationForm = () => {
     const [diameter, setDiameter] = useState((memoryMode && values?.diameter) || "");
     const [cuttingSpeed, setCuttingSpeed] = useState((memoryMode && values?.surfaceSpeed) || "");
     const [rotationSpeed, setRotationSpeed] = useState("");
-    const inputRef = useRef(null);
+    const inputRef = useRef();
+
+    const onDiameterChange = ({ target }) => setDiameter(target.value);
+    const onCuttingSpeedChange = ({ target }) => setCuttingSpeed(target.value);
 
     useEffect(() => {
         setValues({
@@ -29,7 +33,7 @@ const ToolRotationForm = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        setRotationSpeed((cuttingSpeed * 1000 / Math.PI / diameter).toFixed(0));
+        setRotationSpeed(calculateRotationSpeed(diameter, cuttingSpeed));
     };
 
     const onFormReset = (event) => {
@@ -57,7 +61,7 @@ const ToolRotationForm = () => {
                 placeholder={languages[langId].diameter.placeholder}
                 required
                 autoFocus={!checkIfItsTouchDevice()}
-                onChange={({ target }) => setDiameter(target.value)}
+                onChange={onDiameterChange}
             />
             <FormInput
                 name={languages[langId].cutSpeed.name}
@@ -69,7 +73,7 @@ const ToolRotationForm = () => {
                 step="0.01"
                 placeholder={languages[langId].cutSpeed.placeholder}
                 required
-                onChange={({ target }) => setCuttingSpeed(target.value)}
+                onChange={onCuttingSpeedChange}
             />
             <ResultField
                 name={languages[langId].rotSpeed.name}
