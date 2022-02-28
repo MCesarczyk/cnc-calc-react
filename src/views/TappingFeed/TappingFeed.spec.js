@@ -15,13 +15,13 @@ describe("Tapping Feed form", () => {
   for (let i = 0; i < cases.length; i++) {
     const description = cases[i].description;
     const diameter = cases[i].D;
-    const rotations = cases[i].n;
+    const rotationSpeed = cases[i].n;
     const feedrate = cases[i].f;
 
     it(description, () => {
       diameter > 0
         && Object.keys(tapPitchArray).includes(diameter)
-        && expect(calculateTappingFeed(setPitchValue(diameter), rotations)).toBe(feedrate);
+        && expect(calculateTappingFeed(setPitchValue(diameter), rotationSpeed)).toBe(feedrate);
     });
   }
 });

@@ -1,32 +1,24 @@
 import { calculateRotationSpeed } from "../../assets/utils/equations";
 
+const cases = [
+  { description: "calculates result based on D=50 and Vc=200", D: "50", Vc: "200", n: "1273" },
+  { description: "calculates result based on D=0 and Vc=0", D: "0", Vc: "0", n: "NaN" },
+  { description: "calculates result based on D=50 and Vc=0", D: "50", Vc: "0", n: "0" },
+  { description: "calculates result based on D=0 and Vc=200", D: "0", Vc: "200", n: "Infinity" },
+  { description: "calculates result based on D=-50 and Vc=-200", D: "-50", Vc: "-200", n: "1273" },
+  { description: "calculates result based on D=-50 and Vc=200", D: "-50", Vc: "200", n: "-1273" },
+  { description: "calculates result based on D=50 and Vc=-200", D: "50", Vc: "-200", n: "-1273" }
+];
+
 describe("Rotations speed form", () => {
-  it("calculates result based on D=50 and Vc=200", () => {
-    expect(calculateRotationSpeed(50, 200)).toBe("1273");
-  });
-  
-  //cases below have to be disabled by form validation
-  it("calculates result based on D=0 and Vc=0", () => {
-    expect(calculateRotationSpeed(0, 0)).toBe("NaN");
-  });
-  
-  it("calculates result based on D=50 and Vc=0", () => {
-    expect(calculateRotationSpeed(50, 0)).toBe("0");
-  });
-  
-  it("calculates result based on D=0 and Vc=200", () => {
-    expect(calculateRotationSpeed(0, 200)).toBe("Infinity");
-  });
-  
-  it("calculates result based on D=-50 and Vc=-200", () => {
-    expect(calculateRotationSpeed(-50, -200)).toBe("1273");
-  });
-  
-  it("calculates result based on D=-50 and Vc=200", () => {
-    expect(calculateRotationSpeed(-50, 200)).toBe("-1273");
-  });
-  
-  it("calculates result based on D=50 and Vc=-200", () => {
-    expect(calculateRotationSpeed(50, -200)).toBe("-1273");
-  });
+  for (let i = 0; i < cases.length; i++) {
+    const description = cases[i].description;
+    const diameter = cases[i].D;
+    const cuttingSpeed = cases[i].Vc;
+    const rotationSpeed = cases[i].n;
+
+    it(description, () => {
+      expect(calculateRotationSpeed(diameter, cuttingSpeed)).toBe(rotationSpeed);
+    });
+  }
 });
