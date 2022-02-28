@@ -8,7 +8,7 @@ import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormSelect from "../../components/FormSelect";
 import ResultField from "../../features/clipboard/ResultField";
-import { calculateTappingFeed, setPitchValue, tapPitchArray } from "./equation";
+import { calculateTappingFeed, setPitchValue, tapDiametersArray } from "./equation";
 
 const TappingFeedForm = () => {
     const { langId } = useContext(LanguageContext);
@@ -33,7 +33,7 @@ const TappingFeedForm = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        setFeedrate(calculateTappingFeed(rotationSpeed, pitch));
+        setFeedrate(calculateTappingFeed(rotationSpeed, diameter));
     };
 
     const onFormReset = (event) => {
@@ -76,7 +76,7 @@ const TappingFeedForm = () => {
                 id="diameterSelector"
                 onChange={onOptionChange}
                 value={diameter}
-                data={tapPitchArray}
+                data={tapDiametersArray}
             />
             <FormInput
                 name={languages[langId].pitch.name}
