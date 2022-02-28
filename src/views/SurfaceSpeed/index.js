@@ -7,7 +7,7 @@ import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import ResultField from "../../features/clipboard/ResultField";
 import ClipboardContext from "../../features/clipboard/context";
-import { calculateCuttingSpeed } from "../../assets/utils/equations";
+import { calculateCuttingSpeed } from "./equation";
 
 const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);

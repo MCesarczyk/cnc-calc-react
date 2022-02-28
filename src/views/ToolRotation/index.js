@@ -7,7 +7,7 @@ import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import ResultField from "../../features/clipboard/ResultField";
 import ClipboardContext from "../../features/clipboard/context";
-import { calculateRotationSpeed } from "../../assets/utils/equations";
+import { calculateRotationSpeed } from "./equation";
 
 const ToolRotationForm = () => {
     const { langId } = useContext(LanguageContext);

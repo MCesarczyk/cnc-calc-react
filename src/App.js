@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useLocalStorageState } from "./assets/utils/uselocalStorageState";
 import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
@@ -23,10 +23,6 @@ const App = () => {
   const [memoryMode, setMemoryMode] = useLocalStorageState("memoryMode", false);
   const [values, setValues] = useState(undefined);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
 
   return (
     <LanguageProvider value={{ langId, setLangId }} >

@@ -1,4 +1,4 @@
-import { calculateFeedrate } from "../../assets/utils/equations";
+import { calculateFeedrate } from "./equation";
 
 const cases = [
   { description: "calculates feed per revolution based on n=1440 and fr=1.25", type: "FPR", n: "1440", fr: "1.25", f: "1800" },

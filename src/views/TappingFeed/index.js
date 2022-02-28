@@ -8,7 +8,7 @@ import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
 import FormSelect from "../../components/FormSelect";
 import ResultField from "../../features/clipboard/ResultField";
-import { calculateTappingFeed, setPitchValue, tapPitchArray } from "../../assets/utils/equations";
+import { calculateTappingFeed, setPitchValue, tapPitchArray } from "./equation";
 
 const TappingFeedForm = () => {
     const { langId } = useContext(LanguageContext);

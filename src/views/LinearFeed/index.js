@@ -8,7 +8,7 @@ import FormInput from "../../components/FormInput";
 import FeedOptionSelector from "../../components/FeedOptionSelector";
 import ResultField from "../../features/clipboard/ResultField";
 import ClipboardContext from "../../features/clipboard/context";
-import { calculateFeedrate } from "../../assets/utils/equations";
+import { calculateFeedrate } from "./equation";
 
 const LinearFeedForm = () => {
     const { langId } = useContext(LanguageContext);

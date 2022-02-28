@@ -1,4 +1,4 @@
-import { calculateRotationSpeed } from "../../assets/utils/equations";
+import { calculateRotationSpeed } from "./equation";
 
 const cases = [
   { description: "calculates result based on D=50 and Vc=200", D: "50", Vc: "200", n: "1273" },

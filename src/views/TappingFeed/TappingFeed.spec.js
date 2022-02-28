@@ -1,4 +1,4 @@
-import { calculateTappingFeed, setPitchValue, tapPitchArray } from "../../assets/utils/equations";
+import { calculateTappingFeed, setPitchValue, tapPitchArray } from "./equation";
 
 const cases = [
   { description: "calculates result based on D=12 and n=133", D: "12", n: "133", f: "233" },

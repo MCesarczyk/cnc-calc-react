@@ -1,4 +1,4 @@
-import { calculateCuttingSpeed } from "../../assets/utils/equations";
+import { calculateCuttingSpeed } from "./equation";
 
 const cases = [
   { description: "calculates result based on D=50 and n=1200", D: "50", n: "1200", Vc: "188.50" },
