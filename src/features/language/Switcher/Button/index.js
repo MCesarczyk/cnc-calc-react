@@ -5,7 +5,7 @@ import { SwitcherButton } from "./styled";
 
 const Button = ({ language }) => {
   const { langId, setLangId } = useContext(LanguageContext);
-  
+
   const onLanguageChange = (key) => setLangId(changeLanguage(key));
 
   return (

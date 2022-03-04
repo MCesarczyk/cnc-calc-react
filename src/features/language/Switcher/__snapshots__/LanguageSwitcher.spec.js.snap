@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic button should render properly 1`] = `
+.c0 {
+  color: #1e3246;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #1e3246;
+  border-radius: 2px;
+}
+
+.c0:hover {
+  -webkit-filter: brightness(125%);
+  filter: brightness(125%);
+}
+
+.c0:active {
+  -webkit-filter: brightness(150%);
+  filter: brightness(150%);
+}
+
+<button
+  className="c0"
+/>
+`;

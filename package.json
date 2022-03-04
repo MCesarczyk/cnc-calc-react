@@ -19,7 +19,10 @@
     "web-vitals": "^1.1.2"
   },
   "jest": {
-    "coverageReporters": ["json", "html"]
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
