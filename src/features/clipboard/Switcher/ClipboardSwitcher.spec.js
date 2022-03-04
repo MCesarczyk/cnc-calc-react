@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import "jest-styled-components";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../../theme";
@@ -12,7 +12,7 @@ const setLangId = id => langId = id;
 let memoryMode = false;
 const setMemoryMode = value => memoryMode = value;
 
-const switcherSetup = (memoryMode) => render(
+const switcherSetup = (memoryMode, setMemoryMode) => render(
   <ThemeProvider theme={theme}>
     <LanguageContext.Provider value={{ langId, setLangId }}>
       <ClipboardContext.Provider value={{ memoryMode, setMemoryMode }}>
@@ -42,4 +42,26 @@ test("Clipboard switcher should be darkblue and in right position when on", () =
   const button = screen.getByRole('button');
   expect(button.firstChild).toHaveStyle({ 'background-color': '#1E3246' });
   expect(button.firstChild).toHaveStyle({ 'transform': 'translateX(1.2rem)' });
+});
+
+test("Clipboard switcher should toggle state 'ON' of 'memoryMode' variable", () => {
+  memoryMode = false;
+  const setMemoryMode = payload => memoryMode = payload;
+
+  switcherSetup(memoryMode, setMemoryMode);
+
+  const button = screen.getByRole('button');
+  fireEvent.click(button);
+  expect(memoryMode).toBe(true);
+});
+
+test("Clipboard switcher should toggle state 'OFF' of 'memoryMode' variable", () => {
+  memoryMode = true;
+  const setMemoryMode = payload => memoryMode = payload;
+
+  switcherSetup(memoryMode, setMemoryMode);
+
+  const button = screen.getByRole('button');
+  fireEvent.click(button);
+  expect(memoryMode).toBe(false);
 });

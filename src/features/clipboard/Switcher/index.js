@@ -8,10 +8,6 @@ const ClipboardSwitcher = () => {
   const { memoryMode, setMemoryMode } = useContext(ClipboardContext);
   const { langId } = useContext(LanguageContext);
 
-  const switchMemoryMode = () => {
-    setMemoryMode(!memoryMode);
-  };
-
   return (
     <SwitcherWrapper>
       <SwitcherLabel htmlFor="clipboard-switcher" >
@@ -20,7 +16,7 @@ const ClipboardSwitcher = () => {
       <Switcher
         id="clipboard-switcher"
         memoryMode={memoryMode}
-        onClick={switchMemoryMode}
+        onClick={() => setMemoryMode(!memoryMode)}
       >
         <SwitcherIndicator memoryMode={memoryMode} />
       </Switcher>
