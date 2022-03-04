@@ -11,6 +11,7 @@ export const SwitcherLabel = styled.label`
   font-variant: small-caps;
   font-weight: 700;
   margin-right: 1rem;
+  cursor: pointer;
 `
 
 export const Switcher = styled.button`

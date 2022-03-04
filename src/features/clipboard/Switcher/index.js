@@ -14,10 +14,11 @@ const ClipboardSwitcher = () => {
 
   return (
     <SwitcherWrapper>
-      <SwitcherLabel>
+      <SwitcherLabel htmlFor="clipboard-switcher" >
         {languages[langId].clibboardSwitcherLabel}
       </SwitcherLabel>
       <Switcher
+        id="clipboard-switcher"
         memoryMode={memoryMode}
         onClick={switchMemoryMode}
       >
