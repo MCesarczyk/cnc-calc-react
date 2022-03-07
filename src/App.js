@@ -31,13 +31,12 @@ const App = () => {
           <HashRouter >
             <Sidebar />
             <Header />
+            
             <Wrapper>
-              <div>
-                <NavigationWrapper>
-                  <Navigation />
-                  <ClipboardSwitcher />
-                </NavigationWrapper>
-              </div>
+              <NavigationWrapper>
+                <Navigation />
+                <ClipboardSwitcher />
+              </NavigationWrapper>
 
               <Routes>
                 <Route
@@ -68,6 +67,7 @@ const App = () => {
               address={ADDRESS}
               name={NAME}
             />
+
           </HashRouter>
         </ClipboardProvider>
       </NavigationProvider>
