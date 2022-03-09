@@ -1,23 +1,50 @@
-import React from "react";
+import { fireEvent, render } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
-import { FieldWrapper } from "../FieldWrapper";
 import { Input } from "../Input";
-import { Label } from "../Label";
+import FormInput from ".";
 
-test("FormInput component rendering properly", () => {
-  const component = renderer.create(
+const setup = () => render(
+  <ThemeProvider theme={theme} >
+    <FormInput />
+  </ThemeProvider>
+);
+
+test("Input component should be empty initially", () => {
+  const input = setup().getByRole('spinbutton');
+  expect(input.value).toBe('');
+});
+
+test("Input component should display changed value of state variable", () => {
+  const input = setup().getByRole('spinbutton');
+  fireEvent.change(input, { target: { value: '123' } });
+  expect(input.value).toBe('123');
+});
+
+test("Input component shouldn't allow to input letters", () => {
+  const input = setup().getByRole('spinbutton');
+  fireEvent.change(input, { target: { value: 'Qwerty' } });
+  expect(input.value).toBe('');
+});
+
+test("Input component rendering properly", () => {
+  const input = renderer.create(
     <ThemeProvider theme={theme} >
-      <FieldWrapper>
-        <Label />
-        <Input />
-      </FieldWrapper>
+      <Input />
     </ThemeProvider>
   );
 
-  let tree = component.toJSON();
+  let tree = input.toJSON();
 
   expect(tree).toMatchSnapshot();
+
+  expect(tree).toHaveStyleRule('background-color', 'beige', {
+    modifier: ':invalid'
+  })
+
+  expect(tree).toHaveStyleRule('background-color', '#ddd', {
+    modifier: ':disabled'
+  })
 });

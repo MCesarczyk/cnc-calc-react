@@ -55,11 +55,9 @@ const ToolRotationForm = () => {
                 unit={languages[langId].diameter.unit}
                 inputRef={inputRef}
                 value={diameter}
-                type="number"
                 min="0.01"
                 step="0.01"
                 placeholder={languages[langId].diameter.placeholder}
-                required
                 autoFocus={!checkIfItsTouchDevice()}
                 onChange={onDiameterChange}
             />
@@ -68,11 +66,9 @@ const ToolRotationForm = () => {
                 sub={languages[langId].cutSpeed.sub}
                 unit={languages[langId].cutSpeed.unit}
                 value={cuttingSpeed}
-                type="number"
                 min="1"
                 step="0.01"
                 placeholder={languages[langId].cutSpeed.placeholder}
-                required
                 onChange={onCuttingSpeedChange}
             />
             <ResultField

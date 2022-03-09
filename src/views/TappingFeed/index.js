@@ -62,11 +62,9 @@ const TappingFeedForm = () => {
                 unit={languages[langId].rotSpeed.unit}
                 inputRef={inputRef}
                 value={rotationSpeed}
-                type="number"
                 min="1"
                 step="1"
                 placeholder={languages[langId].rotSpeed.placeholder}
-                required
                 autoFocus={!checkIfItsTouchDevice()}
                 onChange={({ target }) => setRotationSpeed(target.value)}
             />

@@ -9,11 +9,9 @@ const FormInput = ({
   unit,
   inputRef,
   value,
-  type,
   min,
   step,
   placeholder,
-  required,
   disabled,
   readOnly,
   autoFocus,
@@ -33,11 +31,11 @@ const FormInput = ({
       <Input
         ref={inputRef}
         value={value}
-        type={type}
+        type="number"
         min={min}
         step={step}
         placeholder={placeholder}
-        required={required}
+        required
         disabled={disabled}
         readOnly={readOnly}
         autoFocus={autoFocus}

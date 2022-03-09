@@ -55,11 +55,9 @@ const SurfaceSpeedForm = () => {
         unit={languages[langId].diameter.unit}
         inputRef={inputRef}
         value={diameter}
-        type="number"
         min="0.01"
         step="0.01"
         placeholder={languages[langId].diameter.placeholder}
-        required
         autoFocus={!checkIfItsTouchDevice()}
         onChange={onDiameterChange}
       />
@@ -68,11 +66,9 @@ const SurfaceSpeedForm = () => {
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
         value={rotationSpeed}
-        type="number"
         min="1"
         step="1"
         placeholder={languages[langId].rotSpeed.placeholder}
-        required
         onChange={onRotationSpeedChange}
       />
       <ResultField

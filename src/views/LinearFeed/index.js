@@ -86,11 +86,9 @@ const LinearFeedForm = () => {
                 unit={languages[langId].rotSpeed.unit}
                 inputRef={inputRef}
                 value={rotationSpeed}
-                type="number"
                 min="1"
                 step="1"
                 placeholder={languages[langId].rotSpeed.placeholder}
-                required
                 autoFocus={!checkIfItsTouchDevice()}
                 onChange={({ target }) => setRotationSpeed(target.value)}
             />
@@ -103,11 +101,9 @@ const LinearFeedForm = () => {
             <FormInput
                 name={languages[langId].teethNumber.name}
                 value={(feedType === "FPT") ? toothNumber : ""}
-                type="number"
                 min="1"
                 step="1"
                 placeholder={languages[langId].teethNumber.placeholder}
-                required
                 disabled={feedType === "FPR"}
                 onChange={({ target }) => setToothNumber(target.value)}
             />
