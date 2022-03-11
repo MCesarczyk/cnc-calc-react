@@ -17,27 +17,31 @@ let feedFactor;
 const setFeedType = jest.fn();
 const setFeedFactor = jest.fn();
 
-const setup = () => render(
-  <ThemeProvider theme={theme} >
-    <LanguageContext.Provider value={langId}>
-      <FeedOptionSelector
-        feedType={feedType}
-        setFeedType={setFeedType}
-        feedFactor={feedFactor}
-        setFeedFactor={setFeedFactor}
-      />
-    </LanguageContext.Provider>
-  </ThemeProvider>
-);
-
-test("Only feed per revolution radio button should be enabled initially, other option fields should be disabled", () => {
-  feedType = "FPR";
-  const component = setup();
+const setup = () => {
+  const component = render(
+    <ThemeProvider theme={theme} >
+      <LanguageContext.Provider value={langId}>
+        <FeedOptionSelector
+          feedType={feedType}
+          setFeedType={setFeedType}
+          feedFactor={feedFactor}
+          setFeedFactor={setFeedFactor}
+        />
+      </LanguageContext.Provider>
+    </ThemeProvider>
+  );
 
   const radio1 = component.getByTestId('FPR-radio');
   const radio2 = component.getByTestId('FPT-radio');
   const feedPerRotation = component.getByTestId('FPR-input');
   const feedPerTooth = component.getByTestId('FPT-input');
+
+  return { component, radio1, radio2, feedPerRotation, feedPerTooth };
+};
+
+test("Only feed per revolution radio button should be enabled initially, other option fields should be disabled", () => {
+  feedType = "FPR";
+  const { radio1, radio2, feedPerRotation, feedPerTooth } = setup();
 
   expect(radio1).toBeChecked();
   expect(radio2).not.toBeChecked();
@@ -47,12 +51,7 @@ test("Only feed per revolution radio button should be enabled initially, other o
 
 test("When feed per tooth is enabled initially, other option fields should be disabled also", () => {
   feedType = "FPT";
-  const component = setup();
-
-  const radio1 = component.getByTestId('FPR-radio');
-  const radio2 = component.getByTestId('FPT-radio');
-  const feedPerRotation = component.getByTestId('FPR-input');
-  const feedPerTooth = component.getByTestId('FPT-input');
+  const { radio1, radio2, feedPerRotation, feedPerTooth } = setup();
 
   expect(radio1).not.toBeChecked();
   expect(radio2).toBeChecked();
@@ -61,7 +60,7 @@ test("When feed per tooth is enabled initially, other option fields should be di
 });
 
 test("Clicking radio buttons should cause switching between them", () => {
-  const component = setup();
+  const { component } = setup();
 
   const radio1 = component.getByTestId('FPR-radio');
   const radio2 = component.getByTestId('FPT-radio');
