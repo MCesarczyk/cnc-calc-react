@@ -7,6 +7,7 @@ const RadioButton = ({ name, option, parameter, onChange }) => (
       type="radio"
       name={name}
       id={option?.id}
+      data-testid={`${option?.id}-radio`}
       value={option?.id}
       checked={parameter === option?.id}
       onChange={onChange}

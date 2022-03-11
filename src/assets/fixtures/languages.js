@@ -50,7 +50,7 @@ const languages = [
     },
     teethNumber: {
       name: "t:",
-      placeholder: "numer of teeth"
+      placeholder: "number of teeth"
     },
     pitch: {
       name: "P",
