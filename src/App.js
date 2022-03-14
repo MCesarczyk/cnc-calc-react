@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useLocalStorageState } from "./assets/utils/uselocalStorageState";
-import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
 import ToolRotationForm from "./views/ToolRotation";
 import LinearFeedForm from "./views/LinearFeed";
@@ -62,11 +61,7 @@ const App = () => {
               </Routes>
             </Wrapper>
 
-            <Footer
-              date={DATE}
-              address={ADDRESS}
-              name={NAME}
-            />
+            <Footer />
 
           </HashRouter>
         </ClipboardProvider>

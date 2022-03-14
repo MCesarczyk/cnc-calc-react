@@ -10,3 +10,12 @@ export const FooterContent = styled.p`
   padding: 0 25px;
   font-size: 14px;
 `;
+
+export const FooterLink = styled.a`
+  color: inherit;
+  transition: 0.5s ease-out;
+
+  &:hover {
+    color: crimson;
+  }
+`

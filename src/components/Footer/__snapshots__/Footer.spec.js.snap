@@ -1,16 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Footer rendered properly 1`] = `
-.c2 {
-  color: inherit;
-}
-
-.c2:hover {
-  color: crimson;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 4px;
-}
-
 .c0 {
   text-align: center;
   margin: 0;
@@ -22,6 +12,16 @@ exports[`Footer rendered properly 1`] = `
   font-size: 14px;
 }
 
+.c2 {
+  color: inherit;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
+.c2:hover {
+  color: crimson;
+}
+
 <footer
   className="c0"
 >
@@ -29,11 +29,14 @@ exports[`Footer rendered properly 1`] = `
     className="c1"
   >
     Copyright © 
+    2022
      by 
     <a
       className="c2"
-      href="#"
-    />
+      href="https://home.cesarczyk.dev"
+    >
+      Cesarczyk.dev
+    </a>
   </p>
 </footer>
 `;
