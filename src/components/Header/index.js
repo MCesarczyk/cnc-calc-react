@@ -4,7 +4,8 @@ import NavigationContext from "../../features/navigation/context";
 import languages from "../../assets/fixtures/languages";
 import MenuIcon from "./MenuIcon";
 import LanguageSwitcher from "../../features/language/Switcher";
-import { AppBar, Headline, HomeLink } from "./styled";
+import { AppBar } from "./styled";
+import Title from "./Title";
 
 const Header = () => {
     const { langId } = useContext(LanguageContext);
@@ -13,14 +14,8 @@ const Header = () => {
     return (
         <header id="start">
             <AppBar>
-                <MenuIcon
-                    onClick={() => setOpen(!open)}
-                />
-                <HomeLink to="/">
-                    <Headline>
-                        {languages[langId]?.mainTitle}
-                    </Headline>
-                </HomeLink>
+                <MenuIcon onClick={() => setOpen(!open)} />
+                <Title title={languages[langId]?.mainTitle} />
                 <LanguageSwitcher />
             </AppBar>
         </header>

@@ -1,29 +1,35 @@
-import React from "react";
+import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import { BrowserRouter } from "react-router-dom";
 import "jest-styled-components";
 import { MenuIconWrapper } from "./MenuIcon/styled";
-import { AppBar, Headline, HomeLink } from "./styled";
-import MenuIcon from "./MenuIcon";
+import Header from ".";
+import LanguageContext from "../../features/language/context";
+import NavigationContext from "../../features/navigation/context";
+import Title from "./Title";
 
-test("Header rendered properly", () => {
-  const component = renderer.create(
-    <ThemeProvider theme={theme} >
-      <BrowserRouter>
-        <AppBar>
-          <MenuIcon />
-          <HomeLink to="/">
-            <Headline />
-          </HomeLink>
-        </AppBar>
-      </BrowserRouter>
-    </ThemeProvider>
-  );
+const setup = (langId, open) => render(
+  <ThemeProvider theme={theme}>
+    <LanguageContext.Provider value={langId}>
+      <NavigationContext.Provider value={open}>
+        <BrowserRouter>
+          <Header />
+        </BrowserRouter>
+      </NavigationContext.Provider>
+    </LanguageContext.Provider>
+  </ThemeProvider>
+);
 
-  let header = component.toJSON();
-  expect(header).toMatchSnapshot();
+test("Title leads to root location", () => {
+  const langId = 0;
+  const open = false;
+
+  setup(langId, open);
+
+  const title = screen.getByRole('link');
+  expect(title).toHaveAttribute('href', "/");
 });
 
 test("MenuIcon changes style on action", () => {
@@ -33,7 +39,7 @@ test("MenuIcon changes style on action", () => {
     </ThemeProvider>
   );
 
-  let icon = iconComponent.toJSON();
+  const icon = iconComponent.toJSON();
 
   expect(icon).toHaveStyleRule('filter', 'brightness(0.8)', {
     modifier: ':hover'
@@ -51,12 +57,14 @@ test("MenuIcon changes style on action", () => {
 test("Home link changes style on action", () => {
   const homeLinkComponent = renderer.create(
     <ThemeProvider theme={theme} >
-      <MenuIconWrapper />
+      <BrowserRouter>
+        <Title />
+      </BrowserRouter>
     </ThemeProvider>
   );
 
-  let homeLink = homeLinkComponent.toJSON();
-
+  const homeLink = homeLinkComponent.toJSON();
+  
   expect(homeLink).toHaveStyleRule('filter', 'brightness(0.8)', {
     modifier: ':hover'
   });
