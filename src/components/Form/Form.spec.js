@@ -1,43 +1,92 @@
-import React from "react";
+import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
-import { FieldsContainer, Fieldset, FormWrapper, Legend } from "./styled";
-import { ButtonsContainer } from "./Footer/styled";
-import { FormButton } from "./Button";
+import LanguageContext from "../../features/language/context";
+import { FieldsContainer } from "./styled";
+import { ButtonsContainer, FooterButton } from "./Footer/styled";
+import Form from ".";
 
-test("Form component rendering properly", () => {
-  const component = renderer.create(
-    <ThemeProvider theme={theme} >
-      <FormWrapper>
-        <Fieldset>
-          <Legend />
-          <FieldsContainer />
-        </Fieldset>
-      </FormWrapper>
+const formSetup = (langId) => render(
+  <ThemeProvider theme={theme}>
+    <LanguageContext.Provider value={{ langId }}>
+      <Form />
+    </LanguageContext.Provider>
+  </ThemeProvider>
+);
+
+test("Fields container should have smaller gap on smallest mobile screen", () => {
+  const containerComponent = renderer.create(
+    <ThemeProvider theme={theme}>
+      <FieldsContainer />
     </ThemeProvider>
   );
 
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot();
+  const container = containerComponent.toJSON();
+  expect(container).toHaveStyleRule('gap', '1rem');
+  expect(container).toHaveStyleRule('gap', '0.5rem', {
+    media: '(max-width:480px)'
+  });
 });
 
-test("Form Footer rendered properly", () => {
-  const footerComponent = renderer.create(
-    <ThemeProvider theme={theme} >
+test("Buttons change direction to column on mobile", () => {
+  const buttonsContainerComponent = renderer.create(
+    <ThemeProvider theme={theme}>
       <ButtonsContainer />
     </ThemeProvider>
   );
 
-  let footer = footerComponent.toJSON();
-  expect(footer).toMatchSnapshot();
+  const buttonsContainer = buttonsContainerComponent.toJSON();
+  expect(buttonsContainer).toHaveStyleRule('flex-direction', 'column', {
+    media: '(max-width:480px)'
+  });
+
+  expect(buttonsContainer).toHaveStyleRule('align-items', 'stretch', {
+    media: '(max-width:480px)'
+  });
 });
 
-test("Form Button with states rendering properly", () => {
+test("Both buttons have proper type", () => {
+  const langId = 0;
+  const types = ['submit', 'reset'];
+
+  formSetup(langId);
+
+  const buttons = screen.getAllByRole('button');
+  buttons.forEach((button, index) =>
+    expect(button.type).toBe(types[index])
+  );
+});
+
+test("Both buttons are displayed with correct names for language: EN", () => {
+  const langId = 0;
+  const labels = ['Calculate', 'Reset'];
+
+  formSetup(langId);
+
+  const buttons = screen.getAllByRole('button');
+  buttons.forEach((button, index) =>
+    expect(button.innerHTML).toBe(labels[index])
+  );
+});
+
+test("Both buttons are displayed with correct names for language: PL", () => {
+  const langId = 1;
+  const labels = ['Oblicz', 'Wyczyść'];
+
+  formSetup(langId);
+
+  const buttons = screen.getAllByRole('button');
+  buttons.forEach((button, index) =>
+    expect(button.innerHTML).toBe(labels[index])
+  );
+});
+
+test("Form Buttons with states rendering properly", () => {
   const buttonComponent = renderer.create(
     <ThemeProvider theme={theme} >
-      <FormButton />
+      <FooterButton />
     </ThemeProvider>
   );
 

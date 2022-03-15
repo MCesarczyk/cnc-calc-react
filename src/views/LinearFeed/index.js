@@ -8,8 +8,9 @@ import FormInput from "../../components/FormInput";
 import FeedOptionSelector from "../../components/FeedOptionSelector";
 import ResultField from "../../features/clipboard/ResultField";
 import ClipboardContext from "../../features/clipboard/context";
+import { calculateFeedrate } from "./equation";
 
-const LinearFeedrateForm = () => {
+const LinearFeedForm = () => {
     const { langId } = useContext(LanguageContext);
     const { values, setValues, memoryMode } = useContext(ClipboardContext);
     const [rotationSpeed, setRotationSpeed] = useState((memoryMode && values?.rotationSpeed) || "");
@@ -26,6 +27,7 @@ const LinearFeedrateForm = () => {
         setFeedPerRevolution(feedPerRevolutionInitial);
         setFeedPerTooth(feedPerToothInitial);
         setToothNumber(values?.toothNumber || "");
+        setFeedrate("");
         //eslint-disable-next-line
     }, [feedType])
 
@@ -50,11 +52,15 @@ const LinearFeedrateForm = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        if (feedType === "FPR") {
-            setFeedrate((rotationSpeed * feedPerRevolution).toFixed());
-        } else {
-            setFeedrate((rotationSpeed * feedPerTooth * toothNumber).toFixed());
-        }
+        setFeedrate(
+            calculateFeedrate(
+                feedType,
+                rotationSpeed,
+                feedPerRevolution,
+                feedPerTooth,
+                toothNumber
+            )
+        );
     };
 
     const onFormReset = (event) => {
@@ -80,11 +86,9 @@ const LinearFeedrateForm = () => {
                 unit={languages[langId].rotSpeed.unit}
                 inputRef={inputRef}
                 value={rotationSpeed}
-                type="number"
                 min="1"
                 step="1"
                 placeholder={languages[langId].rotSpeed.placeholder}
-                required
                 autoFocus={!checkIfItsTouchDevice()}
                 onChange={({ target }) => setRotationSpeed(target.value)}
             />
@@ -97,11 +101,9 @@ const LinearFeedrateForm = () => {
             <FormInput
                 name={languages[langId].teethNumber.name}
                 value={(feedType === "FPT") ? toothNumber : ""}
-                type="number"
                 min="1"
                 step="1"
                 placeholder={languages[langId].teethNumber.placeholder}
-                required
                 disabled={feedType === "FPR"}
                 onChange={({ target }) => setToothNumber(target.value)}
             />
@@ -115,4 +117,4 @@ const LinearFeedrateForm = () => {
     )
 };
 
-export default LinearFeedrateForm;
+export default LinearFeedForm;

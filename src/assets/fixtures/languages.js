@@ -1,6 +1,10 @@
+import PL from "../../assets/images/flagPL.png";
+import EN from "../../assets/images/flagUS.png";
+
 const languages = [
   {
     key: "EN",
+    flag: EN,
     mainTitle: "Cutting parameters calculator",
     welcomeTitle: "Choose an option, please.",
     section1Title: "Milling/drilling",
@@ -46,7 +50,7 @@ const languages = [
     },
     teethNumber: {
       name: "t:",
-      placeholder: "numer of teeth"
+      placeholder: "number of teeth"
     },
     pitch: {
       name: "P",
@@ -60,6 +64,7 @@ const languages = [
   },
   {
     key: "PL",
+    flag: PL,
     mainTitle: "Kalkulator parametrów skrawania",
     welcomeTitle: "Wybierz jedną z opcji.",
     section1Title: "Frezowanie/wiercenie",

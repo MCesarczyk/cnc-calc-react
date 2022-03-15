@@ -1,35 +1,16 @@
-import { useContext } from "react";
-import LanguageContext from "../context";
-import { SwitcherButton, SwitcherWrapper } from "./styled";
-import flagPL from "../../../assets/images/flagPL.png";
-import flagEN from "../../../assets/images/flagUS.png";
+import { SwitcherWrapper } from "./styled";
 import languages from "../../../assets/fixtures/languages";
+import Button from "./Button";
 
-const LanguageSwitcher = () => {
-    const { setLangId } = useContext(LanguageContext);
-
-    const changeLanguage = (key) => {
-        setLangId(languages.findIndex(language => language.key === key));
-    };
-
-    return (
-        <SwitcherWrapper>
-            {languages.map(language => (
-                <SwitcherButton
-                    key={language.key}
-                    onClick={() => changeLanguage(language.key)}
-                    style={{
-                        backgroundImage: `url(${language.key === 'EN' ? flagEN : flagPL})`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'center center',
-                        backgroundSize: 'cover'
-                    }}
-                >
-                    {language.key}
-                </SwitcherButton>
-            ))}
-        </SwitcherWrapper>
-    )
-};
+const LanguageSwitcher = () => (
+    <SwitcherWrapper>
+        {languages.map(language => (
+            <Button
+                key={language.key}
+                language={language}
+            />
+        ))}
+    </SwitcherWrapper>
+);
 
 export default LanguageSwitcher;

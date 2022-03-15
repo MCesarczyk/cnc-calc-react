@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useLocalStorageState } from "./assets/utils/uselocalStorageState";
-import { ADDRESS, DATE, NAME } from "./assets/fixtures/author";
 import SurfaceSpeedForm from "./views/SurfaceSpeed";
 import ToolRotationForm from "./views/ToolRotation";
-import LinearFeedrateForm from "./views/LinearFeedrate";
-import TappingFeedrateForm from "./views/TappingFeedrate";
+import LinearFeedForm from "./views/LinearFeed";
+import TappingFeedForm from "./views/TappingFeed";
 import Home from "./views/Home";
 import Navigation from "./features/navigation/Navigation";
 import Sidebar from "./features/navigation/Sidebar";
@@ -24,11 +23,6 @@ const App = () => {
   const [values, setValues] = useState(undefined);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    console.log(`MemoryMode: ${values?.memoryMode}`);
-    console.log(values);
-  }, [values]);
-
   return (
     <LanguageProvider value={{ langId, setLangId }} >
       <NavigationProvider value={{ open, setOpen }}>
@@ -36,13 +30,12 @@ const App = () => {
           <HashRouter >
             <Sidebar />
             <Header />
+            
             <Wrapper>
-              <div>
-                <NavigationWrapper>
-                  <Navigation />
-                  <ClipboardSwitcher />
-                </NavigationWrapper>
-              </div>
+              <NavigationWrapper>
+                <Navigation />
+                <ClipboardSwitcher />
+              </NavigationWrapper>
 
               <Routes>
                 <Route
@@ -59,20 +52,17 @@ const App = () => {
                 />
                 <Route
                   path="feedrate"
-                  element={<LinearFeedrateForm />}
+                  element={<LinearFeedForm />}
                 />
                 <Route
                   path="tapping-feed"
-                  element={<TappingFeedrateForm />}
+                  element={<TappingFeedForm />}
                 />
               </Routes>
             </Wrapper>
 
-            <Footer
-              date={DATE}
-              address={ADDRESS}
-              name={NAME}
-            />
+            <Footer />
+
           </HashRouter>
         </ClipboardProvider>
       </NavigationProvider>

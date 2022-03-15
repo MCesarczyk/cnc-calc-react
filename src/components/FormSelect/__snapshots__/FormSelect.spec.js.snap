@@ -22,6 +22,12 @@ exports[`FormSelect component rendering properly 1`] = `
 }
 
 .c2 {
+  vertical-align: sub;
+  font-size: 0.7em;
+  margin-right: 0.15em;
+}
+
+.c3 {
   min-width: 16rem;
   border: solid 1px #1e3246;
   border-radius: 5px;
@@ -50,7 +56,7 @@ exports[`FormSelect component rendering properly 1`] = `
 }
 
 @media (max-width:480px) {
-  .c2 {
+  .c3 {
     width: 100%;
   }
 }
@@ -60,9 +66,46 @@ exports[`FormSelect component rendering properly 1`] = `
 >
   <label
     className="c1"
-  />
+  >
+    <label>
+      <span
+        className="c2"
+      />
+    </label>
+  </label>
   <select
-    className="c2"
-  />
+    className="c3"
+  >
+    <option>
+      
+    </option>
+    <option>
+      A
+    </option>
+    <option>
+      B
+    </option>
+    <option>
+      C
+    </option>
+    <option>
+      D
+    </option>
+    <option>
+      E
+    </option>
+    <option>
+      F
+    </option>
+    <option>
+      G
+    </option>
+    <option>
+      H
+    </option>
+    <option>
+      I
+    </option>
+  </select>
 </div>
 `;

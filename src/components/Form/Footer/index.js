@@ -1,22 +1,13 @@
-import { useContext } from "react";
-import LanguageContext from "../../../features/language/context";
-import languages from "../../../assets/fixtures/languages";
-import { ButtonsContainer } from "./styled";
-import { FormButton } from "../Button";
+import { ButtonsContainer, FooterButton } from "./styled";
 
-const FormFooter = () => {
-    const { langId } = useContext(LanguageContext);
-
-    return (
-        <ButtonsContainer>
-            <FormButton type="submit">
-                {languages[langId]?.buttonLabel.submit}
-            </FormButton>
-            <FormButton type="reset">
-                {languages[langId]?.buttonLabel.reset}
-            </FormButton>
-        </ButtonsContainer>
-    )
-};
+const FormFooter = ({ buttons }) => (
+    <ButtonsContainer>
+        {buttons.map(button => (
+            <FooterButton key={button.id} type={button.type}>
+                {button.label}
+            </FooterButton>
+        ))}
+    </ButtonsContainer>
+);
 
 export default FormFooter;

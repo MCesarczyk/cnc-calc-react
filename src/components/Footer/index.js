@@ -1,14 +1,15 @@
-import Link from "../Link";
-import { FooterWrapper, FooterContent } from "./styled";
+import { AUTHOR_PAGE_ADDRESS, AUTHOR_PAGE_LABEL, DATE } from "../../assets/fixtures/author";
+import { FooterWrapper, FooterContent, FooterLink } from "./styled";
 
-const Footer = ({ date, address, name }) => (
+const Footer = () => (
   <FooterWrapper>
     <FooterContent>
-      Copyright &copy; {date} by&nbsp;
-      <Link
-        adress={address}
-        text={name}
-      />
+      Copyright &copy; {DATE} by&nbsp;
+      <FooterLink
+        href={AUTHOR_PAGE_ADDRESS}
+      >
+        {AUTHOR_PAGE_LABEL}
+      </FooterLink>
     </FooterContent>
   </FooterWrapper>
 );

@@ -7,6 +7,7 @@ export const theme = {
         submitButtonFont: "#19aa6e",
         resetButtonFont: "#dc3223",
         copyButtonFont: "#dc143c",
+        activeNavlinkText: "#2188FF",
         invalid: "beige",
         disabled: "#ddd",
         placeholder: "#747474"

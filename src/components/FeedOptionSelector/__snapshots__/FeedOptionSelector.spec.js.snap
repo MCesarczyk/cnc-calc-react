@@ -81,6 +81,7 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   >
     <input
       checked={true}
+      data-testid="undefined-radio"
       type="radio"
     />
     <label>

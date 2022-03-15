@@ -12,10 +12,6 @@ const FeedOptionSelector = ({
   const { langId } = useContext(LanguageContext);
   const feedOptions = createFeedOptions(langId);
 
-  const onOptionChange = ({ target }) => {
-    setFeedType(target.value);
-  };
-
   return (
     <>
       {
@@ -25,9 +21,10 @@ const FeedOptionSelector = ({
               name="feedType"
               option={feedOption}
               parameter={feedType}
-              onChange={onOptionChange}
+              onChange={({ target }) => setFeedType(target.value)}
             />
             <Input
+              data-testid={`${feedOption.id}-input`}
               value={(feedOption.id === feedType) ? feedFactor : ""}
               type="number"
               min="0.01"

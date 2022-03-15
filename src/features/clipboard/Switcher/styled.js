@@ -11,6 +11,7 @@ export const SwitcherLabel = styled.label`
   font-variant: small-caps;
   font-weight: 700;
   margin-right: 1rem;
+  cursor: pointer;
 `
 
 export const Switcher = styled.button`
@@ -33,7 +34,7 @@ export const SwitcherIndicator = styled.div`
   transition: all 0.3s ease-in-out;
 
   ${({ memoryMode }) => memoryMode && css`
-    transform: translateX(1rem);
+    transform: translateX(1.2rem);
     background-color: #1E3246;
   `}
 `

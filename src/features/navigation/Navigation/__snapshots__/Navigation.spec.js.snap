@@ -32,20 +32,14 @@ exports[`List item rendered properly 1`] = `
   transform: scale(0.98);
 }
 
-<a
-  className="c0"
-  href="/"
-  onClick={[Function]}
-/>
-`;
-
-exports[`Navigation list rendered properly 1`] = `
-.c0 {
-  padding: 0;
-  list-style: none;
+.c0.active {
+  color: #2188FF;
 }
 
-<ul
-  className="c0"
+<a
+  aria-current="page"
+  className="c0 active"
+  href="/"
+  onClick={[Function]}
 />
 `;

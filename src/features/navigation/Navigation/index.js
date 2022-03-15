@@ -1,25 +1,17 @@
 import { useContext } from "react";
 import LanguageContext from "../../language/context";
 import { createRoutesList } from "../../../assets/utils/createRoutesList";
-import { Item, List } from "./styled";
+import NavigationList from "./List";
 
 const Navigation = ({ sidebar }) => {
   const { langId } = useContext(LanguageContext);
   const routes = createRoutesList(langId);
 
   return (
-    <List>
-      {routes.map(route => (
-        <li key={route.id}>
-          <Item
-            sidebar={sidebar}
-            to={route.path}
-          >
-            {route.label}
-          </Item>
-        </li>
-      ))}
-    </List>
+    <NavigationList
+      sidebar={sidebar}
+      routes={routes}
+    />
   )
 };
 
