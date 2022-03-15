@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.js": "/cnc-calc-react/static/js/main.82a0a536.chunk.js",
-    "main.js.map": "/cnc-calc-react/static/js/main.82a0a536.chunk.js.map",
-    "runtime-main.js": "/cnc-calc-react/static/js/runtime-main.02d9fff6.js",
-    "runtime-main.js.map": "/cnc-calc-react/static/js/runtime-main.02d9fff6.js.map",
-    "static/js/2.7a901b01.chunk.js": "/cnc-calc-react/static/js/2.7a901b01.chunk.js",
-    "static/js/2.7a901b01.chunk.js.map": "/cnc-calc-react/static/js/2.7a901b01.chunk.js.map",
-    "static/js/3.063c026b.chunk.js": "/cnc-calc-react/static/js/3.063c026b.chunk.js",
-    "static/js/3.063c026b.chunk.js.map": "/cnc-calc-react/static/js/3.063c026b.chunk.js.map",
+    "main.js": "/cnc-calc-react/static/js/main.319e8147.js",
+    "static/js/787.30c8021c.chunk.js": "/cnc-calc-react/static/js/787.30c8021c.chunk.js",
     "index.html": "/cnc-calc-react/index.html",
-    "static/js/2.7a901b01.chunk.js.LICENSE.txt": "/cnc-calc-react/static/js/2.7a901b01.chunk.js.LICENSE.txt",
-    "static/media/hamburger-menu.ad1e3324.svg": "/cnc-calc-react/static/media/hamburger-menu.ad1e3324.svg"
+    "static/media/hamburger-menu.svg": "/cnc-calc-react/static/media/hamburger-menu.ad1e3324c36ae02551c2e84dcb332b68.svg",
+    "main.319e8147.js.map": "/cnc-calc-react/static/js/main.319e8147.js.map",
+    "787.30c8021c.chunk.js.map": "/cnc-calc-react/static/js/787.30c8021c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.02d9fff6.js",
-    "static/js/2.7a901b01.chunk.js",
-    "static/js/main.82a0a536.chunk.js"
+    "static/js/main.319e8147.js"
   ]
 }
