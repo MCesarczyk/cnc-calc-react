@@ -3,7 +3,6 @@ import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
-import { Select } from "../Select";
 import FormSelect from ".";
 
 const data = [
@@ -34,10 +33,10 @@ test("Select component should display selected value", () => {
   const select = setup().getByRole('combobox');
   fireEvent.change(select, { target: { value: 'B' } });
   expect(select.value).toBe('B');
-  
+
   fireEvent.change(select, { target: { value: 'B' } });
   expect(select.value).toBe('B');
-  
+
   fireEvent.change(select, { target: { value: 'F' } });
   expect(select.value).toBe('F');
 });
@@ -45,7 +44,7 @@ test("Select component should display selected value", () => {
 test("FormSelect component rendering properly", () => {
   const component = renderer.create(
     <ThemeProvider theme={theme} >
-      <Select />
+      <FormSelect data={data} />
     </ThemeProvider>
   );
 

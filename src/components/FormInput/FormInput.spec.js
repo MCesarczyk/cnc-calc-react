@@ -29,7 +29,19 @@ test("Input component shouldn't allow to input letters", () => {
   expect(input.value).toBe('');
 });
 
-test("Input component rendering properly", () => {
+test("FormInput component rendering properly", () => {
+  const input = renderer.create(
+    <ThemeProvider theme={theme} >
+      <FormInput />
+    </ThemeProvider>
+  );
+
+  let tree = input.toJSON();
+
+  expect(tree).toMatchSnapshot();
+});
+
+test("Input component change style on actions", () => {
   const input = renderer.create(
     <ThemeProvider theme={theme} >
       <Input />
@@ -37,8 +49,6 @@ test("Input component rendering properly", () => {
   );
 
   let tree = input.toJSON();
-
-  expect(tree).toMatchSnapshot();
 
   expect(tree).toHaveStyleRule('background-color', 'beige', {
     modifier: ':invalid'

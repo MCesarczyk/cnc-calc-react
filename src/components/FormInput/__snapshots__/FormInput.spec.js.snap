@@ -1,28 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component rendering properly 1`] = `
-.c0 {
+exports[`FormInput component rendering properly 1`] = `
+.c3 {
   min-width: 16rem;
   border: solid 1px #1e3246;
   border-radius: 5px;
   padding: 5px;
 }
 
-.c0:invalid {
+.c3:invalid {
   background-color: beige;
 }
 
-.c0:disabled {
+.c3:disabled {
   background-color: #ddd;
 }
 
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c2 {
+  vertical-align: sub;
+  font-size: 0.7em;
+  margin-right: 0.15em;
+}
+
+.c1 {
+  text-align: right;
+}
+
 @media (max-width:480px) {
-  .c0 {
+  .c3 {
     width: 100%;
   }
 }
 
-<input
+@media (max-width:480px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width:480px) {
+  .c1 {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+}
+
+<div
   className="c0"
-/>
+>
+  <label
+    className="c1"
+  >
+    <label>
+      <span
+        className="c2"
+      />
+    </label>
+  </label>
+  <input
+    className="c3"
+    required={true}
+    type="number"
+  />
+</div>
 `;
