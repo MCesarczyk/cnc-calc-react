@@ -1,9 +1,20 @@
+import { render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import { ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import "jest-styled-components";
+import LanguageContext from "../../features/language/context";
 import { FieldsContainer } from "./styled";
 import { ButtonsContainer, FooterButton } from "./Footer/styled";
+import Form from ".";
+
+const formSetup = (langId) => render(
+  <ThemeProvider theme={theme}>
+    <LanguageContext.Provider value={{ langId }}>
+      <Form />
+    </LanguageContext.Provider>
+  </ThemeProvider>
+);
 
 test("Fields container should have smaller gap on smallest mobile screen", () => {
   const containerComponent = renderer.create(
@@ -36,7 +47,43 @@ test("Buttons change direction to column on mobile", () => {
   });
 });
 
-test("Form Button with states rendering properly", () => {
+test("Both buttons have proper type", () => {
+  const langId = 0;
+  const types = ['submit', 'reset'];
+
+  formSetup(langId);
+
+  const buttons = screen.getAllByRole('button');
+  buttons.forEach((button, index) =>
+    expect(button.type).toBe(types[index])
+  );
+});
+
+test("Both buttons are displayed with correct names for language: EN", () => {
+  const langId = 0;
+  const labels = ['Calculate', 'Reset'];
+
+  formSetup(langId);
+
+  const buttons = screen.getAllByRole('button');
+  buttons.forEach((button, index) =>
+    expect(button.innerHTML).toBe(labels[index])
+  );
+});
+
+test("Both buttons are displayed with correct names for language: PL", () => {
+  const langId = 1;
+  const labels = ['Oblicz', 'Wyczyść'];
+
+  formSetup(langId);
+
+  const buttons = screen.getAllByRole('button');
+  buttons.forEach((button, index) =>
+    expect(button.innerHTML).toBe(labels[index])
+  );
+});
+
+test("Form Buttons with states rendering properly", () => {
   const buttonComponent = renderer.create(
     <ThemeProvider theme={theme} >
       <FooterButton />
