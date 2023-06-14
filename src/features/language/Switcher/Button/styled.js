@@ -9,7 +9,7 @@ export const SwitcherButton = styled.button`
     border: 2px solid ${({ theme }) => theme.color.primary};
     border-radius: 2px;
 
-    ${({ active }) => active && css`
+    ${({ $active }) => $active && css`
         border-color: ${({ theme }) => theme.color.primaryContrast};
     `}
     

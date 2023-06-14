@@ -21,6 +21,6 @@ export const SidebarNavigation = styled.div`
   display: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
-    display: ${props => props.visible && 'block'};
+    display: ${({ $visible }) => $visible && "block"};
   }
 `;

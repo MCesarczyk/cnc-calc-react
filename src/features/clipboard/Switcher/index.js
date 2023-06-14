@@ -15,10 +15,10 @@ const ClipboardSwitcher = () => {
       </SwitcherLabel>
       <Switcher
         id="clipboard-switcher"
-        memoryMode={memoryMode}
+        $memorymode={memoryMode}
         onClick={() => setMemoryMode(!memoryMode)}
       >
-        <SwitcherIndicator memoryMode={memoryMode} />
+        <SwitcherIndicator $memorymode={memoryMode} />
       </Switcher>
     </SwitcherWrapper>
   )

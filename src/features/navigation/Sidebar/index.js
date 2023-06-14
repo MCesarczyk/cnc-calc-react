@@ -45,7 +45,7 @@ const Sidebar = () => {
       />
       <SidebarNavigation
         ref={sidebarRef}
-        visible={open && pathname !== "/"}
+        $visible={open && pathname !== "/"}
       >
         <Navigation
           sidebar="true"

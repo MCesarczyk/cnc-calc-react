@@ -33,7 +33,7 @@ export const SwitcherIndicator = styled.div`
   top: -3px;
   transition: all 0.3s ease-in-out;
 
-  ${({ memoryMode }) => memoryMode && css`
+  ${({ $memorymode }) => $memorymode && css`
     transform: translateX(1.2rem);
     background-color: #1E3246;
   `}
