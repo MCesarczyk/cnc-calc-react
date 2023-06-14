@@ -8,17 +8,12 @@ exports[`Radio button rendered properly 1`] = `
 }
 
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   gap: 10px;
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   .c0 {
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
     align-self: flex-start;
   }
 }

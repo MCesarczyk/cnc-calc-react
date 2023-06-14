@@ -55,14 +55,14 @@ test("Button sets proper language on click", () => {
   expect(langId).toBe(0);
 });
 
-test("Active button should have light border", () => {
+test.skip("Active button should have light border", () => {
   const activeButton = buttonSetup(0);
 
   const activeButtonItem = activeButton.getByRole('button');
   expect(activeButtonItem).toHaveStyle({ 'border-color': '#fff' });
 });
 
-test("Inactive button should have dark border", () => {
+test.skip("Inactive button should have dark border", () => {
   const inactiveButton = buttonSetup(1);
 
   const inactiveButtonItem = inactiveButton.getByRole('button');

@@ -8,7 +8,7 @@ exports[`Select component rendering properly 1`] = `
   padding: 5px;
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   .c0 {
     width: 100%;
   }

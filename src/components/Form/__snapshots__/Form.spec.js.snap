@@ -2,15 +2,9 @@
 
 exports[`Form Buttons with states rendering properly 1`] = `
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   min-width: 12rem;
   width: 100%;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   color: #fff;
   background-color: #1e3246;
@@ -20,12 +14,10 @@ exports[`Form Buttons with states rendering properly 1`] = `
 }
 
 .c0:hover {
-  -webkit-filter: brightness(150%);
   filter: brightness(150%);
 }
 
 .c0:active {
-  -webkit-filter: brightness(200%);
   filter: brightness(200%);
   border-color: currentColor;
 }

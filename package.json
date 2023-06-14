@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "cz-conventional-changelog": "^3.3.0",
     "jest-styled-components": "^7.0.8",
     "react-test-renderer": "^18.2.0",
