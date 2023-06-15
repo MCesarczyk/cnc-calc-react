@@ -6,7 +6,7 @@ export const List = styled.ul`
   list-style: none;
 `;
 
-export const Item = styled(NavLink)`
+export const Item = styled(NavLink)<{ sidebar?: boolean }>`
     color: ${({ theme }) => theme.color.primaryContrast};
     background-color: ${({ theme }) => theme.color.primary};
     display: block;

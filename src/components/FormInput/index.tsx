@@ -3,6 +3,21 @@ import { Input } from "../Input";
 import { TextSub } from "../TextSub";
 import { Label } from "../Label";
 
+interface FormInputProps {
+  name: string;
+  sub?: string;
+  unit?: string;
+  inputRef?: any;
+  value?: any;
+  min?: number;
+  step?: number;
+  placeholder?: string;
+  disabled?: boolean;
+  readOnly?: boolean;
+  autoFocus?: boolean;
+  onChange?: any;
+}
+
 const FormInput = ({
   name,
   sub,
@@ -16,7 +31,7 @@ const FormInput = ({
   readOnly,
   autoFocus,
   onChange
-}) => {
+}:FormInputProps) => {
   return (
     <FieldWrapper>
       <Label>

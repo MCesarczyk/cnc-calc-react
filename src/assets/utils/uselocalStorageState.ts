@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch } from "react";
 
-export const useLocalStorageState = (keyName, initialValue) => {
+export const useLocalStorageState = <T>(keyName: string, initialValue: T): [T, Dispatch<T>] => {
     const getInitialState = () => {
         const localStorageState = localStorage.getItem(keyName);
         if (localStorageState === null) {
             return initialValue;
         }
 
-        return JSON.parse(localStorage.getItem(keyName));
+        return JSON.parse(localStorageState);
     };
     const [state, setState] = useState(getInitialState);
 

@@ -1,7 +1,8 @@
-import PL from "../../assets/images/flagPL.png";
-import EN from "../../assets/images/flagUS.png";
+const PL = require('assets/images/flagPL.png');
+const EN = require('assets/images/flagEN.png')
 
-const languages = [
+const languages = {
+  EN:
   {
     key: "EN",
     flag: EN,
@@ -62,7 +63,7 @@ const languages = [
       reset: "Reset"
     }
   },
-  {
+  PL: {
     key: "PL",
     flag: PL,
     mainTitle: "Kalkulator parametrów skrawania",
@@ -122,6 +123,6 @@ const languages = [
       reset: "Wyczyść"
     }
   },
-];
+};
 
 export default languages;

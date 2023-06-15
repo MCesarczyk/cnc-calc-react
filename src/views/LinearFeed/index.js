@@ -5,7 +5,7 @@ import { focusForm } from "../../assets/utils/focusForm";
 import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
 import Form from "../../components/Form";
 import FormInput from "../../components/FormInput";
-import FeedOptionSelector from "../../components/FeedOptionSelector";
+import FeedOptionSelector from "../../components/FeedOptionSelector/FeedOptionsSelector";
 import ResultField from "../../features/clipboard/ResultField";
 import ClipboardContext from "../../features/clipboard/context";
 import { calculateFeedrate } from "./equation";

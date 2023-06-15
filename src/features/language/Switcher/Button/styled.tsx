@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const SwitcherButton = styled.button`
+export const SwitcherButton = styled.button<{ $active?: boolean }>`
     color: ${({ theme }) => theme.color.primary};
     background-color: ${({ theme }) => theme.color.primaryContrast};
     background-repeat: no-repeat;

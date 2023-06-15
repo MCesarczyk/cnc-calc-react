@@ -2,11 +2,19 @@ import { useContext } from "react";
 import LanguageContext from "../../context";
 import { changeLanguage, isButtonActive } from "../functions";
 import { SwitcherButton } from "./styled";
+import { Language } from "types";
 
-const Button = ({ language }) => {
+interface ButtonProps {
+  language: {
+    key: Language;
+    flag: string;
+  };
+}
+
+const Button = ({ language }: ButtonProps) => {
   const { langId, setLangId } = useContext(LanguageContext);
 
-  const onLanguageChange = (key) => setLangId(changeLanguage(key));
+  const onLanguageChange = (key: Language) => setLangId(changeLanguage(key) as Language);
 
   return (
     <SwitcherButton
@@ -16,7 +24,7 @@ const Button = ({ language }) => {
     >
       {language.key}
     </SwitcherButton>
-  )
+  );
 };
 
 export default Button;

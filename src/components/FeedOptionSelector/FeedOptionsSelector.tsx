@@ -1,16 +1,24 @@
-import { useContext } from "react";
-import LanguageContext from "../../features/language/context";
-import { createFeedOptions } from "../../assets/utils/createFeedOptions";
+import { ChangeEvent, useContext } from "react";
+import LanguageContext from "features/language/context";
+import { createFeedOptions } from "assets/utils/createFeedOptions";
 import RadioButton from "../RadioButton";
 import { FieldWrapper } from "../FieldWrapper";
 import { Input } from "../Input";
+import { Language } from "types";
+
+interface FeedOptionSelectorProps {
+  feedType: string;
+  setFeedType: (value: string) => void;
+  feedFactor: string;
+  setFeedFactor: (value: string) => void;
+}
 
 const FeedOptionSelector = ({
   feedType, setFeedType,
   feedFactor, setFeedFactor
-}) => {
+}: FeedOptionSelectorProps) => {
   const { langId } = useContext(LanguageContext);
-  const feedOptions = createFeedOptions(langId);
+  const feedOptions = createFeedOptions(langId as Language);
 
   return (
     <>
@@ -21,7 +29,7 @@ const FeedOptionSelector = ({
               name="feedType"
               option={feedOption}
               parameter={feedType}
-              onChange={({ target }) => setFeedType(target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement> ) => setFeedType(e.target.value)}
             />
             <Input
               data-testid={`${feedOption.id}-input`}

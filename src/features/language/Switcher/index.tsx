@@ -1,13 +1,14 @@
 import { SwitcherWrapper } from "./styled";
-import languages from "../../../assets/fixtures/languages";
+import languages from "assets/fixtures/languages";
 import Button from "./Button";
+import { Language } from "types";
 
 const LanguageSwitcher = () => (
     <SwitcherWrapper>
-        {languages.map(language => (
+        {Object.values(languages).map(language => (
             <Button
                 key={language.key}
-                language={language}
+                language={language as { key: Language; flag: string }}
             />
         ))}
     </SwitcherWrapper>
