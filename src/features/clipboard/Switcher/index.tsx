@@ -1,21 +1,18 @@
 import { useContext } from "react";
-import languages from "../../../assets/fixtures/languages";
-import LanguageContext from "../../language/context";
 import ClipboardContext from "../context";
 import { Switcher, SwitcherIndicator, SwitcherLabel, SwitcherWrapper } from "./styled";
 
 const ClipboardSwitcher = () => {
   const { memoryMode, setMemoryMode } = useContext(ClipboardContext);
-  const { langId } = useContext(LanguageContext);
 
   return (
     <SwitcherWrapper>
       <SwitcherLabel htmlFor="clipboard-switcher" >
-        {languages[langId].clibboardSwitcherLabel}
+        {/* {languages[langId].clibboardSwitcherLabel} */}
+        "ClipboardSwitcher"
       </SwitcherLabel>
       <Switcher
         id="clipboard-switcher"
-        $memorymode={memoryMode}
         onClick={() => setMemoryMode(!memoryMode)}
       >
         <SwitcherIndicator $memorymode={memoryMode} />

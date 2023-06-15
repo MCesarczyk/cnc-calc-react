@@ -9,7 +9,7 @@ export const SidebarActivationArea = styled.div`
   background: transparent;
 `;
 
-export const SidebarNavigation = styled.div`
+export const SidebarNavigation = styled.div<{ $visible?: boolean }>`
   position: absolute;
   left: 0;
   top: 0;

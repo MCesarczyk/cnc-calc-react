@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import LanguageContext from "features/language/context";
-import { createRoutesList } from "assets/utils/createRoutesList";
+import LanguageContext from "../../language/context";
+import { createRoutesList } from "../../../assets/utils/createRoutesList";
 import NavigationList from "./List";
 
 interface NavigationProps {
   sidebar?: boolean;
+  
 }
 
 const Navigation = ({ sidebar }: NavigationProps) => {

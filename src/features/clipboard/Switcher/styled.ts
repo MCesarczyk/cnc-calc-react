@@ -22,7 +22,7 @@ export const Switcher = styled.button`
   border-radius: 1rem;
 `
 
-export const SwitcherIndicator = styled.div`
+export const SwitcherIndicator = styled.div<{ $memorymode?: boolean }>`
   width: 2rem;
   height: 2rem;
   border: 2px solid #525252;

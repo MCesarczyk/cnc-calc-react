@@ -1,7 +1,24 @@
 import { TextSub } from "../TextSub";
 import { RadioButtonWrapper } from "./styled";
 
-const RadioButton = ({ name, option, parameter, onChange }) => (
+interface RadioButtonProps {
+  name: string;
+  option: {
+    id: string;
+    name: string;
+    sub: string;
+    unit: string;
+  };
+  parameter: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const RadioButton = ({
+  name,
+  option,
+  parameter,
+  onChange,
+}: RadioButtonProps) => (
   <RadioButtonWrapper>
     <input
       type="radio"
@@ -14,9 +31,7 @@ const RadioButton = ({ name, option, parameter, onChange }) => (
     />
     <label htmlFor={option?.id}>
       {option?.name}
-      <TextSub>
-        {option?.sub}
-      </TextSub>
+      <TextSub>{option?.sub}</TextSub>
       {option?.unit}
     </label>
   </RadioButtonWrapper>

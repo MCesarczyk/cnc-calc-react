@@ -1,6 +1,6 @@
 import { ChangeEvent, useContext } from "react";
-import LanguageContext from "features/language/context";
-import { createFeedOptions } from "assets/utils/createFeedOptions";
+import LanguageContext from "../../features/language/context";
+import { createFeedOptions } from "../../assets/utils/createFeedOptions";
 import RadioButton from "../RadioButton";
 import { FieldWrapper } from "../FieldWrapper";
 import { Input } from "../Input";

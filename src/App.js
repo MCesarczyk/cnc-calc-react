@@ -18,7 +18,7 @@ import ClipboardProvider from "./features/clipboard/provider";
 import ClipboardSwitcher from "./features/clipboard/Switcher";
 
 const App = () => {
-  const [langId, setLangId] = useLocalStorageState("langId", 0);
+  const [langId, setLangId] = useLocalStorageState("langId", 'EN');
   const [memoryMode, setMemoryMode] = useLocalStorageState("memoryMode", false);
   const [values, setValues] = useState(undefined);
   const [open, setOpen] = useState(false);

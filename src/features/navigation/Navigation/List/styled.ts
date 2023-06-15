@@ -6,7 +6,7 @@ export const List = styled.ul`
   list-style: none;
 `;
 
-export const Item = styled(NavLink)<{ sidebar?: boolean }>`
+export const Item = styled(NavLink) <{ $sidebar?: boolean }>`
     color: ${({ theme }) => theme.color.primaryContrast};
     background-color: ${({ theme }) => theme.color.primary};
     display: block;
@@ -33,7 +33,7 @@ export const Item = styled(NavLink)<{ sidebar?: boolean }>`
       color: ${({ theme }) => theme.color.activeNavlinkText};
     }
     
-    ${props => props.sidebar && css`
+    ${({ $sidebar }) => $sidebar && css`
       border-radius: 0;
       border-bottom: 1px solid currentColor;
       background-color: transparent;

@@ -1,5 +1,5 @@
 import { SwitcherWrapper } from "./styled";
-import languages from "assets/fixtures/languages";
+import languages from "../../../assets/fixtures/languages";
 import Button from "./Button";
 import { Language } from "types";
 

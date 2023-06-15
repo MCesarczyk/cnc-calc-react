@@ -1,5 +1,5 @@
 import { Language } from "types";
-import languages from "assets/fixtures/languages";
+import languages from "../../assets/fixtures/languages";
 
 export const createRoutesList = (langId: Language) => {
   return [

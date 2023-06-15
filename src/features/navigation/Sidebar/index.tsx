@@ -1,14 +1,14 @@
 import { useCallback, useContext, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import NavigationContext from "../context";
-import ClipboardSwitcher from "../../clipboard/Switcher";
 import Navigation from "../Navigation";
+import ClipboardSwitcher from "../../clipboard/Switcher";
 import { SidebarActivationArea, SidebarNavigation } from "./styled";
 
 const Sidebar = () => {
   const { open, setOpen } = useContext(NavigationContext);
   const { pathname } = useLocation();
-  const sidebarRef = useRef();
+  const sidebarRef = useRef<HTMLDivElement | null>(null);
 
   const handleOpen = () => {
     setTimeout(() => {
@@ -25,7 +25,7 @@ const Sidebar = () => {
   }, [pathname, handleClose]);
 
   useEffect(() => {
-    const checkIfClickedOutside = e => {
+    const checkIfClickedOutside = (e: any) => {
       if (open && sidebarRef.current && !sidebarRef.current.contains(e.target)) {
         handleClose();
       }
@@ -48,8 +48,7 @@ const Sidebar = () => {
         $visible={open && pathname !== "/"}
       >
         <Navigation
-          sidebar="true"
-          handleClose={handleClose}
+          sidebar={true}
         />
         <ClipboardSwitcher />
       </SidebarNavigation>
