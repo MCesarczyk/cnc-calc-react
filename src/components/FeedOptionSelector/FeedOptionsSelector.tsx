@@ -5,10 +5,11 @@ import RadioButton from '../RadioButton';
 import { FieldWrapper } from '../FieldWrapper';
 import { Input } from '../Input';
 import { Language } from '../../features/language/types';
+import { FeedType } from 'types';
 
 interface FeedOptionSelectorProps {
-  feedType: number;
-  setFeedType: (value: number) => void;
+  feedType: FeedType;
+  setFeedType: (value: FeedType) => void;
   feedFactor: string | undefined;
   setFeedFactor: (value: number) => void;
 }
@@ -19,23 +20,23 @@ const FeedOptionSelector = ({ feedType, setFeedType, feedFactor, setFeedFactor }
 
   return (
     <>
-      {feedOptions.map((feedOption) => (
-        <FieldWrapper key={feedOption.id}>
+      {feedOptions.map((option) => (
+        <FieldWrapper key={option.id}>
           <RadioButton
             name="feedType"
-            option={feedOption}
+            option={option}
             parameter={feedType}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setFeedType(Number(e.target.value))}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setFeedType(e.target.value as FeedType)}
           />
           <Input
-            data-testid={`${feedOption.id}-input`}
-            value={feedOption.id === feedType ? feedFactor : ''}
+            data-testid={`${option.id}-input`}
+            value={option.id === feedType ? feedFactor : ''}
             type="number"
             min="0.01"
             step="0.01"
             required
-            disabled={feedOption.id !== feedType}
-            placeholder={feedOption.placeholder}
+            disabled={option.id !== feedType}
+            placeholder={option.placeholder}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setFeedFactor(Number(e.target.value))}
           />
         </FieldWrapper>

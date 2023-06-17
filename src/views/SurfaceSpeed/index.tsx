@@ -23,9 +23,9 @@ const SurfaceSpeedForm = () => {
   useEffect(() => {
     setValues({
       ...values,
-      diameter: Number(diameter),
-      rotationSpeed: Number(rotationSpeed),
-      surfaceSpeed: Number(cuttingSpeed),
+      diameter: diameter,
+      rotationSpeed: rotationSpeed,
+      surfaceSpeed: cuttingSpeed,
     });
 
     // eslint-disable-next-line

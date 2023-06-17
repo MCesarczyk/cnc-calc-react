@@ -1,5 +1,5 @@
 export interface Values {
-  [key: string]: number | undefined;
+  [key: string]: string;
 }
 
 export interface ClipboardContextType {

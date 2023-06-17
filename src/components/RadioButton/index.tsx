@@ -3,17 +3,13 @@ import { ChangeEvent } from 'react';
 import { Input } from '../Input';
 import { TextSub } from '../TextSub';
 import { RadioButtonWrapper } from './styled';
+import { FeedOption } from 'types';
 
 interface RadioButtonProps {
   name: string;
-  option: {
-    id: number;
-    name: string;
-    sub: string;
-    unit: string;
-  };
-  parameter: number;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  option: FeedOption;
+  parameter: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const RadioButton = ({ name, option, parameter, onChange }: RadioButtonProps) => {
@@ -22,13 +18,13 @@ const RadioButton = ({ name, option, parameter, onChange }: RadioButtonProps) =>
       <Input
         type="radio"
         name={name}
-        id={option?.name}
+        id={option?.id}
         data-testid={`${option?.id}-radio`}
         value={option?.id}
         checked={parameter === option?.id}
         onChange={onChange}
       />
-      <label htmlFor={option?.name}>
+      <label htmlFor={option?.id}>
         {option?.name}
         <TextSub>{option?.sub}</TextSub>
         {option?.unit}

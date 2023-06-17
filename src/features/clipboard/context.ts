@@ -2,17 +2,17 @@ import { createContext } from 'react';
 import { ClipboardContextType } from './types';
 
 const initialValues = {
-  rotationSpeed: undefined,
-  feedType: undefined,
-  toothNumber: undefined,
-  feedPerRevolution: undefined,
-  feedPerTooth: undefined,
-  diameter: undefined,
-  tapDiameter: undefined,
-  pitch: undefined,
-  cutSpeed: undefined,
-  feedrate: undefined,
-  teethNumber: undefined,
+  rotationSpeed: '',
+  feedType: '',
+  toothNumber: '',
+  feedPerRevolution: '',
+  feedPerTooth: '',
+  diameter: '',
+  tapDiameter: '',
+  pitch: '',
+  cutSpeed: '',
+  feedrate: '',
+  teethNumber: '',
 };
 
 const ClipboardContext = createContext<ClipboardContextType>({

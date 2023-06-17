@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 
 import { FormEvent, useContext, useEffect, useRef, useState } from 'react';
 import ClipboardContext from '../../features/clipboard/context';
@@ -10,7 +10,7 @@ import Form from '../../components/Form';
 import FormInput from '../../components/FormInput';
 import FormSelect from '../../components/FormSelect';
 import ResultField from '../../features/clipboard/ResultField';
-import { calculateTappingFeed, tapDiametersArray } from './equation';
+import { calculateTappingFeed, setPitchValue, tapDiametersArray } from './equation';
 
 const TappingFeedForm = () => {
   const { langId } = useContext(LanguageContext);
@@ -24,10 +24,10 @@ const TappingFeedForm = () => {
   useEffect(() => {
     setValues({
       ...values,
-      rotationSpeed: Number(rotationSpeed),
-      tapDiameter: Number(diameter),
-      pitch: Number(pitch),
-      tappingFeed: Number(feedrate),
+      rotationSpeed: rotationSpeed,
+      tapDiameter: diameter,
+      pitch: pitch,
+      tappingFeed: feedrate,
     });
 
     // eslint-disable-next-line
@@ -36,7 +36,7 @@ const TappingFeedForm = () => {
   const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (rotationSpeed && diameter) {
-      setFeedrate(calculateTappingFeed(Number(rotationSpeed), Number(diameter)));
+      setFeedrate(String(calculateTappingFeed(Number(rotationSpeed), Number(diameter)) || 'N/A'));
     }
   };
 
@@ -51,7 +51,7 @@ const TappingFeedForm = () => {
 
   const onOptionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setDiameter(e.target.value);
-    setPitch(e.target.value);
+    setPitch(String(setPitchValue(Number(e.target.value))));
   };
 
   return (
