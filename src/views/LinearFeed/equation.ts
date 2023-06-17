@@ -1,10 +1,12 @@
+import { FeedType } from "types";
+
 export const calculateFeedrate = (
-  feedType: number,
+  feedType: FeedType,
   rotationSpeed: number,
   feedPerRevolution: number,
   feedPerTooth: number,
   toothNumber: number,
-) =>
-  feedType === 0
-    ? (rotationSpeed * feedPerRevolution).toFixed()
-    : (rotationSpeed * feedPerTooth * toothNumber).toFixed();
+): number =>
+  feedType === "FPR"
+    ? (rotationSpeed * feedPerRevolution)
+    : (rotationSpeed * feedPerTooth * toothNumber);

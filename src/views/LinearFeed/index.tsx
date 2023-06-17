@@ -44,7 +44,7 @@ const LinearFeedForm = () => {
       feedType: feedType,
     });
     // eslint-disable-next-line
-  }, [feedrate]);
+  }, [feedrate, feedType]);
 
   const onFeedChange = (feedValue: number) => {
     feedType === 'FPR' && setFeedPerRevolution(feedValue.toString());
@@ -54,13 +54,13 @@ const LinearFeedForm = () => {
   const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFeedrate(
-      calculateFeedrate(
-        Number(feedType),
+      (calculateFeedrate(
+        feedType,
         Number(rotationSpeed),
         Number(feedPerRevolution),
         Number(feedPerTooth),
         Number(toothNumber),
-      ),
+      )).toFixed(),
     );
   };
 
