@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 
-import LanguageContext from '../../context';
+import LanguageContext from 'features/language/context';
+import { Language } from 'features/language/types';
 import { changeLanguage, isButtonActive } from '../functions';
 import { SwitcherButton } from './styled';
-import { Language } from '../../types';
 
 interface ButtonProps {
   language: {

@@ -1,11 +1,12 @@
 import { ChangeEvent, useContext } from 'react';
-import LanguageContext from '../../features/language/context';
-import { createFeedOptions } from '../../assets/utils/createFeedOptions';
+
+import { FeedType } from 'types';
+import { Language } from 'features/language/types';
+import LanguageContext from 'features/language/context';
+import { createFeedOptions } from 'assets/utils/createFeedOptions';
 import RadioButton from '../RadioButton';
 import { FieldWrapper } from '../FieldWrapper';
 import { Input } from '../Input';
-import { Language } from '../../features/language/types';
-import { FeedType } from 'types';
 
 interface FeedOptionSelectorProps {
   feedType: FeedType;

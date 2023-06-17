@@ -1,8 +1,9 @@
 import { useCallback, useContext, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+
+import ClipboardSwitcher from 'features/clipboard/Switcher';
 import NavigationContext from '../context';
 import Navigation from '../Navigation';
-import ClipboardSwitcher from '../../clipboard/Switcher';
 import { SidebarActivationArea, SidebarNavigation } from './styled';
 
 const Sidebar = () => {

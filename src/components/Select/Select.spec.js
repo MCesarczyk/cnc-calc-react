@@ -1,8 +1,8 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../theme';
+import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+
+import { theme } from 'theme';
 import { Select } from '.';
 
 test('Select component rendering properly', () => {

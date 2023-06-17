@@ -1,14 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
-import { theme } from '../../../theme';
+import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { createRoutesList } from '../../../assets/utils/createRoutesList';
+
+import { createRoutesList } from 'assets/utils/createRoutesList';
+import LanguageContext from 'language/context';
+import Form from 'components/Form';
+import { theme } from '../theme';
 import NavigationList from './List';
 import { Item } from './List/styled';
-import Form from '../../../components/Form';
-import LanguageContext from '../../language/context';
 
 const renderList = (routes) => {
   render(

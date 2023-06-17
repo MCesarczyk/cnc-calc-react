@@ -1,13 +1,14 @@
 import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../../theme';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+
+import { theme } from 'theme';
+import LanguageContext from 'features/language/context';
+import NavigationContext from 'features/navigation/context';
 import { MenuIconWrapper } from './MenuIcon/styled';
 import Header from '.';
-import LanguageContext from '../../features/language/context';
-import NavigationContext from '../../features/navigation/context';
 import Title from './Title';
 
 const setup = (langId, open) =>

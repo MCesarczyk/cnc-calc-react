@@ -1,8 +1,6 @@
-import React from 'react';
-
-import { FieldWrapper } from '../../../components/FieldWrapper';
-import { TextSub } from '../../../components/TextSub';
-import { Label } from '../../../components/Label';
+import { FieldWrapper } from 'components/FieldWrapper';
+import { TextSub } from 'components/TextSub';
+import { Label } from 'components/Label';
 import { Result } from './styled';
 
 interface ResultFieldProps {

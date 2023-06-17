@@ -1,15 +1,16 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from 'react';
-import LanguageContext from '../../features/language/context';
-import languages from '../../assets/fixtures/languages';
-import { focusForm } from '../../assets/utils/focusForm';
-import { checkIfItsTouchDevice } from '../../assets/utils/checkDeviceType';
-import Form from '../../components/Form';
-import FormInput from '../../components/FormInput';
-import ResultField from '../../features/clipboard/ResultField';
-import ClipboardContext from '../../features/clipboard/context';
-import { calculateFeedrate } from './equation';
-import FeedOptionSelector from '../../components/FeedOptionSelector/FeedOptionsSelector';
+
 import { FeedType } from 'types';
+import LanguageContext from 'features/language/context';
+import ResultField from 'features/clipboard/ResultField';
+import ClipboardContext from 'features/clipboard/context';
+import languages from 'assets/fixtures/languages';
+import { focusForm } from 'assets/utils/focusForm';
+import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
+import Form from 'components/Form';
+import FormInput from 'components/FormInput';
+import FeedOptionSelector from 'components/FeedOptionSelector/FeedOptionsSelector';
+import { calculateFeedrate } from './equation';
 
 const LinearFeedForm = () => {
   const { langId } = useContext(LanguageContext);

@@ -1,5 +1,5 @@
-import { Language } from '../../features/language/types';
-import languages from '../../assets/fixtures/languages';
+import { Language } from 'features/language/types';
+import languages from 'assets/fixtures/languages';
 
 export const createFormFooterButtons = (langId: Language) => {
   const buttons: {

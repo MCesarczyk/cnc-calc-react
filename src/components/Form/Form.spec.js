@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../theme';
 import 'jest-styled-components';
-import LanguageContext from '../../features/language/context';
+
+import { theme } from 'theme';
+import LanguageContext from 'features/language/context';
 import { FieldsContainer } from './styled';
 import { ButtonsContainer, FooterButton } from './Footer/styled';
 import Form from '.';

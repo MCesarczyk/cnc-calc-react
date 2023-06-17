@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
-import { ReactComponent as MenuThumbnail } from "../../../assets/images/hamburger-menu.svg";
+
+import { ReactComponent as MenuThumbnail } from "assets/images/hamburger-menu.svg";
 import { MenuIconWrapper } from './styled';
 
 interface MenuIconProps {

@@ -16,11 +16,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./",
-    "paths": {
-      "*": ["src/*"]
-    }
+    "baseUrl": "src"
+    // "paths": {
+    //   "*": ["src/*"]
+    // }
   },
-  "include": ["./src/**/*", "./test-utils/**/*", "./custom.d.ts"],
+  "include": ["src", "./src/**/*", "./test-utils/**/*", "./custom.d.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,8 +1,9 @@
 import { useContext } from 'react';
+
+import languages from 'assets/fixtures/languages';
+import LanguageContext from 'features/language/context';
 import ClipboardContext from '../context';
 import { Switcher, SwitcherIndicator, SwitcherLabel, SwitcherWrapper } from './styled';
-import languages from '../../../assets/fixtures/languages';
-import LanguageContext from '../../../features/language/context';
 
 const ClipboardSwitcher = () => {
   const { memoryMode, setMemoryMode } = useContext(ClipboardContext);

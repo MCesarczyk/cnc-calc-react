@@ -1,9 +1,10 @@
 import { fireEvent, render } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../theme';
-import LanguageContext from '../../features/language/context';
 import 'jest-styled-components';
+
+import { theme } from 'theme';
+import LanguageContext from 'features/language/context';
 import RadioButton from '../RadioButton';
 import { FieldWrapper } from '../FieldWrapper';
 import { Input } from '../Input';

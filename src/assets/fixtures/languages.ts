@@ -1,5 +1,5 @@
-const PL = require('../../assets/images/flagPL.png');
-const EN = require('../../assets/images/flagUS.png');
+const PL = require('assets/images/flagPL.png');
+const EN = require('assets/images/flagUS.png');
 
 const languages = {
   EN: {

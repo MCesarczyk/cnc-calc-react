@@ -1,11 +1,11 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../theme';
+import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+
+import { theme } from 'theme';
+import { MobileNavWrapper } from 'features/navigation/Navigation/styled';
 import { HomeTitle } from './styled';
-import { MobileNavWrapper } from '../../features/navigation/Navigation/styled';
 
 test('Home component rendered properly', () => {
   const component = renderer.create(

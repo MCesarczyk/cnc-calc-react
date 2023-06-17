@@ -1,10 +1,11 @@
 import { fireEvent, screen, render } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../theme';
+
+import languages from 'assets/fixtures/languages';
+import { theme } from '../theme';
 import LanguageContext from '../context';
-import languages from '../../../assets/fixtures/languages';
 import LanguageSwitcher from '.';
 import { SwitcherButton } from './Button/styled';
 import Button from './Button';

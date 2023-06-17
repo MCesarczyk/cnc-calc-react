@@ -1,15 +1,15 @@
 import { ChangeEvent } from 'react';
 
 import { FormEvent, useContext, useEffect, useRef, useState } from 'react';
-import ClipboardContext from '../../features/clipboard/context';
-import LanguageContext from '../../features/language/context';
-import languages from '../../assets/fixtures/languages';
-import { focusForm } from '../../assets/utils/focusForm';
-import { checkIfItsTouchDevice } from '../../assets/utils/checkDeviceType';
-import Form from '../../components/Form';
-import FormInput from '../../components/FormInput';
-import FormSelect from '../../components/FormSelect';
-import ResultField from '../../features/clipboard/ResultField';
+import ClipboardContext from 'features/clipboard/context';
+import LanguageContext from 'features/language/context';
+import ResultField from 'features/clipboard/ResultField';
+import Form from 'components/Form';
+import FormInput from 'components/FormInput';
+import FormSelect from 'components/FormSelect';
+import languages from 'assets/fixtures/languages';
+import { focusForm } from 'assets/utils/focusForm';
+import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
 import { calculateTappingFeed, setPitchValue, tapDiametersArray } from './equation';
 
 const TappingFeedForm = () => {

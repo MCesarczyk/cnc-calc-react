@@ -1,13 +1,13 @@
-import React, { ChangeEvent, FormEvent } from 'react';
-import { useContext, useEffect, useRef, useState } from 'react';
-import LanguageContext from '../../features/language/context';
-import languages from '../../assets/fixtures/languages';
-import { focusForm } from '../../assets/utils/focusForm';
-import { checkIfItsTouchDevice } from '../../assets/utils/checkDeviceType';
-import Form from '../../components/Form';
-import FormInput from '../../components/FormInput';
-import ResultField from '../../features/clipboard/ResultField';
-import ClipboardContext from '../../features/clipboard/context';
+import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from 'react';
+
+import LanguageContext from 'features/language/context';
+import ResultField from 'features/clipboard/ResultField';
+import ClipboardContext from 'features/clipboard/context';
+import Form from 'components/Form';
+import FormInput from 'components/FormInput';
+import languages from 'assets/fixtures/languages';
+import { focusForm } from 'assets/utils/focusForm';
+import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
 import { calculateRotationSpeed } from './equation';
 
 const ToolRotationForm = () => {

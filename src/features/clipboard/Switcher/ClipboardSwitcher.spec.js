@@ -1,9 +1,10 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import 'jest-styled-components';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../../../theme';
-import LanguageContext from '../../language/context';
+import 'jest-styled-components';
+
+import LanguageContext from 'language/context';
 import ClipboardContext from '../context';
+import { theme } from '../theme';
 import ClipboardSwitcher from '.';
 
 let langId = 0;
