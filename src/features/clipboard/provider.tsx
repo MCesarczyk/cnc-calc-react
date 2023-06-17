@@ -1,11 +1,11 @@
+import { ReactNode } from "react";
+
 import ClipboardContext from "./context";
+import { ClipboardContextType } from "./types";
 
 interface ClipboardProviderProps {
-  value: {
-    memoryMode: boolean;
-    setMemoryMode: (value: boolean) => void;
-  };
-  children: React.ReactNode;
+  value: ClipboardContextType;
+  children: ReactNode;
 }
 
 const ClipboardProvider = ({ value, children }:ClipboardProviderProps) => (

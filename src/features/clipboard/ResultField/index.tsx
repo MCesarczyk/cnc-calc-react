@@ -1,3 +1,5 @@
+import React from "react";
+
 import { FieldWrapper } from "../../../components/FieldWrapper";
 import { TextSub } from "../../../components/TextSub";
 import { Label } from "../../../components/Label";
@@ -5,18 +7,18 @@ import { Result } from "./styled";
 
 interface ResultFieldProps {
   name: string;
-  sub: string;
   unit: string;
-  value: string;
+  value: number | undefined;
   placeholder: string;
+  sub?: string;
 }
 
 const ResultField = ({
   name,
-  sub,
   unit,
   value,
   placeholder,
+  sub,
 }: ResultFieldProps) => {
   return (
     <FieldWrapper>
@@ -27,7 +29,7 @@ const ResultField = ({
           {unit}
         </label>
       </Label>
-      <Result placeholder={value.length === 0 ? "placeholder" : ""}>
+      <Result placeholder={!value ? "placeholder" : ""}>
         {value ? value : placeholder}
       </Result>
     </FieldWrapper>

@@ -8,7 +8,7 @@ interface FormSelectProps {
   sub?: string;
   unit?: string;
   id: string;
-  value: string;
+  value: number | undefined;
   data: any[];
   onChange: any;
 }

@@ -1,4 +1,4 @@
-import { Language } from "types";
+import { Language } from "../../features/language/types";
 import languages from "../../assets/fixtures/languages";
 
 export const createFeedOptions = (langId: Language) => {

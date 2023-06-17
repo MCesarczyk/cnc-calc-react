@@ -1,4 +1,4 @@
-import { Language } from "types";
+import { Language } from "../../features/language/types";
 import languages from "../../assets/fixtures/languages";
 
 export const createFormFooterButtons = (langId: Language) => {
@@ -6,18 +6,18 @@ export const createFormFooterButtons = (langId: Language) => {
     id: number;
     type: 'submit' | 'reset';
     label: string;
-}[] = [
-    {
-      id: 1,
-      type: "submit",
-      label: languages[langId]?.buttonLabel.submit
-    },
-    {
-      id: 2,
-      type: "reset",
-      label: languages[langId]?.buttonLabel.reset
-    },
-  ];
+  }[] = [
+      {
+        id: 1,
+        type: "submit",
+        label: languages[langId]?.buttonLabel.submit
+      },
+      {
+        id: 2,
+        type: "reset",
+        label: languages[langId]?.buttonLabel.reset
+      },
+    ];
 
   return buttons;
 };

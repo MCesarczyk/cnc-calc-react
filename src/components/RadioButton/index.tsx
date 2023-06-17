@@ -1,3 +1,6 @@
+import { ChangeEvent } from "react";
+
+import { Input } from "../Input";
 import { TextSub } from "../TextSub";
 import { RadioButtonWrapper } from "./styled";
 
@@ -10,7 +13,7 @@ interface RadioButtonProps {
     unit: string;
   };
   parameter: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const RadioButton = ({
@@ -18,23 +21,25 @@ const RadioButton = ({
   option,
   parameter,
   onChange,
-}: RadioButtonProps) => (
-  <RadioButtonWrapper>
-    <input
-      type="radio"
-      name={name}
-      id={option?.id}
-      data-testid={`${option?.id}-radio`}
-      value={option?.id}
-      checked={parameter === option?.id}
-      onChange={onChange}
-    />
-    <label htmlFor={option?.id}>
-      {option?.name}
-      <TextSub>{option?.sub}</TextSub>
-      {option?.unit}
-    </label>
-  </RadioButtonWrapper>
-);
+}: RadioButtonProps) => {
+  return (
+    <RadioButtonWrapper>
+      <Input
+        type="radio"
+        name={name}
+        id={option?.id}
+        data-testid={`${option?.id}-radio`}
+        value={option?.id}
+        checked={parameter === option?.id}
+        onChange={onChange}
+      />
+      <label htmlFor={option?.id}>
+        {option?.name}
+        <TextSub>{option?.sub}</TextSub>
+        {option?.unit}
+      </label>
+    </RadioButtonWrapper>
+  );
+};
 
 export default RadioButton;

@@ -27,6 +27,8 @@
     }
   },
   "include": [
-    "src"
+    "src",
+    "src/assets/images",
+    "src/custom.d.ts"
   ]
 }

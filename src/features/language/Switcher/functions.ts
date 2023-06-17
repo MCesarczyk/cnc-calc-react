@@ -1,5 +1,5 @@
 import languages from "../../../assets/fixtures/languages";
-import { Language } from "types";
+import { Language } from "../types";
 
 export const changeLanguage = (key: Language) => languages[key].key;
 

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useLocalStorageState } from "./assets/utils/uselocalStorageState";
@@ -16,17 +17,19 @@ import LanguageProvider from "./features/language/provider";
 import NavigationProvider from "./features/navigation/provider";
 import ClipboardProvider from "./features/clipboard/provider";
 import ClipboardSwitcher from "./features/clipboard/Switcher";
+import { Language } from "features/language/types";
 
 const App = () => {
-  const [langId, setLangId] = useLocalStorageState("langId", 'EN');
+  const [langId, setLangId] = useLocalStorageState<Language>("langId", 'EN');
   const [memoryMode, setMemoryMode] = useLocalStorageState("memoryMode", false);
-  const [values, setValues] = useState(undefined);
+  const [values, setValues] = useState({});
+  const [feedType, setFeedType] = useState("FPR");
   const [open, setOpen] = useState(false);
 
   return (
     <LanguageProvider value={{ langId, setLangId }} >
       <NavigationProvider value={{ open, setOpen }}>
-        <ClipboardProvider value={{ values, setValues, memoryMode, setMemoryMode }} >
+        <ClipboardProvider value={{ values, setValues, memoryMode, setMemoryMode, feedType, setFeedType }} >
           <HashRouter >
             <Sidebar />
             <Header />

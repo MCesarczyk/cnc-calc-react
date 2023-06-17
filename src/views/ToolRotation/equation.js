@@ -1,1 +1,0 @@
-export const calculateRotationSpeed = (diameter, cuttingSpeed) => (cuttingSpeed * 1000 / Math.PI / diameter).toFixed(0);

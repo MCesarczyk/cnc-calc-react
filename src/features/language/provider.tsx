@@ -1,4 +1,4 @@
-import { Language } from "types";
+import { Language } from "./types";
 import LanguageContext from "./context";
 
 interface LanguageProviderProps {

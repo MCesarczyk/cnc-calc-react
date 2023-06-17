@@ -8,7 +8,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
 
 const container = document.getElementById("root");
-const root = createRoot(container);
+const root = createRoot(container!);
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

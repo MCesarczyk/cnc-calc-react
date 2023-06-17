@@ -1,10 +1,10 @@
 import { createContext } from "react";
+import { ClipboardContextType } from "./types";
 
-interface ClipboardContextType {
-  memoryMode: boolean;
-  setMemoryMode: (memoryMode: boolean) => void;
-}
+const initialValues = {
+  rotationSpeed: undefined, feedType: undefined, toothNumber: undefined, feedPerRevolution: undefined, feedPerTooth: undefined, diameter: undefined, tapDiameter: undefined, pitch: undefined, cutSpeed: undefined, feedrate: undefined, teethNumber: undefined
+};
 
-const ClipboardContext = createContext<ClipboardContextType>({ memoryMode: false, setMemoryMode: () => { } });
+const ClipboardContext = createContext<ClipboardContextType>({ memoryMode: false, setMemoryMode: () => { }, values: initialValues, setValues: () => initialValues, feedType: "FPR", setFeedType: () => { } });
 
 export default ClipboardContext;

@@ -1,3 +1,5 @@
+import { FormEvent, ReactNode } from "react";
+
 import { useContext } from "react";
 import { createFormFooterButtons } from "../../assets/utils/createFormFooterButtons";
 import LanguageContext from "../../features/language/context";
@@ -6,9 +8,9 @@ import { FieldsContainer, Fieldset, FormWrapper, Legend } from "./styled";
 
 interface FormProps {
   legend: string;
-  children: React.ReactNode;
-  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  onReset: (e: React.FormEvent<HTMLFormElement>) => void;
+  children: ReactNode;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  onReset: (e: FormEvent<HTMLFormElement>) => void;
 }
 
 const Form = ({ legend, children, onSubmit, onReset }: FormProps) => {

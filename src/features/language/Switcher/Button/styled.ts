@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const SwitcherButton = styled.button<{ $active?: boolean }>`
+export const SwitcherButton = styled.button<{ $active?: string }>`
     color: ${({ theme }) => theme.color.primary};
     background-color: ${({ theme }) => theme.color.primaryContrast};
     background-repeat: no-repeat;
@@ -9,7 +9,7 @@ export const SwitcherButton = styled.button<{ $active?: boolean }>`
     border: 2px solid ${({ theme }) => theme.color.primary};
     border-radius: 2px;
 
-    ${({ $active }) => $active && css`
+    ${({ $active }) => $active === 'active' && css`
         border-color: ${({ theme }) => theme.color.primaryContrast};
     `}
     

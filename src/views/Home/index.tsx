@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useContext } from "react";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";

@@ -1,4 +1,13 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import React from "react";
+
+import {
+  ChangeEvent,
+  FormEvent,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import LanguageContext from "../../features/language/context";
 import languages from "../../assets/fixtures/languages";
 import { focusForm } from "../../assets/utils/focusForm";
@@ -12,35 +21,45 @@ import { calculateCuttingSpeed } from "./equation";
 const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);
   const { values, setValues, memoryMode } = useContext(ClipboardContext);
-  const [diameter, setDiameter] = useState((memoryMode && values?.diameter) || "");
-  const [rotationSpeed, setRotationSpeed] = useState((memoryMode && values?.rotationSpeed) || "");
-  const [cuttingSpeed, setCuttingSpeed] = useState("");
-  const inputRef = useRef();
+  const [diameter, setDiameter] = useState(
+    (memoryMode && values?.diameter) || undefined
+  );
+  const [rotationSpeed, setRotationSpeed] = useState(
+    (memoryMode && values?.rotationSpeed) || undefined
+  );
+  const [cuttingSpeed, setCuttingSpeed] = useState<number | undefined>();
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const onDiameterChange = ({ target }) => setDiameter(target.value);
-  const onRotationSpeedChange = ({ target }) => setRotationSpeed(target.value);
+  const onDiameterChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setDiameter(Number(e.target.value));
+  const onRotationSpeedChange = (e: ChangeEvent<HTMLInputElement>) =>
+    setRotationSpeed(Number(e.target.value));
 
   useEffect(() => {
     setValues({
       ...values,
       diameter: diameter,
       rotationSpeed: rotationSpeed,
-      surfaceSpeed: cuttingSpeed
+      surfaceSpeed: cuttingSpeed,
     });
 
-    // eslint-disable-next-line 
+    // eslint-disable-next-line
   }, [cuttingSpeed]);
 
-  const onFormSubmit = (event) => {
+  const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setCuttingSpeed(calculateCuttingSpeed(diameter, rotationSpeed));
+    if (diameter && rotationSpeed) {
+      setCuttingSpeed(
+        Number(calculateCuttingSpeed(Number(diameter), Number(rotationSpeed)))
+      );
+    }
   };
 
-  const onFormReset = (event) => {
+  const onFormReset = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setDiameter("");
-    setRotationSpeed("");
-    setCuttingSpeed("");
+    setDiameter(undefined);
+    setRotationSpeed(undefined);
+    setCuttingSpeed(undefined);
     focusForm(inputRef);
   };
 
@@ -55,8 +74,8 @@ const SurfaceSpeedForm = () => {
         unit={languages[langId].diameter.unit}
         inputRef={inputRef}
         value={diameter}
-        min="0.01"
-        step="0.01"
+        min={0.01}
+        step={0.01}
         placeholder={languages[langId].diameter.placeholder}
         autoFocus={!checkIfItsTouchDevice()}
         onChange={onDiameterChange}
@@ -66,8 +85,8 @@ const SurfaceSpeedForm = () => {
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
         value={rotationSpeed}
-        min="1"
-        step="1"
+        min={1}
+        step={1}
         placeholder={languages[langId].rotSpeed.placeholder}
         onChange={onRotationSpeedChange}
       />
@@ -78,8 +97,8 @@ const SurfaceSpeedForm = () => {
         value={cuttingSpeed}
         placeholder={languages[langId].cutSpeed.placeholder}
       />
-    </Form >
-  )
+    </Form>
+  );
 };
 
 export default SurfaceSpeedForm;
