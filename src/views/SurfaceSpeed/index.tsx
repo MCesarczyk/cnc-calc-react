@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   ChangeEvent,
   FormEvent,
@@ -22,25 +20,25 @@ const SurfaceSpeedForm = () => {
   const { langId } = useContext(LanguageContext);
   const { values, setValues, memoryMode } = useContext(ClipboardContext);
   const [diameter, setDiameter] = useState(
-    (memoryMode && values?.diameter) || undefined
+    (memoryMode && values?.diameter?.toString()) || ""
   );
   const [rotationSpeed, setRotationSpeed] = useState(
-    (memoryMode && values?.rotationSpeed) || undefined
+    (memoryMode && values?.rotationSpeed?.toString()) || ""
   );
-  const [cuttingSpeed, setCuttingSpeed] = useState<number | undefined>();
+  const [cuttingSpeed, setCuttingSpeed] = useState<string>("");
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const onDiameterChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setDiameter(Number(e.target.value));
+    setDiameter(e.target.value);
   const onRotationSpeedChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setRotationSpeed(Number(e.target.value));
+    setRotationSpeed(e.target.value);
 
   useEffect(() => {
     setValues({
       ...values,
-      diameter: diameter,
-      rotationSpeed: rotationSpeed,
-      surfaceSpeed: cuttingSpeed,
+      diameter: Number(diameter),
+      rotationSpeed: Number(rotationSpeed),
+      surfaceSpeed: Number(cuttingSpeed),
     });
 
     // eslint-disable-next-line
@@ -50,16 +48,16 @@ const SurfaceSpeedForm = () => {
     event.preventDefault();
     if (diameter && rotationSpeed) {
       setCuttingSpeed(
-        Number(calculateCuttingSpeed(Number(diameter), Number(rotationSpeed)))
+        calculateCuttingSpeed(Number(diameter), Number(rotationSpeed))
       );
     }
   };
 
   const onFormReset = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setDiameter(undefined);
-    setRotationSpeed(undefined);
-    setCuttingSpeed(undefined);
+    setDiameter("");
+    setRotationSpeed("");
+    setCuttingSpeed("");
     focusForm(inputRef);
   };
 

@@ -7,9 +7,9 @@ import { Input } from "../Input";
 import { Language } from "../../features/language/types";
 
 interface FeedOptionSelectorProps {
-  feedType: string;
-  setFeedType: (value: string) => void;
-  feedFactor: number | undefined;
+  feedType: number;
+  setFeedType: (value: number) => void;
+  feedFactor: string | undefined;
   setFeedFactor: (value: number) => void;
 }
 
@@ -31,7 +31,7 @@ const FeedOptionSelector = ({
             option={feedOption}
             parameter={feedType}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setFeedType(e.target.value)
+              setFeedType(Number(e.target.value))
             }
           />
           <Input

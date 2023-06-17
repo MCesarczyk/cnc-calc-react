@@ -19,74 +19,73 @@ import FeedOptionSelector from "../../components/FeedOptionSelector/FeedOptionsS
 
 const LinearFeedForm = () => {
   const { langId } = useContext(LanguageContext);
-  const { values, setValues, memoryMode, feedType, setFeedType } =
-    useContext(ClipboardContext);
+  const { values, setValues, memoryMode } = useContext(ClipboardContext);
   const [rotationSpeed, setRotationSpeed] = useState(
-    (memoryMode && values?.rotationSpeed) || undefined
+    (memoryMode && values?.rotationSpeed?.toString()) || ""
   );
   const [toothNumber, setToothNumber] = useState(
-    (memoryMode && values?.toothNumber) || undefined
+    (memoryMode && values?.toothNumber?.toString()) || ""
   );
   const feedPerRevolutionInitial =
-    (memoryMode && values?.feedPerRevolution) || undefined;
+    (memoryMode && values?.feedPerRevolution?.toString()) || "";
   const [feedPerRevolution, setFeedPerRevolution] = useState(
     feedPerRevolutionInitial
   );
-  const feedPerToothInitial = (memoryMode && values?.feedPerTooth) || undefined;
+  const feedPerToothInitial =
+    (memoryMode && values?.feedPerTooth?.toString()) || '';
   const [feedPerTooth, setFeedPerTooth] = useState(feedPerToothInitial);
-  const [feedrate, setFeedrate] = useState<number | undefined>(undefined);
+  const [feedrate, setFeedrate] = useState<string>('');
+  const [feedType, setFeedType] = useState<number>(0);
   const inputRef = useRef(null);
 
   useEffect(() => {
     setFeedPerRevolution(feedPerRevolutionInitial);
     setFeedPerTooth(feedPerToothInitial);
-    setToothNumber(values?.toothNumber || undefined);
-    setFeedrate(undefined);
+    setToothNumber(values?.toothNumber?.toString() || "");
+    setFeedrate('');
     //eslint-disable-next-line
-  }, [feedType]);
+  }, [values.feedType]);
 
   useEffect(() => {
     setValues({
       ...values,
-      rotationSpeed: rotationSpeed,
-      feedPerRevolution: feedPerRevolution,
-      feedPerTooth: feedPerTooth,
-      toothNumber: toothNumber,
-      feedrate: feedrate,
+      rotationSpeed: Number(rotationSpeed),
+      feedPerRevolution: Number(feedPerRevolution),
+      feedPerTooth: Number(feedPerTooth),
+      toothNumber: Number(toothNumber),
+      feedrate: Number(feedrate),
+      feedType: feedType,
     });
-    setFeedType(feedType);
 
     // eslint-disable-next-line
   }, [feedrate]);
 
   const onFeedChange = (feedValue: number) => {
-    feedType === "FPR" && setFeedPerRevolution(feedValue);
-    feedType === "FPT" && setFeedPerTooth(feedValue);
+    feedType === 0 && setFeedPerRevolution(feedValue.toString());
+    feedType === 1 && setFeedPerTooth(feedValue.toString());
   };
 
   const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFeedrate(
-      Number(
-        calculateFeedrate(
-          feedType,
-          Number(rotationSpeed),
-          Number(feedPerRevolution),
-          Number(feedPerTooth),
-          Number(toothNumber)
-        )
+      calculateFeedrate(
+        Number(feedType),
+        Number(rotationSpeed),
+        Number(feedPerRevolution),
+        Number(feedPerTooth),
+        Number(toothNumber)
       )
     );
   };
 
   const onFormReset = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setRotationSpeed(undefined);
-    setFeedType("FPR");
-    setFeedPerRevolution(undefined);
-    setFeedPerTooth(undefined);
-    setToothNumber(undefined);
-    setFeedrate(undefined);
+    setRotationSpeed("");
+    setFeedType(0);
+    setFeedPerRevolution("");
+    setFeedPerTooth("");
+    setToothNumber("");
+    setFeedrate("");
     focusForm(inputRef);
   };
 
@@ -107,30 +106,30 @@ const LinearFeedForm = () => {
         placeholder={languages[langId].rotSpeed.placeholder}
         autoFocus={!checkIfItsTouchDevice()}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          setRotationSpeed(Number(e.target.value))
+          setRotationSpeed(e.target.value)
         }
       />
       <FeedOptionSelector
         feedType={feedType}
         setFeedType={setFeedType}
-        feedFactor={feedType === "FPR" ? feedPerRevolution : feedPerTooth}
+        feedFactor={feedType === 0 ? feedPerRevolution : feedPerTooth}
         setFeedFactor={onFeedChange}
       />
       <FormInput
         name={languages[langId].teethNumber.name}
-        value={feedType === "FPT" ? toothNumber : ""}
+        value={feedType === 1 ? toothNumber : ""}
         min={1}
         step={1}
         placeholder={languages[langId].teethNumber.placeholder}
-        disabled={feedType === "FPR"}
+        disabled={feedType === 0}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          setToothNumber(Number(e.target.value))
+          setToothNumber(e.target.value)
         }
       />
       <ResultField
         name={languages[langId].feedrate.name}
         unit={languages[langId].feedrate.unit}
-        value={feedrate}
+        value={feedrate || ""}
         placeholder={languages[langId].feedrate.placeholder}
       />
     </Form>

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Input = styled.input`
-    min-width: 16rem;
     border: solid 1px ${({ theme }) => theme.color.primary};
     border-radius: 5px;
     padding: 5px;

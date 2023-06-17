@@ -23,13 +23,12 @@ const App = () => {
   const [langId, setLangId] = useLocalStorageState<Language>("langId", 'EN');
   const [memoryMode, setMemoryMode] = useLocalStorageState("memoryMode", false);
   const [values, setValues] = useState({});
-  const [feedType, setFeedType] = useState("FPR");
   const [open, setOpen] = useState(false);
 
   return (
     <LanguageProvider value={{ langId, setLangId }} >
       <NavigationProvider value={{ open, setOpen }}>
-        <ClipboardProvider value={{ values, setValues, memoryMode, setMemoryMode, feedType, setFeedType }} >
+        <ClipboardProvider value={{ values, setValues, memoryMode, setMemoryMode }} >
           <HashRouter >
             <Sidebar />
             <Header />

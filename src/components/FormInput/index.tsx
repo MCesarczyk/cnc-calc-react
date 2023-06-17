@@ -2,20 +2,21 @@ import { FieldWrapper } from "../FieldWrapper";
 import { Input } from "../Input";
 import { TextSub } from "../TextSub";
 import { Label } from "../Label";
+import { ChangeEvent } from "react";
 
 interface FormInputProps {
   name: string;
   sub?: string;
   unit?: string;
   inputRef?: any;
-  value?: any;
+  value: string;
   min?: number;
   step?: number;
   placeholder?: string;
   disabled?: boolean;
   readOnly?: boolean;
   autoFocus?: boolean;
-  onChange?: any;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FormInput = ({

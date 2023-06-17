@@ -38,12 +38,14 @@ const languages = {
       placeholder: "feedrate"
     },
     feedPerRev: {
+      label: "FPR",
       name: "f",
       sub: "r",
       unit: " [mm/rev]:",
       placeholder: "feed per rev."
     },
     feedPerTooth: {
+      label: "FPT",
       name: "f",
       sub: "t",
       unit: " [mm]:",
@@ -98,12 +100,14 @@ const languages = {
       placeholder: "posuw liniowy"
     },
     feedPerRev: {
+      label: "FPR",
       name: "f",
       sub: "o",
       unit: " [mm/obr]:",
       placeholder: "posuw na obrót"
     },
     feedPerTooth: {
+      label: "FPT",
       name: "f",
       sub: "z",
       unit: " [mm]:",

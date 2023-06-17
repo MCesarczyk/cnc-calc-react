@@ -7,12 +7,12 @@ import { RadioButtonWrapper } from "./styled";
 interface RadioButtonProps {
   name: string;
   option: {
-    id: string;
+    id: number;
     name: string;
     sub: string;
     unit: string;
   };
-  parameter: string;
+  parameter: number;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -27,13 +27,13 @@ const RadioButton = ({
       <Input
         type="radio"
         name={name}
-        id={option?.id}
+        id={option?.name}
         data-testid={`${option?.id}-radio`}
         value={option?.id}
         checked={parameter === option?.id}
         onChange={onChange}
       />
-      <label htmlFor={option?.id}>
+      <label htmlFor={option?.name}>
         {option?.name}
         <TextSub>{option?.sub}</TextSub>
         {option?.unit}

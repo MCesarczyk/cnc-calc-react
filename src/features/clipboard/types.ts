@@ -7,6 +7,4 @@ export interface ClipboardContextType {
   setMemoryMode: (memoryMode: boolean) => void;
   values: Values;
   setValues: (values: Values) => void;
-  feedType: string;
-  setFeedType: (feedType: string) => void;
 }

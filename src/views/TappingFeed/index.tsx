@@ -16,22 +16,22 @@ const TappingFeedForm = () => {
   const { langId } = useContext(LanguageContext);
   const { values, setValues, memoryMode } = useContext(ClipboardContext);
   const [rotationSpeed, setRotationSpeed] = useState(
-    (memoryMode && values?.rotationSpeed) || undefined
+    (memoryMode && values?.rotationSpeed?.toString()) || ''
   );
   const [diameter, setDiameter] = useState(
-    (memoryMode && values?.tapDiameter) || undefined
+    (memoryMode && values?.tapDiameter?.toString()) || ''
   );
-  const [pitch, setPitch] = useState((memoryMode && values?.pitch) || undefined);
-  const [feedrate, setFeedrate] = useState<number | undefined>(undefined);
+  const [pitch, setPitch] = useState((memoryMode && values?.pitch?.toString()) || '');
+  const [feedrate, setFeedrate] = useState<string>('');
   const inputRef = useRef(null);
 
   useEffect(() => {
     setValues({
       ...values,
-      rotationSpeed: rotationSpeed,
-      tapDiameter: diameter,
-      pitch: pitch,
-      tappingFeed: feedrate,
+      rotationSpeed: Number(rotationSpeed),
+      tapDiameter: Number(diameter),
+      pitch: Number(pitch),
+      tappingFeed: Number(feedrate),
     });
 
     // eslint-disable-next-line
@@ -40,22 +40,22 @@ const TappingFeedForm = () => {
   const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (rotationSpeed && diameter) {
-      setFeedrate(Number(calculateTappingFeed(Number(rotationSpeed), Number(diameter))));
+      setFeedrate(calculateTappingFeed(Number(rotationSpeed), Number(diameter)));
     }
   };
 
   const onFormReset = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setRotationSpeed(undefined);
-    setDiameter(undefined);
-    setPitch(undefined);
-    setFeedrate(undefined);
+    setRotationSpeed('');
+    setDiameter('');
+    setPitch('');
+    setFeedrate('');
     focusForm(inputRef);
   };
 
   const onOptionChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setDiameter(Number(e.target.value));
-    setPitch(Number(e.target.value));
+    setDiameter(e.target.value);
+    setPitch(e.target.value);
   };
 
   return (
@@ -75,7 +75,7 @@ const TappingFeedForm = () => {
         placeholder={languages[langId].rotSpeed.placeholder}
         autoFocus={!checkIfItsTouchDevice()}
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          setRotationSpeed(Number(e.target.value))
+          setRotationSpeed(e.target.value)
         }
       />
       <FormSelect

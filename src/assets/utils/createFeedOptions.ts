@@ -4,7 +4,7 @@ import languages from "../../assets/fixtures/languages";
 export const createFeedOptions = (langId: Language) => {
   const feedOptions = [
     {
-      id: "FPR",
+      id: 0,
       name: languages[langId]?.feedPerRev.name,
       sub: languages[langId]?.feedPerRev.sub,
       unit: languages[langId]?.feedPerRev.unit,
@@ -12,7 +12,7 @@ export const createFeedOptions = (langId: Language) => {
       disabled: false
     },
     {
-      id: "FPT",
+      id: 1,
       name: languages[langId]?.feedPerTooth.name,
       sub: languages[langId]?.feedPerTooth.sub,
       unit: languages[langId]?.feedPerTooth.unit,

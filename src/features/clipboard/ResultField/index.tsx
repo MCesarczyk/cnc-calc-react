@@ -8,7 +8,7 @@ import { Result } from "./styled";
 interface ResultFieldProps {
   name: string;
   unit: string;
-  value: number | undefined;
+  value: string;
   placeholder: string;
   sub?: string;
 }
