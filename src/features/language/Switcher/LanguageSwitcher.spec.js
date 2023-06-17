@@ -4,13 +4,13 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import languages from 'assets/fixtures/languages';
-import { theme } from '../theme';
+import { theme } from 'theme';
 import LanguageContext from '../context';
 import LanguageSwitcher from '.';
 import { SwitcherButton } from './Button/styled';
 import Button from './Button';
 
-let langId = 0;
+let langId = 'EN';
 const setLangId = (id) => (langId = id);
 
 const switcherSetup = () =>
@@ -38,23 +38,23 @@ test('Language switcher should render button for every language', () => {
   switcherSetup();
 
   const buttons = screen.getAllByRole('button');
-  expect(buttons.length).toEqual(languages.length);
+  expect(buttons.length).toEqual(Object.values(languages).length);
 });
 
 test('Button sets proper language on click', () => {
   switcherSetup();
 
-  expect(langId).toBe(0);
+  expect(langId).toBe('EN');
   const button_EN = screen.getByText('EN');
   const button_PL = screen.getByText('PL');
   fireEvent.click(button_PL);
-  expect(langId).toBe(1);
+  expect(langId).toBe('PL');
   fireEvent.click(button_PL);
-  expect(langId).toBe(1);
+  expect(langId).toBe('PL');
   fireEvent.click(button_EN);
-  expect(langId).toBe(0);
+  expect(langId).toBe('EN');
   fireEvent.click(button_EN);
-  expect(langId).toBe(0);
+  expect(langId).toBe('EN');
 });
 
 test.skip('Active button should have light border', () => {

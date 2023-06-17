@@ -5,10 +5,10 @@ import 'jest-styled-components';
 
 import { theme } from 'theme';
 import LanguageContext from 'features/language/context';
-import RadioButton from '../RadioButton';
-import { FieldWrapper } from '../FieldWrapper';
-import { Input } from '../Input';
-import FeedOptionSelector from '.';
+import FeedOptionSelector from 'components/FeedOptionSelector/FeedOptionsSelector';
+import RadioButton from 'components/RadioButton';
+import { FieldWrapper } from 'components/FieldWrapper';
+import { Input } from 'components/Input';
 
 const langId = 0;
 

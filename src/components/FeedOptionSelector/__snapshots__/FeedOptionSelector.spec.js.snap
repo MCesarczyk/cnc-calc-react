@@ -2,6 +2,20 @@
 
 exports[`FeedOptionSelector component rendering properly 1`] = `
 .c2 {
+  border: solid 1px #1e3246;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.c2:invalid {
+  background-color: beige;
+}
+
+.c2:disabled {
+  background-color: #ddd;
+}
+
+.c3 {
   vertical-align: sub;
   font-size: 0.7em;
   margin-right: 0.15em;
@@ -19,19 +33,10 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   justify-content: space-between;
 }
 
-.c3 {
-  min-width: 16rem;
-  border: solid 1px #1e3246;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.c3:invalid {
-  background-color: beige;
-}
-
-.c3:disabled {
-  background-color: #ddd;
+@media (max-width: 480px) {
+  .c2 {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -48,12 +53,6 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   }
 }
 
-@media (max-width: 480px) {
-  .c3 {
-    width: 100%;
-  }
-}
-
 <div
   className="c0"
 >
@@ -62,17 +61,18 @@ exports[`FeedOptionSelector component rendering properly 1`] = `
   >
     <input
       checked={true}
+      className="c2"
       data-testid="undefined-radio"
       type="radio"
     />
     <label>
       <span
-        className="c2"
+        className="c3"
       />
     </label>
   </div>
   <input
-    className="c3"
+    className="c2"
   />
 </div>
 `;

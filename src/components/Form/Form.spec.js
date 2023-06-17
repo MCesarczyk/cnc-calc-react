@@ -50,7 +50,7 @@ test.skip('Buttons change direction to column on mobile', () => {
 });
 
 test('Both buttons have proper type', () => {
-  const langId = 0;
+  const langId = 'EN';
   const types = ['submit', 'reset'];
 
   formSetup(langId);
@@ -60,7 +60,7 @@ test('Both buttons have proper type', () => {
 });
 
 test('Both buttons are displayed with correct names for language: EN', () => {
-  const langId = 0;
+  const langId = 'EN';
   const labels = ['Calculate', 'Reset'];
 
   formSetup(langId);
@@ -70,7 +70,7 @@ test('Both buttons are displayed with correct names for language: EN', () => {
 });
 
 test('Both buttons are displayed with correct names for language: PL', () => {
-  const langId = 1;
+  const langId = "PL";
   const labels = ['Oblicz', 'Wyczyść'];
 
   formSetup(langId);

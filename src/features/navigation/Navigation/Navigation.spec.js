@@ -5,9 +5,9 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { createRoutesList } from 'assets/utils/createRoutesList';
-import LanguageContext from 'language/context';
+import LanguageContext from 'features/language/context';
 import Form from 'components/Form';
-import { theme } from '../theme';
+import { theme } from 'theme';
 import NavigationList from './List';
 import { Item } from './List/styled';
 
@@ -21,7 +21,7 @@ const renderList = (routes) => {
   );
 };
 
-const langId = 0;
+const langId = 'EN';
 const routes = createRoutesList(langId);
 
 const testNavlinkLabels = (langId) => {
@@ -42,11 +42,11 @@ test('Navigation list rendered properly (default language: EN)', () => {
 });
 
 test('Navigation list should render all Navlinks for EN language', () => {
-  testNavlinkLabels(0);
+  testNavlinkLabels('EN');
 });
 
 test('Navigation list should render all Navlinks for PL language', () => {
-  testNavlinkLabels(1);
+  testNavlinkLabels('PL');
 });
 
 test('Each Navlink should lead to proper path', () => {

@@ -9,7 +9,6 @@ exports[`ResultField component rendering properly 1`] = `
 }
 
 .c2 {
-  min-width: 16rem;
   border: solid 1px #1e3246;
   border-radius: 5px;
   padding: 5px;
