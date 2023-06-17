@@ -1,7 +1,17 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const HomeLink = styled(Link)`
+interface TitleProps {
+  title: string;
+}
+
+export const Title = ({ title }: TitleProps) => (
+  <HomeLink to="/">
+    <Headline>{title}</Headline>
+  </HomeLink>
+);
+
+const HomeLink = styled(Link)`
   &:hover {
     filter: brightness(0.8);
   }
@@ -15,7 +25,7 @@ export const HomeLink = styled(Link)`
   }
 `;
 
-export const Headline = styled.h1`
+const Headline = styled.h1`
   font-size: 2rem;
   font-weight: 300;
   font-family: 'Ubuntu', sans-serif;

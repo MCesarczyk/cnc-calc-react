@@ -6,7 +6,7 @@ import 'jest-styled-components';
 
 import { createRoutesList } from 'assets/utils/createRoutesList';
 import LanguageContext from 'features/language/context';
-import Form from 'components/Form';
+import { Form } from 'components/Form';
 import { theme } from 'theme';
 import NavigationList from './List';
 import { Item } from './List/styled';

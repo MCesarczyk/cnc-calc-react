@@ -8,7 +8,7 @@ import { theme } from 'theme';
 import LanguageContext from 'features/language/context';
 import NavigationContext from 'features/navigation/context';
 import { MenuIconWrapper } from './MenuIcon/styled';
-import Header from '.';
+import Header from './Header';
 import Title from './Title';
 
 const setup = (langId, open) =>

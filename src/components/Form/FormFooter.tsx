@@ -1,6 +1,24 @@
 import styled, { css } from 'styled-components';
 
-export const ButtonsContainer = styled.div`
+interface FormFooterProps {
+  buttons: {
+    id: number;
+    label: string;
+    type: 'submit' | 'reset';
+  }[];
+}
+
+export const FormFooter = ({ buttons }: FormFooterProps) => (
+  <ButtonsContainer>
+    {buttons.map((button) => (
+      <FooterButton key={button.id} type={button.type}>
+        {button.label}
+      </FooterButton>
+    ))}
+  </ButtonsContainer>
+);
+
+const ButtonsContainer = styled.div`
   max-width: 30rem;
   margin: 0 auto;
   display: flex;
@@ -13,7 +31,7 @@ export const ButtonsContainer = styled.div`
   }
 `;
 
-export const FooterButton = styled.button`
+const FooterButton = styled.button`
   display: flex;
   min-width: 12rem;
   width: 100%;

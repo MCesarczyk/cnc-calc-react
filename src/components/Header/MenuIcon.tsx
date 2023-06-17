@@ -1,6 +1,23 @@
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const MenuIconWrapper = styled.button`
+import { ReactComponent as MenuThumbnail } from "assets/images/hamburger-menu.svg";
+
+interface MenuIconProps {
+  onClick: () => void;
+}
+
+export const MenuIcon = ({ onClick }: MenuIconProps) => {
+  const { pathname } = useLocation();
+
+  return (
+    <MenuIconWrapper onClick={onClick} disabled={pathname === '/'}>
+      <MenuThumbnail />
+    </MenuIconWrapper>
+  );
+};
+
+const MenuIconWrapper = styled.button`
   height: 1.5rem;
   margin: 0.5rem;
   margin-right: 1rem;

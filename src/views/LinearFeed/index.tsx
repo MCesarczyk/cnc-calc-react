@@ -7,9 +7,9 @@ import ClipboardContext from 'features/clipboard/context';
 import languages from 'assets/fixtures/languages';
 import { focusForm } from 'assets/utils/focusForm';
 import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
-import Form from 'components/Form';
-import FormInput from 'components/FormInput';
-import FeedOptionSelector from 'components/FeedOptionSelector/FeedOptionsSelector';
+import { Form } from 'components/Form';
+import { FormInput } from 'components/FormInput/FormInput';
+import { FeedOptionSelector } from 'components/FeedOptionSelector';
 import { calculateFeedrate } from './equation';
 
 const LinearFeedForm = () => {
@@ -54,13 +54,13 @@ const LinearFeedForm = () => {
   const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFeedrate(
-      (calculateFeedrate(
+      calculateFeedrate(
         feedType,
         Number(rotationSpeed),
         Number(feedPerRevolution),
         Number(feedPerTooth),
         Number(toothNumber),
-      )).toFixed(),
+      ).toFixed(),
     );
   };
 

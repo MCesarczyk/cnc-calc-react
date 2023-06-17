@@ -4,7 +4,7 @@ import { FeedType } from 'types';
 import { Language } from 'features/language/types';
 import LanguageContext from 'features/language/context';
 import { createFeedOptions } from 'assets/utils/createFeedOptions';
-import RadioButton from '../RadioButton';
+import { RadioButton } from '../RadioButton/RadioButton';
 import { FieldWrapper } from '../FieldWrapper';
 import { Input } from '../Input';
 
@@ -15,7 +15,7 @@ interface FeedOptionSelectorProps {
   setFeedFactor: (value: number) => void;
 }
 
-const FeedOptionSelector = ({ feedType, setFeedType, feedFactor, setFeedFactor }: FeedOptionSelectorProps) => {
+export const FeedOptionSelector = ({ feedType, setFeedType, feedFactor, setFeedFactor }: FeedOptionSelectorProps) => {
   const { langId } = useContext(LanguageContext);
   const feedOptions = createFeedOptions(langId as Language);
 
@@ -45,5 +45,3 @@ const FeedOptionSelector = ({ feedType, setFeedType, feedFactor, setFeedFactor }
     </>
   );
 };
-
-export default FeedOptionSelector;

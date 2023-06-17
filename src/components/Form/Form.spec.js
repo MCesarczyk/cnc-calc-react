@@ -7,7 +7,7 @@ import { theme } from 'theme';
 import LanguageContext from 'features/language/context';
 import { FieldsContainer } from './styled';
 import { ButtonsContainer, FooterButton } from './Footer/styled';
-import Form from '.';
+import Form from './Form';
 
 const formSetup = (langId) =>
   render(
