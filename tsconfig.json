@@ -6,6 +6,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -20,5 +21,6 @@
       "*": ["src/*"]
     }
   },
-  "include": ["src", "src/assets/images", "src/custom.d.ts"]
+  "include": ["./src/**/*", "./test-utils/**/*", "./custom.d.ts"],
+  "exclude": ["node_modules"]
 }
