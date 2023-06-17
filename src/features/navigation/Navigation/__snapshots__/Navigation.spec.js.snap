@@ -12,23 +12,16 @@ exports[`List item rendered properly 1`] = `
   font-weight: 400;
   font-family: 'Ubuntu',sans-serif;
   margin: 0 auto 0.75rem auto;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  -webkit-transition: -webkit-transform 0.1s ease-in-out;
-  -webkit-transition: transform 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out;
 }
 
 .c0:hover {
-  -webkit-filter: brightness(1.5);
   filter: brightness(1.5);
 }
 
 .c0:active {
-  -webkit-filter: brightness(1);
   filter: brightness(1);
-  -webkit-transform: scale(0.98);
-  -ms-transform: scale(0.98);
   transform: scale(0.98);
 }
 

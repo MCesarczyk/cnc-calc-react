@@ -12,12 +12,10 @@ exports[`Basic button should render properly 1`] = `
 }
 
 .c0:hover {
-  -webkit-filter: brightness(125%);
   filter: brightness(125%);
 }
 
 .c0:active {
-  -webkit-filter: brightness(150%);
   filter: brightness(150%);
 }
 

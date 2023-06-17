@@ -1,15 +1,15 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { TextSub } from ".";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../theme";
-import "jest-styled-components";
+import { ThemeProvider } from 'styled-components';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components';
 
-test("Text sub rendered properly", () => {
+import { theme } from 'theme';
+import { TextSub } from './TextSub';
+
+test('Text sub rendered properly', () => {
   const component = renderer.create(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <TextSub />
-    </ThemeProvider>
+    </ThemeProvider>,
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -1,23 +1,25 @@
-import { fireEvent, render } from "@testing-library/react";
-import renderer from "react-test-renderer";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../theme";
-import "jest-styled-components";
-import { Input } from "../Input";
-import FormInput from ".";
+import { fireEvent, render } from '@testing-library/react';
+import { ThemeProvider } from 'styled-components';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components';
 
-const setup = () => render(
-  <ThemeProvider theme={theme} >
-    <FormInput />
-  </ThemeProvider>
-);
+import { theme } from 'theme';
+import { Input } from '../Input';
+import { FormInput } from './FormInput';
 
-test("Input component should be empty initially", () => {
+const setup = () =>
+  render(
+    <ThemeProvider theme={theme}>
+      <FormInput />
+    </ThemeProvider>,
+  );
+
+test('Input component should be empty initially', () => {
   const input = setup().getByRole('spinbutton');
   expect(input.value).toBe('');
 });
 
-test("Input component should display changed value of state variable", () => {
+test('Input component should display changed value of state variable', () => {
   const input = setup().getByRole('spinbutton');
   fireEvent.change(input, { target: { value: '123' } });
   expect(input.value).toBe('123');
@@ -29,11 +31,11 @@ test("Input component shouldn't allow to input letters", () => {
   expect(input.value).toBe('');
 });
 
-test("FormInput component rendering properly", () => {
+test('FormInput component rendering properly', () => {
   const input = renderer.create(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <FormInput />
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 
   let tree = input.toJSON();
@@ -41,20 +43,20 @@ test("FormInput component rendering properly", () => {
   expect(tree).toMatchSnapshot();
 });
 
-test("Input component change style on actions", () => {
+test('Input component change style on actions', () => {
   const input = renderer.create(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <Input />
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 
   let tree = input.toJSON();
 
   expect(tree).toHaveStyleRule('background-color', 'beige', {
-    modifier: ':invalid'
-  })
+    modifier: ':invalid',
+  });
 
   expect(tree).toHaveStyleRule('background-color', '#ddd', {
-    modifier: ':disabled'
-  })
+    modifier: ':disabled',
+  });
 });

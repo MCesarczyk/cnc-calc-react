@@ -1,20 +1,20 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../../theme";
-import "jest-styled-components";
-import { FieldWrapper } from "../../../components/FieldWrapper";
-import { Input } from "../../../components/Input";
-import { Label } from "../../../components/Label";
+import { ThemeProvider } from 'styled-components';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components';
 
-test("ResultField component rendering properly", () => {
+import { FieldWrapper } from 'components/FieldWrapper';
+import { Input } from 'components/Input';
+import { Label } from 'components/Label';
+import { theme } from 'theme';
+
+test('ResultField component rendering properly', () => {
   const component = renderer.create(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <FieldWrapper>
         <Label />
         <Input />
       </FieldWrapper>
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 
   let tree = component.toJSON();

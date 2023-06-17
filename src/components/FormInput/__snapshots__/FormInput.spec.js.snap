@@ -2,7 +2,6 @@
 
 exports[`FormInput component rendering properly 1`] = `
 .c3 {
-  min-width: 16rem;
   border: solid 1px #1e3246;
   border-radius: 5px;
   padding: 5px;
@@ -17,18 +16,9 @@ exports[`FormInput component rendering properly 1`] = `
 }
 
 .c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   gap: 0.5rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -42,29 +32,22 @@ exports[`FormInput component rendering properly 1`] = `
   text-align: right;
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   .c3 {
     width: 100%;
   }
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   .c0 {
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
     gap: 0.25rem;
   }
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
   .c1 {
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
     align-self: flex-start;
   }
 }

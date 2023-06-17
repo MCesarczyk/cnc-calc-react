@@ -1,15 +1,15 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../theme";
-import "jest-styled-components";
-import RadioButton from ".";
+import { ThemeProvider } from 'styled-components';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components';
 
-test("Radio button rendered properly", () => {
+import { theme } from 'theme';
+import { RadioButton } from './RadioButton';
+
+test('Radio button rendered properly', () => {
   const component = renderer.create(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <RadioButton />
-    </ThemeProvider>
+    </ThemeProvider>,
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

@@ -6,14 +6,14 @@ Array [
   text-align: center;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 768px) {
   .c0 {
     display: none;
   }
-}
-
-@media (max-width:768px) {
-
 }
 
 <h2
@@ -23,14 +23,14 @@ Array [
   display: none;
 }
 
-@media (max-width:768px) {
-
-}
-
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .c0 {
     display: block;
   }
+}
+
+@media (max-width: 768px) {
+
 }
 
 <div
