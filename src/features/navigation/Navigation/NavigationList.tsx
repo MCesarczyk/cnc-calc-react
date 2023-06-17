@@ -1,12 +1,33 @@
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-export const List = styled.ul`
+interface NavigationListProps {
+  sidebar?: boolean;
+  routes?: {
+    id: number;
+    path: string;
+    label: string;
+  }[];
+}
+
+export const NavigationList = ({ sidebar, routes }: NavigationListProps) => (
+  <List>
+    {routes?.map((route) => (
+      <li key={route.id}>
+        <Item $sidebar={sidebar} to={route.path}>
+          {route.label}
+        </Item>
+      </li>
+    ))}
+  </List>
+);
+
+const List = styled.ul`
   padding: 0;
   list-style: none;
 `;
 
-export const Item = styled(NavLink)<{ $sidebar?: boolean }>`
+const Item = styled(NavLink)<{ $sidebar?: boolean }>`
   color: ${({ theme }) => theme.color.primaryContrast};
   background-color: ${({ theme }) => theme.color.primary};
   display: block;

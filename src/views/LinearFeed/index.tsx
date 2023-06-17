@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from 
 
 import { FeedType } from 'types';
 import LanguageContext from 'features/language/context';
-import ResultField from 'features/clipboard/ResultField';
+import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
 import languages from 'assets/fixtures/languages';
 import { focusForm } from 'assets/utils/focusForm';

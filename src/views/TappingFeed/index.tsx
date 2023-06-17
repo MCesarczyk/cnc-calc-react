@@ -3,7 +3,7 @@ import { ChangeEvent } from 'react';
 import { FormEvent, useContext, useEffect, useRef, useState } from 'react';
 import ClipboardContext from 'features/clipboard/context';
 import LanguageContext from 'features/language/context';
-import ResultField from 'features/clipboard/ResultField';
+import { ResultField } from 'features/clipboard/ResultField';
 import { Form } from 'components/Form';
 import { FormInput } from 'components/FormInput';
 import { FormSelect } from 'components/FormSelect';

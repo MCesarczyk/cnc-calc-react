@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from 'react';
 
 import LanguageContext from 'features/language/context';
-import ResultField from 'features/clipboard/ResultField';
+import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
 import { Form } from 'components/Form';
 import { FormInput } from 'components/FormInput/FormInput';

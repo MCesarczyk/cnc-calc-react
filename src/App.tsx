@@ -1,23 +1,21 @@
-import React from 'react';
 import { useState } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { useLocalStorageState } from './assets/utils/uselocalStorageState';
-import SurfaceSpeedForm from './views/SurfaceSpeed';
-import ToolRotationForm from './views/ToolRotation';
-import LinearFeedForm from './views/LinearFeed';
-import TappingFeedForm from './views/TappingFeed';
-import Home from './views/Home';
-import Navigation from './features/navigation/Navigation';
-import Sidebar from './features/navigation/Sidebar';
-import { Header } from './components/Header/Header';
-import { Footer } from './components/Footer/Footer';
-import { Wrapper } from './components/Warpper';
-import { NavigationWrapper } from './features/navigation/Navigation/styled';
-import LanguageProvider from './features/language/provider';
-import NavigationProvider from './features/navigation/provider';
-import ClipboardProvider from './features/clipboard/provider';
-import ClipboardSwitcher from './features/clipboard/Switcher';
+import { useLocalStorageState } from 'assets/utils/uselocalStorageState';
+import Home from 'views/Home';
+import SurfaceSpeedForm from 'views/SurfaceSpeed';
+import ToolRotationForm from 'views/ToolRotation';
+import LinearFeedForm from 'views/LinearFeed';
+import TappingFeedForm from 'views/TappingFeed';
+import { Navigation, NavigationWrapper } from 'features/navigation/Navigation';
+import { ClipboardSwitcher } from 'features/clipboard/Switcher';
 import { Language } from 'features/language/types';
+import { Sidebar } from 'features/navigation/Sidebar';
+import LanguageProvider from 'features/language/provider';
+import NavigationProvider from 'features/navigation/provider';
+import ClipboardProvider from 'features/clipboard/provider';
+import { Header } from 'components/Header/Header';
+import { Footer } from 'components/Footer/Footer';
+import { Wrapper } from 'components/Warpper';
 
 const App = () => {
   const [langId, setLangId] = useLocalStorageState<Language>('langId', 'EN');

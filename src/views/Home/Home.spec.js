@@ -5,7 +5,7 @@ import 'jest-styled-components';
 
 import { theme } from 'theme';
 import { MobileNavWrapper } from 'features/navigation/Navigation/styled';
-import { HomeTitle } from './styled';
+import { HomeTitle } from '.';
 
 test('Home component rendered properly', () => {
   const component = renderer.create(
