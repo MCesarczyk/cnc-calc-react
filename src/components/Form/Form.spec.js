@@ -5,9 +5,8 @@ import 'jest-styled-components';
 
 import { theme } from 'theme';
 import LanguageContext from 'features/language/context';
-import { FieldsContainer } from './styled';
-import { ButtonsContainer, FooterButton } from './Footer/styled';
-import Form from './Form';
+import { Form, FieldsContainer } from './Form';
+import { ButtonsContainer, FooterButton } from 'components/Form/FormFooter';
 
 const formSetup = (langId) =>
   render(
@@ -70,7 +69,7 @@ test('Both buttons are displayed with correct names for language: EN', () => {
 });
 
 test('Both buttons are displayed with correct names for language: PL', () => {
-  const langId = "PL";
+  const langId = 'PL';
   const labels = ['Oblicz', 'Wyczyść'];
 
   formSetup(langId);

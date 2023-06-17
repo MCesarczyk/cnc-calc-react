@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { theme } from 'theme';
-import { MobileNavWrapper } from 'features/navigation/Navigation/styled';
+import { MobileNavWrapper } from 'features/navigation/Navigation';
 import { HomeTitle } from '.';
 
 test('Home component rendered properly', () => {

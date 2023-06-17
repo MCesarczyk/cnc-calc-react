@@ -7,9 +7,9 @@ import 'jest-styled-components';
 import { theme } from 'theme';
 import LanguageContext from 'features/language/context';
 import NavigationContext from 'features/navigation/context';
-import { MenuIconWrapper } from './MenuIcon/styled';
-import Header from './Header';
-import Title from './Title';
+import { Header } from './Header';
+import { Title } from './Title';
+import { MenuIconWrapper } from 'components/Header/MenuIcon';
 
 const setup = (langId, open) =>
   render(

@@ -5,8 +5,8 @@ import 'jest-styled-components';
 
 import { theme } from 'theme';
 import LanguageContext from 'features/language/context';
-import FeedOptionSelector from 'components/FeedOptionSelector';
-import RadioButton from 'components/RadioButton';
+import { FeedOptionSelector } from 'components/FeedOptionSelector';
+import { RadioButton } from 'components/RadioButton';
 import { FieldWrapper } from 'components/FieldWrapper';
 import { Input } from 'components/Input';
 

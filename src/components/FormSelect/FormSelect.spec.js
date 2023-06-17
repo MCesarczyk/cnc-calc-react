@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { theme } from 'theme';
-import FormSelect from './FormSelect';
+import { FormSelect } from './FormSelect';
 
 const data = [
   { key: 0, value: '' },

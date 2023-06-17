@@ -5,7 +5,7 @@ import 'jest-styled-components';
 
 import { theme } from 'theme';
 import { Input } from '../Input';
-import FormInput from './FormInput';
+import { FormInput } from './FormInput';
 
 const setup = () =>
   render(

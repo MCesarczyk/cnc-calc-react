@@ -3,9 +3,9 @@ import { ThemeProvider } from 'styled-components';
 import 'jest-styled-components';
 
 import LanguageContext from 'features/language/context';
-import { theme } from 'theme';
 import ClipboardContext from '../context';
-import ClipboardSwitcher from './ClipboardSwitcher';
+import { theme } from 'theme';
+import { ClipboardSwitcher } from './ClipboardSwitcher';
 
 let langId = 'EN';
 const setLangId = (id) => (langId = id);

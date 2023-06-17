@@ -41,7 +41,7 @@ const Legend = styled.legend`
   margin: 0.5rem;
 `;
 
-const FieldsContainer = styled.div`
+export const FieldsContainer = styled.div`
   display: grid;
   justify-content: center;
   gap: 1rem;

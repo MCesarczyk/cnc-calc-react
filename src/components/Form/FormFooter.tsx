@@ -18,7 +18,7 @@ export const FormFooter = ({ buttons }: FormFooterProps) => (
   </ButtonsContainer>
 );
 
-const ButtonsContainer = styled.div`
+export const ButtonsContainer = styled.div`
   max-width: 30rem;
   margin: 0 auto;
   display: flex;
@@ -31,7 +31,7 @@ const ButtonsContainer = styled.div`
   }
 `;
 
-const FooterButton = styled.button`
+export const FooterButton = styled.button`
   display: flex;
   min-width: 12rem;
   width: 100%;

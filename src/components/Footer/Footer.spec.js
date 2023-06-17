@@ -4,8 +4,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { theme } from 'theme';
-import Footer from './Footer';
-import { FooterLink } from './styled';
+import { Footer, FooterLink } from './Footer';
 
 test('Footer contains link to author homepage', () => {
   render(

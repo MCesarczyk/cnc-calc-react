@@ -21,7 +21,7 @@ const FooterContent = styled.p`
   font-size: 14px;
 `;
 
-const FooterLink = styled.a`
+export const FooterLink = styled.a`
   color: inherit;
   transition: 0.5s ease-out;
 

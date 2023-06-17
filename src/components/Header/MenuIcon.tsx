@@ -17,7 +17,7 @@ export const MenuIcon = ({ onClick }: MenuIconProps) => {
   );
 };
 
-const MenuIconWrapper = styled.button`
+export const MenuIconWrapper = styled.button`
   height: 1.5rem;
   margin: 0.5rem;
   margin-right: 1rem;
