@@ -1,7 +1,7 @@
-import { FieldWrapper } from "../FieldWrapper";
-import { Label } from "../Label";
-import { TextSub } from "../TextSub";
-import { Select } from "../Select";
+import { FieldWrapper } from '../FieldWrapper';
+import { Label } from '../Label';
+import { TextSub } from '../TextSub';
+import { Select } from '../Select';
 
 interface FormSelectProps {
   name: string;
@@ -13,15 +13,7 @@ interface FormSelectProps {
   onChange: any;
 }
 
-const FormSelect = ({
-  name,
-  sub,
-  unit,
-  id,
-  value,
-  data,
-  onChange,
-}: FormSelectProps) => {
+const FormSelect = ({ name, sub, unit, id, value, data, onChange }: FormSelectProps) => {
   return (
     <FieldWrapper>
       <Label>

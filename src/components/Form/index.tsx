@@ -1,10 +1,10 @@
-import { FormEvent, ReactNode } from "react";
+import { FormEvent, ReactNode } from 'react';
 
-import { useContext } from "react";
-import { createFormFooterButtons } from "../../assets/utils/createFormFooterButtons";
-import LanguageContext from "../../features/language/context";
-import FormFooter from "./Footer";
-import { FieldsContainer, Fieldset, FormWrapper, Legend } from "./styled";
+import { useContext } from 'react';
+import { createFormFooterButtons } from '../../assets/utils/createFormFooterButtons';
+import LanguageContext from '../../features/language/context';
+import FormFooter from './Footer';
+import { FieldsContainer, Fieldset, FormWrapper, Legend } from './styled';
 
 interface FormProps {
   legend: string;

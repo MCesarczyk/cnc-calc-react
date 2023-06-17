@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const ResultWrapper = styled.div`
   display: flex;
@@ -8,16 +8,18 @@ export const ResultWrapper = styled.div`
     flex-basis: unset;
     width: 100%;
   }
-`
+`;
 
 export const Result = styled.div`
-    min-width: 16rem;
-    border: solid 1px ${({ theme }) => theme.color.primary};
-    border-radius: 5px;
-    padding: 5px;
-    color: ${({ theme }) => theme.color.primaryText};
+  min-width: 16rem;
+  border: solid 1px ${({ theme }) => theme.color.primary};
+  border-radius: 5px;
+  padding: 5px;
+  color: ${({ theme }) => theme.color.primaryText};
 
-    ${({ placeholder }) => placeholder && css`
+  ${({ placeholder }) =>
+    placeholder &&
+    css`
       color: ${({ theme }) => theme.color.placeholder};
     `}
 `;
@@ -36,4 +38,4 @@ export const ResultCopyButton = styled.button`
   &:active {
     filter: brightness(0.5);
   }
-`
+`;

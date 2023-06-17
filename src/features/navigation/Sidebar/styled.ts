@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SidebarActivationArea = styled.div`
   position: absolute;
@@ -21,6 +21,6 @@ export const SidebarNavigation = styled.div<{ $visible?: boolean }>`
   display: none;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
-    display: ${({ $visible }) => $visible && "block"};
+    display: ${({ $visible }) => $visible && 'block'};
   }
 `;

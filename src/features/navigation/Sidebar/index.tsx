@@ -1,9 +1,9 @@
-import { useCallback, useContext, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
-import NavigationContext from "../context";
-import Navigation from "../Navigation";
-import ClipboardSwitcher from "../../clipboard/Switcher";
-import { SidebarActivationArea, SidebarNavigation } from "./styled";
+import { useCallback, useContext, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
+import NavigationContext from '../context';
+import Navigation from '../Navigation';
+import ClipboardSwitcher from '../../clipboard/Switcher';
+import { SidebarActivationArea, SidebarNavigation } from './styled';
 
 const Sidebar = () => {
   const { open, setOpen } = useContext(NavigationContext);
@@ -31,29 +31,22 @@ const Sidebar = () => {
       }
     };
 
-    document.addEventListener("pointerdown", checkIfClickedOutside)
+    document.addEventListener('pointerdown', checkIfClickedOutside);
 
     return () => {
-      document.removeEventListener("pointerdown", checkIfClickedOutside)
-    }
+      document.removeEventListener('pointerdown', checkIfClickedOutside);
+    };
   }, [open, handleClose]);
 
   return (
     <>
-      <SidebarActivationArea
-        onPointerEnter={handleOpen}
-      />
-      <SidebarNavigation
-        ref={sidebarRef}
-        $visible={open && pathname !== "/"}
-      >
-        <Navigation
-          sidebar={true}
-        />
+      <SidebarActivationArea onPointerEnter={handleOpen} />
+      <SidebarNavigation ref={sidebarRef} $visible={open && pathname !== '/'}>
+        <Navigation sidebar={true} />
         <ClipboardSwitcher />
       </SidebarNavigation>
     </>
-  )
+  );
 };
 
 export default Sidebar;

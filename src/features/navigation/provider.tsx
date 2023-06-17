@@ -1,4 +1,4 @@
-import NavigationContext from "./context";
+import NavigationContext from './context';
 
 interface NavigationProviderProps {
   value: {
@@ -9,9 +9,7 @@ interface NavigationProviderProps {
 }
 
 const NavigationProvider = ({ value, children }: NavigationProviderProps) => (
-  <NavigationContext.Provider value={value}>
-    {children}
-  </NavigationContext.Provider>
+  <NavigationContext.Provider value={value}>{children}</NavigationContext.Provider>
 );
 
 export default NavigationProvider;

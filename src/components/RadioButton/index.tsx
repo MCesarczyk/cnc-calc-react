@@ -1,8 +1,8 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent } from 'react';
 
-import { Input } from "../Input";
-import { TextSub } from "../TextSub";
-import { RadioButtonWrapper } from "./styled";
+import { Input } from '../Input';
+import { TextSub } from '../TextSub';
+import { RadioButtonWrapper } from './styled';
 
 interface RadioButtonProps {
   name: string;
@@ -16,12 +16,7 @@ interface RadioButtonProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const RadioButton = ({
-  name,
-  option,
-  parameter,
-  onChange,
-}: RadioButtonProps) => {
+const RadioButton = ({ name, option, parameter, onChange }: RadioButtonProps) => {
   return (
     <RadioButtonWrapper>
       <Input

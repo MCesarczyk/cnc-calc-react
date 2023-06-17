@@ -9,28 +9,33 @@
 [https://mcesarczyk.github.io/cnc-calc-react/](https://mcesarczyk.github.io/cnc-calc-react/)
 
 ### Brief description:
+
 Since my first profession is **CNC Programming** I use this formulas in my day to day work.
 I plan to add next functionalities with time.
 So, don't hesitate to contact me on: michal.cesarczyk@gmail.com to propose another one.
 
 ### Features:
-1. Calculation forms:
-   - Drilling/milling:
-      - linear cutting speed in function of diameter and spindle speed
-      - tool rotational speed in function of diameter and surface speed
-      - feed rate in function of spindle speed and:
-         - feed per revolution
-         - feed per tooth, numer of tooth
 
-    - Threading/tapping:
-      - feed rate for tapping in function of spindle speed and threading tool pitch  
-    (pitch value is selected from list according to tool diameter)
+1. Calculation forms:
+
+   - Drilling/milling:
+
+     - linear cutting speed in function of diameter and spindle speed
+     - tool rotational speed in function of diameter and surface speed
+     - feed rate in function of spindle speed and:
+       - feed per revolution
+       - feed per tooth, numer of tooth
+
+   - Threading/tapping:
+     - feed rate for tapping in function of spindle speed and threading tool pitch  
+       (pitch value is selected from list according to tool diameter)
 
 2. Language switching between english and polish.
 
 ![language versions](src/assets/images/language_switching.gif)
 
 1. Memory mode to transfer values beetween forms.
+
 - below is default forms behaviour:
 
 ![memory mode off](src/assets/images/default_bahaviour.gif)
@@ -43,16 +48,15 @@ And this is how it works:
 
 ![memory mode demo](src/assets/images/using_memory_mode.gif)
 
-
-
 ### Used technologies
+
 1. html
 1. CSS
 1. BEM
 1. JavaScript/ES6: const variables, arrow functions, arrays, objects
 1. Immutability
 1. React: hooks, controlled components
-2. React Router
+1. React Router
 
 I've decided to use UseContext hook to manage globa state of app, but in future updates I plan to switch to Redux, since there is more variables to handle globally.
 Newly added memory mode function inclined me to start thinking about switching to Redux.\
@@ -60,11 +64,13 @@ This would, beside obvious benefits of Redux as code clarity and raliability, al
 But in the first place, I'd like to replace snapshot tests with solid unit and integration tests to avoid functional regression errors.
 
 ### Areas of future improvement:
-1. Switching to Redux since more variables become propagated in context and more code  repeats in all forms.
+
+1. Switching to Redux since more variables become propagated in context and more code repeats in all forms.
 2. Squash app into widget form to enable embedding in other applications/websites.
 3. Use some API data to obtain material related data to automatically propose cutting speeds and feeds.
 
-***
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

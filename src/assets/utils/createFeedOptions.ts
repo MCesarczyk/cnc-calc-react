@@ -1,5 +1,5 @@
-import { Language } from "../../features/language/types";
-import languages from "../../assets/fixtures/languages";
+import { Language } from '../../features/language/types';
+import languages from '../../assets/fixtures/languages';
 
 export const createFeedOptions = (langId: Language) => {
   const feedOptions = [
@@ -9,7 +9,7 @@ export const createFeedOptions = (langId: Language) => {
       sub: languages[langId]?.feedPerRev.sub,
       unit: languages[langId]?.feedPerRev.unit,
       placeholder: languages[langId]?.feedPerRev.placeholder,
-      disabled: false
+      disabled: false,
     },
     {
       id: 1,
@@ -17,8 +17,8 @@ export const createFeedOptions = (langId: Language) => {
       sub: languages[langId]?.feedPerTooth.sub,
       unit: languages[langId]?.feedPerTooth.unit,
       placeholder: languages[langId]?.feedPerTooth.placeholder,
-      disabled: true
-    }
+      disabled: true,
+    },
   ];
 
   return feedOptions;

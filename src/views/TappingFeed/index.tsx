@@ -1,26 +1,22 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent } from 'react';
 
-import { FormEvent, useContext, useEffect, useRef, useState } from "react";
-import ClipboardContext from "../../features/clipboard/context";
-import LanguageContext from "../../features/language/context";
-import languages from "../../assets/fixtures/languages";
-import { focusForm } from "../../assets/utils/focusForm";
-import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
-import Form from "../../components/Form";
-import FormInput from "../../components/FormInput";
-import FormSelect from "../../components/FormSelect";
-import ResultField from "../../features/clipboard/ResultField";
-import { calculateTappingFeed, tapDiametersArray } from "./equation";
+import { FormEvent, useContext, useEffect, useRef, useState } from 'react';
+import ClipboardContext from '../../features/clipboard/context';
+import LanguageContext from '../../features/language/context';
+import languages from '../../assets/fixtures/languages';
+import { focusForm } from '../../assets/utils/focusForm';
+import { checkIfItsTouchDevice } from '../../assets/utils/checkDeviceType';
+import Form from '../../components/Form';
+import FormInput from '../../components/FormInput';
+import FormSelect from '../../components/FormSelect';
+import ResultField from '../../features/clipboard/ResultField';
+import { calculateTappingFeed, tapDiametersArray } from './equation';
 
 const TappingFeedForm = () => {
   const { langId } = useContext(LanguageContext);
   const { values, setValues, memoryMode } = useContext(ClipboardContext);
-  const [rotationSpeed, setRotationSpeed] = useState(
-    (memoryMode && values?.rotationSpeed?.toString()) || ''
-  );
-  const [diameter, setDiameter] = useState(
-    (memoryMode && values?.tapDiameter?.toString()) || ''
-  );
+  const [rotationSpeed, setRotationSpeed] = useState((memoryMode && values?.rotationSpeed?.toString()) || '');
+  const [diameter, setDiameter] = useState((memoryMode && values?.tapDiameter?.toString()) || '');
   const [pitch, setPitch] = useState((memoryMode && values?.pitch?.toString()) || '');
   const [feedrate, setFeedrate] = useState<string>('');
   const inputRef = useRef(null);
@@ -59,11 +55,7 @@ const TappingFeedForm = () => {
   };
 
   return (
-    <Form
-      legend={languages[langId].form4Legend}
-      onSubmit={onFormSubmit}
-      onReset={onFormReset}
-    >
+    <Form legend={languages[langId].form4Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <FormInput
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
@@ -74,9 +66,7 @@ const TappingFeedForm = () => {
         step={1}
         placeholder={languages[langId].rotSpeed.placeholder}
         autoFocus={!checkIfItsTouchDevice()}
-        onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          setRotationSpeed(e.target.value)
-        }
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setRotationSpeed(e.target.value)}
       />
       <FormSelect
         name={languages[langId].diameter.name}

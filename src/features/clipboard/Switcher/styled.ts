@@ -1,18 +1,18 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const SwitcherWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 1.5rem;
-`
+`;
 
 export const SwitcherLabel = styled.label`
   font-variant: small-caps;
   font-weight: 700;
   margin-right: 1rem;
   cursor: pointer;
-`
+`;
 
 export const Switcher = styled.button`
   width: 3rem;
@@ -20,7 +20,7 @@ export const Switcher = styled.button`
   background-color: #d9d9d9;
   border: 2px solid #525252;
   border-radius: 1rem;
-`
+`;
 
 export const SwitcherIndicator = styled.div<{ $memorymode?: boolean }>`
   width: 2rem;
@@ -33,8 +33,10 @@ export const SwitcherIndicator = styled.div<{ $memorymode?: boolean }>`
   top: -3px;
   transition: all 0.3s ease-in-out;
 
-  ${({ $memorymode }) => $memorymode && css`
-    transform: translateX(1.2rem);
-    background-color: #1E3246;
-  `}
-`
+  ${({ $memorymode }) =>
+    $memorymode &&
+    css`
+      transform: translateX(1.2rem);
+      background-color: #1e3246;
+    `}
+`;

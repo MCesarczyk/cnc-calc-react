@@ -1,10 +1,10 @@
-import { ButtonsContainer, FooterButton } from "./styled";
+import { ButtonsContainer, FooterButton } from './styled';
 
 interface FormFooterProps {
   buttons: {
     id: number;
     label: string;
-    type: "submit" | "reset";
+    type: 'submit' | 'reset';
   }[];
 }
 

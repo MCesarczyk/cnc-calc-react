@@ -1,13 +1,13 @@
-import { fireEvent, render } from "@testing-library/react";
-import renderer from "react-test-renderer";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../theme";
-import LanguageContext from "../../features/language/context";
-import "jest-styled-components";
-import RadioButton from "../RadioButton";
-import { FieldWrapper } from "../FieldWrapper";
-import { Input } from "../Input";
-import FeedOptionSelector from ".";
+import { fireEvent, render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../../theme';
+import LanguageContext from '../../features/language/context';
+import 'jest-styled-components';
+import RadioButton from '../RadioButton';
+import { FieldWrapper } from '../FieldWrapper';
+import { Input } from '../Input';
+import FeedOptionSelector from '.';
 
 const langId = 0;
 
@@ -19,7 +19,7 @@ const setFeedFactor = jest.fn();
 
 const setup = () => {
   const component = render(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <LanguageContext.Provider value={langId}>
         <FeedOptionSelector
           feedType={feedType}
@@ -28,7 +28,7 @@ const setup = () => {
           setFeedFactor={setFeedFactor}
         />
       </LanguageContext.Provider>
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 
   const radio1 = component.getByTestId('FPR-radio');
@@ -39,8 +39,8 @@ const setup = () => {
   return { component, radio1, radio2, feedPerRotation, feedPerTooth };
 };
 
-test("Only feed per revolution radio button should be enabled initially, other option fields should be disabled", () => {
-  feedType = "FPR";
+test('Only feed per revolution radio button should be enabled initially, other option fields should be disabled', () => {
+  feedType = 'FPR';
   const { radio1, radio2, feedPerRotation, feedPerTooth } = setup();
 
   expect(radio1).toBeChecked();
@@ -49,8 +49,8 @@ test("Only feed per revolution radio button should be enabled initially, other o
   expect(feedPerTooth).toHaveAttribute('disabled');
 });
 
-test("When feed per tooth is enabled initially, other option fields should be disabled also", () => {
-  feedType = "FPT";
+test('When feed per tooth is enabled initially, other option fields should be disabled also', () => {
+  feedType = 'FPT';
   const { radio1, radio2, feedPerRotation, feedPerTooth } = setup();
 
   expect(radio1).not.toBeChecked();
@@ -59,7 +59,7 @@ test("When feed per tooth is enabled initially, other option fields should be di
   expect(feedPerTooth).not.toHaveAttribute('disabled');
 });
 
-test("Clicking radio buttons should cause switching between them", () => {
+test('Clicking radio buttons should cause switching between them', () => {
   const { component } = setup();
 
   const radio1 = component.getByTestId('FPR-radio');
@@ -76,14 +76,14 @@ test("Clicking radio buttons should cause switching between them", () => {
   expect(radio2).not.toBeChecked();
 });
 
-test("FeedOptionSelector component rendering properly", () => {
+test('FeedOptionSelector component rendering properly', () => {
   const component = renderer.create(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <FieldWrapper>
         <RadioButton />
         <Input />
       </FieldWrapper>
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 
   let tree = component.toJSON();

@@ -1,1 +1,1 @@
-export const rootPath = "/cnc-calc-react";
+export const rootPath = '/cnc-calc-react';

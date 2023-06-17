@@ -1,1 +1,1 @@
-export const checkIfItsTouchDevice = () => window.matchMedia("(pointer: coarse)").matches;
+export const checkIfItsTouchDevice = () => window.matchMedia('(pointer: coarse)').matches;

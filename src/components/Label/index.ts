@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Label = styled.label`
-    text-align: right;
+  text-align: right;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
-        align-self: flex-start;
-    }
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}) {
+    align-self: flex-start;
+  }
 `;

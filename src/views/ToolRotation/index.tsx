@@ -1,31 +1,25 @@
-import React, { ChangeEvent, FormEvent } from "react";
-import { useContext, useEffect, useRef, useState } from "react";
-import LanguageContext from "../../features/language/context";
-import languages from "../../assets/fixtures/languages";
-import { focusForm } from "../../assets/utils/focusForm";
-import { checkIfItsTouchDevice } from "../../assets/utils/checkDeviceType";
-import Form from "../../components/Form";
-import FormInput from "../../components/FormInput";
-import ResultField from "../../features/clipboard/ResultField";
-import ClipboardContext from "../../features/clipboard/context";
-import { calculateRotationSpeed } from "./equation";
+import React, { ChangeEvent, FormEvent } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import LanguageContext from '../../features/language/context';
+import languages from '../../assets/fixtures/languages';
+import { focusForm } from '../../assets/utils/focusForm';
+import { checkIfItsTouchDevice } from '../../assets/utils/checkDeviceType';
+import Form from '../../components/Form';
+import FormInput from '../../components/FormInput';
+import ResultField from '../../features/clipboard/ResultField';
+import ClipboardContext from '../../features/clipboard/context';
+import { calculateRotationSpeed } from './equation';
 
 const ToolRotationForm = () => {
   const { langId } = useContext(LanguageContext);
   const { values, setValues, memoryMode } = useContext(ClipboardContext);
-  const [diameter, setDiameter] = useState(
-    (memoryMode && values?.diameter?.toString()) || ''
-  );
-  const [cuttingSpeed, setCuttingSpeed] = useState(
-    (memoryMode && values?.surfaceSpeed?.toString()) || ''
-  );
+  const [diameter, setDiameter] = useState((memoryMode && values?.diameter?.toString()) || '');
+  const [cuttingSpeed, setCuttingSpeed] = useState((memoryMode && values?.surfaceSpeed?.toString()) || '');
   const [rotationSpeed, setRotationSpeed] = useState<string>('');
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const onDiameterChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setDiameter(e.target.value);
-  const onCuttingSpeedChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setCuttingSpeed(e.target.value);
+  const onDiameterChange = (e: ChangeEvent<HTMLInputElement>) => setDiameter(e.target.value);
+  const onCuttingSpeedChange = (e: ChangeEvent<HTMLInputElement>) => setCuttingSpeed(e.target.value);
 
   useEffect(() => {
     setValues({
@@ -54,11 +48,7 @@ const ToolRotationForm = () => {
   };
 
   return (
-    <Form
-      legend={languages[langId].form2Legend}
-      onSubmit={onFormSubmit}
-      onReset={onFormReset}
-    >
+    <Form legend={languages[langId].form2Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <FormInput
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}

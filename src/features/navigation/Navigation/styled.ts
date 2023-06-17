@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NavigationWrapper = styled.div`
   align-self: flex-start;

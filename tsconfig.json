@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,14 +17,8 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
-      "*": [
-        "src/*"
-      ]
+      "*": ["src/*"]
     }
   },
-  "include": [
-    "src",
-    "src/assets/images",
-    "src/custom.d.ts"
-  ]
+  "include": ["src", "src/assets/images", "src/custom.d.ts"]
 }

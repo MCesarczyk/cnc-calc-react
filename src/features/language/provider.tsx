@@ -1,5 +1,5 @@
-import { Language } from "./types";
-import LanguageContext from "./context";
+import { Language } from './types';
+import LanguageContext from './context';
 
 interface LanguageProviderProps {
   value: {

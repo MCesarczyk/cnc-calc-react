@@ -1,8 +1,8 @@
-import { FieldWrapper } from "../FieldWrapper";
-import { Input } from "../Input";
-import { TextSub } from "../TextSub";
-import { Label } from "../Label";
-import { ChangeEvent } from "react";
+import { FieldWrapper } from '../FieldWrapper';
+import { Input } from '../Input';
+import { TextSub } from '../TextSub';
+import { Label } from '../Label';
+import { ChangeEvent } from 'react';
 
 interface FormInputProps {
   name: string;
@@ -31,16 +31,14 @@ const FormInput = ({
   disabled,
   readOnly,
   autoFocus,
-  onChange
-}:FormInputProps) => {
+  onChange,
+}: FormInputProps) => {
   return (
     <FieldWrapper>
       <Label>
         <label>
           {name}
-          <TextSub>
-            {sub}
-          </TextSub>
+          <TextSub>{sub}</TextSub>
           {unit}
         </label>
       </Label>
@@ -58,7 +56,7 @@ const FormInput = ({
         onChange={onChange}
       />
     </FieldWrapper>
-  )
+  );
 };
 
 export default FormInput;

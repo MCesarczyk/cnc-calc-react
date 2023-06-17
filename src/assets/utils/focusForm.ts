@@ -1,5 +1,5 @@
-import { MutableRefObject } from "react";
-import { checkIfItsTouchDevice } from "./checkDeviceType";
+import { MutableRefObject } from 'react';
+import { checkIfItsTouchDevice } from './checkDeviceType';
 
 const isTouchDevice = checkIfItsTouchDevice();
 

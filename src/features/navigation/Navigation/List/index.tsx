@@ -1,4 +1,4 @@
-import { Item, List } from "./styled";
+import { Item, List } from './styled';
 
 interface NavigationListProps {
   sidebar?: boolean;

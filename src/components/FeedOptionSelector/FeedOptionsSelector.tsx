@@ -1,10 +1,10 @@
-import { ChangeEvent, useContext } from "react";
-import LanguageContext from "../../features/language/context";
-import { createFeedOptions } from "../../assets/utils/createFeedOptions";
-import RadioButton from "../RadioButton";
-import { FieldWrapper } from "../FieldWrapper";
-import { Input } from "../Input";
-import { Language } from "../../features/language/types";
+import { ChangeEvent, useContext } from 'react';
+import LanguageContext from '../../features/language/context';
+import { createFeedOptions } from '../../assets/utils/createFeedOptions';
+import RadioButton from '../RadioButton';
+import { FieldWrapper } from '../FieldWrapper';
+import { Input } from '../Input';
+import { Language } from '../../features/language/types';
 
 interface FeedOptionSelectorProps {
   feedType: number;
@@ -13,12 +13,7 @@ interface FeedOptionSelectorProps {
   setFeedFactor: (value: number) => void;
 }
 
-const FeedOptionSelector = ({
-  feedType,
-  setFeedType,
-  feedFactor,
-  setFeedFactor,
-}: FeedOptionSelectorProps) => {
+const FeedOptionSelector = ({ feedType, setFeedType, feedFactor, setFeedFactor }: FeedOptionSelectorProps) => {
   const { langId } = useContext(LanguageContext);
   const feedOptions = createFeedOptions(langId as Language);
 
@@ -30,22 +25,18 @@ const FeedOptionSelector = ({
             name="feedType"
             option={feedOption}
             parameter={feedType}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setFeedType(Number(e.target.value))
-            }
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setFeedType(Number(e.target.value))}
           />
           <Input
             data-testid={`${feedOption.id}-input`}
-            value={feedOption.id === feedType ? feedFactor : ""}
+            value={feedOption.id === feedType ? feedFactor : ''}
             type="number"
             min="0.01"
             step="0.01"
             required
             disabled={feedOption.id !== feedType}
             placeholder={feedOption.placeholder}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setFeedFactor(Number(e.target.value))
-            }
+            onChange={(e: ChangeEvent<HTMLInputElement>) => setFeedFactor(Number(e.target.value))}
           />
         </FieldWrapper>
       ))}

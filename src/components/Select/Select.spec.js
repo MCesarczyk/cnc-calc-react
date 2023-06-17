@@ -1,18 +1,18 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../theme";
-import "jest-styled-components";
-import { Select } from ".";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../../theme';
+import 'jest-styled-components';
+import { Select } from '.';
 
-test("Select component rendering properly", () => {
+test('Select component rendering properly', () => {
   const select = renderer.create(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <Select />
-    </ThemeProvider>
+    </ThemeProvider>,
   );
-  
+
   let tree = select.toJSON();
-  
+
   expect(tree).toMatchSnapshot();
 });

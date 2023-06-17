@@ -1,9 +1,9 @@
-import { fireEvent, render } from "@testing-library/react";
-import renderer from "react-test-renderer";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../../theme";
-import "jest-styled-components";
-import FormSelect from ".";
+import { fireEvent, render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../../theme';
+import 'jest-styled-components';
+import FormSelect from '.';
 
 const data = [
   { key: 0, value: '' },
@@ -15,21 +15,22 @@ const data = [
   { key: 6, value: 'F' },
   { key: 7, value: 'G' },
   { key: 8, value: 'H' },
-  { key: 9, value: 'I' }
+  { key: 9, value: 'I' },
 ];
 
-const setup = () => render(
-  <ThemeProvider theme={theme} >
-    <FormSelect data={data} />
-  </ThemeProvider>
-);
+const setup = () =>
+  render(
+    <ThemeProvider theme={theme}>
+      <FormSelect data={data} />
+    </ThemeProvider>,
+  );
 
-test("Select component should be empty initially", () => {
+test('Select component should be empty initially', () => {
   const select = setup().getByRole('combobox');
   expect(select.value).toBe('');
 });
 
-test("Select component should display selected value", () => {
+test('Select component should display selected value', () => {
   const select = setup().getByRole('combobox');
   fireEvent.change(select, { target: { value: 'B' } });
   expect(select.value).toBe('B');
@@ -41,11 +42,11 @@ test("Select component should display selected value", () => {
   expect(select.value).toBe('F');
 });
 
-test("FormSelect component rendering properly", () => {
+test('FormSelect component rendering properly', () => {
   const component = renderer.create(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <FormSelect data={data} />
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 
   let tree = component.toJSON();

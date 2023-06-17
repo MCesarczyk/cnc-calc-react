@@ -1,23 +1,23 @@
-import { render, screen } from "@testing-library/react";
-import renderer from "react-test-renderer";
-import { ThemeProvider } from "styled-components";
-import { BrowserRouter } from "react-router-dom";
-import { theme } from "../../../theme";
-import "jest-styled-components";
-import { createRoutesList } from "../../../assets/utils/createRoutesList";
-import NavigationList from "./List";
-import { Item } from "./List/styled";
-import Form from "../../../components/Form";
-import LanguageContext from "../../language/context";
+import { render, screen } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
+import { theme } from '../../../theme';
+import 'jest-styled-components';
+import { createRoutesList } from '../../../assets/utils/createRoutesList';
+import NavigationList from './List';
+import { Item } from './List/styled';
+import Form from '../../../components/Form';
+import LanguageContext from '../../language/context';
 
 const renderList = (routes) => {
   render(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
         <NavigationList routes={routes} />
       </BrowserRouter>
-    </ThemeProvider>
-  )
+    </ThemeProvider>,
+  );
 };
 
 const langId = 0;
@@ -33,30 +33,30 @@ const testNavlinkLabels = (langId) => {
   });
 };
 
-test("Navigation list rendered properly (default language: EN)", () => {
+test('Navigation list rendered properly (default language: EN)', () => {
   renderList(routes);
 
   let list = screen.queryByRole('list');
   expect(list).toBeInTheDocument();
 });
 
-test("Navigation list should render all Navlinks for EN language", () => {
+test('Navigation list should render all Navlinks for EN language', () => {
   testNavlinkLabels(0);
 });
 
-test("Navigation list should render all Navlinks for PL language", () => {
+test('Navigation list should render all Navlinks for PL language', () => {
   testNavlinkLabels(1);
 });
 
-test("Each Navlink should lead to proper path", () => {
+test('Each Navlink should lead to proper path', () => {
   renderList(routes);
 
   const form = render(
     <ThemeProvider theme={theme}>
-      <LanguageContext.Provider value={langId} >
+      <LanguageContext.Provider value={langId}>
         <Form />
       </LanguageContext.Provider>
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 
   const surfaceSpeedView = form.queryByText(/Surface cutting speed/i);
@@ -72,31 +72,31 @@ test("Each Navlink should lead to proper path", () => {
   expect(tappingView).toHaveAttribute('href', '/tapping-feed');
 });
 
-test("List item rendered properly", () => {
+test('List item rendered properly', () => {
   const listItemComponent = renderer.create(
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Item to="#" />
       </BrowserRouter>
-    </ThemeProvider>
+    </ThemeProvider>,
   );
 
   let item = listItemComponent.toJSON();
   expect(item).toMatchSnapshot();
 
   expect(item).toHaveStyleRule('filter', 'brightness(1.5)', {
-    modifier: ':hover'
+    modifier: ':hover',
   });
 
   expect(item).toHaveStyleRule('filter', 'brightness(1)', {
-    modifier: ':active'
+    modifier: ':active',
   });
 
   expect(item).toHaveStyleRule('transform', 'scale(0.98)', {
-    modifier: ':active'
+    modifier: ':active',
   });
 
   expect(item).toHaveStyleRule('color', '#2188FF', {
-    modifier: '&.active'
+    modifier: '&.active',
   });
 });

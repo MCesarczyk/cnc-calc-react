@@ -1,4 +1,4 @@
-import { HomeLink, Headline } from "./styled";
+import { HomeLink, Headline } from './styled';
 
 interface TitleProps {
   title: string;

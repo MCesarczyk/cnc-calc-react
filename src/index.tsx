@@ -1,13 +1,13 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { ThemeProvider } from "styled-components";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { ThemeProvider } from 'styled-components';
 
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { GlobalStyle } from "./GlobalStyle";
-import { theme } from "./theme";
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { GlobalStyle } from './GlobalStyle';
+import { theme } from './theme';
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 const root = createRoot(container!);
 root.render(
   <React.StrictMode>
@@ -15,7 +15,7 @@ root.render(
       <GlobalStyle />
       <App />
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 reportWebVitals();

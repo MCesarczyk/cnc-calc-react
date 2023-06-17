@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { FieldWrapper } from "../../../components/FieldWrapper";
-import { TextSub } from "../../../components/TextSub";
-import { Label } from "../../../components/Label";
-import { Result } from "./styled";
+import { FieldWrapper } from '../../../components/FieldWrapper';
+import { TextSub } from '../../../components/TextSub';
+import { Label } from '../../../components/Label';
+import { Result } from './styled';
 
 interface ResultFieldProps {
   name: string;
@@ -13,13 +13,7 @@ interface ResultFieldProps {
   sub?: string;
 }
 
-const ResultField = ({
-  name,
-  unit,
-  value,
-  placeholder,
-  sub,
-}: ResultFieldProps) => {
+const ResultField = ({ name, unit, value, placeholder, sub }: ResultFieldProps) => {
   return (
     <FieldWrapper>
       <Label>
@@ -29,9 +23,7 @@ const ResultField = ({
           {unit}
         </label>
       </Label>
-      <Result placeholder={!value ? "placeholder" : ""}>
-        {value ? value : placeholder}
-      </Result>
+      <Result placeholder={!value ? 'placeholder' : ''}>{value ? value : placeholder}</Result>
     </FieldWrapper>
   );
 };
