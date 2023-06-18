@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useLocalStorageState } from 'assets/utils/uselocalStorageState';
-import Home from 'views/Home';
-import SurfaceSpeedForm from 'views/SurfaceSpeed';
-import ToolRotationForm from 'views/ToolRotation';
-import LinearFeedForm from 'views/LinearFeed';
-import TappingFeedForm from 'views/TappingFeed';
+import Home from 'app/Home';
+import SurfaceSpeedForm from 'app/SurfaceSpeed';
+import ToolRotationForm from 'app/ToolRotation';
+import LinearFeedForm from 'app/LinearFeed';
+import TappingFeedForm from 'app/TappingFeed';
 import { Navigation, NavigationWrapper } from 'features/navigation/Navigation';
 import { ClipboardSwitcher } from 'features/clipboard/Switcher';
 import { Language } from 'features/language/types';
