@@ -7,7 +7,7 @@ import { ResultField } from 'features/clipboard/ResultField';
 import { Form } from 'components/Form';
 import { FormInput } from 'components/FormInput';
 import { FormSelect } from 'components/FormSelect';
-import languages from 'assets/fixtures/languages';
+import languages from 'features/language/languages';
 import { focusForm } from 'assets/utils/focusForm';
 import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
 import { calculateTappingFeed, setPitchValue, tapDiametersArray } from './equation';

@@ -4,7 +4,7 @@ import { FeedType } from 'types';
 import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
-import languages from 'assets/fixtures/languages';
+import languages from 'features/language/languages';
 import { focusForm } from 'assets/utils/focusForm';
 import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
 import { Form } from 'components/Form';

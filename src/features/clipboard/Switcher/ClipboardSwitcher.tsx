@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import styled, { css } from 'styled-components';
 
-import languages from 'assets/fixtures/languages';
+import languages from 'features/language/languages';
 import LanguageContext from 'features/language/context';
 import ClipboardContext from '../context';
 

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 
 import LanguageContext from 'features/language/context';
-import languages from 'assets/fixtures/languages';
+import languages from 'features/language/languages';
 import { MobileNavWrapper, Navigation } from 'features/navigation/Navigation';
 
 const Home = () => {

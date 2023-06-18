@@ -3,12 +3,12 @@ import { ThemeProvider } from 'styled-components';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import languages from 'assets/fixtures/languages';
+import languages from 'features/language/languages';
 import { theme } from 'theme';
 import LanguageContext from '../context';
-import LanguageSwitcher from '.';
+import LanguageSwitcher from './LanguageSwitcher';
 import { SwitcherButton } from './Button/styled';
-import Button from './Button';
+import Button from './SwitcherButton';
 
 let langId = 'EN';
 const setLangId = (id) => (langId = id);

@@ -1,5 +1,5 @@
-import PL from 'assets/images/flagPL.png';
-import EN from 'assets/images/flagUS.png';
+import PL from 'features/language/flagPL.png';
+import EN from 'features/language/flagUS.png';
 
 const languages = {
   EN: {

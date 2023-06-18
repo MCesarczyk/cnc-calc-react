@@ -1,5 +1,5 @@
 import { Language } from 'features/language/types';
-import languages from 'assets/fixtures/languages';
+import languages from 'features/language/languages';
 import { FeedOption } from 'types';
 
 export const createFeedOptions = (langId: Language) => {

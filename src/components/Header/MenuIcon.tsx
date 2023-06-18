@@ -1,7 +1,7 @@
 import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 
-import MenuThumbnail from '../../assets/images/hamburger-menu.svg';
+import { ReactComponent as MenuThumbnail } from './hamburger-menu.svg';
 
 interface MenuIconProps {
   onClick: () => void;
@@ -12,10 +12,15 @@ export const MenuIcon = ({ onClick }: MenuIconProps) => {
 
   return (
     <MenuIconWrapper onClick={onClick} disabled={pathname === '/'}>
-      <MenuThumbnail />
+      <Thumbnail />
     </MenuIconWrapper>
   );
 };
+
+const Thumbnail = styled(MenuThumbnail)`
+  width: 36px;
+  margin: -14px 0 0 -14px;
+`;
 
 export const MenuIconWrapper = styled.button`
   height: 1.5rem;
@@ -26,6 +31,7 @@ export const MenuIconWrapper = styled.button`
   color: inherit;
   display: none;
   z-index: 25;
+  padding: 20px;
 
   &:hover {
     filter: brightness(0.8);
