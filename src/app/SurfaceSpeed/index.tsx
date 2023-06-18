@@ -6,8 +6,8 @@ import ClipboardContext from 'features/clipboard/context';
 import { Form } from 'components/Form';
 import { FormInput } from 'components/FormInput/FormInput';
 import languages from 'features/language/languages';
-import { focusForm } from 'assets/utils/focusForm';
-import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
+import { focusForm } from 'common/utils/focusForm';
+import { checkIfItsTouchDevice } from 'common/utils/checkDeviceType';
 import { calculateCuttingSpeed } from './equation';
 
 const SurfaceSpeedForm = () => {

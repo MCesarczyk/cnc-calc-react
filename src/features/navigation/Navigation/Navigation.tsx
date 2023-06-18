@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 
 import LanguageContext from 'features/language/context';
-import { createRoutesList } from 'assets/utils/createRoutesList';
+import { createRoutesList } from 'common/utils/createRoutesList';
 import { NavigationList } from './NavigationList';
 
 interface NavigationProps {

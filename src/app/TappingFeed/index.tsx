@@ -8,8 +8,8 @@ import { Form } from 'components/Form';
 import { FormInput } from 'components/FormInput';
 import { FormSelect } from 'components/FormSelect';
 import languages from 'features/language/languages';
-import { focusForm } from 'assets/utils/focusForm';
-import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
+import { focusForm } from 'common/utils/focusForm';
+import { checkIfItsTouchDevice } from 'common/utils/checkDeviceType';
 import { calculateTappingFeed, setPitchValue, tapDiametersArray } from './equation';
 
 const TappingFeedForm = () => {

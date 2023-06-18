@@ -32,21 +32,21 @@ So, don't hesitate to contact me on: michal.cesarczyk@gmail.com to propose anoth
 
 2. Language switching between english and polish.
 
-![language versions](src/assets/images/language_switching.gif)
+![language versions](/assets/language_switching.gif)
 
 1. Memory mode to transfer values beetween forms.
 
 - below is default forms behaviour:
 
-![memory mode off](src/assets/images/default_bahaviour.gif)
+![memory mode off](/assets/default_bahaviour.gif)
 
 - and with memory mode active:
 
-![memory mode on](src/assets/images/memory_mode.gif)
+![memory mode on](/assets/memory_mode.gif)
 
 And this is how it works:
 
-![memory mode demo](src/assets/images/using_memory_mode.gif)
+![memory mode demo](/assets/using_memory_mode.gif)
 
 ### Used technologies
 

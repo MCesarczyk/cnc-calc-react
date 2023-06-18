@@ -11,7 +11,7 @@ import LanguageProvider from 'features/language/provider';
 import { Navigation, NavigationWrapper } from 'features/navigation/Navigation';
 import { Sidebar } from 'features/navigation/Sidebar';
 import NavigationProvider from 'features/navigation/provider';
-import { useLocalStorageState } from 'assets/utils/uselocalStorageState';
+import { useLocalStorageState } from 'common/utils/uselocalStorageState';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { Wrapper } from 'components/Wrapper';

@@ -1,4 +1,4 @@
-import { AUTHOR_PAGE_ADDRESS, AUTHOR_PAGE_LABEL, DATE } from 'assets/fixtures/author';
+import { AUTHOR_PAGE_ADDRESS, AUTHOR_PAGE_LABEL, DATE } from 'common/author';
 import styled from 'styled-components';
 
 export const Footer = () => (
