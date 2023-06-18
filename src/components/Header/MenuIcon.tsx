@@ -1,14 +1,14 @@
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 
-import { ReactComponent as MenuThumbnail } from "assets/images/hamburger-menu.svg";
+import MenuThumbnail from '../../assets/images/hamburger-menu.svg';
 
 interface MenuIconProps {
   onClick: () => void;
 }
 
 export const MenuIcon = ({ onClick }: MenuIconProps) => {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   return (
     <MenuIconWrapper onClick={onClick} disabled={pathname === '/'}>

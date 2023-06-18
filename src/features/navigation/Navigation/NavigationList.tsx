@@ -1,5 +1,5 @@
+import Link from 'next/link';
 import styled, { css } from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
 interface NavigationListProps {
   sidebar?: boolean;
@@ -14,7 +14,7 @@ export const NavigationList = ({ sidebar, routes }: NavigationListProps) => (
   <List>
     {routes?.map((route) => (
       <li key={route.id}>
-        <Item $sidebar={sidebar} to={route.path}>
+        <Item $sidebar={sidebar} href={route.path}>
           {route.label}
         </Item>
       </li>
@@ -27,7 +27,7 @@ const List = styled.ul`
   list-style: none;
 `;
 
-export const Item = styled(NavLink)<{ $sidebar?: boolean }>`
+export const Item = styled(Link)<{ $sidebar?: boolean }>`
   color: ${({ theme }) => theme.color.primaryContrast};
   background-color: ${({ theme }) => theme.color.primary};
   display: block;
