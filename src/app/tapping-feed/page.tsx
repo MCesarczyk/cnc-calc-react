@@ -1,3 +1,4 @@
+'use client';
 import { ChangeEvent } from 'react';
 
 import { FormEvent, useContext, useEffect, useRef, useState } from 'react';

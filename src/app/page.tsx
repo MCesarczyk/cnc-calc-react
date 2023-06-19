@@ -1,3 +1,30 @@
-export default function Page() {
-  return <h1>Hello, Next.js!</h1>
-}
+'use client';
+import { useContext } from 'react';
+import styled from 'styled-components';
+
+import LanguageContext from 'features/language/context';
+import languages from 'features/language/languages';
+import { MobileNavWrapper, Navigation } from 'features/navigation/Navigation';
+
+const Home = () => {
+  const { langId } = useContext(LanguageContext);
+
+  return (
+    <>
+      <HomeTitle>{languages[langId]?.welcomeTitle}</HomeTitle>
+      <MobileNavWrapper>
+        <Navigation />
+      </MobileNavWrapper>
+    </>
+  );
+};
+
+export const HomeTitle = styled.h2`
+  text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
+    display: none;
+  }
+`;
+
+export default Home;

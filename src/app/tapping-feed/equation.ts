@@ -1,4 +1,4 @@
-import tapDiameters from 'assets/fixtures/tapDiameters';
+import tapDiameters from 'common/tapDiameters';
 
 export const tapDiametersArray = tapDiameters.map((record) => ({
   key: record.id,

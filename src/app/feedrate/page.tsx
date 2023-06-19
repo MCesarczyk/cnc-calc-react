@@ -1,3 +1,4 @@
+'use client';
 import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from 'react';
 
 import { FeedType } from 'types';
