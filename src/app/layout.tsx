@@ -5,7 +5,7 @@ import { GlobalStyle } from 'GlobalStyle';
 
 import { theme } from 'theme';
 import { Language } from 'features/language/types';
-import { ClipboardSwitcher } from 'features/clipboard/Switcher';
+import { ClipboardSwitcher } from 'features/clipboard/ClipboardSwitcher';
 import ClipboardProvider from 'features/clipboard/provider';
 import LanguageProvider from 'features/language/provider';
 import { Navigation, NavigationWrapper } from 'features/navigation/Navigation';

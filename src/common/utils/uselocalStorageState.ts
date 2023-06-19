@@ -2,6 +2,10 @@ import { useState, useEffect, Dispatch } from 'react';
 
 export const useLocalStorageState = <T>(keyName: string, initialValue: T): [T, Dispatch<T>] => {
   const getInitialState = () => {
+    if (typeof window === 'undefined') {
+      return initialValue;
+    }
+
     const localStorageState = localStorage.getItem(keyName);
     if (localStorageState === null) {
       return initialValue;

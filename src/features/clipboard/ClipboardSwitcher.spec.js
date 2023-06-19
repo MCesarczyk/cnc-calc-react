@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import 'jest-styled-components';
 
 import LanguageContext from 'features/language/context';
-import ClipboardContext from '../context';
+import ClipboardContext from './context';
 import { theme } from 'theme';
 import { ClipboardSwitcher } from './ClipboardSwitcher';
 

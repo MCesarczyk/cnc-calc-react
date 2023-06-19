@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import LanguageContext from 'features/language/context';
 import NavigationContext from 'features/navigation/context';
 import languages from 'features/language/languages';
-import { LanguageSwitcher } from 'features/language/Switcher/LanguageSwitcher';
+import { LanguageSwitcher } from 'features/language/LanguageSwitcher';
 import { MenuIcon } from './MenuIcon';
 import { Title } from './Title';
 

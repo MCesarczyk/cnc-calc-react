@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import languages from 'features/language/languages';
 import { SwitcherButton } from './SwitcherButton';
-import { Language } from '../types';
+import { Language } from './types';
 
 export const LanguageSwitcher = () => (
   <SwitcherWrapper>

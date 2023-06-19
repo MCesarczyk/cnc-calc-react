@@ -23,7 +23,7 @@ export const SwitcherButton = ({ language }: SwitcherButtonProps) => {
       onClick={() => onLanguageChange(language.key)}
       $active={isButtonActive(language.key, langId) ? 'active' : undefined}
     >
-      <ButtonBackground alt="flag" src={language.flag} placeholder="blur" quality={10} />
+      <ButtonBackground alt="flag" src={language.flag} />
       <SwitcherButtonLabel>{language.key}</SwitcherButtonLabel>
     </StyledButton>
   );
@@ -60,6 +60,7 @@ export const StyledButton = styled.button<{ $active?: string }>`
 const ButtonBackground = styled(Image)`
   object-fit: fill;
   height: 30px;
+  width: auto;
   margin: 0;
   margin-top: -4px;
 `;

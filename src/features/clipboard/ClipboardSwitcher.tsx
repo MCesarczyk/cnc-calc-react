@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 import languages from 'features/language/languages';
 import LanguageContext from 'features/language/context';
-import ClipboardContext from '../context';
+import ClipboardContext from './context';
 
 export const ClipboardSwitcher = () => {
   const { memoryMode, setMemoryMode } = useContext(ClipboardContext);

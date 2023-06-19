@@ -1,7 +1,7 @@
 import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 
-import { ReactComponent as MenuThumbnail } from './hamburger-menu.svg';
+import  MenuThumbnail from './hamburger-menu.svg';
 
 interface MenuIconProps {
   onClick: () => void;

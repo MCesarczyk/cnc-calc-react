@@ -1,1 +1,0 @@
-export { ClipboardSwitcher } from './ClipboardSwitcher';

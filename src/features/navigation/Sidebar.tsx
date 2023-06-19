@@ -3,7 +3,7 @@ import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 
 import { Navigation } from 'features/navigation/Navigation';
-import { ClipboardSwitcher } from 'features/clipboard/Switcher';
+import { ClipboardSwitcher } from 'features/clipboard/ClipboardSwitcher';
 import NavigationContext from './context';
 
 export const Sidebar = () => {
