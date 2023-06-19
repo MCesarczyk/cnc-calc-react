@@ -1,12 +1,12 @@
+import Link from 'next/link';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 interface TitleProps {
   title: string;
 }
 
 export const Title = ({ title }: TitleProps) => (
-  <HomeLink to="/">
+  <HomeLink href="/">
     <Headline>{title}</Headline>
   </HomeLink>
 );

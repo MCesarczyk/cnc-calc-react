@@ -1,14 +1,14 @@
 import { useCallback, useContext, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 
 import { Navigation } from 'features/navigation/Navigation';
-import { ClipboardSwitcher } from 'features/clipboard/Switcher';
+import { ClipboardSwitcher } from 'features/clipboard/ClipboardSwitcher';
 import NavigationContext from './context';
 
 export const Sidebar = () => {
   const { open, setOpen } = useContext(NavigationContext);
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const sidebarRef = useRef<HTMLDivElement | null>(null);
 
   const handleOpen = () => {
