@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component rendered properly 1`] = `
+Array [
+  .c0 {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 768px) {
+  .c0 {
+    display: none;
+  }
+}
+
+<h2
+    className="c0"
+  />,
+  .c0 {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .c0 {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+
+}
+
+<div
+    className="c0"
+  />,
+]
+`;
