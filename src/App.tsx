@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { useLocalStorageState } from 'assets/utils/uselocalStorageState';
+import { useLocalStorageState } from 'utils/uselocalStorageState';
 import Home from 'views/Home';
 import SurfaceSpeedForm from 'views/SurfaceSpeed';
 import ToolRotationForm from 'views/ToolRotation';
