@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { createRoutesList } from 'assets/utils/createRoutesList';
+import { createRoutesList } from 'utils/createRoutesList';
 import LanguageContext from 'features/language/context';
 import { Form } from 'components/Form';
 import { NavigationList, Item } from './NavigationList';

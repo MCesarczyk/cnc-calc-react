@@ -6,8 +6,8 @@ import ClipboardContext from 'features/clipboard/context';
 import { Form } from 'components/Form';
 import { FormInput } from 'components/FormInput/FormInput';
 import languages from 'assets/fixtures/languages';
-import { focusForm } from 'assets/utils/focusForm';
-import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
+import { focusForm } from 'utils/focusForm';
+import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
 import { calculateCuttingSpeed } from './equation';
 
 const SurfaceSpeedForm = () => {
@@ -50,6 +50,7 @@ const SurfaceSpeedForm = () => {
   return (
     <Form legend={languages[langId].form1Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <FormInput
+        inputName="diameter"
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         inputRef={inputRef}
@@ -61,6 +62,7 @@ const SurfaceSpeedForm = () => {
         onChange={onDiameterChange}
       />
       <FormInput
+        inputName="rotationSpeed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}

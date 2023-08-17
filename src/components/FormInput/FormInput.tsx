@@ -5,38 +5,38 @@ import { Label } from '../Label';
 import { ChangeEvent } from 'react';
 
 interface FormInputProps {
+  inputName: string;
   name: string;
+  value: string;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   sub?: string;
   unit?: string;
   inputRef?: any;
-  value: string;
   min?: number;
   step?: number;
   placeholder?: string;
   disabled?: boolean;
-  readOnly?: boolean;
   autoFocus?: boolean;
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const FormInput = ({
+  inputName,
   name,
+  value,
+  onChange,
   sub,
   unit,
   inputRef,
-  value,
   min,
   step,
   placeholder,
   disabled,
-  readOnly,
   autoFocus,
-  onChange,
 }: FormInputProps) => {
   return (
     <FieldWrapper>
       <Label>
-        <label>
+        <label htmlFor={inputName}>
           {name}
           <TextSub>{sub}</TextSub>
           {unit}
@@ -44,6 +44,8 @@ export const FormInput = ({
       </Label>
       <Input
         ref={inputRef}
+        name={inputName}
+        id={inputName}
         value={value}
         type="number"
         min={min}
@@ -51,7 +53,6 @@ export const FormInput = ({
         placeholder={placeholder}
         required
         disabled={disabled}
-        readOnly={readOnly}
         autoFocus={autoFocus}
         onChange={onChange}
       />
