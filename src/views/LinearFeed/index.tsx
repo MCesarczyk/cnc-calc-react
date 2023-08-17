@@ -78,6 +78,7 @@ const LinearFeedForm = () => {
   return (
     <Form legend={languages[langId].form3Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <FormInput
+        inputName="rotationSpeed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
@@ -96,6 +97,7 @@ const LinearFeedForm = () => {
         setFeedFactor={onFeedChange}
       />
       <FormInput
+        inputName="feedFactor"
         name={languages[langId].teethNumber.name}
         value={feedType === 'FPT' ? toothNumber : ''}
         min={1}

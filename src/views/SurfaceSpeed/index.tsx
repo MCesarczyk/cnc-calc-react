@@ -50,6 +50,7 @@ const SurfaceSpeedForm = () => {
   return (
     <Form legend={languages[langId].form1Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <FormInput
+        inputName="diameter"
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         inputRef={inputRef}
@@ -61,6 +62,7 @@ const SurfaceSpeedForm = () => {
         onChange={onDiameterChange}
       />
       <FormInput
+        inputName="rotationSpeed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}

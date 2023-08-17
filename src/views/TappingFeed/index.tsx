@@ -57,6 +57,7 @@ const TappingFeedForm = () => {
   return (
     <Form legend={languages[langId].form4Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <FormInput
+        inputName='rotationSpeed'
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
@@ -76,12 +77,11 @@ const TappingFeedForm = () => {
         value={diameter}
         data={tapDiametersArray}
       />
-      <FormInput
+      <ResultField
         name={languages[langId].pitch.name}
         unit={languages[langId].pitch.unit}
         value={pitch}
         placeholder={languages[langId].pitch.placeholder}
-        readOnly
       />
       <ResultField
         name={languages[langId].feedrate.name}

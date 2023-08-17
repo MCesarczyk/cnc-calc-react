@@ -10,7 +10,7 @@ import { FormInput } from './FormInput';
 const setup = () =>
   render(
     <ThemeProvider theme={theme}>
-      <FormInput name={''} value={''} />
+      <FormInput inputName="" name={''} value={''} onChange={() => {}} />
     </ThemeProvider>,
   );
 
@@ -37,7 +37,7 @@ test("Input component shouldn't allow to input letters", () => {
 test('FormInput component rendering properly', () => {
   const input = renderer.create(
     <ThemeProvider theme={theme}>
-      <FormInput name={''} value={''} />
+      <FormInput inputName="" name={''} value={''} onChange={() => {}} />
     </ThemeProvider>,
   );
 
