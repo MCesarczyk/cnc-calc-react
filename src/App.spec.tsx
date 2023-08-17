@@ -37,7 +37,7 @@ test('Tool rotational speed form should be active after choose proper navigation
 });
 
 test('Linear feedrate form should be active after choose proper navigation button', async () => {
-  const { findAllByRole, findByText, findAllByText, rerender, debug } = render(testWithStyles(<App />, theme));
+  const { findAllByRole, findByText, findAllByText, rerender } = render(testWithStyles(<App />, theme));
 
   const linearFeedrateButtons = await findAllByRole('link', { name: 'Linear feedrate' });
   // two types of navigation buttons expected
@@ -52,7 +52,7 @@ test('Linear feedrate form should be active after choose proper navigation butto
 });
 
 test('Tapping feedrate form should be active after choose proper navigation button', async () => {
-  const { findAllByRole, findByText, findAllByText, rerender, debug } = render(testWithStyles(<App />, theme));
+  const { findAllByRole, findByText, findAllByText, rerender } = render(testWithStyles(<App />, theme));
 
   const tappingFeedrateButtons = await findAllByRole('link', { name: 'Tapping feedrate' });
   // two types of navigation buttons expected
@@ -77,11 +77,11 @@ test('Main menu should be active after click on main header', async () => {
 });
 
 test('Language switcher button marked "PL" should change language to polish', async () => {
-  const { findByRole, findByText, findAllByText, rerender, debug } = render(testWithStyles(<App />, theme));
+  const { findByRole, findByText, findAllByText } = render(testWithStyles(<App />, theme));
 
   const polishButton = await findByRole('button', { name: 'PL' });
   expect(polishButton).toBeInTheDocument();
-  fireEvent.click(polishButton);
+  fireEvent.click(polishButton); 
   await findByText('Kalkulator parametrów skrawania');
   expect(await findAllByText('Liniowa prędkość skrawania')).toHaveLength(3);
   expect(await findAllByText('Prędkość obrotowa narzędzia')).toHaveLength(3);

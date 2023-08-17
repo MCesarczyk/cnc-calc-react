@@ -62,6 +62,7 @@ exports[`FormSelect component rendering properly 1`] = `
   <select
     className="c3"
     id=""
+    onChange={[Function]}
     value=""
   >
     <option />

@@ -1,6 +1,5 @@
-import { ChangeEvent } from 'react';
+import { FormEvent, ChangeEvent, useContext, useEffect, useRef, useState } from 'react';
 
-import { FormEvent, useContext, useEffect, useRef, useState } from 'react';
 import ClipboardContext from 'features/clipboard/context';
 import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
@@ -57,7 +56,7 @@ const TappingFeedForm = () => {
   return (
     <Form legend={languages[langId].form4Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <FormInput
-        inputName='rotationSpeed'
+        inputName="rotationSpeed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
