@@ -3,7 +3,7 @@
   "author": "Michał Cesarczyk",
   "email": "michal.cesarczyk@gmail.com",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "homepage": "https://mcesarczyk.github.io/cnc-calc-react",
   "dependencies": {
@@ -16,6 +16,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.13.0",
     "react-scripts": "^5.0.1",
+    "standard-version": "^9.5.0",
     "styled-components": "^6.0.0-rc.3",
     "web-vitals": "^3.3.2"
   },
@@ -26,6 +27,7 @@
     ]
   },
   "scripts": {
+    "release": "standard-version",
     "start": "PORT=3005 react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint . --ext .ts,.tsx",
