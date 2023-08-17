@@ -34,7 +34,7 @@ So, don't hesitate to contact me on: michal.cesarczyk@gmail.com to propose anoth
 
 ![language versions](src/assets/images/language_switching.gif)
 
-1. Memory mode to transfer values beetween forms.
+3. Memory mode to transfer values beetween forms.
 
 - below is default forms behaviour:
 
