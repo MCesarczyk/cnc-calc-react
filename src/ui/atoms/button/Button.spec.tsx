@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'theme';
-import { Button } from 'ui/button/Button';
+import { Button } from 'ui/atoms/button/Button';
 import 'jest-styled-components';
 
 test('Default Button with states rendering properly', () => {

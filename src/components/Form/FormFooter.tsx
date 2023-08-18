@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from 'ui/button/Button';
+import { Button } from 'ui/atoms/button/Button';
 
 interface FormFooterProps {
   buttons: {
