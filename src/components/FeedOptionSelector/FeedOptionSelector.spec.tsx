@@ -1,16 +1,12 @@
 import { fireEvent, render } from '@testing-library/react';
-import renderer from 'react-test-renderer';
 import { ThemeProvider } from 'styled-components';
 import 'jest-styled-components';
 
 import { theme } from 'theme';
-import LanguageContext from 'features/language/context';
-import { FeedOptionSelector } from 'components/FeedOptionSelector';
-import { RadioButton } from 'components/RadioButton';
-import { FieldWrapper } from 'components/FieldWrapper';
-import { Input } from 'components/Input';
 import { FeedType } from 'types';
 import { Language } from 'features/language/types';
+import LanguageContext from 'features/language/context';
+import { FeedOptionSelector } from 'components/FeedOptionSelector';
 
 const langId: Language = 'EN';
 const setLangId = jest.fn();
@@ -24,7 +20,7 @@ const setFeedFactor = jest.fn();
 const setup = () => {
   const component = render(
     <ThemeProvider theme={theme}>
-      <LanguageContext.Provider value={{langId,setLangId}}>
+      <LanguageContext.Provider value={{ langId, setLangId }}>
         <FeedOptionSelector
           feedType={feedType}
           setFeedType={setFeedType}

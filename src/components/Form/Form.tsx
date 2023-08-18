@@ -2,7 +2,7 @@ import { FormEvent, ReactNode, useContext } from 'react';
 import styled from 'styled-components';
 
 import LanguageContext from 'features/language/context';
-import { createFormFooterButtons } from 'assets/utils/createFormFooterButtons';
+import { createFormFooterButtons } from 'utils/createFormFooterButtons';
 import { FormFooter } from './FormFooter';
 
 interface FormProps {

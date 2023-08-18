@@ -5,8 +5,8 @@ import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
 import languages from 'assets/fixtures/languages';
-import { focusForm } from 'assets/utils/focusForm';
-import { checkIfItsTouchDevice } from 'assets/utils/checkDeviceType';
+import { focusForm } from 'utils/focusForm';
+import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
 import { Form } from 'components/Form';
 import { FormInput } from 'components/FormInput/FormInput';
 import { FeedOptionSelector } from 'components/FeedOptionSelector';
@@ -78,6 +78,7 @@ const LinearFeedForm = () => {
   return (
     <Form legend={languages[langId].form3Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <FormInput
+        inputName="rotationSpeed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
@@ -96,6 +97,7 @@ const LinearFeedForm = () => {
         setFeedFactor={onFeedChange}
       />
       <FormInput
+        inputName="feedFactor"
         name={languages[langId].teethNumber.name}
         value={feedType === 'FPT' ? toothNumber : ''}
         min={1}

@@ -22,7 +22,7 @@ const data = [
 const setup = () =>
   render(
     <ThemeProvider theme={theme}>
-      <FormSelect data={data} name={''} id={''} value={''} onChange={undefined} />
+      <FormSelect data={data} name={''} id={''} value={''} onChange={() => {}} />
     </ThemeProvider>,
   );
 
@@ -50,7 +50,7 @@ test('Select component should display selected value', () => {
 test('FormSelect component rendering properly', () => {
   const component = renderer.create(
     <ThemeProvider theme={theme}>
-      <FormSelect data={data} name={''} id={''} value={''} onChange={undefined} />
+      <FormSelect data={data} name={''} id={''} value={''} onChange={() => {}} />
     </ThemeProvider>,
   );
 

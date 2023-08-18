@@ -58,7 +58,9 @@ exports[`FormInput component rendering properly 1`] = `
   <label
     className="c1"
   >
-    <label>
+    <label
+      htmlFor=""
+    >
       <span
         className="c2"
       />
@@ -66,6 +68,9 @@ exports[`FormInput component rendering properly 1`] = `
   </label>
   <input
     className="c3"
+    id=""
+    name=""
+    onChange={[Function]}
     required={true}
     type="number"
     value=""
