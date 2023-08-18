@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const SwitcherButton = styled.button<{ $active?: string }>`
   color: ${({ theme }) => theme.color.primary};
-  background-color: ${({ theme }) => theme.color.primaryContrast};
+  background-color: ${({ theme }) => theme.color.contrastText};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -12,7 +12,7 @@ export const SwitcherButton = styled.button<{ $active?: string }>`
   ${({ $active }) =>
     $active === 'active' &&
     css`
-      border-color: ${({ theme }) => theme.color.primaryContrast};
+      border-color: ${({ theme }) => theme.color.contrastText};
     `}
 
   &:hover {

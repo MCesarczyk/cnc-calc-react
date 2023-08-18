@@ -41,7 +41,7 @@ export const ResultCopyButton = styled.button`
   background: transparent;
   border: none;
   outline: none;
-  color: ${({ theme }) => theme.color.copyButtonFont};
+  color: ${({ theme }) => theme.color.copyButtonText};
   margin-left: 0.5rem;
 
   &:hover {

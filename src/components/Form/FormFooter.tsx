@@ -36,7 +36,7 @@ export const FooterButton = styled.button`
   min-width: 12rem;
   width: 100%;
   justify-content: center;
-  color: ${({ theme }) => theme.color.primaryContrast};
+  color: ${({ theme }) => theme.color.contrastText};
   background-color: ${({ theme }) => theme.color.primary};
   border: solid ${({ theme }) => theme.color.primary};
   padding: 0.25rem;
@@ -54,12 +54,12 @@ export const FooterButton = styled.button`
   ${({ type }) =>
     type === 'submit' &&
     css`
-      color: ${({ theme }) => theme.color.submitButtonFont};
+      color: ${({ theme }) => theme.color.submitButtonText};
     `}
 
   ${({ type }) =>
     type === 'reset' &&
     css`
-      color: ${({ theme }) => theme.color.resetButtonFont};
+      color: ${({ theme }) => theme.color.resetButtonText};
     `}
 `;

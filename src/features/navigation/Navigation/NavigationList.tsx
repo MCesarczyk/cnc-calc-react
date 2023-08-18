@@ -28,7 +28,7 @@ const List = styled.ul`
 `;
 
 export const Item = styled(NavLink)<{ $sidebar?: boolean }>`
-  color: ${({ theme }) => theme.color.primaryContrast};
+  color: ${({ theme }) => theme.color.contrastText};
   background-color: ${({ theme }) => theme.color.primary};
   display: block;
   font-size: 1.25rem;

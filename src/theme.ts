@@ -1,12 +1,12 @@
 export const theme = {
   color: {
     primary: '#1e3246',
-    primaryContrast: '#fff',
     primaryText: '#000',
+    contrastText: '#fff',
     background: '#133246',
-    submitButtonFont: '#19aa6e',
-    resetButtonFont: '#dc3223',
-    copyButtonFont: '#dc143c',
+    submitButtonText: '#19aa6e',
+    resetButtonText: '#dc3223',
+    copyButtonText: '#dc143c',
     activeNavlinkText: '#2188FF',
     invalid: 'beige',
     disabled: '#ddd',
