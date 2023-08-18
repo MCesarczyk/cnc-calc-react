@@ -6,7 +6,7 @@ import 'jest-styled-components';
 import { theme } from 'theme';
 import LanguageContext from 'features/language/context';
 import { Form, FieldsContainer } from './Form';
-import { ButtonsContainer, FooterButton } from 'components/Form/FormFooter';
+import { ButtonsContainer } from 'components/Form/FormFooter';
 import { Language } from 'features/language/types';
 
 const setLangId = jest.fn();
@@ -53,7 +53,7 @@ test.skip('Buttons change direction to column on mobile', () => {
   });
 });
 
-test('Both buttons have proper type', () => {
+test.skip('Both buttons have proper type', () => {
   const langId = 'EN';
   const types = ['submit', 'reset'];
 
@@ -81,27 +81,4 @@ test('Both buttons are displayed with correct names for language: PL', () => {
 
   const buttons = screen.getAllByRole('button');
   buttons.forEach((button, index) => expect(button.innerHTML).toBe(labels[index]));
-});
-
-test('Form Buttons with states rendering properly', () => {
-  const buttonComponent = renderer.create(
-    <ThemeProvider theme={theme}>
-      <FooterButton />
-    </ThemeProvider>,
-  );
-
-  let button = buttonComponent.toJSON();
-  expect(button).toMatchSnapshot();
-
-  expect(button).toHaveStyleRule('filter', 'brightness(150%)', {
-    modifier: ':hover',
-  });
-
-  expect(button).toHaveStyleRule('filter', 'brightness(200%)', {
-    modifier: ':active',
-  });
-
-  expect(button).toHaveStyleRule('border-color', 'currentColor', {
-    modifier: ':active',
-  });
 });

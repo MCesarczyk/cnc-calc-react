@@ -1,7 +1,46 @@
-import { css, styled } from 'styled-components';
+import { CSSProperties } from 'react';
+import styled from 'styled-components';
+
+export type ButtonVariants = 'DEFAULT' | 'SUBMIT' | 'RESET';
+
+type ButtonStyles = Required<
+  Pick<CSSProperties, 'color' | 'backgroundColor' | 'borderColor'> & {
+    disabledColor?: CSSProperties['color'];
+    disabledBackgroundColor?: CSSProperties['backgroundColor'];
+  }
+>;
+
+export type Palette<TVariants extends string, TStyles> = {
+  [variant in TVariants]: TStyles;
+};
+
+const styles: Palette<ButtonVariants, ButtonStyles> = {
+  DEFAULT: {
+    color: 'contrastText',
+    backgroundColor: 'primary',
+    borderColor: 'primary',
+    disabledColor: 'disabledText',
+    disabledBackgroundColor: 'disabledBackground',
+  },
+  SUBMIT: {
+    color: 'submitButtonText',
+    backgroundColor: 'primary',
+    borderColor: 'primary',
+    disabledColor: 'disabledText',
+    disabledBackgroundColor: 'disabledBackground',
+  },
+  RESET: {
+    color: 'resetButtonText',
+    backgroundColor: 'primary',
+    borderColor: 'primary',
+    disabledColor: 'disabledText',
+    disabledBackgroundColor: 'disabledBackground',
+  },
+};
 
 interface ButtonProps {
-  type: 'primary' | 'submit' | 'reset';
+  $variant?: ButtonVariants;
+  disabled?: boolean;
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -9,9 +48,9 @@ export const Button = styled.button<ButtonProps>`
   min-width: 12rem;
   width: 100%;
   justify-content: center;
-  color: ${({ theme }) => theme.color.primaryContrast};
-  background-color: ${({ theme }) => theme.color.primary};
-  border: solid ${({ theme }) => theme.color.primary};
+  color: ${(props) => props.theme.color[styles[props.$variant!].color]};
+  background-color: ${(props) => props.theme.color[styles[props.$variant!].backgroundColor]};
+  border: solid ${(props) => props.theme.color[styles[props.$variant!].borderColor]};
   padding: 0.25rem;
   border-radius: 1.5rem;
 
@@ -20,19 +59,20 @@ export const Button = styled.button<ButtonProps>`
   }
 
   &:active {
-    filter: brightness(200%);
-    border-color: currentColor;
+    filter: brightness(100%);
   }
 
-  ${({ type }) =>
-    type === 'submit' &&
-    css`
-      color: ${({ theme }) => theme.color.submitButtonFont};
-    `}
-
-  ${({ type }) =>
-    type === 'reset' &&
-    css`
-      color: ${({ theme }) => theme.color.resetButtonFont};
-    `}
+  &:disabled {
+    color: ${(props) => props.theme.color[styles[props.$variant!].disabledColor]};
+    background-color: ${(props) => props.theme.color[styles[props.$variant!].disabledBackgroundColor]};
+    border-color: ${(props) => props.theme.color[styles[props.$variant!].disabledBackgroundColor]};
+    pointer-events: none;
+    cursor: default;
+  }
 `;
+
+Button.defaultProps = {
+  $variant: 'DEFAULT',
+};
+
+Button.displayName = 'Button';

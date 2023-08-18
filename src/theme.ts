@@ -1,6 +1,7 @@
 export const theme = {
   color: {
     primary: '#1e3246',
+    primaryLight: '#2e4c6b',
     primaryText: '#000',
     contrastText: '#fff',
     background: '#133246',
@@ -10,6 +11,8 @@ export const theme = {
     activeNavlinkText: '#2188FF',
     invalid: 'beige',
     disabled: '#ddd',
+    disabledText: '#808080',
+    disabledBackground: '#ddd',
     placeholder: '#747474',
   },
   breakpoint: {
