@@ -1,7 +1,7 @@
-import { Label } from '../../ui/atoms/Label';
-import { TextSub } from '../TextSub/TextSub';
-import { Select } from '../Select/Select';
-import { FieldWrapper } from 'ui/atoms/FieldWrapper';
+import { Label } from '../../ui/atoms/label';
+import { TextSub } from '../../ui/atoms/textSub';
+import { Select } from '../Select';
+import { FieldWrapper } from 'ui/atoms/fieldWrapper';
 
 interface FormSelectProps {
   name: string;

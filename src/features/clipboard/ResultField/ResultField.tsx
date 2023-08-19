@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import { TextSub } from 'components/TextSub';
-import { Label } from 'ui/atoms/Label';
-import { FieldWrapper } from 'ui/atoms/FieldWrapper';
+import { TextSub } from 'ui/atoms/textSub';
+import { Label } from 'ui/atoms/label';
+import { FieldWrapper } from 'ui/atoms/fieldWrapper';
 
 interface ResultFieldProps {
   name: string;

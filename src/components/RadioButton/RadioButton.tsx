@@ -1,9 +1,9 @@
 import { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
-import { TextSub } from '../TextSub/TextSub';
 import { FeedOption } from 'types';
-import { Input } from 'ui/atoms/input/Input';
+import { TextSub } from 'ui/atoms/textSub';
+import { Input } from 'ui/atoms/input';
 
 interface RadioButtonProps {
   name: string;
