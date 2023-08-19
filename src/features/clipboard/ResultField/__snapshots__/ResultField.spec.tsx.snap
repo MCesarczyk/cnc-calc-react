@@ -8,6 +8,10 @@ exports[`ResultField component rendering properly 1`] = `
   justify-content: space-between;
 }
 
+.c1 {
+  text-align: right;
+}
+
 .c2 {
   border: solid 1px #1e3246;
   border-radius: 5px;
@@ -22,10 +26,6 @@ exports[`ResultField component rendering properly 1`] = `
   background-color: #ddd;
 }
 
-.c1 {
-  text-align: right;
-}
-
 @media (max-width: 480px) {
   .c0 {
     flex-direction: column;
@@ -35,14 +35,14 @@ exports[`ResultField component rendering properly 1`] = `
 }
 
 @media (max-width: 480px) {
-  .c2 {
-    width: 100%;
+  .c1 {
+    align-self: flex-start;
   }
 }
 
 @media (max-width: 480px) {
-  .c1 {
-    align-self: flex-start;
+  .c2 {
+    width: 100%;
   }
 }
 

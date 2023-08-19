@@ -4,7 +4,6 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { theme } from 'theme';
-import { Input } from '../Input';
 import { FormInput } from './FormInput';
 
 const setup = () =>
@@ -34,7 +33,7 @@ test("Input component shouldn't allow to input letters", () => {
   expect(input.value).toBe('');
 });
 
-test('FormInput component rendering properly', () => {
+test('FormInput component rendering properly with styles', () => {
   const input = renderer.create(
     <ThemeProvider theme={theme}>
       <FormInput inputName="" name={''} value={''} onChange={() => {}} />
@@ -44,22 +43,4 @@ test('FormInput component rendering properly', () => {
   let tree = input.toJSON();
 
   expect(tree).toMatchSnapshot();
-});
-
-test('Input component change style on actions', () => {
-  const input = renderer.create(
-    <ThemeProvider theme={theme}>
-      <Input />
-    </ThemeProvider>,
-  );
-
-  let tree = input.toJSON();
-
-  expect(tree).toHaveStyleRule('background-color', 'beige', {
-    modifier: ':invalid',
-  });
-
-  expect(tree).toHaveStyleRule('background-color', '#ddd', {
-    modifier: ':disabled',
-  });
 });

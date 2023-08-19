@@ -1,8 +1,8 @@
 import { FieldWrapper } from '../FieldWrapper';
-import { Input } from '../Input';
 import { TextSub } from '../TextSub/TextSub';
 import { Label } from '../Label';
 import { ChangeEvent } from 'react';
+import { Input } from 'ui/atoms/input/Input';
 
 interface FormInputProps {
   inputName: string;

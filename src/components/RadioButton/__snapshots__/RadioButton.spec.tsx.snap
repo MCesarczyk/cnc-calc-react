@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio button rendered properly 1`] = `
+.c2 {
+  vertical-align: sub;
+  font-size: 0.7em;
+  margin-right: 0.15em;
+}
+
 .c1 {
   border: solid 1px #1e3246;
   border-radius: 5px;
@@ -13,12 +19,6 @@ exports[`Radio button rendered properly 1`] = `
 
 .c1:disabled {
   background-color: #ddd;
-}
-
-.c2 {
-  vertical-align: sub;
-  font-size: 0.7em;
-  margin-right: 0.15em;
 }
 
 .c0 {

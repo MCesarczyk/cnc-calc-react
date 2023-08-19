@@ -3,9 +3,9 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { FieldWrapper } from 'components/FieldWrapper';
-import { Input } from 'components/Input';
 import { Label } from 'components/Label';
 import { theme } from 'theme';
+import { Input } from 'ui/atoms/input/Input';
 
 test('ResultField component rendering properly', () => {
   const component = renderer.create(

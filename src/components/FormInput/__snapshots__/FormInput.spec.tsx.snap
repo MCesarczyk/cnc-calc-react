@@ -1,20 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FormInput component rendering properly 1`] = `
-.c3 {
-  border: solid 1px #1e3246;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.c3:invalid {
-  background-color: beige;
-}
-
-.c3:disabled {
-  background-color: #ddd;
-}
-
+exports[`FormInput component rendering properly with styles 1`] = `
 .c0 {
   display: flex;
   gap: 0.5rem;
@@ -32,10 +18,18 @@ exports[`FormInput component rendering properly 1`] = `
   text-align: right;
 }
 
-@media (max-width: 480px) {
-  .c3 {
-    width: 100%;
-  }
+.c3 {
+  border: solid 1px #1e3246;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.c3:invalid {
+  background-color: beige;
+}
+
+.c3:disabled {
+  background-color: #ddd;
 }
 
 @media (max-width: 480px) {
@@ -49,6 +43,12 @@ exports[`FormInput component rendering properly 1`] = `
 @media (max-width: 480px) {
   .c1 {
     align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .c3 {
+    width: 100%;
   }
 }
 
