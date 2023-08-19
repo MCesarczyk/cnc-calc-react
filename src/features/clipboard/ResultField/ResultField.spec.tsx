@@ -2,10 +2,10 @@ import { ThemeProvider } from 'styled-components';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-import { FieldWrapper } from 'components/FieldWrapper';
-import { Label } from 'components/Label';
+import { Label } from 'ui/atoms/Label';
 import { theme } from 'theme';
 import { Input } from 'ui/atoms/input/Input';
+import { FieldWrapper } from 'ui/atoms/FieldWrapper';
 
 test('ResultField component rendering properly', () => {
   const component = renderer.create(

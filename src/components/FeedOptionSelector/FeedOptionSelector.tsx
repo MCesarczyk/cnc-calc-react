@@ -5,8 +5,8 @@ import { Language } from 'features/language/types';
 import LanguageContext from 'features/language/context';
 import { createFeedOptions } from 'utils/createFeedOptions';
 import { RadioButton } from '../RadioButton/RadioButton';
-import { FieldWrapper } from '../FieldWrapper';
 import { Input } from 'ui/atoms/input/Input';
+import { FieldWrapper } from 'ui/atoms/FieldWrapper';
 
 interface FeedOptionSelectorProps {
   feedType: FeedType;

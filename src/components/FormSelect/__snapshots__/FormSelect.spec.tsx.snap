@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FormSelect component rendering properly 1`] = `
-.c0 {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .c1 {
   text-align: right;
 }
@@ -25,12 +18,11 @@ exports[`FormSelect component rendering properly 1`] = `
   padding: 5px;
 }
 
-@media (max-width: 480px) {
-  .c0 {
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.25rem;
-  }
+.c0 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 480px) {
@@ -42,6 +34,14 @@ exports[`FormSelect component rendering properly 1`] = `
 @media (max-width: 480px) {
   .c3 {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .c0 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
   }
 }
 
