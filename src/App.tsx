@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { styled } from 'styled-components';
 
+import { AUTHOR_PAGE_ADDRESS, AUTHOR_PAGE_LABEL, DATE } from 'assets/fixtures/author';
 import { Navigation, NavigationWrapper } from 'features/navigation/Navigation';
 import { ClipboardSwitcher } from 'features/clipboard/Switcher';
 import { Language } from 'features/language/types';
@@ -16,7 +17,7 @@ import ToolRotationForm from 'views/ToolRotation';
 import LinearFeedForm from 'views/LinearFeed';
 import TappingFeedForm from 'views/TappingFeed';
 import { Header } from 'components/Header/Header';
-import { Footer } from 'components/Footer/Footer';
+import { Footer } from 'ui/organisms/footer';
 
 const App = () => {
   const [langId, setLangId] = useLocalStorageState<Language>('langId', 'EN');
@@ -47,7 +48,7 @@ const App = () => {
               </Routes>
             </Wrapper>
 
-            <Footer />
+            <Footer date={DATE} url={AUTHOR_PAGE_ADDRESS} label={AUTHOR_PAGE_LABEL} />
           </HashRouter>
         </ClipboardProvider>
       </NavigationProvider>

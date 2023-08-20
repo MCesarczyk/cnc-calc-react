@@ -6,7 +6,7 @@ import { theme } from 'theme';
 import { FeedType } from 'types';
 import { Language } from 'features/language/types';
 import LanguageContext from 'features/language/context';
-import { FeedOptionSelector } from 'components/FeedOptionSelector';
+import { FeedOptionSelector } from 'ui/organisms/feedOptionSelector/FeedOptionSelector';
 
 const langId: Language = 'EN';
 const setLangId = jest.fn();
@@ -22,6 +22,24 @@ const setup = () => {
     <ThemeProvider theme={theme}>
       <LanguageContext.Provider value={{ langId, setLangId }}>
         <FeedOptionSelector
+          feedOptions={[
+            {
+              id: 'FPR',
+              name: 'f',
+              sub: 'r',
+              unit: ' [mm/rev]:',
+              placeholder: 'feed per rev.',
+              disabled: true,
+            },
+            {
+              id: 'FPT',
+              name: 'f',
+              sub: 't',
+              unit: ' [mm]:',
+              placeholder: 'feed per tooth',
+              disabled: false,
+            },
+          ]}
           feedType={feedType}
           setFeedType={setFeedType}
           feedFactor={feedFactor}

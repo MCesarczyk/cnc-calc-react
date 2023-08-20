@@ -4,13 +4,15 @@ import { FeedType } from 'types';
 import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
-import languages from 'assets/fixtures/languages';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
+import languages from 'assets/fixtures/languages';
 import { Form } from 'components/Form';
-import { FeedOptionSelector } from 'components/FeedOptionSelector';
 import { LabeledInput } from 'ui/molecules/labeledInput';
+import { FeedOptionSelector } from 'ui/organisms/feedOptionSelector';
 import { calculateFeedrate } from './equation';
+import { createFeedOptions } from 'utils/createFeedOptions';
+import { Language } from 'features/language/types';
 
 const LinearFeedForm = () => {
   const { langId } = useContext(LanguageContext);
@@ -23,6 +25,7 @@ const LinearFeedForm = () => {
   const [feedPerTooth, setFeedPerTooth] = useState(feedPerToothInitial);
   const [feedrate, setFeedrate] = useState<string>('');
   const [feedType, setFeedType] = useState<FeedType>('FPR');
+  const feedOptions = createFeedOptions(langId as Language);
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -91,6 +94,7 @@ const LinearFeedForm = () => {
         onChange={(e: ChangeEvent<HTMLInputElement>) => setRotationSpeed(e.target.value)}
       />
       <FeedOptionSelector
+        feedOptions={feedOptions}
         feedType={feedType}
         setFeedType={setFeedType}
         feedFactor={feedType === 'FPR' ? feedPerRevolution : feedPerTooth}

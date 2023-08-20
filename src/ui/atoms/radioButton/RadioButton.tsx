@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties } from 'react';
+import { ChangeEvent } from 'react';
 import styled from 'styled-components';
 
 import { FeedOption } from 'types';
@@ -7,25 +7,8 @@ import { Input } from 'ui/atoms/input';
 
 export type RadioButtonVariants = 'DEFAULT';
 
-type RadioButtonStyles = Required<
-  Pick<CSSProperties, 'color' | 'backgroundColor' | 'borderColor'> & {
-    disabledText?: CSSProperties['color'];
-    disabledBackgroundColor?: CSSProperties['backgroundColor'];
-  }
->;
-
 export type Palette<TVariants extends string, TStyles> = {
   [variant in TVariants]: TStyles;
-};
-
-const styles: Palette<RadioButtonVariants, RadioButtonStyles> = {
-  DEFAULT: {
-    color: 'primaryText',
-    backgroundColor: 'elementBackground',
-    borderColor: 'primary',
-    disabledText: 'disabledText',
-    disabledBackgroundColor: 'disabledBackground',
-  },
 };
 
 interface RadioButtonProps {

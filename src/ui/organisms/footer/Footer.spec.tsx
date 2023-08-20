@@ -4,12 +4,13 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 import { theme } from 'theme';
-import { Footer, FooterLink } from './Footer';
+import { Footer } from './Footer';
+import { Link } from 'ui/atoms/link';
 
 test('Footer contains link to author homepage', () => {
   render(
     <ThemeProvider theme={theme}>
-      <Footer />
+      <Footer date={1410} url="www.uvonjungingen.com" label="Ulrich von Jungingen" />
     </ThemeProvider>,
   );
 
@@ -17,23 +18,12 @@ test('Footer contains link to author homepage', () => {
   expect(content).toBeInTheDocument();
 
   const link = screen.getByRole('link');
-  expect(link.innerHTML).toBe('Cesarczyk.dev');
-  expect(link).toHaveAttribute('href', 'https://home.cesarczyk.dev');
-});
-
-test('Footer rendered properly', () => {
-  const footerComponent = renderer.create(
-    <ThemeProvider theme={theme}>
-      <Footer />
-    </ThemeProvider>,
-  );
-
-  let footer = footerComponent.toJSON();
-  expect(footer).toMatchSnapshot();
+  expect(link.innerHTML).toBe('Ulrich von Jungingen');
+  expect(link).toHaveAttribute('href', 'www.uvonjungingen.com');
 });
 
 test('Link change style on hover', () => {
-  const linkComponent = renderer.create(<FooterLink />);
+  const linkComponent = renderer.create(<Link href="#" />);
 
   let link = linkComponent.toJSON();
   expect(link).toHaveStyleRule('color', 'crimson', {
