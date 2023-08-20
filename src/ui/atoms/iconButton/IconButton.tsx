@@ -1,30 +1,24 @@
-import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { ReactComponent as MenuThumbnail } from "assets/images/hamburger-menu.svg";
-
-interface MenuIconProps {
+interface IconButtonProps {
+  children: React.ReactNode;
+  disabled?: boolean;
   onClick: () => void;
 }
 
-export const MenuIcon = ({ onClick }: MenuIconProps) => {
-  const { pathname } = useLocation();
+export const IconButton = ({ children, disabled, onClick }: IconButtonProps) => (
+  <IconButtonWrapper onClick={onClick} disabled={disabled}>
+    {children}
+  </IconButtonWrapper>
+);
 
-  return (
-    <MenuIconWrapper onClick={onClick} disabled={pathname === '/'}>
-      <MenuThumbnail />
-    </MenuIconWrapper>
-  );
-};
-
-export const MenuIconWrapper = styled.button`
+const IconButtonWrapper = styled.button<{ disabled?: boolean }>`
   height: 1.5rem;
   margin: 0.5rem;
   margin-right: 1rem;
   background: transparent;
   border: none;
   color: inherit;
-  display: none;
   z-index: 25;
 
   &:hover {
@@ -53,3 +47,5 @@ export const MenuIconWrapper = styled.button`
     margin: 0;
   }
 `;
+
+IconButton.displayName = 'IconButton';

@@ -1,22 +1,28 @@
 import { useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import LanguageContext from 'features/language/context';
 import NavigationContext from 'features/navigation/context';
 import LanguageSwitcher from 'features/language/Switcher';
 import languages from 'assets/fixtures/languages';
-import { MenuIcon } from './MenuIcon';
-import { Title } from './Title';
+import { IconButton } from 'ui/atoms/iconButton';
+import { Title } from 'ui/atoms/title';
+import { ReactComponent as MenuThumbnail } from 'assets/images/hamburger-menu.svg';
 
 export const Header = () => {
+  const { pathname } = useLocation();
+
   const { langId } = useContext(LanguageContext);
   const { open, setOpen } = useContext(NavigationContext);
 
   return (
     <header id="start">
       <AppBar>
-        <MenuIcon onClick={() => setOpen(!open)} />
-        <Title title={languages[langId]?.mainTitle} />
+        <IconButton disabled={pathname === '/'} onClick={() => setOpen(!open)}>
+          <MenuThumbnail />
+        </IconButton>
+        <Title url="/" title={languages[langId]?.mainTitle} />
         <LanguageSwitcher />
       </AppBar>
     </header>
