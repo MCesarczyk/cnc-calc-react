@@ -4,10 +4,10 @@ import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
 import { Form } from 'components/Form';
-import { FormInput } from 'components/FormInput/FormInput';
 import languages from 'assets/fixtures/languages';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
+import { LabeledInput } from 'ui/molecules/labeledInput';
 import { calculateRotationSpeed } from './equation';
 
 const ToolRotationForm = () => {
@@ -49,7 +49,7 @@ const ToolRotationForm = () => {
 
   return (
     <Form legend={languages[langId].form2Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
-      <FormInput
+      <LabeledInput
         inputName='diameter'
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
@@ -61,7 +61,7 @@ const ToolRotationForm = () => {
         autoFocus={!checkIfItsTouchDevice()}
         onChange={onDiameterChange}
       />
-      <FormInput
+      <LabeledInput
         inputName='cuttingSpeed'
         name={languages[langId].cutSpeed.name}
         sub={languages[langId].cutSpeed.sub}

@@ -8,8 +8,8 @@ import languages from 'assets/fixtures/languages';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
 import { Form } from 'components/Form';
-import { FormInput } from 'components/FormInput/FormInput';
 import { FeedOptionSelector } from 'components/FeedOptionSelector';
+import { LabeledInput } from 'ui/molecules/labeledInput';
 import { calculateFeedrate } from './equation';
 
 const LinearFeedForm = () => {
@@ -77,7 +77,7 @@ const LinearFeedForm = () => {
 
   return (
     <Form legend={languages[langId].form3Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
-      <FormInput
+      <LabeledInput
         inputName="rotationSpeed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
@@ -96,7 +96,7 @@ const LinearFeedForm = () => {
         feedFactor={feedType === 'FPR' ? feedPerRevolution : feedPerTooth}
         setFeedFactor={onFeedChange}
       />
-      <FormInput
+      <LabeledInput
         inputName="feedFactor"
         name={languages[langId].teethNumber.name}
         value={feedType === 'FPT' ? toothNumber : ''}

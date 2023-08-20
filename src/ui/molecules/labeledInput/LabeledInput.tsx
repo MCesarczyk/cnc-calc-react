@@ -1,10 +1,11 @@
-import { TextSub } from '../../ui/atoms/textSub';
-import { Label } from '../../ui/atoms/label';
 import { ChangeEvent } from 'react';
+
 import { Input } from 'ui/atoms/input';
+import { Label } from 'ui/atoms/label';
+import { TextSub } from 'ui/atoms/textSub';
 import { FieldWrapper } from 'ui/atoms/fieldWrapper';
 
-interface FormInputProps {
+interface LabeledInputProps {
   inputName: string;
   name: string;
   value: string;
@@ -19,7 +20,7 @@ interface FormInputProps {
   autoFocus?: boolean;
 }
 
-export const FormInput = ({
+export const LabeledInput = ({
   inputName,
   name,
   value,
@@ -32,7 +33,7 @@ export const FormInput = ({
   placeholder,
   disabled,
   autoFocus,
-}: FormInputProps) => {
+}: LabeledInputProps) => {
   return (
     <FieldWrapper>
       <Label>
