@@ -18,5 +18,7 @@ exports[`Text sub rendered properly 1`] = `
 
 <div
   className="c0"
-/>
+>
+  Sample content
+</div>
 `;

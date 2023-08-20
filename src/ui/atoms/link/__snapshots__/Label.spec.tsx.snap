@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text sub rendered properly 1`] = `
+.c0 {
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .c0 {
+    align-self: flex-start;
+  }
+}
+
+<label
+  className="c0"
+/>
+`;
