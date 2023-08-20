@@ -11,9 +11,10 @@ interface FormSelectProps {
   value: string;
   data: any[];
   onChange: any;
+  disabled?: boolean;
 }
 
-export const FormSelect = ({ name, sub, unit, id, value, data, onChange }: FormSelectProps) => {
+export const LabeledSelect = ({ name, sub, unit, id, value, data, onChange, disabled }: FormSelectProps) => {
   return (
     <FieldWrapper>
       <Label>
@@ -23,7 +24,7 @@ export const FormSelect = ({ name, sub, unit, id, value, data, onChange }: FormS
           {unit}
         </label>
       </Label>
-      <Select id={id} value={value} onChange={onChange}>
+      <Select id={id} value={value} onChange={onChange} disabled={disabled}>
         {data.map((item) => (
           <option key={item.key}>{item.value}</option>
         ))}

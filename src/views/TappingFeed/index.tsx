@@ -4,11 +4,11 @@ import ClipboardContext from 'features/clipboard/context';
 import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
 import { Form } from 'components/Form';
-import { FormSelect } from 'components/FormSelect';
 import languages from 'assets/fixtures/languages';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
 import { LabeledInput } from 'ui/molecules/labeledInput';
+import { LabeledSelect } from 'ui/molecules/labeledSelect';
 import { calculateTappingFeed, setPitchValue, tapDiametersArray } from './equation';
 
 const TappingFeedForm = () => {
@@ -68,7 +68,7 @@ const TappingFeedForm = () => {
         autoFocus={!checkIfItsTouchDevice()}
         onChange={(e: ChangeEvent<HTMLInputElement>) => setRotationSpeed(e.target.value)}
       />
-      <FormSelect
+      <LabeledSelect
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         id="diameterSelector"
