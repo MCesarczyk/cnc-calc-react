@@ -11,6 +11,13 @@ exports[`FormSelect component rendering properly 1`] = `
   margin-right: 0.15em;
 }
 
+.c0 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .c3 {
   min-width: 16rem;
   border: solid 1px #1e3246;
@@ -18,11 +25,10 @@ exports[`FormSelect component rendering properly 1`] = `
   padding: 5px;
 }
 
-.c0 {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
+.c3:disabled {
+  background-color: #ddd;
+  color: #808080;
+  border-color: #808080;
 }
 
 @media (max-width: 480px) {
@@ -32,16 +38,16 @@ exports[`FormSelect component rendering properly 1`] = `
 }
 
 @media (max-width: 480px) {
-  .c3 {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
   .c0 {
     flex-direction: column;
     justify-content: center;
     gap: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .c3 {
+    width: 100%;
   }
 }
 
