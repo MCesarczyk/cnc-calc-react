@@ -3,11 +3,11 @@ import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from 
 import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
-import { Form } from 'components/Form';
 import languages from 'assets/fixtures/languages';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
 import { LabeledInput } from 'ui/molecules/labeledInput';
+import { Form } from 'ui/organisms/form';
 import { calculateCuttingSpeed } from './equation';
 
 const SurfaceSpeedForm = () => {

@@ -4,15 +4,15 @@ import { FeedType } from 'types';
 import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
+import { Language } from 'features/language/types';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
+import { createFeedOptions } from 'utils/createFeedOptions';
 import languages from 'assets/fixtures/languages';
-import { Form } from 'components/Form';
 import { LabeledInput } from 'ui/molecules/labeledInput';
 import { FeedOptionSelector } from 'ui/organisms/feedOptionSelector';
+import { Form } from 'ui/organisms/form';
 import { calculateFeedrate } from './equation';
-import { createFeedOptions } from 'utils/createFeedOptions';
-import { Language } from 'features/language/types';
 
 const LinearFeedForm = () => {
   const { langId } = useContext(LanguageContext);

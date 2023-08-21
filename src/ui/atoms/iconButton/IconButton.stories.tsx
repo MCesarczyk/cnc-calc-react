@@ -3,8 +3,8 @@ import { withRouter } from 'storybook-addon-react-router-v6';
 
 import type { Meta, StoryFn } from '@storybook/react';
 
-import { IconButton } from './IconButton';
 import { ReactComponent as MenuThumbnail } from 'assets/images/hamburger-menu.svg';
+import { IconButton } from './IconButton';
 
 const meta = {
   title: 'Atoms/IconButton',

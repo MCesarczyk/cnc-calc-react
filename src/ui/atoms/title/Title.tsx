@@ -13,6 +13,9 @@ export const Title = ({ title, url }: TitleProps) => (
 );
 
 const HomeLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+
   &:hover {
     filter: brightness(0.8);
   }
@@ -31,6 +34,7 @@ const Headline = styled.h1`
   font-weight: 300;
   font-family: 'Ubuntu', sans-serif;
   text-align: center;
+  color: inherit;
   margin: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.md}) {

@@ -5,7 +5,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 import { Footer } from './Footer';
 
 const meta = {
-  title: 'Molecules/Footer',
+  title: 'Organisms/Footer',
   component: Footer,
   parameters: {
     layout: 'centered',

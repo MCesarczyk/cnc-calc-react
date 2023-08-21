@@ -6,8 +6,8 @@ import 'jest-styled-components';
 import { theme } from 'theme';
 import LanguageContext from 'features/language/context';
 import { Form, FieldsContainer } from './Form';
-import { ButtonsContainer } from 'components/Form/FormFooter';
 import { Language } from 'features/language/types';
+import { ButtonsContainer } from 'ui/organisms/form/FormFooter';
 
 const setLangId = jest.fn();
 const onReset = jest.fn();

@@ -10,7 +10,11 @@ import { IconButton } from 'ui/atoms/iconButton';
 import { Title } from 'ui/atoms/title';
 import { ReactComponent as MenuThumbnail } from 'assets/images/hamburger-menu.svg';
 
-export const Header = () => {
+interface HeaderProps {
+  homeUrl: string;
+}
+
+export const Header = ({ homeUrl }: HeaderProps) => {
   const { pathname } = useLocation();
 
   const { langId } = useContext(LanguageContext);
@@ -19,10 +23,10 @@ export const Header = () => {
   return (
     <header id="start">
       <AppBar>
-        <IconButton disabled={pathname === '/'} onClick={() => setOpen(!open)}>
+        <IconButton disabled={pathname === homeUrl} onClick={() => setOpen(!open)}>
           <MenuThumbnail />
         </IconButton>
-        <Title url="/" title={languages[langId]?.mainTitle} />
+        <Title url={homeUrl} title={languages[langId]?.mainTitle} />
         <LanguageSwitcher />
       </AppBar>
     </header>

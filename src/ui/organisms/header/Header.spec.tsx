@@ -16,7 +16,7 @@ const setup = (langId: Language, open: boolean) =>
       {/* @ts-ignore */}
         <NavigationContext.Provider value={open}>
           <BrowserRouter>
-            <Header />
+            <Header homeUrl='/' />
           </BrowserRouter>
         </NavigationContext.Provider>
       </LanguageContext.Provider>

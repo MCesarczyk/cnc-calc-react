@@ -19,6 +19,7 @@ const IconButtonWrapper = styled.button<{ disabled?: boolean }>`
   background: transparent;
   border: none;
   color: inherit;
+  display: none;
   z-index: 25;
 
   &:hover {
