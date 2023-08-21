@@ -7,7 +7,7 @@ import { FieldWrapper } from 'ui/atoms/fieldWrapper';
 interface ResultFieldProps {
   name: string;
   unit: string;
-  value: string;
+  value?: string;
   placeholder: string;
   sub?: string;
 }

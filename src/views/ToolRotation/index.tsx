@@ -1,12 +1,12 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from 'react';
 
 import LanguageContext from 'features/language/context';
-import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
 import languages from 'assets/fixtures/languages';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
 import { LabeledInput } from 'ui/molecules/labeledInput';
+import { ResultField } from 'ui/molecules/resultField';
 import { Form } from 'ui/organisms/form';
 import { calculateRotationSpeed } from './equation';
 
@@ -50,7 +50,7 @@ const ToolRotationForm = () => {
   return (
     <Form legend={languages[langId].form2Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <LabeledInput
-        inputName='diameter'
+        inputName="diameter"
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         inputRef={inputRef}
@@ -62,7 +62,7 @@ const ToolRotationForm = () => {
         onChange={onDiameterChange}
       />
       <LabeledInput
-        inputName='cuttingSpeed'
+        inputName="cuttingSpeed"
         name={languages[langId].cutSpeed.name}
         sub={languages[langId].cutSpeed.sub}
         unit={languages[langId].cutSpeed.unit}

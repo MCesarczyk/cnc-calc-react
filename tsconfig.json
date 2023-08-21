@@ -18,6 +18,6 @@
     "jsx": "react-jsx",
     "baseUrl": "src"
   },
-  "include": ["src", "./src/**/*", "./test-utils/**/*", "./custom.d.ts"],
+  "include": ["src", "./src/**/*", "./test-utils/**/*", "./custom.d.ts", "src/ui/molecules/resultField/.stories.tsx"],
   "exclude": ["node_modules"]
 }
