@@ -50,7 +50,7 @@ const ToolRotationForm = () => {
   return (
     <Form legend={languages[langId].form2Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <LabeledInput
-        inputName='diameter'
+        inputName="diameter"
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         inputRef={inputRef}
@@ -62,7 +62,7 @@ const ToolRotationForm = () => {
         onChange={onDiameterChange}
       />
       <LabeledInput
-        inputName='cuttingSpeed'
+        inputName="cuttingSpeed"
         name={languages[langId].cutSpeed.name}
         sub={languages[langId].cutSpeed.sub}
         unit={languages[langId].cutSpeed.unit}
