@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 
-import { FieldWrapper } from 'components/FieldWrapper';
-import { TextSub } from 'components/TextSub';
-import { Label } from 'components/Label';
+import { TextSub } from 'ui/atoms/textSub';
+import { Label } from 'ui/atoms/label';
+import { FieldWrapper } from 'ui/atoms/fieldWrapper';
 
 interface ResultFieldProps {
   name: string;
@@ -41,7 +41,7 @@ export const ResultCopyButton = styled.button`
   background: transparent;
   border: none;
   outline: none;
-  color: ${({ theme }) => theme.color.copyButtonFont};
+  color: ${({ theme }) => theme.color.copyButtonText};
   margin-left: 0.5rem;
 
   &:hover {

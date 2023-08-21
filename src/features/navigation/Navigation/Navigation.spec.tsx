@@ -1,15 +1,15 @@
+import { FormEvent } from 'react';
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+import { theme } from 'theme';
 import { createRoutesList } from 'utils/createRoutesList';
 import LanguageContext from 'features/language/context';
-import { Form } from 'components/Form';
+import { Form } from 'ui/organisms/form';
 import { NavigationList, Item } from './NavigationList';
-import { theme } from 'theme';
-import { FormEvent } from 'react';
 
 const renderList = (routes: { id: number; path: string; label: string; }[] | undefined) => {
   render(

@@ -64,7 +64,7 @@ const SidebarNavigation = styled.div<{ $visible?: boolean }>`
   left: 0;
   top: 0;
   height: 100%;
-  color: ${({ theme }) => theme.color.primaryContrast};
+  color: ${({ theme }) => theme.color.contrastText};
   background-color: ${({ theme }) => theme.color.primary};
   padding: 1rem;
   padding-top: 6rem;

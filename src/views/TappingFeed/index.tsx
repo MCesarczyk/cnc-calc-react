@@ -3,12 +3,12 @@ import { FormEvent, ChangeEvent, useContext, useEffect, useRef, useState } from 
 import ClipboardContext from 'features/clipboard/context';
 import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
-import { Form } from 'components/Form';
-import { FormInput } from 'components/FormInput';
-import { FormSelect } from 'components/FormSelect';
 import languages from 'assets/fixtures/languages';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
+import { LabeledInput } from 'ui/molecules/labeledInput';
+import { LabeledSelect } from 'ui/molecules/labeledSelect';
+import { Form } from 'ui/organisms/form';
 import { calculateTappingFeed, setPitchValue, tapDiametersArray } from './equation';
 
 const TappingFeedForm = () => {
@@ -55,7 +55,7 @@ const TappingFeedForm = () => {
 
   return (
     <Form legend={languages[langId].form4Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
-      <FormInput
+      <LabeledInput
         inputName="rotationSpeed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
@@ -68,7 +68,7 @@ const TappingFeedForm = () => {
         autoFocus={!checkIfItsTouchDevice()}
         onChange={(e: ChangeEvent<HTMLInputElement>) => setRotationSpeed(e.target.value)}
       />
-      <FormSelect
+      <LabeledSelect
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         id="diameterSelector"

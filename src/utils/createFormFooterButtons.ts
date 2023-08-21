@@ -4,17 +4,17 @@ import languages from 'assets/fixtures/languages';
 export const createFormFooterButtons = (langId: Language) => {
   const buttons: {
     id: number;
-    type: 'submit' | 'reset';
+    type: 'SUBMIT' | 'RESET';
     label: string;
   }[] = [
     {
       id: 1,
-      type: 'submit',
+      type: 'SUBMIT',
       label: languages[langId]?.buttonLabel.submit,
     },
     {
       id: 2,
-      type: 'reset',
+      type: 'RESET',
       label: languages[langId]?.buttonLabel.reset,
     },
   ];

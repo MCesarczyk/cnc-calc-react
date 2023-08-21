@@ -4,12 +4,14 @@ import { FeedType } from 'types';
 import LanguageContext from 'features/language/context';
 import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
-import languages from 'assets/fixtures/languages';
+import { Language } from 'features/language/types';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
-import { Form } from 'components/Form';
-import { FormInput } from 'components/FormInput/FormInput';
-import { FeedOptionSelector } from 'components/FeedOptionSelector';
+import { createFeedOptions } from 'utils/createFeedOptions';
+import languages from 'assets/fixtures/languages';
+import { LabeledInput } from 'ui/molecules/labeledInput';
+import { FeedOptionSelector } from 'ui/organisms/feedOptionSelector';
+import { Form } from 'ui/organisms/form';
 import { calculateFeedrate } from './equation';
 
 const LinearFeedForm = () => {
@@ -23,6 +25,7 @@ const LinearFeedForm = () => {
   const [feedPerTooth, setFeedPerTooth] = useState(feedPerToothInitial);
   const [feedrate, setFeedrate] = useState<string>('');
   const [feedType, setFeedType] = useState<FeedType>('FPR');
+  const feedOptions = createFeedOptions(langId as Language);
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -77,7 +80,7 @@ const LinearFeedForm = () => {
 
   return (
     <Form legend={languages[langId].form3Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
-      <FormInput
+      <LabeledInput
         inputName="rotationSpeed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
@@ -91,12 +94,13 @@ const LinearFeedForm = () => {
         onChange={(e: ChangeEvent<HTMLInputElement>) => setRotationSpeed(e.target.value)}
       />
       <FeedOptionSelector
+        feedOptions={feedOptions}
         feedType={feedType}
         setFeedType={setFeedType}
         feedFactor={feedType === 'FPR' ? feedPerRevolution : feedPerTooth}
         setFeedFactor={onFeedChange}
       />
-      <FormInput
+      <LabeledInput
         inputName="feedFactor"
         name={languages[langId].teethNumber.name}
         value={feedType === 'FPT' ? toothNumber : ''}

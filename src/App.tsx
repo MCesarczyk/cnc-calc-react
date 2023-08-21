@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { useLocalStorageState } from 'utils/uselocalStorageState';
-import Home from 'views/Home';
-import SurfaceSpeedForm from 'views/SurfaceSpeed';
-import ToolRotationForm from 'views/ToolRotation';
-import LinearFeedForm from 'views/LinearFeed';
-import TappingFeedForm from 'views/TappingFeed';
+import { styled } from 'styled-components';
+
+import { AUTHOR_PAGE_ADDRESS, AUTHOR_PAGE_LABEL, DATE } from 'assets/fixtures/author';
 import { Navigation, NavigationWrapper } from 'features/navigation/Navigation';
 import { ClipboardSwitcher } from 'features/clipboard/Switcher';
 import { Language } from 'features/language/types';
@@ -13,9 +10,14 @@ import { Sidebar } from 'features/navigation/Sidebar';
 import LanguageProvider from 'features/language/provider';
 import NavigationProvider from 'features/navigation/provider';
 import ClipboardProvider from 'features/clipboard/provider';
-import { Header } from 'components/Header/Header';
-import { Footer } from 'components/Footer/Footer';
-import { Wrapper } from 'components/Warpper';
+import { useLocalStorageState } from 'utils/uselocalStorageState';
+import Home from 'views/Home';
+import SurfaceSpeedForm from 'views/SurfaceSpeed';
+import ToolRotationForm from 'views/ToolRotation';
+import LinearFeedForm from 'views/LinearFeed';
+import TappingFeedForm from 'views/TappingFeed';
+import { Footer } from 'ui/organisms/footer';
+import { Header } from 'ui/organisms/header';
 
 const App = () => {
   const [langId, setLangId] = useLocalStorageState<Language>('langId', 'EN');
@@ -29,7 +31,7 @@ const App = () => {
         <ClipboardProvider value={{ values, setValues, memoryMode, setMemoryMode }}>
           <HashRouter>
             <Sidebar />
-            <Header />
+            <Header homeUrl='/' />
 
             <Wrapper>
               <NavigationWrapper>
@@ -46,7 +48,7 @@ const App = () => {
               </Routes>
             </Wrapper>
 
-            <Footer />
+            <Footer date={DATE} url={AUTHOR_PAGE_ADDRESS} label={AUTHOR_PAGE_LABEL} />
           </HashRouter>
         </ClipboardProvider>
       </NavigationProvider>
@@ -54,3 +56,17 @@ const App = () => {
   );
 };
 export default App;
+
+export const Wrapper = styled.main`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  width: 100%;
+  min-height: 16rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.md}) {
+    grid-template-columns: 1fr;
+  }
+`;

@@ -1,11 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ResultField component rendering properly 1`] = `
-.c0 {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
+.c1 {
+  text-align: right;
 }
 
 .c2 {
@@ -22,15 +19,16 @@ exports[`ResultField component rendering properly 1`] = `
   background-color: #ddd;
 }
 
-.c1 {
-  text-align: right;
+.c0 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 480px) {
-  .c0 {
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.25rem;
+  .c1 {
+    align-self: flex-start;
   }
 }
 
@@ -41,8 +39,10 @@ exports[`ResultField component rendering properly 1`] = `
 }
 
 @media (max-width: 480px) {
-  .c1 {
-    align-self: flex-start;
+  .c0 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
   }
 }
 
