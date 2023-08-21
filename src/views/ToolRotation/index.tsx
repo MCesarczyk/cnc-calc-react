@@ -1,12 +1,12 @@
 import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from 'react';
 
 import LanguageContext from 'features/language/context';
-import { ResultField } from 'features/clipboard/ResultField';
 import ClipboardContext from 'features/clipboard/context';
 import languages from 'assets/fixtures/languages';
 import { focusForm } from 'utils/focusForm';
 import { checkIfItsTouchDevice } from 'utils/checkDeviceType';
 import { LabeledInput } from 'ui/molecules/labeledInput';
+import { ResultField } from 'ui/molecules/resultField';
 import { Form } from 'ui/organisms/form';
 import { calculateRotationSpeed } from './equation';
 
