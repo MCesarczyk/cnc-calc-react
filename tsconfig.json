@@ -1,12 +1,24 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -16,8 +28,23 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "src"
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": [
+        "./*"
+      ]
+    }
   },
-  "include": ["src", "./src/**/*", "./test-utils/**/*", "./custom.d.ts", "src/ui/molecules/resultField/.stories.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src",
+    "vite.config.ts",
+    "./src/**/*",
+    "./test-utils/**/*",
+    "./custom.d.ts",
+    "src/ui/molecules/resultField/.stories.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "jest"
+  ]
 }

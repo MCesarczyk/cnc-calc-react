@@ -1,5 +1,5 @@
-const PL = require('assets/images/flagPL.png');
-const EN = require('assets/images/flagUS.png');
+import PL from 'assets/images/flagPL.png';
+import EN from 'assets/images/flagUS.png';
 
 const languages = {
   EN: {
