@@ -6,16 +6,19 @@ export const createFormFooterButtons = (langId: Language) => {
     id: number;
     type: 'SUBMIT' | 'RESET';
     label: string;
+    testId: string;
   }[] = [
     {
       id: 1,
       type: 'SUBMIT',
       label: languages[langId]?.buttonLabel.submit,
+      testId: 'button-submit',
     },
     {
       id: 2,
       type: 'RESET',
       label: languages[langId]?.buttonLabel.reset,
+      testId: 'button-reset',
     },
   ];
 

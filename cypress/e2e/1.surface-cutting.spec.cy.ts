@@ -1,0 +1,16 @@
+describe('Surface cutting view', () => {
+  it('should enable tool surface cutting speed calculation', () => {
+    cy.visit('/')
+    cy.contains('Cutting parameters calculator').should('be.visible')
+    cy.contains('Choose an option, please').should('be.visible')
+    cy.get('[data-testid="link-surface-speed"]').click()
+    cy.get('[data-testid="input-surface-speed-diameter"]').should('be.visible').clear().type('123')
+    cy.get('[data-testid="input-surface-speed-spindle-speed"]').should('be.visible').clear().type('456')
+    cy.get('[data-testid="button-submit"]').should('be.visible').click()
+    cy.get('[data-testid="result-surface-speed"]').should('be.visible').contains('176.21')
+    cy.get('[data-testid="button-reset"]').should('be.visible').click()
+    cy.get('[data-testid="input-surface-speed-diameter"]').should('be.visible').should('have.value', '')
+    cy.get('[data-testid="input-surface-speed-spindle-speed"]').should('be.visible').should('have.value', '')
+    cy.get('[data-testid="result-surface-speed"]').should('be.visible').should('have.value', '')
+  })
+})

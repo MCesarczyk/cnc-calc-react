@@ -7,6 +7,7 @@ import { FieldWrapper } from 'ui/atoms/fieldWrapper';
 
 interface LabeledInputProps {
   inputName: string;
+  testId: string;
   name: string;
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -22,6 +23,7 @@ interface LabeledInputProps {
 
 export const LabeledInput = ({
   inputName,
+  testId,
   name,
   value,
   onChange,
@@ -46,6 +48,7 @@ export const LabeledInput = ({
       <Input
         ref={inputRef}
         name={inputName}
+        data-testid={testId}
         id={inputName}
         value={value}
         type="number"

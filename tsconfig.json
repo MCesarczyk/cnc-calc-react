@@ -10,14 +10,16 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "typeRoots": [
-      "./src/@types",
-      "./node_modules/@types"
-    ],
+    // "typeRoots": [
+    //   "./src/@types",
+    //   "./node_modules/@types"
+    // ],
     "types": [
       "node",
       "jest",
-      "@testing-library/jest-dom"
+      "@testing-library/jest-dom",
+      "cypress",
+      "@testing-library/cypress",
     ],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -45,6 +47,9 @@
   ],
   "exclude": [
     "node_modules",
-    "jest"
+    "jest",
+    "cypress",
+    "cypress.config.ts",
+    "cypress/e2e/**/*",
   ]
 }

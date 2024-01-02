@@ -6,13 +6,14 @@ import { FieldWrapper } from 'ui/atoms/fieldWrapper';
 
 interface ResultFieldProps {
   name: string;
+  testId: string;
   unit: string;
   value?: string;
   placeholder: string;
   sub?: string;
 }
 
-export const ResultField = ({ name, unit, value, placeholder, sub }: ResultFieldProps) => {
+export const ResultField = ({ name, testId, unit, value, placeholder, sub }: ResultFieldProps) => {
   return (
     <FieldWrapper>
       <Label>
@@ -22,7 +23,7 @@ export const ResultField = ({ name, unit, value, placeholder, sub }: ResultField
           {unit}
         </label>
       </Label>
-      <Result $placeholder={!value ? 'placeholder' : ''}>{value ? value : placeholder}</Result>
+      <Result $placeholder={!value ? 'placeholder' : ''} data-testid={testId} >{value ? value : placeholder}</Result>
     </FieldWrapper>
   );
 };

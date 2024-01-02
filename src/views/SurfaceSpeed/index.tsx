@@ -51,6 +51,7 @@ const SurfaceSpeedForm = () => {
     <Form legend={languages[langId].form1Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <LabeledInput
         inputName="diameter"
+        testId="input-surface-speed-diameter"
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         inputRef={inputRef}
@@ -63,6 +64,7 @@ const SurfaceSpeedForm = () => {
       />
       <LabeledInput
         inputName="rotationSpeed"
+        testId="input-surface-speed-spindle-speed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
@@ -74,6 +76,7 @@ const SurfaceSpeedForm = () => {
       />
       <ResultField
         name={languages[langId].cutSpeed.name}
+        testId="result-surface-speed"
         sub={languages[langId].cutSpeed.sub}
         unit={languages[langId].cutSpeed.unit}
         value={cuttingSpeed}

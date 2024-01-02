@@ -5,15 +5,17 @@ import LanguageContext from 'features/language/context';
 import { createRoutesList } from 'utils/createRoutesList';
 import { NavigationList } from './NavigationList';
 
+export type NavigationVariant = 'DEFAULT' | 'SIDEBAR' | 'MOBILE';
+
 interface NavigationProps {
-  sidebar?: boolean;
+  variant: NavigationVariant;
 }  
 
-export const Navigation = ({ sidebar }: NavigationProps) => {
+export const Navigation = ({ variant }: NavigationProps) => {
   const { langId } = useContext(LanguageContext);
   const routes = createRoutesList(langId);
 
-  return <NavigationList sidebar={sidebar} routes={routes} />;
+  return <NavigationList variant={variant} routes={routes} />;
 };  
 
 export const NavigationWrapper = styled.div`
