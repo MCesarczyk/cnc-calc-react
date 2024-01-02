@@ -20,7 +20,7 @@ const Button = ({ language }: ButtonProps) => {
   return (
     <SwitcherButton
       onClick={() => onLanguageChange(language.key)}
-      style={{ backgroundImage: `url(${language.flag})` }}
+      style={{ backgroundImage: `url(/src/${language.flag})` }}
       $active={isButtonActive(language.key, langId) ? 'active' : undefined}
     >
       {language.key}

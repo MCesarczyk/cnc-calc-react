@@ -22,7 +22,7 @@ export const ResultField = ({ name, unit, value, placeholder, sub }: ResultField
           {unit}
         </label>
       </Label>
-      <Result placeholder={!value ? 'placeholder' : ''}>{value ? value : placeholder}</Result>
+      <Result $placeholder={!value ? 'placeholder' : ''}>{value ? value : placeholder}</Result>
     </FieldWrapper>
   );
 };
@@ -53,15 +53,15 @@ export const ResultCopyButton = styled.button`
   }
 `;
 
-const Result = styled.div`
+const Result = styled.div<{$placeholder?: string}>`
   min-width: 16rem;
   border: solid 1px ${({ theme }) => theme.color.primary};
   border-radius: 5px;
   padding: 5px;
   color: ${({ theme }) => theme.color.primaryText};
 
-  ${({ placeholder }) =>
-    placeholder &&
+  ${({ $placeholder }) =>
+    $placeholder &&
     css`
       color: ${({ theme }) => theme.color.placeholder};
     `}
