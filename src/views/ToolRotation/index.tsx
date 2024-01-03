@@ -51,6 +51,7 @@ const ToolRotationForm = () => {
     <Form legend={languages[langId].form2Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <LabeledInput
         inputName="diameter"
+        testId='input-spindle-speed-diameter'
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         inputRef={inputRef}
@@ -63,6 +64,7 @@ const ToolRotationForm = () => {
       />
       <LabeledInput
         inputName="cuttingSpeed"
+        testId='input-spindle-speed-surface-speed'
         name={languages[langId].cutSpeed.name}
         sub={languages[langId].cutSpeed.sub}
         unit={languages[langId].cutSpeed.unit}
@@ -74,6 +76,7 @@ const ToolRotationForm = () => {
       />
       <ResultField
         name={languages[langId].rotSpeed.name}
+        testId='result-spindle-speed'
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
         value={rotationSpeed}

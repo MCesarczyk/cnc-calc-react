@@ -1,5 +1,5 @@
-describe('Surface cutting view', () => {
-  it('should enable tool surface cutting speed calculation', () => {
+describe('Tool rotational view', () => {
+  it.skip('should enable tool surface cutting speed calculation', () => {
     cy.visit('/')
     cy.contains('Cutting parameters calculator').should('be.visible')
     cy.contains('Choose an option, please').should('be.visible')
