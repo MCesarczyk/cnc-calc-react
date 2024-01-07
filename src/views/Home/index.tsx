@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <HomeTitle>{languages[langId]?.welcomeTitle}</HomeTitle>
       <MobileNavWrapper>
-        <Navigation />
+        <Navigation variant='MOBILE' />
       </MobileNavWrapper>
     </>
   );

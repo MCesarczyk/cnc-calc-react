@@ -1,10 +1,7 @@
-const PL = require('assets/images/flagPL.png');
-const EN = require('assets/images/flagUS.png');
-
 const languages = {
   EN: {
     key: 'EN',
-    flag: EN,
+    flag: 'assets/images/flagUS.png',
     mainTitle: 'Cutting parameters calculator',
     welcomeTitle: 'Choose an option, please.',
     section1Title: 'Milling/drilling',
@@ -66,7 +63,7 @@ const languages = {
   },
   PL: {
     key: 'PL',
-    flag: PL,
+    flag: 'assets/images/flagPL.png',
     mainTitle: 'Kalkulator parametrów skrawania',
     welcomeTitle: 'Wybierz jedną z opcji.',
     section1Title: 'Frezowanie/wiercenie',

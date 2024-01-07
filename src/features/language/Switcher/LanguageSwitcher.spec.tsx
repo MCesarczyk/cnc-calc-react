@@ -9,6 +9,7 @@ import LanguageContext from '../context';
 import LanguageSwitcher from '.';
 import { SwitcherButton } from './Button/styled';
 import Button from './Button';
+import { Language, LanguageState } from '~/features/language/types';
 
 let langId = 'EN';
 const setLangId = (id: string) => (langId = id);
@@ -16,22 +17,19 @@ const setLangId = (id: string) => (langId = id);
 const switcherSetup = () =>
   render(
     <ThemeProvider theme={theme}>
-      {/* @ts-ignore */}
-      <LanguageContext.Provider value={{ langId, setLangId }}>
+      <LanguageContext.Provider value={{ langId, setLangId } as LanguageState}>
         <LanguageSwitcher />
       </LanguageContext.Provider>
     </ThemeProvider>,
   );
-  
-  const buttonSetup = (currentLangId: number) => {
-  {/* @ts-ignore */}
+
+const buttonSetup = (currentLangId: Language) => {
   const language = languages[currentLangId];
-  
+
   return render(
     <ThemeProvider theme={theme}>
-      {/* @ts-ignore */}
-      <LanguageContext.Provider value={{ langId, setLangId }}>
-        <Button language={language} />
+      <LanguageContext.Provider value={{ langId, setLangId } as LanguageState}>
+        <Button language={{ key: language.key as Language, flag: language.flag }} />
       </LanguageContext.Provider>
     </ThemeProvider>,
   );
@@ -61,16 +59,16 @@ test('Button sets proper language on click', () => {
 });
 
 test.skip('Active button should have light border', () => {
-  const activeButton = buttonSetup(0);
+  buttonSetup('EN');
 
-  const activeButtonItem = activeButton.getByRole('button');
+  const activeButtonItem = screen.getByRole('button');
   expect(activeButtonItem).toHaveStyle({ 'border-color': '#fff' });
 });
 
 test.skip('Inactive button should have dark border', () => {
-  const inactiveButton = buttonSetup(1);
+  buttonSetup('PL');
 
-  const inactiveButtonItem = inactiveButton.getByRole('button');
+  const inactiveButtonItem = screen.getByRole('button');
   expect(inactiveButtonItem).toHaveStyle({ 'border-color': '#1e3246' });
 });
 

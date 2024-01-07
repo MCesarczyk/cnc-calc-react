@@ -1,20 +1,26 @@
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { NavigationVariant } from '~/features/navigation/Navigation/Navigation';
 
 interface NavigationListProps {
-  sidebar?: boolean;
+  variant: NavigationVariant;
   routes?: {
     id: number;
     path: string;
     label: string;
+    testId: string;
   }[];
 }
 
-export const NavigationList = ({ sidebar, routes }: NavigationListProps) => (
+export const NavigationList = ({ variant, routes }: NavigationListProps) => (
   <List>
     {routes?.map((route) => (
       <li key={route.id}>
-        <Item $sidebar={sidebar} to={route.path}>
+        <Item
+          $sidebar={variant === 'SIDEBAR'}
+          to={route.path}
+          data-testid={`${route.testId}${variant === 'DEFAULT' ? '' : `-${String(variant).toLowerCase()}`}`}
+        >
           {route.label}
         </Item>
       </li>

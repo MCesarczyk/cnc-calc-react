@@ -5,7 +5,11 @@ import languages from 'assets/fixtures/languages';
 import LanguageContext from 'features/language/context';
 import ClipboardContext from '../context';
 
-export const ClipboardSwitcher = () => {
+interface ClipboardSwitcherProps {
+  variant?: 'DEFAULT' | 'SIDEBAR' | 'MOBILE';
+}
+
+export const ClipboardSwitcher = ({ variant }: ClipboardSwitcherProps) => {
   const { memoryMode, setMemoryMode } = useContext(ClipboardContext);
 
   const { langId } = useContext(LanguageContext);
@@ -13,7 +17,11 @@ export const ClipboardSwitcher = () => {
   return (
     <SwitcherWrapper>
       <SwitcherLabel htmlFor="clipboard-switcher">{languages[langId].clibboardSwitcherLabel}</SwitcherLabel>
-      <Switcher id="clipboard-switcher" onClick={() => setMemoryMode(!memoryMode)}>
+      <Switcher
+        id="clipboard-switcher"
+        data-testid={`clipboard-switcher${variant === 'DEFAULT' ? '' : `-${String(variant).toLowerCase()}`}`}
+        onClick={() => setMemoryMode(!memoryMode)}
+      >
         <SwitcherIndicator $memorymode={memoryMode} />
       </Switcher>
     </SwitcherWrapper>

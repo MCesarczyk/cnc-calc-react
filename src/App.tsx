@@ -35,8 +35,8 @@ const App = () => {
 
             <Wrapper>
               <NavigationWrapper>
-                <Navigation />
-                <ClipboardSwitcher />
+                <Navigation variant='DEFAULT' />
+                <ClipboardSwitcher variant='DEFAULT' />
               </NavigationWrapper>
 
               <Routes>

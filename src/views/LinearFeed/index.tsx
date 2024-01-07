@@ -82,6 +82,7 @@ const LinearFeedForm = () => {
     <Form legend={languages[langId].form3Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <LabeledInput
         inputName="rotationSpeed"
+        testId="input-feedrate-spindle-speed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
@@ -102,6 +103,7 @@ const LinearFeedForm = () => {
       />
       <LabeledInput
         inputName="feedFactor"
+        testId="input-feedrate-tooth-number"
         name={languages[langId].teethNumber.name}
         value={feedType === 'FPT' ? toothNumber : ''}
         min={1}
@@ -112,6 +114,7 @@ const LinearFeedForm = () => {
       />
       <ResultField
         name={languages[langId].feedrate.name}
+        testId="result-feedrate"
         unit={languages[langId].feedrate.unit}
         value={feedrate || ''}
         placeholder={languages[langId].feedrate.placeholder}

@@ -6,13 +6,14 @@ interface FormFooterProps {
     id: number;
     label: string;
     type: 'SUBMIT' | 'RESET';
+    testId: string;
   }[];
 }
 
 export const FormFooter = ({ buttons }: FormFooterProps) => (
   <ButtonsContainer>
     {buttons.map((button) => (
-      <Button key={button.id} $variant={button.type}>
+      <Button key={button.id} $variant={button.type} type={button.type === 'RESET' ? 'reset' : 'submit'} data-testid={button.testId} >
         {button.label}
       </Button>
     ))}

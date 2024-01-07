@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-interface NavigationContextType {
+export interface NavigationContextType {
   open: boolean;
   setOpen: (open: boolean) => void;
 }

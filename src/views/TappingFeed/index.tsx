@@ -57,6 +57,7 @@ const TappingFeedForm = () => {
     <Form legend={languages[langId].form4Legend} onSubmit={onFormSubmit} onReset={onFormReset}>
       <LabeledInput
         inputName="rotationSpeed"
+        testId="input-tapping-spindle-speed"
         name={languages[langId].rotSpeed.name}
         sub={languages[langId].rotSpeed.sub}
         unit={languages[langId].rotSpeed.unit}
@@ -72,18 +73,21 @@ const TappingFeedForm = () => {
         name={languages[langId].diameter.name}
         unit={languages[langId].diameter.unit}
         id="diameterSelector"
+        testId="select-tapping-diameter"
         onChange={onOptionChange}
         value={diameter}
         data={tapDiametersArray}
       />
       <ResultField
         name={languages[langId].pitch.name}
+        testId='result-thread-pitch'
         unit={languages[langId].pitch.unit}
         value={pitch}
         placeholder={languages[langId].pitch.placeholder}
       />
       <ResultField
         name={languages[langId].feedrate.name}
+        testId='result-tapping-feedrate'
         unit={languages[langId].feedrate.unit}
         value={feedrate}
         placeholder={languages[langId].feedrate.placeholder}
