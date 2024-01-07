@@ -43,8 +43,8 @@ export const Sidebar = () => {
     <>
       <SidebarActivationArea onPointerEnter={handleOpen} />
       <SidebarNavigation ref={sidebarRef} $visible={open && pathname !== '/'}>
-        <Navigation variant={true} />
-        <ClipboardSwitcher />
+        <Navigation variant='SIDEBAR' />
+        <ClipboardSwitcher variant='SIDEBAR' />
       </SidebarNavigation>
     </>    
   );
