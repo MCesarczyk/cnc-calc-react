@@ -92,6 +92,15 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run e2e`
+
+Launches end to end test in console using cypress:
+https://docs.cypress.io/guides/overview/why-cypress
+
+### `npm run e2e:preview`
+Launches end to end tests of choice in Chrome, Firefox or Electron environment
+https://docs.cypress.io/guides/end-to-end-testing/testing-your-app
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
